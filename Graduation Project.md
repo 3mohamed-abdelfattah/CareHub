@@ -1,2 +1,1 @@
-#Graduation Project
-##medical simulator
+medical simulator
