@@ -85,7 +85,7 @@ export default function BN() {
     <div className="doctors-list">
       <div className="container">
         <div className="Doctors">
-          <img src="https://mediaaws.almasryalyoum.com/news/large/2021/10/28/1657986_0.jpeg" alt="" />
+          <img src="" alt="" />
           <div className="doctors-data">
             <h1>د.أحمد عبداللطيف </h1>
             <h3>جراحة مسالك بولية</h3>
