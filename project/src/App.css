@@ -1,4 +1,4 @@
-/* Global */
+                                                                /* Global */
 
 *{
   box-sizing: border-box;
@@ -12,57 +12,51 @@ body{
 }
 
 .container{
-  padding: 0 90px;
+  padding: 0;
   margin: 0 auto;
   background-color: #006d77;
 }
 .shadow{
   box-shadow: 1px 1px 10px 1px rgb(0, 0, 0);
 }
-/* Header */
+
+
+                                                                /* Header */
 
 .d-flex{
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-color: #006d77;
 }
-/*  الشعار*/
+
+
+                                                                /*  الشعار*/
 .d-flex{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   color: rgb(255, 255, 255);
   text-decoration: none;
-  font-size: 18px;
-  padding: 10px;
+  font-size: 20px;
+  padding: 1%;
+justify-content: right;
+
 }
 .b-flex{
   display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 
-/* Sign Up Page */
-
-
-
-
-
+                                                                /* login page */
 
 
 .parent{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  margin-top: 15%;
 }
 
 .form1{
-  width: 450px;
+  width: 99%;
   box-shadow: 0px 2px 15px rgb(156, 156, 156);
-  padding: 20px;
+  padding: 12%;
   border-radius: 20px;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -71,8 +65,8 @@ body{
 }
 
 input{
-  padding: 10px 20px;
-  width: 100%;
+  padding: 4%;
+  width: 98%;
   outline: none;
   border: 2px solid rgb(255, 255, 255);
   border-radius: 10px;
@@ -103,7 +97,6 @@ input::placeholder{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
 }
 
 
@@ -113,7 +106,7 @@ input::placeholder{
   outline: none;
   border: none;
   background-color: #83c5be;
-  padding: 10px 20px;
+  padding: 3% 15%;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -125,7 +118,26 @@ input::placeholder{
   border: 2px solid rgb(255, 255, 255);
   font-weight: bold;
   text-decoration: none;
-  margin-left: 5px;
+  margin: 2%;
+
+}
+.SignDiv-nav1{ 
+  outline: none;
+  border: none;
+  background-color: #83c5be;
+  padding: 1% 2%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid rgb(255, 255, 255);
+  font-weight: bold;
+  text-decoration: none;
+  margin: 1%;
 
 }
 
@@ -134,21 +146,23 @@ input::placeholder{
   background-color: rgb(255, 255, 255);
   color: #000000;
   border: 2px solid rgb(255, 255, 255);
+  
 }
 .placehold{
   text-align: right;
 }
 
-/* Errors*/
+
+                                                                /* Errors*/
 .error{
   color: red;
   text-align:right;
   font-size: 14px;
   margin-top: 0;
-
 }
 
-/* Wallpaper */
+
+                                                                /* Wallpaper */
 .wall{
   background-image: url('./componant/Wall.js');
   background-size: cover;
@@ -161,12 +175,14 @@ input::placeholder{
   height: 100%;
   z-index: -1;
 }
-/* HEADER BUTTONS */
+
+
+
+
+                                                                /* HEADER BUTTONS */
 .lol{
-  outline: none;
-  border: none;
+  outline: none;  
   background-color: #83c5be;
-  padding: 10px 20px;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -178,8 +194,8 @@ input::placeholder{
   border: 2px solid rgb(255, 255, 255);
   font-weight: bold;
   text-decoration: none;
-  margin-left: 5px;
-
+  padding: 1%;
+  margin: 0.5%;
 }
 
 .lol button:hover,
@@ -191,7 +207,125 @@ input::placeholder{
 
 
 
-/* UPDATE PAGE */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                                /* SignUp Page */
+
+.parentS{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8%;
+}
+
+.form1S{
+  width:58%;
+  box-shadow: 0px 2px 15px rgb(156, 156, 156);
+  padding: 2%;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+input{
+  padding: 4%;
+  outline: none;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  box-shadow: 0px 0px 1px 1px rgb(198, 198, 198);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  margin-bottom: 8px;
+  margin-top: 8px;
+
+}
+
+input:focus{
+  border: 2px solid #83c5be;
+}
+
+input::placeholder{
+  color: rgb(0, 0, 0,0.4);
+}
+
+.SignDivS{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.SignDivS button ,
+.SignDivS-nav1{ 
+  outline: none;
+  border: none;
+  background-color: #83c5be;
+  padding: 3% 15%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid rgb(255, 255, 255);
+  font-weight: bold;
+  text-decoration: none;
+  margin: 2%;
+
+}
+
+.SignDivS button:hover,
+.SignDivS-nav1:hover{
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+  border: 2px solid rgb(255, 255, 255);
+  
+}
+.placeholdS{
+  text-align: right;
+}
+
+                                                                /* Errors*/
+.error{
+  color: red;
+  text-align:right;
+  margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+                                                                /* UPDATE PAGE */
 
 .parent1{
 justify-content: right;
@@ -237,7 +371,296 @@ padding: 20px;
 
 }
 .nabd{
-  position: relative;right: 39.5%;
+  position: fixed,left;
   color:rgb(255, 255, 255);
   display: flex;
+}
+
+.nabd1{
+  position: fixed,left;
+  color:rgb(255, 255, 255);
+  display: flex;
+}
+
+
+
+
+
+
+
+
+
+                                                      /*iPad------------resolution*/
+
+
+@media screen and (max-width: 768px){
+
+
+                                                                /* Header Ipad */
+
+.d-flex{
+  display: flex;
+  background-color: #006d77;
+}
+
+
+                                                                /*  الشعارIpad*/
+.d-flex{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 20px;
+  padding: 1%;
+justify-content: right;
+
+}
+.b-flex{
+  display: flex;
+}
+
+
+                                                                /* login page Ipad*/
+
+
+.parent{
+  margin-top: 25%;
+}
+
+.form1{
+  width: 100%;
+  padding: 4%;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+input{
+  padding: 4%;
+  width: 98%;
+  margin-bottom: 8px;
+  margin-top: 8px;
+
+}
+
+input:focus{
+  border: 2px solid #83c5be;
+}
+
+input::placeholder{
+  color: rgb(0, 0, 0,0.4);
+}
+
+.SignDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.SignDiv button ,
+.SignDiv-nav{ 
+  outline: none;
+  border: none;
+  background-color: #83c5be;
+  padding: 3% 15%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid rgb(255, 255, 255);
+  font-weight: bold;
+  text-decoration: none;
+  margin: 2%;
+
+}
+.SignDiv-nav1{ 
+  outline: none;
+  border: none;
+  background-color: #83c5be;
+  padding: 1% 2%;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.3s;
+  border: 2px solid rgb(255, 255, 255);
+  font-weight: bold;
+  text-decoration: none;
+  margin: 1%;
+
+}
+
+.SignDiv button:hover,
+.SignDiv-nav:hover{
+  background-color: rgb(255, 255, 255);
+  color: #000000;
+  border: 2px solid rgb(255, 255, 255);
+  
+}
+.placehold{
+  text-align: right;
+}
+
+                                                                /* Wallpaper Ipad*/
+.wall{
+  background-image: url('./componant/Wall.js');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 105%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+
+
+                                                                /* HEADER BUTTONS Ipad*/
+.lol{
+  padding: 2%;
+}
+
+
+                                                                /* SignUp Page Ipad*/
+
+.parentS{
+  margin-top: 13%;
+}
+
+.form1S{
+  width:58%;
+  padding: 2%;
+}
+
+input{
+  padding: 4%;
+  margin-top: 9px;
+}
+
+
+
+
+                                                                /* UPDATE PAGE Ipad*/
+
+.parent1{
+padding: 1%;
+}
+
+.nabd{
+  color:rgb(255, 255, 255);
+  position: fixed,left;
+}
+.nabd1{
+  color:rgb(255, 255, 255);
+  position: fixed,left;
+}
+}
+
+
+                                                      /*Mobile ---------------------resolution*/
+
+
+@media screen and (max-width: 480px){
+
+
+
+
+                                                                /* Header Mobile */
+
+.d-flex{
+  display: flex;
+  background-color: #006d77;
+}
+
+
+                                                                /*  الشعارMobile*/
+.d-flex{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-size: 15px;
+  padding:1%;
+justify-content: right;
+
+}
+.b-flex{
+  display: flex;
+}
+
+
+                                                                /* login page Mobile*/
+
+
+.parent{
+  margin-top: 70%;
+}
+
+.form1{
+  width: 100%;
+  padding: 4%;
+}
+
+
+
+
+                                                                /* Wallpaper Mobile*/
+.wall{
+  background-image: url('./componant/Wall.js');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 105%;
+  height: 100%;
+  z-index: -1;
+}
+
+
+
+
+                                                                /* HEADER BUTTONS Mobile*/
+.lol{
+  padding: 2.5%;
+}
+
+
+                                                                /* SignUp Page Mobile*/
+
+.parentS{
+  margin-top: 50%;
+}
+
+
+                                                                /* UPDATE PAGE Mobile*/
+
+.parent1{
+padding: 2%;
+}
+
+.nabd{
+  color:rgb(255, 255, 255);
+  position: fixed,left;
+}
+.nabd1{
+  color:rgb(255, 255, 255);
+  position: fixed,left;
+}
+
+
+
+
+
 }

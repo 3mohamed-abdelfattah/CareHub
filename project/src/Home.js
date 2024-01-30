@@ -32,11 +32,67 @@ export default function Home() {
           <div className="landing">
             <div className="intro-text">
                 <h1><b>التخصصات الاكثر شيوعاً</b> </h1>
-                <p>ابحث عن افضل الدكاترة  والمراكز الطبيه فى اكثر التخصصات شيوعاً </p>
+                <p>ابحث عن افضل الاطباء  والمراكز  فى اكثر التخصصات شيوعاً </p>
             </div>
           </div>
         </div>
         <main id="slider">
+
+            <section class="slider-container">
+                <div class="slider">
+                    <div class="slider-item">
+                    <Link to ="/stomch" className="HOMELINK">
+                        <div class="slide">
+                            <figure class="slide-image">
+                                <img src={GL} alt=""/>
+                            </figure>
+                            <h4 class="slide-name">جلديه</h4>
+                            <div class="custom-line"></div>
+                            <div class="row">
+                                <p>60 دكتور</p>
+                                <strong>•</strong>
+                                <p>4 مراكز</p>
+                            </div>
+                            </div>
+                            </Link>
+                    </div>
+                    <div class="slider-item">
+                    <Link to ="/stomch" className="HOMELINK">
+                        <div class="slide">
+                            <figure class="slide-image">
+                                <img src={BU} alt=""/>
+                            </figure>
+                            <h4 class="slide-name">تجميل</h4>
+                            <div class="custom-line"></div>
+                            <div class="row">
+                                <p>20 دكتور</p>
+                                <strong>•</strong>
+                                <p>5 مراكز</p>
+                            </div>
+                            </div>
+                            </Link>
+                    </div>
+                    <div class="slider-item">
+                    <Link to ="/stomch" className="HOMELINK">
+                        <div class="slide">
+                            <figure class="slide-image">
+                                <img src={MS} alt=""/>
+                            </figure>
+                            <h4 class="slide-name">نساء وتوليد</h4>
+                            <div class="custom-line"></div>
+                            <div class="row">
+                                <p>30 دكتور</p>
+                                <strong>•</strong>
+                                <p>1 مراكز</p>
+                            </div>
+                    </div>
+                    </Link>
+                    </div>
+                </div>
+            </section>
+
+
+
             <section class="slider-container">
                 <div class="slider">
                     <div class="slider-item">
@@ -90,58 +146,11 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section class="slider-container">
-                <div class="slider">
-                    <div class="slider-item">
-                    <Link to ="/stomch" className="HOMELINK">
-                        <div class="slide">
-                            <figure class="slide-image">
-                                <img src={GL} alt=""/>
-                            </figure>
-                            <h4 class="slide-name">جلديه</h4>
-                            <div class="custom-line"></div>
-                            <div class="row">
-                                <p>60 دكتور</p>
-                                <strong>•</strong>
-                                <p>4 مراكز</p>
-                            </div>
-                            </div>
-                            </Link>
-                    </div>
-                    <div class="slider-item">
-                    <Link to ="/stomch" className="HOMELINK">
-                        <div class="slide">
-                            <figure class="slide-image">
-                                <img src={BU} alt=""/>
-                            </figure>
-                            <h4 class="slide-name">تجميل</h4>
-                            <div class="custom-line"></div>
-                            <div class="row">
-                                <p>20 دكتور</p>
-                                <strong>•</strong>
-                                <p>5 مراكز</p>
-                            </div>
-                            </div>
-                            </Link>
-                    </div>
-                    <div class="slider-item">
-                    <Link to ="/stomch" className="HOMELINK">
-                        <div class="slide">
-                            <figure class="slide-image">
-                                <img src={MS} alt=""/>
-                            </figure>
-                            <h4 class="slide-name">نساء وتوليد</h4>
-                            <div class="custom-line"></div>
-                            <div class="row">
-                                <p>30 دكتور</p>
-                                <strong>•</strong>
-                                <p>1 مراكز</p>
-                            </div>
-                    </div>
-                    </Link>
-                    </div>
-                </div>
-            </section>
+
+
+
+
+
             <section class="slider-container">
                 <div class="slider">
                     <div class="slider-item">
@@ -200,7 +209,7 @@ export default function Home() {
         <div class="landing">
             <div class="intro-text">
                 <h1><b> أختر ما تبحث عنه</b></h1>
-                <p>حدد ما تريد الوصول اليه طبيب و مركز طبي ومستشفى ...<a href="#">والمذيد</a></p>
+                <p>حدد ما تريد الوصول اليه طبيب و مركز طبي ومستشفى ...<a href="#">اكثر</a></p>
             </div>
         </div>
         <main id="slider">

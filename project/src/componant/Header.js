@@ -11,25 +11,18 @@ export default function Header() {
     }
 
   return (
-    <div className="container shadow">
-    <nav className="d-flex">
-        <div className="b-flex">
+    <div className="d-flex container top-bar shadow">
+        <FontAwesomeIcon icon={faHospital} fade size="2xl" className="nabd1" />
+        <div>
+            
+        </div>
         <Link to ="/" className="lol">الدليل الطبي </Link>
-        <Link to="/dashboard" className="lol">خدمات</Link>
         <Link to="/dashboard" className="lol">لوحه التحكم</Link>
+        <Link to="/dashboard" className="lol">خدمات</Link>
+        {!window.localStorage.getItem('email')?
+            <><Link to='/register' className="lol">تسجيل</Link>
+            <Link to='/login' className="lol">تسجيل دخول</Link>
+            </>:<div className="lol" onClick={HandleLog}>تسجيل خروج</div>}
 
-
-        </div>
-
-
-
-        <div className="d-flex">
-            <FontAwesomeIcon icon={faHospital} fade size="2xl" className="nabd" style={{position:"relative",left:"-480px"}}/>
-            {!window.localStorage.getItem('email')?
-            <><Link to='/register' className="SignDiv-nav">تسجيل</Link>
-            <Link to='/login' className="SignDiv-nav">تسجيل دخول</Link>
-            </>:<div className="SignDiv-nav" onClick={HandleLog}>تسجيل خروج</div>}
-        </div>
-    </nav>
     </div>
 )}

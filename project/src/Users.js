@@ -63,7 +63,152 @@ const showUsers = user.map((user,index) =>(
             </tr>
         </thead>
         <tbody>
-            {showUsers}
+          <tr>
+
+        <td>Alaa Omar</td>
+        <td>FD23</td>
+        <td>CCW12@gmail.com</td>
+        <td>Doctor</td>
+        <td>
+        <Link to={`./${user.id}`}>
+        <FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+        </Link>
+        <FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
+        </td>
+          </tr>
+          <tr>
+
+<td>Eman Youssef</td>
+<td>CE33</td>
+<td>dda2@gmail.com</td>
+<td>Pataint</td>
+<td>
+<Link to={`./${user.id}`}>
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+</Link>
+<FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
+</td>
+  </tr>
+  <tr>
+
+<td>Ahmed Mohamed</td>
+<td>AM19</td>
+<td>m273@gmail.com</td>
+<td>Pataint</td>
+<td>
+<Link to={`./${user.id}`}>
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+</Link>
+<FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
+</td>
+  </tr>
+  <tr>
+
+<td>Nour Eldeen </td>
+<td>wd12</td>
+<td>d2dacs@gmail.com</td>
+<td>Pataint</td>
+<td>
+<Link to={`./${user.id}`}>
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+</Link>
+<FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
+</td>
+  </tr>
+  <tr>
+
+<td>Marwa Sayed</td>
+<td>1rf2</td>
+<td>ssmar1@gmail.com</td>
+<td>Nurse</td>
+<td>
+<Link to={`./${user.id}`}>
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+</Link>
+<FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
+</td>
+  </tr>
+  <tr>
+
+<td>Mohamed Mohamed</td>
+<td>cew2</td>
+<td>abf2@icloud.com</td>
+<td>Admin</td>
+<td>
+<Link to={`./${user.id}`}>
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+</Link>
+<FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
+</td>
+  </tr>
+  <tr>
+
+<td>Ramy Ashraf</td>
+<td>ghd4</td>
+<td>dwad1@gmail.com</td>
+<td>Doctor</td>
+<td>
+<Link to={`./${user.id}`}>
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+</Link>
+<FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
+</td>
+  </tr>
+  <tr>
+
+<td>Ahmed Emad</td>
+<td>dw12</td>
+<td>ddc22@gmail.com</td>
+<td>Pataint</td>
+<td>
+<Link to={`./${user.id}`}>
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+</Link>
+<FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
+</td>
+  </tr>
+  <tr>
+
+<td>Mohamed Sayed</td>
+<td>fw2d</td>
+<td>dwad@gmail.com</td>
+<td>Pataint</td>
+<td>
+<Link to={`./${user.id}`}>
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+</Link>
+<FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
+</td>
+  </tr>
+  <tr>
+
+<td>Aya Mohamed</td>
+<td>2eda</td>
+<td>vse3@yahoo.com</td>
+<td>Nurse</td>
+<td>
+<Link to={`./${user.id}`}>
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+</Link>
+<FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
+</td>
+  </tr>
+  <tr>
+
+<td>Rana Mohamed</td>
+<td>Ada9</td>
+<td>2fd3@icloud.com</td>
+<td>Doctor</td>
+<td>
+<Link to={`./${user.id}`}>
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+</Link>
+<FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
+</td>
+  </tr>
+
+
+
         </tbody>
       </table>
     </div>

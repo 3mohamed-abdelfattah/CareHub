@@ -8,10 +8,10 @@
 /*SIDE Bar*/
 
 .side-bar{
-    padding: 20px;
+    padding: 1%;
     border-right: 1px solid rgba(143, 143, 143, 0.36);
+    height: 65vh;
     width: 20%;
-    height: 100vh;
     text-align: right;
 
 }
@@ -21,13 +21,13 @@
     text-decoration:    none;
     font-size: 22px;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 5%;
     transition: 0.2s;
     -webkit-transition: 0.2s;
     -moz-transition: 0.2s;
     -ms-transition: 0.2s;
     -o-transition: 0.2s;
-    padding: 10px;
+    padding: 7%;
 }
 
 .user-link:hover{
@@ -78,8 +78,106 @@ td{
 /*ICONS*/
 .icons{
     color: rgb(0, 0, 0);
-    margin-left: 12px;
+    margin-left: 5%;
 }
 
 
 
+
+
+
+
+
+                                                      /*iPad-----------------resolution*/
+
+
+@media screen and (max-width: 768px){
+
+
+
+
+/*SIDE Bar iPad*/
+
+.side-bar{
+    padding: 1%;
+    height: 60vh;
+    width: 20%;
+}
+
+.user-link{
+    color: rgb(0, 0, 0);
+    text-decoration:    none;
+    font-size: 22px;
+    display: block;
+    margin-bottom: 7%;
+
+    padding: 11%;
+}
+
+/*TABLE iPad*/
+
+table{
+    border-collapse: collapse;
+    width:100%;
+    table-layout: fixed;
+}
+
+th,td{
+    border: 1px solid rgba(143, 143, 143, 0.36);
+    padding: 0.75rem;
+    text-align: center;
+}
+
+
+td{
+    white-space: nowrap;
+    overflow: scroll;
+    text-overflow: clip;
+}
+
+/*ICONS iPad*/
+.icons{
+    color: rgb(0, 0, 0);
+    margin-left: 5%;
+}
+
+  
+}
+
+
+                                                      /*Mobile------------------resolution*/
+
+
+@media screen and (max-width: 480px){
+
+
+
+
+    /*SIDE Bar Mobile*/
+
+.side-bar{
+    padding: 1%;
+    height: 60vh;
+    width: 25%;
+}
+
+.user-link{
+    color: rgb(0, 0, 0);
+    text-decoration:    none;
+    font-size: 22px;
+    display: block;
+    margin-bottom: 2%;
+
+    padding: 2%;
+}
+
+/*TABLE Mobile*/
+
+table{
+    border-collapse: collapse;
+    width:100%;
+    table-layout: fixed;
+}
+
+
+}
