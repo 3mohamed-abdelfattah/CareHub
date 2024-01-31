@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faHospital } from '@fortawesome/free-solid-svg-icons'
+import PG1 from "./Photos/PG1.jpg"
+
 
 export default function Header() {
 
@@ -11,7 +13,7 @@ export default function Header() {
     }
 
   return (
-    <div className="d-flex container top-bar shadow">
+    <div className="d-flex container top-bar shadow" style={{ backgroundImage:`url(${PG1})` }}>
         <FontAwesomeIcon icon={faHospital} fade size="2xl" className="nabd1" />
         <div>
             

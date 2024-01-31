@@ -71,7 +71,7 @@ const showUsers = user.map((user,index) =>(
         <td>Doctor</td>
         <td>
         <Link to={`./${user.id}`}>
-        <FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+        <FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "#5dbafda8",paddingRight:"12px", cursor:"pointer"}} />
         </Link>
         <FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
         </td>
@@ -84,7 +84,7 @@ const showUsers = user.map((user,index) =>(
 <td>Pataint</td>
 <td>
 <Link to={`./${user.id}`}>
-<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "#5dbafda8",paddingRight:"12px", cursor:"pointer"}} />
 </Link>
 <FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
 </td>
@@ -97,7 +97,7 @@ const showUsers = user.map((user,index) =>(
 <td>Pataint</td>
 <td>
 <Link to={`./${user.id}`}>
-<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "#5dbafda8",paddingRight:"12px", cursor:"pointer"}} />
 </Link>
 <FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
 </td>
@@ -110,7 +110,7 @@ const showUsers = user.map((user,index) =>(
 <td>Pataint</td>
 <td>
 <Link to={`./${user.id}`}>
-<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "#5dbafda8",paddingRight:"12px", cursor:"pointer"}} />
 </Link>
 <FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
 </td>
@@ -123,7 +123,7 @@ const showUsers = user.map((user,index) =>(
 <td>Nurse</td>
 <td>
 <Link to={`./${user.id}`}>
-<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "#5dbafda8",paddingRight:"12px", cursor:"pointer"}} />
 </Link>
 <FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
 </td>
@@ -136,7 +136,7 @@ const showUsers = user.map((user,index) =>(
 <td>Admin</td>
 <td>
 <Link to={`./${user.id}`}>
-<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "#5dbafda8",paddingRight:"12px", cursor:"pointer"}} />
 </Link>
 <FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
 </td>
@@ -149,7 +149,7 @@ const showUsers = user.map((user,index) =>(
 <td>Doctor</td>
 <td>
 <Link to={`./${user.id}`}>
-<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "#5dbafda8",paddingRight:"12px", cursor:"pointer"}} />
 </Link>
 <FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
 </td>
@@ -162,7 +162,7 @@ const showUsers = user.map((user,index) =>(
 <td>Pataint</td>
 <td>
 <Link to={`./${user.id}`}>
-<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "#5dbafda8",paddingRight:"12px", cursor:"pointer"}} />
 </Link>
 <FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
 </td>
@@ -175,7 +175,7 @@ const showUsers = user.map((user,index) =>(
 <td>Pataint</td>
 <td>
 <Link to={`./${user.id}`}>
-<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "#5dbafda8",paddingRight:"12px", cursor:"pointer"}} />
 </Link>
 <FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
 </td>
@@ -188,7 +188,7 @@ const showUsers = user.map((user,index) =>(
 <td>Nurse</td>
 <td>
 <Link to={`./${user.id}`}>
-<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "#5dbafda8",paddingRight:"12px", cursor:"pointer"}} />
 </Link>
 <FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
 </td>
@@ -201,7 +201,7 @@ const showUsers = user.map((user,index) =>(
 <td>Doctor</td>
 <td>
 <Link to={`./${user.id}`}>
-<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "rgb(106, 178, 155)",paddingRight:"12px", cursor:"pointer"}} />
+<FontAwesomeIcon icon={faUserPen} fade size="lg" style={{color: "#5dbafda8",paddingRight:"12px", cursor:"pointer"}} />
 </Link>
 <FontAwesomeIcon onClick={()=>deleteUser(user.id)} icon={faTrashCan}  size="lg" style={{color: "red",cursor:"pointer",paddingLeft:"12px"}} />
 </td>

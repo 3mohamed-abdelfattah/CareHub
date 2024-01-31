@@ -31,7 +31,7 @@
 }
 
 .user-link:hover{
-    background-color: rgba(143, 143, 143, 0.36);
+    background-color: rgba(0, 0, 0, 0.192);
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
@@ -39,7 +39,7 @@
     -o-border-radius: 12px;
 }
 .active{
-    background-color: #006d77;
+    background-color: #5dbafda8;
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
@@ -105,7 +105,6 @@ td{
 }
 
 .user-link{
-    color: rgb(0, 0, 0);
     text-decoration:    none;
     font-size: 22px;
     display: block;
@@ -123,7 +122,7 @@ table{
 }
 
 th,td{
-    border: 1px solid rgba(143, 143, 143, 0.36);
+    border: 1px solid ;
     padding: 0.75rem;
     text-align: center;
 }
@@ -137,7 +136,6 @@ td{
 
 /*ICONS iPad*/
 .icons{
-    color: rgb(0, 0, 0);
     margin-left: 5%;
 }
 
@@ -162,7 +160,6 @@ td{
 }
 
 .user-link{
-    color: rgb(0, 0, 0);
     text-decoration:    none;
     font-size: 22px;
     display: block;

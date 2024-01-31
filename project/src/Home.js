@@ -28,7 +28,7 @@ export default function Home() {
     <div>
 <Header />
 <container>
-        <div class="background-image">
+        <div>
           <div className="landing">
             <div className="intro-text">
                 <h1><b>التخصصات الاكثر شيوعاً</b> </h1>

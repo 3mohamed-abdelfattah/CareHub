@@ -28,6 +28,10 @@ body {
 @import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap");
 
 
+.background-image{
+    background-color: #ffffff;
+}
+
 .landing .intro-text h1 {
     font-weight: 500;
     color: #000000;

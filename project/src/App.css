@@ -14,10 +14,9 @@ body{
 .container{
   padding: 0;
   margin: 0 auto;
-  background-color: #006d77;
 }
 .shadow{
-  box-shadow: 1px 1px 10px 1px rgb(0, 0, 0);
+  box-shadow: 1px 1px 10px 1px rgb(153, 144, 144);
 }
 
 
@@ -25,7 +24,6 @@ body{
 
 .d-flex{
   display: flex;
-  background-color: #006d77;
 }
 
 
@@ -55,7 +53,7 @@ justify-content: right;
 
 .form1{
   width: 99%;
-  box-shadow: 0px 2px 15px rgb(156, 156, 156);
+  box-shadow: 0px 2px 15px rgb(207, 203, 203);
   padding: 12%;
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -86,7 +84,7 @@ input{
 }
 
 input:focus{
-  border: 2px solid #83c5be;
+  border: 2px solid #ffffff;
 }
 
 input::placeholder{
@@ -105,7 +103,8 @@ input::placeholder{
 .SignDiv-nav{ 
   outline: none;
   border: none;
-  background-color: #83c5be;
+  background-color: #032522bb
+  ;
   padding: 3% 15%;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -115,7 +114,7 @@ input::placeholder{
   color: rgb(255, 255, 255);
   cursor: pointer;
   transition: 0.3s;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
   font-weight: bold;
   text-decoration: none;
   margin: 2%;
@@ -124,7 +123,7 @@ input::placeholder{
 .SignDiv-nav1{ 
   outline: none;
   border: none;
-  background-color: #83c5be;
+  background-color: #ee0f0f;
   padding: 1% 2%;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -143,9 +142,9 @@ input::placeholder{
 
 .SignDiv button:hover,
 .SignDiv-nav:hover{
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(0, 255, 34, 0.548);
   color: #000000;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
   
 }
 .placehold{
@@ -182,16 +181,16 @@ input::placeholder{
                                                                 /* HEADER BUTTONS */
 .lol{
   outline: none;  
-  background-color: #83c5be;
+  background-color: #ffffff;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   cursor: pointer;
   transition: 0.3s;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid rgba(0, 0, 0, 0.61);
   font-weight: bold;
   text-decoration: none;
   padding: 1%;
@@ -200,21 +199,10 @@ input::placeholder{
 
 .lol button:hover,
 .lol:hover{
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.363);
   color: #000000;
   border: 2px solid rgb(255, 255, 255);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -233,7 +221,7 @@ input::placeholder{
 
 .form1S{
   width:58%;
-  box-shadow: 0px 2px 15px rgb(156, 156, 156);
+  box-shadow: 0px 2px 15px rgb(204, 204, 204);
   padding: 2%;
   border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -263,7 +251,7 @@ input{
 }
 
 input:focus{
-  border: 2px solid #83c5be;
+  border: 2px solid #5dbafda8;
 }
 
 input::placeholder{
@@ -282,17 +270,17 @@ input::placeholder{
 .SignDivS-nav1{ 
   outline: none;
   border: none;
-  background-color: #83c5be;
+  background-color: #032522bb;
   padding: 3% 15%;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-  color: rgb(255, 255, 255);
+  color: #ffffff;
   cursor: pointer;
   transition: 0.3s;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
   font-weight: bold;
   text-decoration: none;
   margin: 2%;
@@ -301,9 +289,9 @@ input::placeholder{
 
 .SignDivS button:hover,
 .SignDivS-nav1:hover{
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(0, 255, 34, 0.548);
   color: #000000;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
   
 }
 .placeholdS{
@@ -342,7 +330,7 @@ padding: 20px;
 .UpdateDiv-nav{ 
   outline: none;
   border: none;
-  background-color: #83c5be;
+  background-color:#032522bb;
   padding: 10px 20px;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -352,7 +340,7 @@ padding: 20px;
   color: rgb(255, 255, 255);
   cursor: pointer;
   transition: 0.3s;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
   font-weight: bold;
   text-decoration: none;
   width: 100%;
@@ -361,9 +349,9 @@ padding: 20px;
 
 .UpdateDiv button:hover,
 .UpdateDiv-nav:hover{
-  background-color: rgba(143, 143, 143, 0.36);
+  background-color: rgba(0, 255, 34, 0.548);
   color: #000000;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
 }
 .Updateuser{
   text-align: right;
@@ -375,15 +363,6 @@ padding: 20px;
   color:rgb(255, 255, 255);
   display: flex;
 }
-
-.nabd1{
-  position: fixed,left;
-  color:rgb(255, 255, 255);
-  display: flex;
-}
-
-
-
 
 
 
@@ -400,13 +379,11 @@ padding: 20px;
 
 .d-flex{
   display: flex;
-  background-color: #006d77;
 }
 
 
                                                                 /*  الشعارIpad*/
 .d-flex{
-  color: rgb(255, 255, 255);
   text-decoration: none;
   font-size: 20px;
   padding: 1%;
@@ -443,13 +420,7 @@ input{
 
 }
 
-input:focus{
-  border: 2px solid #83c5be;
-}
 
-input::placeholder{
-  color: rgb(0, 0, 0,0.4);
-}
 
 .SignDiv{
   display: flex;
@@ -463,17 +434,14 @@ input::placeholder{
 .SignDiv-nav{ 
   outline: none;
   border: none;
-  background-color: #83c5be;
   padding: 3% 15%;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-  color: rgb(255, 255, 255);
   cursor: pointer;
   transition: 0.3s;
-  border: 2px solid rgb(255, 255, 255);
   font-weight: bold;
   text-decoration: none;
   margin: 2%;
@@ -482,17 +450,15 @@ input::placeholder{
 .SignDiv-nav1{ 
   outline: none;
   border: none;
-  background-color: #83c5be;
   padding: 1% 2%;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-  color: rgb(255, 255, 255);
   cursor: pointer;
   transition: 0.3s;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid ;
   font-weight: bold;
   text-decoration: none;
   margin: 1%;
@@ -501,9 +467,7 @@ input::placeholder{
 
 .SignDiv button:hover,
 .SignDiv-nav:hover{
-  background-color: rgb(255, 255, 255);
-  color: #000000;
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid;
   
 }
 .placehold{
@@ -559,11 +523,9 @@ padding: 1%;
 }
 
 .nabd{
-  color:rgb(255, 255, 255);
   position: fixed,left;
 }
 .nabd1{
-  color:rgb(255, 255, 255);
   position: fixed,left;
 }
 }
@@ -581,13 +543,11 @@ padding: 1%;
 
 .d-flex{
   display: flex;
-  background-color: #006d77;
 }
 
 
                                                                 /*  الشعارMobile*/
 .d-flex{
-  color: rgb(255, 255, 255);
   text-decoration: none;
   font-size: 15px;
   padding:1%;
@@ -651,16 +611,9 @@ padding: 2%;
 }
 
 .nabd{
-  color:rgb(255, 255, 255);
   position: fixed,left;
 }
 .nabd1{
-  color:rgb(255, 255, 255);
   position: fixed,left;
 }
-
-
-
-
-
 }

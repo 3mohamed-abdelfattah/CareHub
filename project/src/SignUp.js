@@ -4,6 +4,7 @@ import Header from './componant/Header';
 import { User } from "./context/UserContext";
 import { useNavigate } from "react-router-dom";
 
+
 export default function SignUp(props) {
     const [firstname,setfName]=useState('');
     const [lastname,setlName]=useState('');
@@ -58,7 +59,7 @@ export default function SignUp(props) {
   return (
       <div>
         <Header />
-    <div className="parentS">
+    <div className="parentS" >
         <div className="SignDivS">
             <form onSubmit={Submit} className="form1S">
 
