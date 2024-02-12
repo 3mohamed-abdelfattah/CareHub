@@ -14,7 +14,7 @@ export default function Users() {
 
 
     useEffect(() => {
-      fetch("http://127.0.0.1:8000/api/user/show")
+      fetch("")
       .then((res) => res.json())
       .then((data) =>setUser(data));
     }, [runUseEffect])

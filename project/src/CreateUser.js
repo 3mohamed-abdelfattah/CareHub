@@ -10,7 +10,7 @@ export default function CreateUser() {
 
     
     useEffect(()=>{
-        fetch(`http://127.0.0.1:8000/api/user/create`)
+        fetch(``)
         .then((res)=>res.json())
         .then((data)=>{
             setemail(data[0].email);

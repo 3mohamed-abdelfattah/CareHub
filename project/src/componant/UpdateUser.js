@@ -14,7 +14,7 @@ export default function UpdateUser() {
     const id =window.location.pathname.split("/").slice(-1)[0];
 
     useEffect(()=>{
-        fetch(`http://127.0.0.1:8000/api/user/showbyid/${id}`)
+        fetch(`${id}`)
         .then((res)=>res.json())
         .then((data)=>{
             setemail(data[0].email);
