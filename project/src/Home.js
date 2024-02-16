@@ -11,6 +11,11 @@ import DOC from "./componant/Photos/DOC.jpeg"
 import BOT from "./componant/Photos/bot.gif"
 import NEWS from "./componant/Photos/news.jpg"
 import TWEA from "./componant/Photos/tweaa.jpg"
+import CLC from "./componant/Photos/clac.png"
+import FOOC from "./componant/Photos/foodclc.jpg"
+
+
+import Footer from "./componant/Footer"
 
 
 
@@ -24,12 +29,13 @@ export default function Home() {
         <div class="landing">
             <div class="intro-text">
                 <h1><b> أختر ما تبحث عنه</b></h1>
-                <p>حدد ما تريد الوصول اليه طبيب و مركز طبي ومستشفى ...<a href="#">اكثر</a></p>
+                <p>حدد ما تريد الوصول اليه طبيب و مركز طبي ومستشفى</p>
             </div>
         </div>
         <main id="slider">
             <section class="slider-container">
                 <div class="slider">
+
                     <div class="slider-item">
                         <div class="slide">
                             <figure class="slide-image">
@@ -38,6 +44,7 @@ export default function Home() {
                             <h4 class="slide-name">مستشفيات</h4>
                         </div>
                     </div>
+
                     <div class="slider-item">
                         <div class="slide">
                             <figure class="slide-image">
@@ -46,6 +53,7 @@ export default function Home() {
                             <h4 class="slide-name">مراكز</h4>
                         </div>
                     </div>
+
                     <div class="slider-item">
                         <div class="slide">
                             <figure class="slide-image">
@@ -54,10 +62,12 @@ export default function Home() {
                             <h4 class="slide-name">شركات ادويه</h4>
                         </div>
                     </div>
+
                   </div>
             </section>
             <section class="slider-container">
                 <div class="slider">
+
                     <div class="slider-item">
                         <div class="slide">
                             <figure class="slide-image">
@@ -66,6 +76,7 @@ export default function Home() {
                             <h4 class="slide-name">صيدليات</h4>
                         </div>
                     </div>
+
                     <div class="slider-item">
                         <div class="slide">
                             <figure class="slide-image">
@@ -74,6 +85,7 @@ export default function Home() {
                             <h4 class="slide-name">معامل</h4>
                         </div>
                     </div>
+
                     <div class="slider-item">
                     <Link to ="/doctors" className="HOMELINK">
                         <div class="slide">
@@ -84,29 +96,37 @@ export default function Home() {
                         </div>
                     </Link>
                     </div>
+
                 </div>
             </section>
 
             <section class="slider-container">
                 <div class="slider">
+
                     <div class="slider-item">
-                        <div class="slide">
-                            <figure class="slide-image">
-                                <img src={BOT} alt=""/>
-                            </figure>
-                            <h4 class="slide-name">Chat Bot</h4>
-                        </div>
+                    <Link to ="/bmr" className="HOMELINK">
+                    <div class="slide">
+                        <figure class="slide-image">
+                            <img src={CLC} alt=""/>
+                        </figure>
+                        <h4 class="slide-name">معدل الأيض</h4>
                     </div>
-                    <div class="slider-item">
-                        <div class="slide">
-                            <figure class="slide-image">
-                                <img src={NEWS} alt=""/>
-                            </figure>
-                            <h4 class="slide-name">مقالات طبية</h4>
-                        </div>
+                    </Link>
+                </div>
+
+                <div class="slider-item">
+                <Link to ="/foodclc" className="HOMELINK">
+                    <div class="slide">
+                        <figure class="slide-image">
+                            <img src={FOOC} alt=""/>
+                        </figure>
+                        <h4 class="slide-name">الدليل الغذائي </h4>
                     </div>
+                    </Link>
+                    </div>
+
                     <div class="slider-item">
-                    <Link to ="/doctors" className="HOMELINK">
+                    <Link to ="/healthawr" className="HOMELINK">
                         <div class="slide">
                             <figure class="slide-image">
                                 <img src={TWEA} alt=""/>
@@ -115,13 +135,40 @@ export default function Home() {
                         </div>
                     </Link>
                     </div>
+
                 </div>
             </section>
+
+            <section class="slider-container">
+            <div class="slider">
+
+                <div class="slider-item">
+                <Link to ="/healthawr" className="HOMELINK">
+                <div class="slide">
+                    <figure class="slide-image">
+                        <img src={BOT} alt=""/>
+                    </figure>
+                    <h4 class="slide-name">Chat Bot</h4>
+                </div>
+                </Link>
+                </div>
+
+                <div class="slider-item">
+                <Link to ="/healthawr" className="HOMELINK">
+                <div class="slide">
+                    <figure class="slide-image">
+                        <img src={NEWS} alt=""/>
+                    </figure>
+                    <h4 class="slide-name">مقالات طبية</h4>
+                </div>
+                </Link>
+                </div>
+
+            </div>
+        </section>
         </main>
-
-
     </container>
-
+    <Footer/>
     </div>
     )
 }

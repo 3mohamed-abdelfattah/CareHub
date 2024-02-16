@@ -9,7 +9,15 @@ import Users from './Users';
 import UpdateUser from './componant/UpdateUser';
 import CreateUser from './CreateUser';
 import Wallpaper from './componant/Wall'; // Import your background component
+
+
+import HealthAWR from './componant/HealthAwernesPAge/HealthAWR';
+
+import AdultAWR from './componant/HealthAwernesPAge/AdultAWR';
+
+
 import AllDoc from './componant/DoctorsPage/AllDoc';
+
 import SkinDoc from './componant/DoctorsPage/SkinDoc';
 import ButeDoc from './componant/DoctorsPage/ButeDoc';
 import WomanDoc from './componant/DoctorsPage/WomanDoc';
@@ -30,6 +38,8 @@ import UrologistDoc from './componant/DoctorsPage/UrologistDoc';
 import PsycholoDoc from './componant/DoctorsPage/PsycholoDoc';
 import TeethDoc from './componant/DoctorsPage/TeethDoc';
 
+import Calculator from "./componant/BMR"
+import FoodList from './componant/FoodCL';
 
 export default function App() {
   return (
@@ -47,6 +57,12 @@ export default function App() {
           <Route path="user/:id" element={<UpdateUser />} />
           <Route path="users/create" element={<CreateUser />} />
         </Route>
+
+
+        <Route path="/healthawr" element={<HealthAWR/>} />
+        <Route path="/adult" element={<AdultAWR/>} />
+
+
         <Route path="/doctors" element={<AllDoc/>} />
         <Route path="/skin" element={<SkinDoc/>} />
         <Route path="/bute" element={<ButeDoc/>} />
@@ -68,6 +84,8 @@ export default function App() {
         <Route path="/psychological" element={<PsycholoDoc/>} />
         <Route path="/teeth" element={<TeethDoc/>} />
 
+        <Route path="/bmr" element={<Calculator/>} />
+        <Route path="/foodclc" element={<FoodList/>} />
 
 
       </Routes>

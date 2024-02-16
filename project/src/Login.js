@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from './componant/Header';
 import { User } from "./context/UserContext";
 import { useNavigate } from "react-router-dom";
+import Footer from "./componant/Footer";
 
 export default function SignUp() {
     const [email,setemail]=useState('');
@@ -42,26 +43,30 @@ export default function SignUp() {
 
 
   return (
-      <div>
-        <Header />
-    <div className="parent">
-        <div className="SignDiv">
-            <form onSubmit={Submit} className="form1">
+    <>
+    
+    <div>
+      <Header />
+  <div className="parent">
+      <div className="SignDiv">
+          <form onSubmit={Submit} className="form1">
 
-                {/* <label htmlFor="email">البريد الإلكتروني</label>  */}
-                <input id="email" type="email" placeholder="البريد الإلكتروني" className="placehold" value={email} onChange={(e)=>setemail(e.target.value)} />
+              {/* <label htmlFor="email">البريد الإلكتروني</label>  */}
+              <input id="email" type="email" placeholder="البريد الإلكتروني" className="placehold" value={email} onChange={(e)=>setemail(e.target.value)} />
 
-                {/* <label htmlFor="password">كلمة المرور</label>  */}
-                <input id="password" type="password" placeholder="كلمة المرور" className="placehold" value={password} onChange={(e)=>setpassword(e.target.value)}/>
-                {password < 8 && accept &&<p className="error">كلمة المرور اقصر من الازم</p>}
+              {/* <label htmlFor="password">كلمة المرور</label>  */}
+              <input id="password" type="password" placeholder="كلمة المرور" className="placehold" value={password} onChange={(e)=>setpassword(e.target.value)}/>
+              {password < 8 && accept &&<p className="error">كلمة المرور اقصر من الازم</p>}
 
-                <div style={{textAlign:"center"}}>
-                   <button type="submit">تسجيل دخول</button>
-                </div>
-                { accept && Err && <p className="error">البيانات غير صحيحه</p>}
-            </form>
-        </div>
-    </div>
-    </div>
+              <div style={{textAlign:"center"}}>
+                 <button type="submit">تسجيل دخول</button>
+              </div>
+              { accept && Err && <p className="error">البيانات غير صحيحه</p>}
+          </form>
+      </div>
+  </div>
+  </div>
+  <Footer/>
+  </>
   )
   }

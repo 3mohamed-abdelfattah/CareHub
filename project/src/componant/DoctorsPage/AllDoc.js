@@ -19,8 +19,9 @@ import TKB from "../Photos/tkhtb.jpg"
 import BON from "../Photos/bone.jpg"
 import MSK from "../Photos/msalk.jpg"
 import NFS from "../Photos/nfsy.jpg"
-import DO1 from "../Photos/doc1.jpg"
+import DO1 from "../Photos/Gluds.png"
 import TEE from "../Photos/teath.svg"
+import Footer from "../Footer";
 
 
 
@@ -400,6 +401,7 @@ export default function AllDoc() {
 
             </main>
         </container>
+        <Footer/>
         </div>
         )
     }

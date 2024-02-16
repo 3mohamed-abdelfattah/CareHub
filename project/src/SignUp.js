@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from './componant/Header';
 import { User } from "./context/UserContext";
 import { useNavigate } from "react-router-dom";
+import Footer from "./componant/Footer";
 
 
 export default function SignUp(props) {
@@ -95,6 +96,8 @@ export default function SignUp(props) {
             </form>
         </div>
     </div>
+    <Footer/>
+
     </div>
   )
   }

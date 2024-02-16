@@ -3,11 +3,18 @@ import "./AllDoc.css";
 import DOC1 from "../Photos/doc1.jpg"
 import DOC2 from "../Photos/nurse.jpg"
 import { useState } from "react";
+import Footer from "../Footer";
 
 
 
 
 export default function AllDoc() {
+//Search by name Filter
+const [filter,setFilter]=useState("");
+const FilterHandler = (e)=> {
+  setFilter(e.target.value)
+  console.log(filter);
+}
 
 const mystyle ={ 
    overflow: 'hidden',
@@ -66,7 +73,7 @@ const ToggleHandler7 = ()=> {
         <div class="container-D">
         <h1 className="txtdoc">احجز مع افضل أطباء في بني سويف</h1>
       <div class="search-box-D">
-        <input type="text"placeholder="... بحث بالأسم" class="search-input-D"onkeyup="search()"/>
+        <input type="text"placeholder="... بحث بالأسم" class="search-input-D" value={filter} onChange={FilterHandler}/>
       </div>
     </div>
     </div>
@@ -308,6 +315,7 @@ const ToggleHandler7 = ()=> {
   </section>
     </div>
   </div>
+  <Footer/>
         </div>
         )
     }

@@ -3,6 +3,7 @@ import "./AllDoc.css";
 import DOC1 from "../Photos/doc1.jpg"
 import DOC2 from "../Photos/nurse.jpg"
 import { useState } from "react";
+import Footer from "../Footer";
 
 
 
@@ -263,6 +264,8 @@ const ToggleHandler6 = ()=> {
   </section>
     </div>
   </div>
+  <Footer/>
+
         </div>
         )
     }

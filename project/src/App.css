@@ -103,8 +103,7 @@ input::placeholder{
 .SignDiv-nav{ 
   outline: none;
   border: none;
-  background-color: #032522bb
-  ;
+  background-color: #032522bb;
   padding: 3% 15%;
   border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -142,7 +141,7 @@ input::placeholder{
 
 .SignDiv button:hover,
 .SignDiv-nav:hover{
-  background-color: rgba(0, 255, 34, 0.548);
+  background-color: #00ff228c;
   color: #000000;
   border: 2px solid rgb(0, 0, 0);
   

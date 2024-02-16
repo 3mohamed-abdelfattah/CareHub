@@ -1,0 +1,113 @@
+
+  @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap");
+  /*   خصائص النص للتاج h1*/
+  .landing .introtext h1 {
+    font-weight: 500;
+    color: #000;
+    font-size: 34px;
+    font-weight: bold;
+    margin: 1%;
+    text-align: center;
+  }
+  /*خصائص النص للتاجp */
+  .landing .introtext p {
+    font-weight: 300;
+    color: #000;
+    font-size: 30px;
+    margin: 2%;
+    text-align: center;
+  }
+  /*خصائص اللينك  */
+  .landing .introtext p,
+  a {
+    color: #01130e;
+    text-decoration: none;
+  }
+  .landing .introtext p,
+  a:hover {
+    text-decoration: none;
+  }
+  #slider {
+    position: relative;
+  }
+  
+  .slidercontainer {
+    width: 280px * 3;
+    overflow-x: hidden;
+    margin: 3%;
+  
+    & .slider {
+      display: flex;
+      &.animation {
+        transition: 500ms ease-in-out;
+      }
+  
+      & .slideritem {
+        min-width: 200px;
+  
+        & .slide {
+          box-shadow: 0 0 10px #0505053f;
+          border-radius: 25px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin: 3%;
+
+          & .slideimage {
+            width: 100%;
+            height: 100%;
+            padding: 0px;
+            margin: 0px 0px 0px 0px;
+            pointer-events: none;
+            border-radius: 25px;
+            overflow: hidden;
+            background-repeat: no-repeat;
+  
+            & > img {
+              height: 300px;
+              width: 350px;
+              margin: 0 auto;
+              display: flex;
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+            }
+          }
+  
+          &:hover {
+            .slide-name,
+            .custom-line,
+            .row,
+            .row strong,
+            .row.custom-row > p {
+              color: #ebdada;
+            }
+  
+            .slideimage > img {
+              transform: scale(1.2);
+            }
+  
+            background-color: rgb(192, 191, 191);
+        }
+          .slidename a {
+            text-decoration: none;
+            font-size: large;
+            color: rgb(23, 23, 23);
+          }
+  
+          &,
+          .slideimage > img,
+          .slidename,
+          .customline,
+          .row,
+          .row strong,
+          .row.customrow > p,
+          .row.customrow > a {
+            transition: 400ms;
+          }
+        }
+      }
+    }
+  }
+  
