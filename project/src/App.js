@@ -40,6 +40,13 @@ import TeethDoc from './componant/DoctorsPage/TeethDoc';
 
 import Calculator from "./componant/BMR"
 import FoodList from './componant/FoodCL';
+import Company from './componant/Company';
+import Centers from './componant/Centers';
+import Pharmacies from './componant/Pharmacies';
+import Labs from './componant/Labs';
+import Hospital from './componant/Hospital';
+import ARTI from './componant/ARTI';
+
 
 export default function App() {
   return (
@@ -86,6 +93,13 @@ export default function App() {
 
         <Route path="/bmr" element={<Calculator/>} />
         <Route path="/foodclc" element={<FoodList/>} />
+        <Route path="/company" element={<Company/>} />
+        <Route path="/centers" element={<Centers/>} />
+        <Route path="/pharmacies" element={<Pharmacies/>} />
+        <Route path="/labs" element={<Labs/>} />
+        <Route path="/hospital" element={<Hospital/>} />
+        <Route path="/arti" element={<ARTI/>} />
+
 
 
       </Routes>

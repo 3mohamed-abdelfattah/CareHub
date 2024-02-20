@@ -4,6 +4,8 @@ import DOC1 from "../Photos/doc1.jpg"
 import DOC2 from "../Photos/nurse.jpg"
 import { useState } from "react";
 import Footer from "../Footer";
+import React, { Component }  from 'react';
+import ChatbotUorolgy from "../ChatBOTS/ChatbotUorolgy";
 
 
 
@@ -268,6 +270,7 @@ const ToggleHandler6 = ()=> {
   </section>
     </div>
   </div>
+  <ChatbotUorolgy/>
   <Footer/>
 
         </div>

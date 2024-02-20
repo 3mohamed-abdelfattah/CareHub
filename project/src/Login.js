@@ -1,9 +1,10 @@
-import { useState,useContext, useEffect } from "react";
+import { useState,useContext, useEffect, Fragment } from "react";
 import axios from "axios";
 import Header from './componant/Header';
 import { User } from "./context/UserContext";
 import { useNavigate } from "react-router-dom";
 import Footer from "./componant/Footer";
+import React, { Component }  from 'react';
 
 export default function SignUp() {
     const [email,setemail]=useState('');
@@ -43,8 +44,7 @@ export default function SignUp() {
 
 
   return (
-    <>
-    
+    <Fragment>
     <div>
       <Header />
   <div className="parent">
@@ -67,6 +67,6 @@ export default function SignUp() {
   </div>
   </div>
   <Footer/>
-  </>
+  </Fragment>
   )
   }

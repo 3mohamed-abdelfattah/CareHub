@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import Header from "./componant/Header"
 import "./HomePage.css"
 import { Link } from "react-router-dom"
@@ -16,6 +17,7 @@ import FOOC from "./componant/Photos/foodclc.jpg"
 
 
 import Footer from "./componant/Footer"
+import ChatbotHome from './componant/ChatBOTS/ChatbotHome';
 
 
 
@@ -34,33 +36,39 @@ export default function Home() {
         </div>
         <main id="slider">
             <section class="slider-container">
-                <div class="slider">
-
-                    <div class="slider-item">
+            <div class="slider">
+            
+            <div class="slider-item">
+            <Link to ="/hospital" className="HOMELINK">
                         <div class="slide">
                             <figure class="slide-image">
                                 <img src={HOS} alt=""/>
                             </figure>
                             <h4 class="slide-name">مستشفيات</h4>
                         </div>
+                        </Link>
                     </div>
 
                     <div class="slider-item">
+                    <Link to ="/centers" className="HOMELINK">
                         <div class="slide">
                             <figure class="slide-image">
                                 <img src={CEN} alt=""/>
                             </figure>
                             <h4 class="slide-name">مراكز</h4>
                         </div>
+                        </Link>
                     </div>
 
                     <div class="slider-item">
+                    <Link to ="/company" className="HOMELINK">
                         <div class="slide">
                             <figure class="slide-image">
                                 <img src={COM} alt=""/>
                             </figure>
                             <h4 class="slide-name">شركات ادويه</h4>
                         </div>
+                        </Link>
                     </div>
 
                   </div>
@@ -69,21 +77,25 @@ export default function Home() {
                 <div class="slider">
 
                     <div class="slider-item">
+                    <Link to ="/pharmacies" className="HOMELINK">
                         <div class="slide">
                             <figure class="slide-image">
                                 <img src={PH} alt=""/>
                             </figure>
                             <h4 class="slide-name">صيدليات</h4>
                         </div>
+                        </Link>
                     </div>
 
                     <div class="slider-item">
+                    <Link to ="/labs" className="HOMELINK">
                         <div class="slide">
                             <figure class="slide-image">
                                 <img src={LAB} alt=""/>
                             </figure>
                             <h4 class="slide-name">معامل</h4>
                         </div>
+                        </Link>
                     </div>
 
                     <div class="slider-item">
@@ -142,19 +154,9 @@ export default function Home() {
             <section class="slider-container">
             <div class="slider">
 
-                <div class="slider-item">
-                <Link to ="/healthawr" className="HOMELINK">
-                <div class="slide">
-                    <figure class="slide-image">
-                        <img src={BOT} alt=""/>
-                    </figure>
-                    <h4 class="slide-name">Chat Bot</h4>
-                </div>
-                </Link>
-                </div>
 
                 <div class="slider-item">
-                <Link to ="/healthawr" className="HOMELINK">
+                <Link to ="/arti" className="HOMELINK">
                 <div class="slide">
                     <figure class="slide-image">
                         <img src={NEWS} alt=""/>
@@ -168,6 +170,7 @@ export default function Home() {
         </section>
         </main>
     </container>
+    <ChatbotHome/>
     <Footer/>
     </div>
     )

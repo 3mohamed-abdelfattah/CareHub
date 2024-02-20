@@ -48,7 +48,7 @@
   
         & .slide {
           box-shadow: 0 0 10px #0505053f;
-          border-radius: 25px;
+          border-radius: 5px;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -60,7 +60,7 @@
             padding: 0px;
             margin: 0px 0px 0px 0px;
             pointer-events: none;
-            border-radius: 25px;
+            border-radius: 5px;
             overflow: hidden;
             background-repeat: no-repeat;
   
@@ -98,7 +98,6 @@
   
           &,
           .slideimage > img,
-          .slidename,
           .customline,
           .row,
           .row strong,
@@ -111,3 +110,6 @@
     }
   }
   
+  .slide:hover{
+color: rgb(255, 255, 255);
+  }

@@ -3,6 +3,8 @@ import SideBar from "./SideBar"
 //import Users from "../Users"
 //import { Route, Routes } from "react-router-dom"
 import { Outlet} from "react-router-dom"
+import React, { Component }  from 'react';
+import Footer from "./Footer";
 
 export default function Dashbord() {
   return (
@@ -16,6 +18,7 @@ export default function Dashbord() {
             </div>
             </div>
         </div>
+        <Footer/>
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState,useEffect } from "react";
+import React, { Component }  from 'react';
 
 export default function CreateUser() {
     const [firstname,setfName]=useState('');
