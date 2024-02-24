@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
-import Header from '../Header';
-import Footer from '../Footer';
+import Header from '../AllBars/Header';
+import Footer from '../AllBars/Footer';
 import  styles  from './AWR.module.css';
 
 import AWRA from "../Photos/awradult.png"
@@ -49,12 +48,12 @@ const Pstyle={
         </Link>
       </div>
       <div className={styles.slideritem}>
-      <Link to ="/healthawr">
+      <Link to ="/womanawr">
           <div className={styles.slide}>
             <figure className={styles.slideimage}>
               <img src={AWRW} alt="" />
             </figure>
-            <h4 className={styles.slidename}>صحة المرأه</h4>
+            <h4 className={styles.slidename}>صحة المرأة</h4>
           </div>
           </Link>
         </div>
@@ -83,7 +82,7 @@ const Pstyle={
         </Link >
       </div>
       <div className={styles.slideritem}>
-      <Link to ="/healthawr">
+      <Link to ="/firstaid">
           <div className={styles.slide}>
             <figure className={styles.slideimage}>
             <img src={AWRI} alt="" />
@@ -93,7 +92,7 @@ const Pstyle={
           </Link>
         </div>
         <div className={styles.slideritem}>
-        <Link to ="/healthawr">
+        <Link to ="/illawr">
           <div className={styles.slide}>
             <figure className={styles.slideimage}>
             <img src={AWRV} alt="" />

@@ -20,17 +20,13 @@ html {
 }
 
 body {
-    background: #fbfeff;
+    background: #ffffff;
     font-family: 'Cairo';
 
 }
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@300&display=swap");
 
-
-.background-image{
-    background-color: #ffffff;
-}
 
 .landing .intro-text h1 {
     font-weight: 500;
@@ -39,7 +35,8 @@ body {
     font-weight: bold;
     margin: 1%;
     text-align: center;
-    position: relative;top: 20px;;
+    position: relative;top: 20px;
+    text-shadow: 2px 2px #fffefe96;
 }
 .landing .intro-text p {
     font-weight: 300;
@@ -48,10 +45,11 @@ body {
     margin: 2%;
     text-align: center;
     position: relative;top: 40px;
-
+    text-shadow: 2px 2px rgba(255, 255, 255, 0.459);
 }
 .landing .intro-text p,a {
     color: #ff0505;
+    
 }
 .landing .intro-text p,a:hover{
     text-decoration: none;

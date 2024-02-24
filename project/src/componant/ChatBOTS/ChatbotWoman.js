@@ -87,7 +87,7 @@ const steps = [
       {
         id: '12',
         message: "نعتقد انك مصابه (العقم)",
-        trigger: '11',
+        trigger: '13',
       },
       {
         id: '13',
@@ -99,7 +99,7 @@ const steps = [
       {
         id: '14',
         message: "نعتقد انك مصابه (الولادة المبكرة)",
-        trigger: '11',
+        trigger: '15',
       },
       {
         id: '15',
@@ -111,7 +111,7 @@ const steps = [
       {
         id: '16',
         message: "نعتقد انك مصابه (التغيرات الهرمونية في سن اليأس)",
-        trigger: '11',
+        trigger: '17',
       },
       {
         id: '17',

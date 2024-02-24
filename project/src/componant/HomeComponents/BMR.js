@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import Header from '../AllBars/Header';
+import Footer from '../AllBars/Footer';
 
 const Calculator = () => {
   const [weight, setWeight] = useState('');

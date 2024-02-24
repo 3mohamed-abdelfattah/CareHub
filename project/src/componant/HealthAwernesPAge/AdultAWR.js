@@ -1,8 +1,7 @@
 import React, { Fragment, useState } from 'react';
-import ADLT from "../Photos/ADLT.png"
 import "./adult.css"
-import Header from '../Header';
-import Footer from '../Footer';
+import Header from '../AllBars/Header';
+import Footer from '../AllBars/Footer';
 import IMGS from "../Photos/olderTwe.jpg"
 import AD from "../Photos/AD.webp"
 import AD1 from "../Photos/AD1.jpg"
@@ -440,8 +439,6 @@ export default function ModifiedAWR() {
 
 
 
-
-
           )} style={divStyle}>
           <div className="slide">
             <figure className="slide-image">
@@ -683,7 +680,7 @@ export default function ModifiedAWR() {
               </div>
               <br />
               <h2><b>ما هي التحاليل التي يحتاجها المسنين دورياً؟</b></h2>
-              <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fegypt.mohp%2Fvideos%2F1534131376957910%2F&show_text=false&width=476&t=0" width={555} height={330} style={{border: 'none', overflow: 'hidden'}} scrolling="no" frameBorder={0} allowFullScreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" />
+              <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fegypt.mohp%2Fvideos%2F1534131376957910%2F&show_text=false&width=476&t=0" width={555} height={330} title="YouTube video player" style={{border: 'none', overflow: 'hidden'}} scrolling="no" frameBorder={0} allowFullScreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" />
               <div id="b">
               <hr style={{height: 2, borderWidth: 0, color: 'gray', backgroundColor: 'gray'}} />
 

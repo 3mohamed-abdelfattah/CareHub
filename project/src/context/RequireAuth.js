@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { User } from "./UserContext"
 import { Navigate, Outlet } from "react-router-dom";
-import React, { Component }  from 'react';
+import React from 'react';
 
 export default function RequireAuth() {
     const user=useContext(User);

@@ -87,7 +87,7 @@ import { ThemeProvider } from 'styled-components';
           {
             id: '12',
             message: "نعتقد انك مصاب (الصدفية)",
-            trigger: '11',
+            trigger: '13',
           },
           {
             id: '13',
@@ -99,7 +99,7 @@ import { ThemeProvider } from 'styled-components';
           {
             id: '14',
             message: "نعتقد انك مصاب (القرحة الباردة)",
-            trigger: '11',
+            trigger: '15',
           },
           {
             id: '15',
@@ -111,7 +111,7 @@ import { ThemeProvider } from 'styled-components';
           {
             id: '16',
             message: "نعتقد انك مصاب (الثآليل)",
-            trigger: '11',
+            trigger: '17',
           },
           {
             id: '17',

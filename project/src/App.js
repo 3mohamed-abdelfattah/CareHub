@@ -1,15 +1,13 @@
 import React from 'react';
 import './App.css';
-import SignUp from './SignUp';
+import SignUp from './componant/AdminBoard/SignUp';
 import { Route, Routes } from 'react-router-dom';
-import Login from './Login';
-import Home from './Home';
-import Dashbord from './componant/Dashbord';
-import Users from './Users';
-import UpdateUser from './componant/UpdateUser';
-import CreateUser from './CreateUser';
-import Wallpaper from './componant/Wall'; // Import your background component
-
+import Login from './componant/AdminBoard/Login';
+import Home from './componant/Home/Home';
+import Dashbord from './componant/AdminBoard/Dashbord';
+import Users from './componant/AdminBoard/Users';
+import UpdateUser from './componant/AdminBoard/UpdateUser';
+import CreateUser from './componant/AdminBoard/CreateUser';
 
 import HealthAWR from './componant/HealthAwernesPAge/HealthAWR';
 
@@ -38,22 +36,23 @@ import UrologistDoc from './componant/DoctorsPage/UrologistDoc';
 import PsycholoDoc from './componant/DoctorsPage/PsycholoDoc';
 import TeethDoc from './componant/DoctorsPage/TeethDoc';
 
-import Calculator from "./componant/BMR"
-import FoodList from './componant/FoodCL';
-import Company from './componant/Company';
-import Centers from './componant/Centers';
-import Pharmacies from './componant/Pharmacies';
-import Labs from './componant/Labs';
-import Hospital from './componant/Hospital';
-import ARTI from './componant/ARTI';
+import Calculator from "./componant/HomeComponents/BMR"
+import FoodList from './componant/HomeComponents/FoodCL';
+import Company from './componant/HomeComponents/Company';
+import Centers from './componant/HomeComponents/Centers';
+import Pharmacies from './componant/HomeComponents/Pharmacies';
+import Labs from './componant/HomeComponents/Labs';
+import Hospital from './componant/HomeComponents/Hospital';
+import ARTI from './componant/HomeComponents/ARTI';
+import FirstAid from './componant/HealthAwernesPAge/FirstAid';
+import WomanAWR from './componant/HealthAwernesPAge/WomanAWR';
+import IllAWR from './componant/HealthAwernesPAge/IllAWR';
 
 
 export default function App() {
   return (
     <div>
       <div className='wall'>
-      {/*<Wallpaper />*/}
-       {/* Use the Background component as a background */}
       </div>
       <Routes>
         <Route path="/register" element={<SignUp />} />
@@ -99,8 +98,9 @@ export default function App() {
         <Route path="/labs" element={<Labs/>} />
         <Route path="/hospital" element={<Hospital/>} />
         <Route path="/arti" element={<ARTI/>} />
-
-
+        <Route path="/firstaid" element={<FirstAid/>} />
+        <Route path="/womanawr" element={<WomanAWR/>} />
+        <Route path="/illawr" element={<IllAWR/>} />
 
       </Routes>
     </div>

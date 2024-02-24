@@ -1,5 +1,5 @@
 // Footer.js
-import React from 'react';
+import React, { Fragment } from 'react';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
@@ -9,23 +9,23 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons'
 const Footer = () => {
   return (
     <footer style={{ ...footerStyle, ...glassStyle }}>
-    <> 
+    <Fragment> 
     <div style={linksContainer}>
           <div style={sectionStyle} className="hoverable-section">
           <p>Sections</p>
 
           <div style={verticalLinksContainer}>
-            <a href="/home" style={linkStyle}>
+            <a href="/" style={linkStyle}>
               Home
             </a>
-            <a href="/content" style={linkStyle}>
-              Content
+            <a href="/login" style={linkStyle}>
+              Login
             </a>
-            <a href="/us" style={linkStyle}>
-              Contact Us
+            <a href="/register" style={linkStyle}>
+              Sign UP
             </a>
-            <a href="/terms" style={linkStyle}>
-              Terms & Conditions
+            <a href="/doctors" style={linkStyle}>
+              Doctors
             </a>
           </div>
         </div>
@@ -44,9 +44,7 @@ const Footer = () => {
             <a href="/guides" style={linkStyle}>
               Guides
             </a>
-            <a href="/api-status" style={linkStyle}>
-              API Status
-            </a>
+
           </div>
         </div>
         <div style={sectionStyle} className="hoverable-section">
@@ -61,9 +59,6 @@ const Footer = () => {
             <a href="/jobs" style={linkStyle}>
               Jobs
             </a>
-            <a href="/press" style={linkStyle}>
-              Press
-            </a>
             <a href="/partners" style={linkStyle}>
               Partners
             </a>
@@ -74,9 +69,6 @@ const Footer = () => {
           <div style={verticalLinksContainer}>
             <a href="/legal" style={linkStyle}>
               Legal
-            </a>
-            <a href="/claim" style={linkStyle}>
-              Claim
             </a>
             <a href="/privacy" style={linkStyle}>
               Privacy
@@ -95,7 +87,7 @@ const Footer = () => {
       <div style={copyrightStyle}>
         <p style={subtleColor}>© 2024 All rights reserved</p>
       </div>
-      </>
+      </Fragment>
     </footer>
   
   );
@@ -124,6 +116,7 @@ const linksContainer = {
   justifyContent: 'space-between',
   flexWrap: 'wrap',
   marginTop: '10px',
+
 };
 
 const linksContainer0 = {

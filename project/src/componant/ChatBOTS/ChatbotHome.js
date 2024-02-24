@@ -1,23 +1,25 @@
 import ChatBot from "react-simple-chatbot";
 import { ThemeProvider } from 'styled-components';
-import UpdateUser from "../UpdateUser";
-import Signup from "../../SignUp"
-import Login from "../../Login"
+import UpdateUser from "../AdminBoard/UpdateUser";
+import Signup from "../AdminBoard/SignUp"
 import { Link } from "react-router-dom";
-import { Button } from "semantic-ui-react";
+import { Fragment } from "react";
 
 
+const StyledFragment ={
 
-const StyledButton = {
-  backgroundColor: '#4CAF50', // لون الخلفية
-  color: 'white', // لون النص
-  padding: '10px 15px', // حجم الهوامش الداخلية
-  fontSize: '16px', // حجم الخط
-  border: 'none', // حذف حدود الزر
-  borderRadius: '5px', // تقويس زوايا الزر
-  cursor: 'pointer', // تغيير شكل المؤشر عند التحويل
-  transition: 'background-color 0.3s', // تأثير التحول على لون الخلفية
-};
+  display: 'flex',
+  justifyContent: 'space-around',
+  alignItems: 'center', // لوضع النص في وسط الـ div
+  textAlign: 'center', // لتوسيع النص بشكل كامل
+  fontFamily: 'Cairo',
+  padding: 5,
+  margin: 1,
+  border: '2px solid #3498db',
+  borderRadius: 5,
+  backgroundColor: 'white',
+}
+
 
 
     const steps = [
@@ -103,8 +105,23 @@ const StyledButton = {
 
         {
           id: '14',
-          message: 'شكرًا! سيتم توجيهك إلى الصفحة المحددة.',
-          end: true,
+          component: (
+            <Fragment>
+            <Link to ="/">
+            <div style={StyledFragment}>الصفحه الرئيسيه</div>
+            </Link>
+            <Link to ="/register">
+            <div style={StyledFragment}>دليل غذائي</div>
+            </Link>
+            <Link to ="/doctors">
+            <div style={StyledFragment}>الاطباء</div>
+            </Link>
+            <Link to ="/arti">
+            <div style={StyledFragment}>مقالات</div>
+            </Link>
+            </Fragment>
+          ),
+          trigger: '4',
         },
         {
           id: '101',

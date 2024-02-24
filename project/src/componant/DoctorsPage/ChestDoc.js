@@ -1,11 +1,11 @@
-import Header from "../Header";
-import "./AllDoc.css";
+import React from 'react';
+import { useState } from "react";
+import Header from "../AllBars/Header";
+import Footer from "../AllBars/Footer";
+import ChatbotChest from "../ChatBOTS/ChatbotChest";
 import DOC1 from "../Photos/doc1.jpg"
 import DOC2 from "../Photos/nurse.jpg"
-import { useState } from "react";
-import Footer from "../Footer";
-import React, { Component }  from 'react';
-import ChatbotChest from "../ChatBOTS/ChatbotChest";
+import "./AllDoc.css";
 
 
 
@@ -57,15 +57,15 @@ const ToggleHandler6 = ()=> {
 
 
   
-    <div class="header-D">
+    <div className="header-D">
     </div>
   
   
-    <div class="landing-D">
-        <div class="container-D">
+    <div className="landing-D">
+        <div className="container-D">
         <h1 className="txtdoc">احجز مع افضل أطباء في بني سويف</h1>
-      <div class="search-box-D">
-        <input type="text"placeholder="... بحث بالأسم" class="search-input-D"onkeyup="search()"/>
+      <div className="search-box-D">
+        <input type="text"placeholder="... بحث بالأسم" className="search-input-D"onkeyup="search()"/>
       </div>
     </div>
     </div>
@@ -73,10 +73,10 @@ const ToggleHandler6 = ()=> {
   
 
     
-    <div class="doctors-list-D">
-    <div class="container-D">
-        <div class="Doctors-D">
-    <div class="doctors-data-D">
+    <div className="doctors-list-D">
+    <div className="container-D">
+        <div className="Doctors-D">
+    <div className="doctors-data-D">
         <h1>د.أحمد عبداللطيف </h1>
         <h3>صدر وجهاز تنفسي</h3>
         <h4>ش مقبل فوق مكتبة تبارك</h4>
@@ -87,10 +87,10 @@ const ToggleHandler6 = ()=> {
     </div>
     </div>
 
-    <div class="doctors-list-D">
-        <div class="container-D">
-            <div class="Doctors-D">
-        <div class="doctors-data-D">
+    <div className="doctors-list-D">
+        <div className="container-D">
+            <div className="Doctors-D">
+        <div className="doctors-data-D">
             <h1>د.امنية احمد ابراهيم </h1>
             <h3>صدر وجهاز تنفسي</h3>
             <h4>مستشفى الدعوة والحياة جاما عند الزراعيين</h4>
@@ -101,10 +101,10 @@ const ToggleHandler6 = ()=> {
         </div>
         </div>
 
-    <div class="doctors-list-D">
-    <div class="container-D">
-        <div class="Doctors-D">
-        <div class="doctors-data-D">
+    <div className="doctors-list-D">
+    <div className="container-D">
+        <div className="Doctors-D">
+        <div className="doctors-data-D">
     <h1>د.ياسر رمضان مجاهد</h1>
     <h3>صدر وجهاز تنفسي</h3>
     <h4>ش المدارس برج التوحيد الدور السادس -- القاهرة 15 نادى الصيد الدقي الجيزة</h4>
@@ -115,10 +115,10 @@ const ToggleHandler6 = ()=> {
     </div>
     </div>
     
-    <div class="doctors-list-D">
-      <div class="container-D">
-          <div class="Doctors-D">
-      <div class="doctors-data-D">
+    <div className="doctors-list-D">
+      <div className="container-D">
+          <div className="Doctors-D">
+      <div className="doctors-data-D">
           <h1>د.هبة احمد كمال</h1>
           <h3>صدر وجهاز تنفسي</h3>
           <h4>ميدان حارث برج المرمر بجوار الحسين السجاد</h4>
@@ -129,10 +129,10 @@ const ToggleHandler6 = ()=> {
       </div>
       </div>
 
-  <div class="doctors-list-D">
-  <div class="container-D">
-      <div class="Doctors-D">
-      <div class="doctors-data-D">
+  <div className="doctors-list-D">
+  <div className="container-D">
+      <div className="Doctors-D">
+      <div className="doctors-data-D">
   <h1>د.ياسين رمضان مجاهد</h1>
   <h3>صدر وجهاز تنفسي</h3>
   <h4>مستشفى اللؤلؤة شرق النيل الحي الأول</h4>
@@ -143,10 +143,10 @@ const ToggleHandler6 = ()=> {
   </div>
   </div>
   
-    <div class="doctors-list-D">
-        <div class="container-D">
-            <div class="Doctors-D">
-        <div class="doctors-data-D">
+    <div className="doctors-list-D">
+        <div className="container-D">
+            <div className="Doctors-D">
+        <div className="doctors-data-D">
             <h1>د.ربيع محمد عبدالله</h1>
             <h3>صدر وجهاز تنفسي</h3>
             <h4>شارع رجائي امام صيدلية العياطي الدور الثاني - مركز روح الحياة</h4>
@@ -158,14 +158,14 @@ const ToggleHandler6 = ()=> {
         </div>
     
 
-    <div class="common_questions-D">
-      <div class="container-D">
+    <div className="common_questions-D">
+      <div className="container-D">
   <section>
-    <h2 class="title-D">الاسئلة الشائعة</h2>
+    <h2 className="title-D">الاسئلة الشائعة</h2>
 
 
-    <div class="faq-D" onClick={ToggleHandler1}>
-    <div class="question-D">
+    <div className="faq-D" onClick={ToggleHandler1}>
+    <div className="question-D">
       <h4>ما هي الأعراض الرئيسية لأمراض الجهاز التنفسي؟</h4>
       <svg width="15"height="10" viewbox="0 0 42 25">
         <path d="M3 3L21 21L39 3" stroke ="white" stroke-width="7" stroke-linecap="round" />
@@ -180,8 +180,8 @@ const ToggleHandler6 = ()=> {
     </div>
     </div>
     
-    <div class="faq-D" onClick={ToggleHandler2}>
-    <div class="question-D">
+    <div className="faq-D" onClick={ToggleHandler2}>
+    <div className="question-D">
       <h4>كيف يمكن التعامل مع الربو؟</h4>
       <svg width="15"height="10" viewbox="0 0 42 25">
         <path d="M3 3L21 21L39 3" stroke ="white" stroke-width="7" stroke-linecap="round" />
@@ -197,8 +197,8 @@ const ToggleHandler6 = ()=> {
     </div>
     
     
-    <div class="faq-D" onClick={ToggleHandler3}>
-    <div class="question-D">
+    <div className="faq-D" onClick={ToggleHandler3}>
+    <div className="question-D">
       <h4>ما هي الفحوصات الشائعة لتقييم صحة الرئتين؟</h4>
       <svg width="15"height="10" viewbox="0 0 42 25">
         <path d="M3 3L21 21L39 3" stroke ="white" stroke-width="7" stroke-linecap="round" />
@@ -214,8 +214,8 @@ const ToggleHandler6 = ()=> {
     </div>
     
     
-    <div class="faq-D" onClick={ToggleHandler4}>
-    <div class="question-D">
+    <div className="faq-D" onClick={ToggleHandler4}>
+    <div className="question-D">
       <h4>كيف يتم تشخيص الالتهاب الرئوي؟</h4>
       <svg width="15"height="10" viewbox="0 0 42 25">
         <path d="M3 3L21 21L39 3" stroke ="white" stroke-width="7" stroke-linecap="round" />
@@ -231,8 +231,8 @@ const ToggleHandler6 = ()=> {
     </div>
     
     
-    <div class="faq-D" onClick={ToggleHandler5}>
-    <div class="question-D">
+    <div className="faq-D" onClick={ToggleHandler5}>
+    <div className="question-D">
       <h4>ما هي الخطوات الرئيسية في علاج التهاب الشعب الهوائية المزمنة؟</h4>
       <svg width="15"height="10" viewbox="0 0 42 25">
         <path d="M3 3L21 21L39 3" stroke ="white" stroke-width="7" stroke-linecap="round" />
@@ -248,8 +248,8 @@ const ToggleHandler6 = ()=> {
     </div>
     
     
-    <div class="faq-D" onClick={ToggleHandler6}>
-    <div class="question-D">
+    <div className="faq-D" onClick={ToggleHandler6}>
+    <div className="question-D">
       <h4>هل هناك أسلحة رذاذية فعالة لعلاج أمراض التنفس؟</h4>
       <svg width="15"height="10" viewbox="0 0 42 25">
         <path d="M3 3L21 21L39 3" stroke ="white" stroke-width="7" stroke-linecap="round" />

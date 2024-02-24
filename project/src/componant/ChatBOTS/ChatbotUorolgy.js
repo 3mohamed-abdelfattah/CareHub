@@ -87,7 +87,7 @@ const steps = [
       {
         id: '12',
         message: "نعتقد انك مصاب (حصوات الكلى )",
-        trigger: '11',
+        trigger: '12',
       },
       {
         id: '13',
@@ -99,7 +99,7 @@ const steps = [
       {
         id: '14',
         message: "نعتقد انك مصاب (التضخم البروستاتي)",
-        trigger: '11',
+        trigger: '15',
       },
       {
         id: '15',
@@ -111,7 +111,7 @@ const steps = [
       {
         id: '16',
         message: "نعتقد انك مصاب (التهاب الأمعاء البولية)",
-        trigger: '11',
+        trigger: '17',
       },
       {
         id: '17',

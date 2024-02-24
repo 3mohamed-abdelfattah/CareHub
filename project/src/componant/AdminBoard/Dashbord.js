@@ -1,10 +1,10 @@
-import TopBar from "./TopBar"
-import SideBar from "./SideBar"
+import TopBar from "../AllBars/TopBar"
+import SideBar from "../AllBars/SideBar"
 //import Users from "../Users"
 //import { Route, Routes } from "react-router-dom"
 import { Outlet} from "react-router-dom"
-import React, { Component }  from 'react';
-import Footer from "./Footer";
+import React from 'react';
+import Footer from "../AllBars/Footer";
 
 export default function Dashbord() {
   return (

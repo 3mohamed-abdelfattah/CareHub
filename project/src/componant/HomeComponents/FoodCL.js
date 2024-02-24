@@ -1,9 +1,9 @@
 import React, { Fragment, useState } from 'react';
-import Footer from './Footer';
-import Header from './Header';
+import Footer from '../AllBars/Footer';
+import Header from '../AllBars/Header';
 
 const FoodList = () => {
-    const [foods, setFoods] = useState([
+    const [foods] = useState([
         { id: 1, name: 'تفاح', calories: 52, quantity: 100 },
         { id: 2, name: 'موز', calories: 89, quantity: 100 },
         { id: 3, name: 'جزر', calories: 41, quantity: 100 },

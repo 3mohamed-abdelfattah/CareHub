@@ -1,8 +1,8 @@
-import React, { Component }  from 'react';
+import React, { Fragment } from 'react';
 import { Link } from "react-router-dom"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faHospital } from '@fortawesome/free-solid-svg-icons'
-import PG1 from "./Photos/PG1.jpg"
+import PG1 from "../Photos/PG1.jpg"
 
 
 export default function Header() {
@@ -16,16 +16,11 @@ export default function Header() {
   return (
     <div className="d-flex container top-bar shadow" style={{ backgroundImage:`url(${PG1})` }}>
         <FontAwesomeIcon icon={faHospital} fade size="2xl" className="nabd1" />
-        <div>
-            
-        </div>
         <Link to ="/" className="lol">الدليل الطبي </Link>
         <Link to="/dashboard" className="lol">لوحه التحكم</Link>
-        <Link to="/dashboard" className="lol">خدمات</Link>
         {!window.localStorage.getItem('email')?
-            <><Link to='/register' className="lol">تسجيل</Link>
+            (<Fragment><Link to='/register' className="lol">تسجيل</Link>
             <Link to='/login' className="lol">تسجيل دخول</Link>
-            </>:<div className="lol" onClick={HandleLog}>تسجيل خروج</div>}
-
+            </Fragment>):(<div className="lol" style={{backgroundColor:"#ff0505c7",color:"white"}} onClick={HandleLog}>تسجيل خروج</div>)}
     </div>
 )}

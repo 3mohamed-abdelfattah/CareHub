@@ -160,19 +160,6 @@ input::placeholder{
 }
 
 
-                                                                /* Wallpaper */
-.wall{
-  background-image: url('./componant/Wall.js');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 105%;
-  height: 100%;
-  z-index: -1;
-}
 
 
 
@@ -199,7 +186,7 @@ input::placeholder{
 .lol button:hover,
 .lol:hover{
   background-color: rgba(0, 0, 0, 0.363);
-  color: #000000;
+  color: #ffffff;
   border: 2px solid rgb(255, 255, 255);
 }
 
@@ -473,19 +460,6 @@ input{
   text-align: right;
 }
 
-                                                                /* Wallpaper Ipad*/
-.wall{
-  background-image: url('./componant/Wall.js');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 105%;
-  height: 100%;
-  z-index: -1;
-}
 
 
 
@@ -568,23 +542,6 @@ justify-content: right;
 .form1{
   width: 100%;
   padding: 4%;
-}
-
-
-
-
-                                                                /* Wallpaper Mobile*/
-.wall{
-  background-image: url('./componant/Wall.js');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 105%;
-  height: 100%;
-  z-index: -1;
 }
 
 
