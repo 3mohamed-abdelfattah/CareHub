@@ -6,6 +6,7 @@ import { useState } from "react";
 import Footer from "../AllBars/Footer";
 import React from 'react';
 import ChatbotBone from "../ChatBOTS/ChatbotBone";
+import Stars from "../SomeStyles/Stars";
 
 
 
@@ -65,19 +66,18 @@ const ToggleHandler6 = ()=> {
     </div>
     </div>
 
-  
 
-    
     <div className="doctors-list-D">
     <div className="container-D">
         <div className="Doctors-D">
     <div className="doctors-data-D">
-        <h1>د.أحمد عبداللطيف </h1>
-        <h3>عظام</h3>
-        <h4>ش مقبل فوق مكتبة تبارك</h4>
+    <h1>د.أحمد عبداللطيف </h1>
+    <h3>عظام</h3>
+    <h4>ش مقبل فوق مكتبة تبارك</h4>
+    <Stars/>
     </div>
-        <img src={DOC1} alt=""/>
-        <button onclick="document.location=''">التفاصيل</button>
+    <img src={DOC1} alt=""/>
+    <button onclick="document.location=''">التفاصيل</button>
     </div>
     </div>
     </div>

@@ -4,6 +4,7 @@ import UpdateUser from "../AdminBoard/UpdateUser";
 import Signup from "../AdminBoard/SignUp"
 import { Link } from "react-router-dom";
 import { Fragment } from "react";
+import "./ChatHome.css"
 
 
 const StyledFragment ={
@@ -130,26 +131,27 @@ const StyledFragment ={
         },
         {
             id: '102',
-            user: true,
-            trigger: '103',
+            component: (
+              <Fragment>
+                <div className="form-container">
+                  <form className="form">
+                    <div className="form-group">
+                      <label htmlFor="email">Email</label>
+                      <input required name="email" id="email" type="text" />
+                      <label htmlFor="number">Number</label>
+                      <input required name="number" id="number" type="text" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="textarea">?How Can We Help You</label>
+                      <textarea required cols={50} rows={10} id="textarea" name="textarea" defaultValue={"          "} />
+                    </div>
+                    <button type="submit" className="form-submit-btn">Submit</button>
+                  </form>
+                </div>
+              </Fragment>
+            ),
+            end: true,
           },
-          {
-            id: '103',
-            message: 'يرجي ترك الرقم للتواصل وسيتم التواصل معك من جهه الدعم الفني',
-            trigger: '104',
-          },
-          {
-            id: '104',
-            user: true,
-            trigger: '105',
-          },
-          {
-            id: '105',
-            message: "انتظر مكالمتنا قريبا",
-            trigger: '10',
-        },
-        
-        
       ];
 
       const theme = {

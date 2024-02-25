@@ -5,6 +5,7 @@ import { User } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import Footer from "../AllBars/Footer";
 import React from 'react';
+import "./Log&Sign.css"
 
 export default function SignUp() {
   const [firstname,setfName]=useState('');
@@ -46,9 +47,10 @@ export default function SignUp() {
         const status = Err.response.status;
         setErrors({}); // Clear errors on each attempt
         if (status === 400) {
-          setErrors({ email: ".هذا البريد الإلكتروني مسجل لدينا بالفعل. إذا نسيت كلمة المرور، تواصل مع فريق الدعم"});
+          setErrors({ email: ".This email is already registered with us. If you forgot your password, contact the support team"
+        });
         } else if (status === 401) {
-          setErrors({ password: ".كلمة المرور غير متطابقة" });
+          setErrors({ password: ".The password does not match. Please check and ensure the password is entered correctly" });
         } 
         setAccept(true);
       }
@@ -56,33 +58,40 @@ export default function SignUp() {
   }
 
   return (
-    <div>
-      <Header />
-  <div className="parentS" >
-      <div className="SignDivS">
-          <form onSubmit={Submit} className="form1S">
+    <Fragment>
+        <Header />
+<form className="form" onSubmit={Submit}>
+  <p className="title">Register </p>
+  <p className="message">.Register now and get full access to our Website</p>
+  <div className="flex">
+    <label>
+      <input required placeholder type="text" className="input" id="first-name" value={firstname} onChange={(e)=>setfName(e.target.value)}/>
+      <span>Firstname</span>
+    </label>
+    <label>
+      <input required placeholder type="text" className="input" id="last-name" value={lastname} onChange={(e)=>setlName(e.target.value)}/>
+      <span>Lastname</span>
+    </label>
+  </div>  
+  <label>
+    <input required placeholder type="email" className="input" id="email" value={email} onChange={(e)=>setemail(e.target.value)}/>
+    <span>Email</span>
+  </label> 
+  {errors.email && <h1 className="error">{errors.email}</h1>}
+  <label>
+    <input required placeholder type="password" className="input" id="password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
+    <span>Password</span>
+  </label>
+  <label>
+    <input required placeholder type="password" className="input" id="password" value={passwordR} onChange={(e)=>setpasswordR(e.target.value)}/>
+    <span>Confirm password</span>
+  </label>
+  {errors.password && <h1 className="error">{errors.password}</h1>}
+  <button className="submit">Submit</button>
+  <p className="signin">Already have an account ?<a href="login">Login</a> </p>
+</form>
 
-              <input id="first-name" type="text" placeholder="الاسم الأول" className="placeholdS" value={firstname} onChange={(e)=>setfName(e.target.value)} required/>
-
-              <input id="last-name" type="text" placeholder="الاسم الأخير" className="placeholdS" value={lastname} onChange={(e)=>setlName(e.target.value)} required/>
-
-
-              <input id="email" type="email" placeholder="البريد الإلكتروني" className="placeholdS" value={email} onChange={(e)=>setemail(e.target.value)} />
-
-              <input id="password" type="password" placeholder="كلمة المرور" className="placeholdS" value={password} onChange={(e)=>setpassword(e.target.value)}/>
-
-              <input id="password" type="password" placeholder="تأكيد كلمة المرور" className="placeholdS" value={passwordR} onChange={(e)=>setpasswordR(e.target.value)}/>
-              {errors.email && <h1 className="error">{errors.email}</h1>}
-              {errors.password && <h1 className="error">{errors.password}</h1>}
-
-              <div style={{textAlign:"center"}}>
-                 <button type="submit">تسجيل</button>
-              </div>
-          </form>
-      </div>
-  </div>
-  <Footer/>
-
-  </div>
+      <Footer />
+    </Fragment>
 )
 }

@@ -5,6 +5,7 @@ import { User } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import Footer from "../AllBars/Footer";
 import React from 'react';
+import "./Log&Sign.css"
 
 export default function Login() {
   const [email, setemail] = useState('');
@@ -42,9 +43,9 @@ export default function Login() {
         if (status === 400) {
           setErrors({ email: 'يجب ملء الحقول' });
         } else if (status === 401) {
-          setErrors({ password: 'كلمة المرور غير صحيحة، يرجى التحقق من صحة البيانات' });
+          setErrors({ password: ".The password is incorrect, please verify the accuracy of the information" });
         } else if (status === 402) {
-          setErrors({ email: 'البريد الإلكتروني غير صحيح، يرجى التحقق من صحة البيانات' });
+          setErrors({ email: '.The email address is not valid, please verify the accuracy of the information' });
         }
         setAccept(true);
       }
@@ -53,24 +54,24 @@ export default function Login() {
 
   return (
     <Fragment>
-      <div>
         <Header />
-        <div className="parent">
-          <div className="SignDiv">
-            <form onSubmit={Submit} className="form1">
-              <input id="email" type="email" placeholder="البريد الإلكتروني" className="placehold" value={email} onChange={(e) => setemail(e.target.value)} />
-              
-              <input id="password" type="password" placeholder="كلمة المرور" className="placehold" value={password} onChange={(e) => setpassword(e.target.value)} />
-              {errors.email && <h1 className="error">{errors.email}</h1>}
-              {errors.password && <h1 className="error">{errors.password}</h1>}
+<form className="form" onSubmit={Submit} >
+  <p className="title">Login</p>
+  <p className="message">.Login now and get full access to our Website</p> 
+  <label>
+    <input required placeholder type="email" className="input" id="email" value={email} onChange={(e) => setemail(e.target.value)}/>
+    <span>Email</span>
+  </label> 
+  {errors.email && <h1 className="error">{errors.email}</h1>}
+  <label>
+    <input required placeholder type="password" className="input" id="password" value={password} onChange={(e) => setpassword(e.target.value)}/>
+    <span>Password</span>
+  </label>
+  {errors.password && <h1 className="error">{errors.password}</h1>}
+  <button className="submit">Submit</button>
+  <p className="signin">Don't have account ? <a href="register">Registration</a> </p>
+</form>
 
-              <div style={{ textAlign: "center" }}>
-                <button type="submit">تسجيل دخول</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
       <Footer />
     </Fragment>
   );

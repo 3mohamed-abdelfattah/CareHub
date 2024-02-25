@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
 import { Link } from "react-router-dom"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {faHospital } from '@fortawesome/free-solid-svg-icons'
 import PG1 from "../Photos/PG1.jpg"
+import Slogan from '../SomeStyles/Slogan';
+import SloganM from '../SomeStyles/SolganM';
+
 
 
 export default function Header() {
@@ -15,7 +16,8 @@ export default function Header() {
 
   return (
     <div className="d-flex container top-bar shadow" style={{ backgroundImage:`url(${PG1})` }}>
-        <FontAwesomeIcon icon={faHospital} fade size="2xl" className="nabd1" />
+    <SloganM/>
+    <Slogan/>
         <Link to ="/" className="lol">الدليل الطبي </Link>
         <Link to="/dashboard" className="lol">لوحه التحكم</Link>
         {!window.localStorage.getItem('email')?
