@@ -14,10 +14,10 @@ export default function Dashbord() {
             <div className="content-flex">
             <SideBar />
             <div style={{width:'80%'}}>
-              <Outlet />
+            <Outlet />
             </div>
             </div>
-        </div>
+            </div>
         <Footer/>
     </div>
   )

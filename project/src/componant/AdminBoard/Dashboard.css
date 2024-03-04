@@ -2,23 +2,22 @@
 
 .content-flex{
     display: flex;
-
+    margin-top: 6%;
 }
 
 /*SIDE Bar*/
 
 .side-bar{
     padding: 1%;
-    border-right: 1px solid rgba(143, 143, 143, 0.36);
+    border-right: 1px solid rgba(0, 0, 0, 0.267);
     height: 65vh;
     width: 20%;
     text-align: right;
-
 }
 
 .user-link{
-    color: rgb(0, 0, 0);
-    text-decoration:    none;
+    color: #132F2B;
+    text-decoration:none;
     font-size: 22px;
     display: block;
     margin-bottom: 5%;
@@ -31,7 +30,7 @@
 }
 
 .user-link:hover{
-    background-color: rgba(0, 0, 0, 0.192);
+    background-color: #def7e5;
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
@@ -39,7 +38,7 @@
     -o-border-radius: 12px;
 }
 .active{
-    background-color: #5dbafda8;
+    background-color: #b3e0d2;
     border-radius: 12px;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
@@ -56,16 +55,16 @@ table{
 }
 
 th,td{
-    border: 1px solid rgba(143, 143, 143, 0.36);
+    border: 1px solid rgba(0, 0, 0, 0.192);
     padding: 0.75rem;
     text-align: center;
 }
 
 tr:nth-child(even){
-    background: rgba(201, 201, 201, 0.36)
+    background: rgba(0, 0, 0, 0.11)
 }
 th{
-    background:rgba(0, 0, 0, 0.603);
+    background:rgba(0, 0, 0, 0.397);
     color: rgb(255, 255, 255);
 }
 
@@ -75,16 +74,122 @@ td{
     text-overflow: ellipsis;
 }
 
-/*ICONS*/
-.icons{
-    color: rgb(0, 0, 0);
-    margin-left: 5%;
-}
 
 
+.editBtn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: none;
+    background-color: #1F5357;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.123);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .editBtn::before {
+    content: "";
+    width: 200%;
+    height: 200%;
+    background-color: #132F2B;
+    position: absolute;
+    z-index: 1;
+    transform: scale(0);
+    transition: all 0.3s;
+    border-radius: 50%;
+    filter: blur(10px);
+  }
+  .editBtn:hover::before {
+    transform: scale(1);
+  }
+  .editBtn:hover {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.336);
+  }
+  
+  .editBtn svg {
+    height: 17px;
+    fill: white;
+    z-index: 3;
+    transition: all 0.2s;
+    transform-origin: bottom;
+  }
+  .editBtn:hover svg {
+    transform: rotate(-15deg) translateX(5px);
+  }
+  .editBtn::after {
+    content: "";
+    width: 25px;
+    height: 1.5px;
+    position: absolute;
+    bottom: 19px;
+    left: -5px;
+    background-color: white;
+    border-radius: 2px;
+    z-index: 2;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease-out;
+  }
+  .editBtn:hover::after {
+    transform: scaleX(1);
+    left: 0px;
+    transform-origin: right;
+  }
+  
 
+.buttonDEL {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: relative;
+    gap: 2px;
+  }
+  
+  .svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .buttonDEL:hover {
+    transition-duration: 0.3s;
+    background-color: rgb(255, 69, 69);
+    align-items: center;
+    gap: 0;
+  }
+  
+  .bin-top {
+    transform-origin: bottom right;
+  }
+  .buttonDEL:hover .bin-top {
+    transition-duration: 0.5s;
+    transform: rotate(160deg);
+  }
+  
 
-
+  .button-cell {
+    display: flex;
+    gap: 20px; 
+    align-items: center;
+  }
 
 
 

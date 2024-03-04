@@ -1,6 +1,6 @@
 
 .loading{
-    position: absolute;left: 19%;top: 4%
+    position: absolute;left: 19%;top: 20%
 }
 
 .loading svg polyline {
@@ -18,7 +18,7 @@
   
   .loading svg polyline#front {
     fill: none;
-    stroke: #000000;
+    stroke: #3e5a44;
     stroke-dasharray: 48, 144;
     stroke-dashoffset: 192;
     animation: dash_682 1.4s linear infinite;
@@ -48,7 +48,7 @@
   
   .loader span {
     position: absolute;
-    color: #ffffff;
+    color: #3e5a44;
     transform: translate(-50%, -50%);
     font-size: 60px;
     letter-spacing: 5px;
@@ -56,12 +56,12 @@
   
   .loader span:nth-child(1) {
     color: transparent;
-    -webkit-text-stroke: 1.3px rgb(0, 0, 0);
+    -webkit-text-stroke: 1.3px #ffffff;
   }
   
   .loader span:nth-child(2) {
-    color: rgb(255, 255, 255);
-    -webkit-text-stroke: 2px rgb(255, 255, 255);
+    color: #3e5a44;
+    -webkit-text-stroke: 2px #3e5a44;
     animation: uiverse723 3s ease-in-out infinite;
   }
   

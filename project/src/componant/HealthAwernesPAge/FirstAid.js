@@ -3,6 +3,7 @@ import "./FirsrAid.css"
 import Footer from '../AllBars/Footer'
 import Header from '../AllBars/Header'
 import AID from "../Photos/aid.jpg"
+import ScrollToTopButton from '../SomeStyles/ScrollToTopButton'
 
 
 
@@ -12,7 +13,6 @@ export default function FirstAid() {
     const body ={
             direction: 'rtl',
             margin: 2,
-            fontFamily: 'var(--bs-body-font-family)',
             fontSize: 'var(--bs-body-font-size)',
             fontWeight: 'var(--bs-body-font-weight)',
             lineHeight: 'var(--bs-body-line-height)',
@@ -20,6 +20,7 @@ export default function FirstAid() {
             backgroundColor: 'var(--bs-body-bg)',
             WebkitTextSizeAdjust: '100%',
             WebkitTapHighlightColor: 'transparent',
+            marginTop: '5%',
     }
 
 
@@ -543,8 +544,8 @@ export default function FirstAid() {
         </div>
       </div>
     </div>
-    <a href="#" className="topA">↑</a>
   </div>
+  <ScrollToTopButton/>
   <Footer/>
     </Fragment>
 

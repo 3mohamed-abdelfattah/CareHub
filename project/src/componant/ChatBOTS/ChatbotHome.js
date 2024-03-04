@@ -16,7 +16,7 @@ const StyledFragment ={
   fontFamily: 'Cairo',
   padding: 5,
   margin: 1,
-  border: '2px solid #3498db',
+  border: '2px solid #94E18D',
   borderRadius: 5,
   backgroundColor: 'white',
 }
@@ -157,15 +157,13 @@ const StyledFragment ={
       const theme = {
         background: '#f5f8fb',
         fontFamily: 'Cairo',
-        headerBgColor: 'rgba(93, 186, 253, 0.7)',
-        headerFontColor: '#000',
+        headerBgColor: '#1F5357',
+        headerFontColor: 'white',
         headerFontSize: '20px',
-        botBubbleColor: 'rgba(93, 186, 253, 0.7)',
-        botFontColor: '#000',
+        botBubbleColor: '#1F5357',
+        botFontColor: 'white',
         userBubbleColor: 'lightgrey',
         userFontColor: '#000',
-        navigationPrevColor: '#5dba', // لون الرابط السابق
-        navigationNextColor: '#5dfd',
       };
 
 

@@ -3,6 +3,7 @@ import "../DoctorsPage/AllDoc.css";
 import MED from "../Photos/med.jpg"
 import Footer from "../AllBars/Footer";
 import { Fragment } from "react";
+import ScrollToTopButton from "../SomeStyles/ScrollToTopButton";
 
 
 
@@ -12,25 +13,17 @@ export default function Company() {
     return (
         <Fragment>
     <Header />
-
-
-  
     <div className="header-D">
+    <h1>نُشاركك رحلتك نحو الشفاء، من خلال أدويةٍ مُبتكرةٍ وعالية الجودة</h1>
+    <h5 style={{color:"#ff0505",fontSize:"25px"}}>...مع أشهر شركات الأدوية</h5>
     </div>
-  
-  
     <div className="landing-D">
         <div className="container-D">
-        <h1 className="txtdoc">اشهر شركات الادويه في بني سويف</h1>
-      <div className="search-box-D">
+        <div className="search-box-D">
         <input type="text"placeholder="... بحث بالأسم" className="search-input-D"onkeyup="search()"/>
       </div>
-    </div>
-    </div>
-
-  
-
-    
+        </div>
+        </div>
     <div className="doctors-list-D">
     <div className="container-D">
         <div className="Doctors-D">
@@ -72,6 +65,8 @@ export default function Company() {
     </div>
     </div>
     </div>
+
+    <ScrollToTopButton/>
 
   <Footer/>
         </Fragment>

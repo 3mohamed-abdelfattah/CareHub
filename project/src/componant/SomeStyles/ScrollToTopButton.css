@@ -1,0 +1,72 @@
+.buttonBT {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 0px 4px #a2c4ac4f;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    overflow: hidden;
+    position: fixed;
+    display: none;
+    position: fixed;
+    bottom: 12%;
+    right: 94.8%;
+    z-index: 999;
+    
+  }
+
+  .buttonBT.visible {
+    display: block;
+  }
+  
+  .svgIconBT {
+    width: 12px;
+    transition-duration: 0.3s;
+  }
+  
+  .svgIconBT path {
+    fill: white;
+  }
+  
+  .buttonBT:hover {
+    width: 50px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: #a2c4ac;
+    align-items: left;
+    text-align: center;
+    right: 94.8%;
+    bottom: 13%;
+
+
+  }
+  
+  .buttonBT:hover .svgIconBT {
+    /* width: 20px; */
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+  }
+  
+  .buttonBT::before {
+    position: absolute;
+    bottom: -20px;
+    content: "UP";
+    color: white;
+    /* transition-duration: .3s; */
+    font-size: 0px;
+  }
+  
+  .buttonBT:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    /* transform: translateY(-30px); */
+    transition-duration: 0.3s;
+  }
+  

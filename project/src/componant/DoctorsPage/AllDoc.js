@@ -3,26 +3,28 @@ import Header from "../AllBars/Header";
 import Footer from "../AllBars/Footer";
 import { Link } from "react-router-dom"
 import "../Home/HomePage.css"
+import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
+
 //الصور
-import Brain from "../Photos/brain.png"
-import Nose from "../Photos/nose.png"
-import BT from "../Photos/BT.png"
-import GL from "../Photos/GL.svg"
-import BU from "../Photos/BU.svg"
-import MS from "../Photos/MS.svg"
-import HEART from "../Photos/HEART.svg"
-import SR from "../Photos/SR.svg"
-import EYE from "../Photos/EYE.svg"
-import SUB from "../Photos/suplment.jpg"
-import CHILD from "../Photos/Child.svg"
-import NUT from "../Photos/nutural.jpg"
-import CST from "../Photos/chest.jpg"
-import TKB from "../Photos/tkhtb.jpg"
-import BON from "../Photos/bone.jpg"
-import MSK from "../Photos/msalk.jpg"
-import NFS from "../Photos/nfsy.jpg"
-import DO1 from "../Photos/Gluds.png"
-import TEE from "../Photos/teath.svg"
+import Brain from "../Photos/BRAIN.png"
+import Nose from "../Photos/NOSE.png"
+import BT from "../Photos/STOMCH.png"
+import GL from "../Photos/SKIN.png"
+import BU from "../Photos/BUTY.png"
+import MS from "../Photos/WOMAN.png"
+import HEART from "../Photos/HEART.png"
+import SR from "../Photos/SURGRY.png"
+import EYE from "../Photos/EYE.png"
+import SUB from "../Photos/FOOD.png"
+import CHILD from "../Photos/Children.png"
+import NUT from "../Photos/NURAL.png"
+import CST from "../Photos/CHEST.png"
+import TKB from "../Photos/TKATB.png"
+import BON from "../Photos/BONE.png"
+import MSK from "../Photos/MASLAK.png"
+import NFS from "../Photos/NAfSY.png"
+import DO1 from "../Photos/GALDS.png"
+import TEE from "../Photos/TEEth.png"
 
 
 
@@ -34,129 +36,15 @@ export default function AllDoc() {
         <div>
     <Header />
     <container>
-            <div>
+            <div className='COLOR'>
               <div className="landing">
                 <div className="intro-text">
-                    <h1><b>التخصصات الاكثر شيوعاً</b> </h1>
-                    <p>ابحث عن افضل الاطباء  والمراكز  فى اكثر التخصصات شيوعاً </p>
+                    <h1><b>رحلة نحو الصحة بمساعدة نخبة من أفضل الأطباء</b> </h1>
+                    <p><h5>...غوص عميق في مختلف التخصصات الطبية، وتعرف على أطباء مختصين بكل مجال</h5></p>
                 </div>
               </div>
             </div>
             <main id="slider">
-    
-                <section className="slider-container">
-                    <div className="slider">
-                        <div className="slider-item">
-                        <Link to ="/skin" className="HOMELINK">
-                            <div className="slide">
-                                <figure className="slide-image">
-                                    <img src={GL} alt=""/>
-                                </figure>
-                                <h4 className="slide-name">جلديه</h4>
-                                <div className="custom-line"></div>
-                                <div className="row">
-                                    <p>60 دكتور</p>
-                                    <strong>•</strong>
-                                    <p>4 مراكز</p>
-                                </div>
-                                </div>
-                                </Link>
-                        </div>
-                        <div className="slider-item">
-                        <Link to ="/bute" className="HOMELINK">
-                            <div className="slide">
-                                <figure className="slide-image">
-                                    <img src={BU} alt=""/>
-                                </figure>
-                                <h4 className="slide-name">تجميل</h4>
-                                <div className="custom-line"></div>
-                                <div className="row">
-                                    <p>20 دكتور</p>
-                                    <strong>•</strong>
-                                    <p>5 مراكز</p>
-                                </div>
-                                </div>
-                                </Link>
-                        </div>
-                        <div className="slider-item">
-                        <Link to ="/woman" className="HOMELINK">
-                            <div className="slide">
-                                <figure className="slide-image">
-                                    <img src={MS} alt=""/>
-                                </figure>
-                                <h4 className="slide-name">نساء وتوليد</h4>
-                                <div className="custom-line"></div>
-                                <div className="row">
-                                    <p>30 دكتور</p>
-                                    <strong>•</strong>
-                                    <p>1 مراكز</p>
-                                </div>
-                        </div>
-                        </Link>
-                        </div>
-                    </div>
-                </section>
-
-
-
-                <section className="slider-container">
-                    <div className="slider">
-                        <div className="slider-item">
-                        <Link to ="/brain" className="HOMELINK">
-    
-                            <div className="slide">
-                                <figure className="slide-image">
-                                    <img src={Brain} alt=""/>
-                                </figure>
-                                <h4 className="slide-name">مخ واعصاب</h4>
-                                <div className="custom-line"></div>
-                                <div className="row">
-                                    <p>60 دكتور</p>
-                                    <strong>•</strong>
-                                    <p>4 مراكز</p>
-                                </div>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="slider-item">
-                        <Link to ="/nose" className="HOMELINK">
-                            <div className="slide">
-                                <figure className="slide-image">
-                                    <img src={Nose} alt=""/>
-                                </figure>
-                                <h4 className="slide-name">انف واذن</h4>
-                                <div className="custom-line"></div>
-                                <div className="row">
-                                    <p>20 دكتور</p>
-                                    <strong>•</strong>
-                                    <p>5 مراكز</p>
-                                </div>   
-                                </div>
-                                </Link>
-                        </div>
-                        <div className="slider-item">
-                        <Link to ="/stomch" className="HOMELINK">
-                            <div className="slide">
-                                <figure className="slide-image">
-                                    <img src={BT} alt=""/>
-                                </figure>
-                                <h4 className="slide-name">باطنه</h4>
-                                <div className="custom-line"></div>
-                                <div className="row">
-                                    <p>30 دكتور</p>
-                                    <strong>•</strong>
-                                    <p>1 مراكز</p>
-                                </div>
-                                </div>
-                                </Link>
-                        </div>
-                    </div>
-                </section>
-    
-    
-    
-    
-    
                 <section className="slider-container">
                     <div className="slider">
                         <div className="slider-item">
@@ -210,6 +98,171 @@ export default function AllDoc() {
                     </div>
                 </section>
 
+
+
+
+                
+                <section className="slider-container">
+                    <div className="slider">
+                        <div className="slider-item">
+                        <Link to ="/bone" className="HOMELINK">
+                            <div className="slide">
+                                <figure className="slide-image">
+                                    <img src={BON} alt=""/>
+                                </figure>
+                                <h4 className="slide-name">عظام</h4>
+                                <div className="custom-line"></div>
+                                <div className="row">
+                                    <p>60 دكتور</p>
+                                    <strong>•</strong>
+                                    <p>4 مراكز</p>
+                                </div>
+                                </div>
+                                </Link>
+                        </div>
+                        <div className="slider-item">
+                        <Link to ="/speach" className="HOMELINK">
+                            <div className="slide">
+                                <figure className="slide-image">
+                                    <img src={TKB} alt=""/>
+                                </figure>
+                                <h4 className="slide-name">تخاطب</h4>
+                                <div className="custom-line"></div>
+                                <div className="row">
+                                    <p>20 دكتور</p>
+                                    <strong>•</strong>
+                                    <p>5 مراكز</p>
+                                </div>
+                                </div>
+                                </Link>
+                        </div>
+                        <div className="slider-item">
+                        <Link to ="/chest" className="HOMELINK">
+                            <div className="slide">
+                                <figure className="slide-image">
+                                    <img src={CST} alt=""/>
+                                </figure>
+                                <h4 className="slide-name">صدر وجهاز تنفسي</h4>
+                                <div className="custom-line"></div>
+                                <div className="row">
+                                    <p>30 دكتور</p>
+                                    <strong>•</strong>
+                                    <p>1 مراكز</p>
+                                </div>
+                        </div>
+                        </Link>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section className="slider-container">
+                <div className="slider">
+                    <div className="slider-item">
+                    <Link to ="/brain" className="HOMELINK">
+
+                        <div className="slide">
+                            <figure className="slide-image">
+                                <img src={Brain} alt=""/>
+                            </figure>
+                            <h4 className="slide-name">مخ واعصاب</h4>
+                            <div className="custom-line"></div>
+                            <div className="row">
+                                <p>60 دكتور</p>
+                                <strong>•</strong>
+                                <p>4 مراكز</p>
+                            </div>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className="slider-item">
+                    <Link to ="/nose" className="HOMELINK">
+                        <div className="slide">
+                            <figure className="slide-image">
+                                <img src={Nose} alt=""/>
+                            </figure>
+                            <h4 className="slide-name">انف واذن</h4>
+                            <div className="custom-line"></div>
+                            <div className="row">
+                                <p>20 دكتور</p>
+                                <strong>•</strong>
+                                <p>5 مراكز</p>
+                            </div>   
+                            </div>
+                            </Link>
+                    </div>
+                    <div className="slider-item">
+                    <Link to ="/stomch" className="HOMELINK">
+                        <div className="slide">
+                            <figure className="slide-image">
+                                <img src={BT} alt=""/>
+                            </figure>
+                            <h4 className="slide-name">باطنه</h4>
+                            <div className="custom-line"></div>
+                            <div className="row">
+                                <p>30 دكتور</p>
+                                <strong>•</strong>
+                                <p>1 مراكز</p>
+                            </div>
+                            </div>
+                            </Link>
+                    </div>
+                </div>
+            </section>
+
+
+                <section className="slider-container">
+                <div className="slider">
+                    <div className="slider-item">
+                    <Link to ="/skin" className="HOMELINK">
+                        <div className="slide">
+                            <figure className="slide-image">
+                                <img src={GL} alt=""/>
+                            </figure>
+                            <h4 className="slide-name">جلديه</h4>
+                            <div className="custom-line"></div>
+                            <div className="row">
+                                <p>60 دكتور</p>
+                                <strong>•</strong>
+                                <p>4 مراكز</p>
+                            </div>
+                            </div>
+                            </Link>
+                    </div>
+                    <div className="slider-item">
+                    <Link to ="/bute" className="HOMELINK">
+                        <div className="slide">
+                            <figure className="slide-image">
+                                <img src={BU} alt=""/>
+                            </figure>
+                            <h4 className="slide-name">تجميل</h4>
+                            <div className="custom-line"></div>
+                            <div className="row">
+                                <p>20 دكتور</p>
+                                <strong>•</strong>
+                                <p>5 مراكز</p>
+                            </div>
+                            </div>
+                            </Link>
+                    </div>
+                    <div className="slider-item">
+                    <Link to ="/woman" className="HOMELINK">
+                        <div className="slide">
+                            <figure className="slide-image">
+                                <img src={MS} alt=""/>
+                            </figure>
+                            <h4 className="slide-name">نساء وتوليد</h4>
+                            <div className="custom-line"></div>
+                            <div className="row">
+                                <p>30 دكتور</p>
+                                <strong>•</strong>
+                                <p>1 مراكز</p>
+                            </div>
+                    </div>
+                    </Link>
+                    </div>
+                </div>
+            </section>
 
 
                 <section className="slider-container">
@@ -266,58 +319,6 @@ export default function AllDoc() {
                 </section>
 
 
-                <section className="slider-container">
-                    <div className="slider">
-                        <div className="slider-item">
-                        <Link to ="/bone" className="HOMELINK">
-                            <div className="slide">
-                                <figure className="slide-image">
-                                    <img src={BON} alt=""/>
-                                </figure>
-                                <h4 className="slide-name">عظام</h4>
-                                <div className="custom-line"></div>
-                                <div className="row">
-                                    <p>60 دكتور</p>
-                                    <strong>•</strong>
-                                    <p>4 مراكز</p>
-                                </div>
-                                </div>
-                                </Link>
-                        </div>
-                        <div className="slider-item">
-                        <Link to ="/speach" className="HOMELINK">
-                            <div className="slide">
-                                <figure className="slide-image">
-                                    <img src={TKB} alt=""/>
-                                </figure>
-                                <h4 className="slide-name">تخاطب</h4>
-                                <div className="custom-line"></div>
-                                <div className="row">
-                                    <p>20 دكتور</p>
-                                    <strong>•</strong>
-                                    <p>5 مراكز</p>
-                                </div>
-                                </div>
-                                </Link>
-                        </div>
-                        <div className="slider-item">
-                        <Link to ="/chest" className="HOMELINK">
-                            <div className="slide">
-                                <figure className="slide-image">
-                                    <img src={CST} alt=""/>
-                                </figure>
-                                <h4 className="slide-name">صدر وجهاز تنفسي</h4>
-                                <div className="custom-line"></div>
-                                <div className="row">
-                                    <p>30 دكتور</p>
-                                    <strong>•</strong>
-                                    <p>1 مراكز</p>
-                                </div>
-                        </div>
-                        </Link>
-                        </div>
-                    </div>
-                </section>
 
 
                 <section className="slider-container">
@@ -399,6 +400,7 @@ export default function AllDoc() {
 
             </main>
         </container>
+        <ScrollToTopButton/>
         <Footer/>
         </div>
         )

@@ -6,6 +6,7 @@ import ChatbotChest from "../ChatBOTS/ChatbotChest";
 import DOC1 from "../Photos/doc1.jpg"
 import DOC2 from "../Photos/nurse.jpg"
 import "./AllDoc.css";
+import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
 
 
@@ -268,8 +269,8 @@ const ToggleHandler6 = ()=> {
     </div>
   </div>
     <ChatbotChest/>
+    <ScrollToTopButton/>
   <Footer/>
-
         </div>
         )
     }

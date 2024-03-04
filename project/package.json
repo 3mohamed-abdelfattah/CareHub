@@ -13,19 +13,27 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.2",
     "body-parser": "^1.20.2",
+    "buffer": "^6.0.3",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "font-awesome": "^4.7.0",
+    "howler": "^2.2.4",
     "openai": "^4.28.0",
     "react": "^18.2.0",
+    "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^18.2.0",
     "react-error-boundary": "^4.0.12",
+    "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.18.0",
     "react-scripts": "5.0.1",
     "react-simple-chatbot": "^0.6.1",
+    "react-sound": "^1.2.0",
+    "react-spring": "^9.7.3",
+    "react-toastify": "^10.0.4",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.5",
     "styled-components": "^6.1.8",
+    "twilio": "^4.23.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -51,5 +59,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "webpack": "^5.90.3"
   }
 }

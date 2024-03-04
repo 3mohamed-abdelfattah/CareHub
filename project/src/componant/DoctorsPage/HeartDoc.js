@@ -5,6 +5,8 @@ import Footer from "../AllBars/Footer";
 import DOC1 from "../Photos/doc1.jpg"
 import DOC2 from "../Photos/nurse.jpg"
 import "./AllDoc.css";
+import ChatbotHeart from '../ChatBOTS/ChatbotHeart';
+import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
 
 
@@ -81,7 +83,7 @@ const ToggleHandler6 = ()=> {
         <h4>ش مقبل فوق مكتبة تبارك</h4>
     </div>
         <img src={DOC1} alt=""/>
-        <button onclick="document.location=''">التفاصيل</button>
+        <button onclick="document.location=''"><span>التفاصيل</span></button>
     </div>
     </div>
     </div>
@@ -262,16 +264,18 @@ const ToggleHandler6 = ()=> {
       </svg>
     </div>
     <div className={cardtoggle6 ? "show" : "hide"} style={mystyle}>
-    
+
       <p>
       <>.يُجري فحوصات دورية لمتابعة وظيفة القلب وضبط الأدوية إذا لزم الأمر</>
       </p>
-    
+
     </div>
     </div>
   </section>
     </div>
   </div>
+  <ChatbotHeart/>
+  <ScrollToTopButton/>
   <Footer/>
         </div>
         )

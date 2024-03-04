@@ -3,6 +3,7 @@ import "./WomanAWR.css"
 import Footer from '../AllBars/Footer'
 import Header from '../AllBars/Header'
 import WAWR from "../Photos/WomnAWR.jpg"
+import ScrollToTopButton from '../SomeStyles/ScrollToTopButton'
 
 export default function WomanAWR() {
 
@@ -17,6 +18,7 @@ export default function WomanAWR() {
         WebkitTextSizeAdjust: '100%',
         WebkitTapHighlightColor: 'transparent',
         backgroundColor: '#ffffff',
+        marginTop: '5%'
     }
 
 
@@ -1133,8 +1135,8 @@ export default function WomanAWR() {
           </div>
         </div>
       </div>
-      <a href="#" className="topA">↑</a>
     </div>
+    <ScrollToTopButton/>
     <Footer/>
   </Fragment>
   )

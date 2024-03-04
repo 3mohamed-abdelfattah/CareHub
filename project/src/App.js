@@ -43,17 +43,30 @@ import Centers from './componant/HomeComponents/Centers';
 import Pharmacies from './componant/HomeComponents/Pharmacies';
 import Labs from './componant/HomeComponents/Labs';
 import Hospital from './componant/HomeComponents/Hospital';
-import ARTI from './componant/HomeComponents/ARTI';
 import FirstAid from './componant/HealthAwernesPAge/FirstAid';
 import WomanAWR from './componant/HealthAwernesPAge/WomanAWR';
 import IllAWR from './componant/HealthAwernesPAge/IllAWR';
+import AWRChild from './componant/HealthAwernesPAge/AWRChild';
+import AWRTeeth from './componant/HealthAwernesPAge/AWRTeeth';
+import ArticlesList from './componant/HomeComponents/ARTI';
+import { ToastContainer } from 'react-toastify';
+import NotifiMED from './componant/HomeComponents/NotifiMed';
+import HealthGame from './componant/HomeComponents/HealthyGame';
+import LefWarn from './componant/Artifile/LefWarn';
+import LowD from './componant/Artifile/LowD';
+import Sugerl from './componant/Artifile/Sugerl';
+import Stomchar from './componant/Artifile/Stomchar';
+import Cancer from './componant/Artifile/Cancer';
+import DOCdetail from './componant/DoctorsPage/DOCdetail';
+import Highd from './componant/Artifile/Highd';
+import Arti2 from './componant/Artifile/Arti2';
+import Arti3 from './componant/Artifile/Arti3';
 
 
 export default function App() {
   return (
     <div>
-      <div className='wall'>
-      </div>
+    <ToastContainer/>
       <Routes>
         <Route path="/register" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
@@ -67,6 +80,11 @@ export default function App() {
 
         <Route path="/healthawr" element={<HealthAWR/>} />
         <Route path="/adult" element={<AdultAWR/>} />
+        <Route path="/awrchild" element={<AWRChild/>} />
+        <Route path="/womanawr" element={<WomanAWR/>} />
+        <Route path="/firstaid" element={<FirstAid/>} />
+        <Route path="/illawr" element={<IllAWR/>} />
+        <Route path="/awrteeth" element={<AWRTeeth/>} />
 
 
         <Route path="/doctors" element={<AllDoc/>} />
@@ -97,10 +115,36 @@ export default function App() {
         <Route path="/pharmacies" element={<Pharmacies/>} />
         <Route path="/labs" element={<Labs/>} />
         <Route path="/hospital" element={<Hospital/>} />
-        <Route path="/arti" element={<ARTI/>} />
-        <Route path="/firstaid" element={<FirstAid/>} />
-        <Route path="/womanawr" element={<WomanAWR/>} />
-        <Route path="/illawr" element={<IllAWR/>} />
+        <Route path="/arti" element={<ArticlesList/>} />
+
+        <Route path="/legwarn" element={<LefWarn/>} />
+        <Route path="/lowar" element={<LowD/>} />
+        <Route path="/sugerl" element={<Sugerl/>} />
+        <Route path="/stomchar" element={<Stomchar/>} />
+        <Route path="/cancer" element={<Cancer/>} />
+
+        <Route path="/highd" element={<Highd/>} />
+        <Route path="/problems" element={<Cancer/>} />
+        <Route path="/snstake" element={<Cancer/>} />
+        <Route path="/stomchasb" element={<Cancer/>} />
+        <Route path="/stomchrsom" element={<Cancer/>} />
+
+
+        <Route path="/artic" element={<ArticlesList/>} />
+        <Route path="/arti2" element={<Arti2/>} />
+        <Route path="/arti3" element={<Arti3/>} />
+
+
+
+
+
+        <Route path="/notifimid" element={<NotifiMED/>} />
+        <Route path="/gamehl" element={<HealthGame/>} />
+
+        
+        <Route path="/docdetail" element={<DOCdetail/>} />
+
+
 
       </Routes>
     </div>

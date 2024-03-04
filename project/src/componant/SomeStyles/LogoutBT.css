@@ -1,0 +1,287 @@
+.containerH {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(45deg, #92c9b1, #92c9b1 20px, #b3e0d2 20px, #b3e0d2 40px);
+  }
+
+
+.Btnout {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 25%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .4s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(255, 65, 65);
+  }
+  
+  /* plus signout */
+  .signout {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .signout svg {
+    width: 20px;
+  }
+  
+  .signout svg path {
+    fill: white;
+  }
+  /* texttt */
+  .texttt {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 600;
+    transition-duration: .3s;
+  }
+  /* hover effect on button width */
+  .Btnout:hover {
+    width: 125px;
+    border-radius: 15px;
+    transition-duration: .4s;
+  }
+  
+  .Btnout:hover .signout {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+  }
+  /* hover effect button's texttt */
+  .Btnout:hover .texttt {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .Btnout:active {
+    transform: translate(2px ,2px);
+  }
+
+
+
+
+
+  .BtnDB {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 25%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.4s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: #2a442ed3;
+    margin-right: 10px;
+  }
+  
+  /* plus sign */
+  .svgWrapper {
+    width: 100%;
+    transition-duration: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .svgIcon {
+    width: 20px;
+  }
+  
+  /* textDB */
+  .textDB {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 600;
+    transition-duration: 0.3s;
+  }
+  /* hover effect on button width */
+  .BtnDB:hover {
+    width: 125px;
+    border-radius: 15px;
+    transition-duration: 0.3s;
+  }
+  
+  .BtnDB:hover .svgWrapper {
+    width: 30%;
+    transition-duration: 0.3s;
+    padding-left: -20px;
+  }
+  /* hover effect button's textDB */
+  .BtnDB:hover .textDB {
+    opacity: 1;
+    width: 70%;
+    transition-duration: 0.3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .BtnDB:active {
+    transform: translate(2px, 2px);
+  }
+  
+
+
+
+
+
+
+
+
+
+  .BtnH {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 25%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.4s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: #2a442ed3;
+    margin-right: 10px;
+  }
+  
+  /* plus sign */
+  .svgWrapperH {
+    width: 100%;
+    transition-duration: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .svgIcon1 {
+    width: 20px;
+  }
+  
+  /* textDB */
+  .textH {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 600;
+    transition-duration: 0.3s;
+  }
+  /* hover effect on button width */
+  .BtnH:hover {
+    width: 125px;
+    border-radius: 15px;
+    transition-duration: 0.3s;
+  }
+  
+  .BtnH:hover .svgWrapperH {
+    width: 30%;
+    transition-duration: 0.3s;
+    padding-left: -20px;
+  }
+  /* hover effect button's textDB */
+  .BtnH:hover .textH {
+    opacity: 1;
+    width: 70%;
+    transition-duration: 0.3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .BtnH:active {
+    transform: translate(2px, 2px);
+  }
+  
+
+
+
+
+  .Btnin{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 55px;
+    height: 55px;
+    border: none;
+    border-radius: 25%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: #000000d3;
+  }
+  
+  /* plus sign */
+  .sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sign svg {
+    width: 20px;
+  }
+  
+  .sign svg path {
+    fill: white;
+  }
+  /* text */
+  .textin{
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 600;
+    transition-duration: .3s;
+  }
+  /* hover effect on button width */
+  .Btnin:hover {
+    width: 125px;
+    border-radius: 15px;
+    transition-duration: .3s;
+  }
+  
+  .Btnin:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+  }
+  /* hover effect button's text */
+  .Btnin:hover .textin{
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+  }
+  /* button click effect*/
+  .Btnin:active {
+    transform: translate(2px ,2px);
+  }

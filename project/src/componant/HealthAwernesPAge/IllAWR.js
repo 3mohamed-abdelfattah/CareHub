@@ -3,13 +3,13 @@ import "./WomanAWR.css"
 import Header from '../AllBars/Header'
 import Footer from '../AllBars/Footer'
 import IAWR from '../Photos/Ill.jpg'
+import ScrollToTopButton from '../SomeStyles/ScrollToTopButton'
 
 export default function IllAWR() {
 
     const body ={
         direction: 'rtl',
         margin: 2,
-        fontFamily: 'var(--bs-body-font-family)',
         fontSize: 'var(--bs-body-font-size)',
         fontWeight: 'var(--bs-body-font-weight)',
         lineHeight: 'var(--bs-body-line-height)',
@@ -17,6 +17,7 @@ export default function IllAWR() {
         WebkitTextSizeAdjust: '100%',
         WebkitTapHighlightColor: 'transparent',
         backgroundColor: '#ffffff',
+        marginTop: '5%' 
     }
 
   return (
@@ -913,8 +914,8 @@ export default function IllAWR() {
         </div>
       </div>
     </div>
-    <a href="#" className="topA">↑</a>
   </div>
+  <ScrollToTopButton/>
   <Footer/>
     </Fragment>
   )

@@ -7,6 +7,7 @@ import Footer from "../AllBars/Footer";
 import React from 'react';
 import ChatbotBone from "../ChatBOTS/ChatbotBone";
 import Stars from "../SomeStyles/Stars";
+import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
 
 
@@ -77,8 +78,12 @@ const ToggleHandler6 = ()=> {
     <Stars/>
     </div>
     <img src={DOC1} alt=""/>
-    <button onclick="document.location=''">التفاصيل</button>
-    </div>
+    <button class="buttondoc">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>التفاصيل
+  </button>    </div>
     </div>
     </div>
 
@@ -266,6 +271,7 @@ const ToggleHandler6 = ()=> {
     </div>
   </div>
   <ChatbotBone/>
+  <ScrollToTopButton/>
   <Footer/>
         </div>
         )

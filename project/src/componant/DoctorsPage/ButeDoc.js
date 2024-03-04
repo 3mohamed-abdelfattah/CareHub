@@ -5,6 +5,7 @@ import DOC2 from "../Photos/nurse.jpg"
 import { useState } from "react";
 import Footer from "../AllBars/Footer";
 import ChatbotBute from "../ChatBOTS/ChatbotBute";
+import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
 
 
@@ -268,6 +269,7 @@ const ToggleHandler6 = ()=> {
     </div>
   </div>
   <ChatbotBute/>
+  <ScrollToTopButton/>
   <Footer/>
         </div>
         )

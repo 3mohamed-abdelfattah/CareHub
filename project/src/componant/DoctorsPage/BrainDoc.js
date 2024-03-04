@@ -6,6 +6,7 @@ import { useState } from "react";
 import Footer from "../AllBars/Footer";
 import React from 'react';
 import ChatbotBrain from "../ChatBOTS/ChatbotBrain";
+import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
 
 
@@ -67,12 +68,13 @@ const ToggleHandler7 = ()=> {
 
   
     <div className="header-D">
+    <h1 className="txtdoc">احصل على أفضل رعاية طبية من اشهر اطباء المخ والاعصاب</h1>
+    <h2 style={{color:"#ff0505"}}>...ستجدُ طريقَكَ نحوَ الشفاءِ</h2>
     </div>
   
   
     <div className="landing-D">
         <div className="container-D">
-        <h1 className="txtdoc">احجز مع افضل أطباء في بني سويف</h1>
       <div className="search-box-D">
         <input type="text"placeholder="... بحث بالأسم" className="search-input-D" value={filter} onChange={FilterHandler}/>
       </div>
@@ -317,6 +319,7 @@ const ToggleHandler7 = ()=> {
     </div>
   </div>
   <ChatbotBrain/>
+  <ScrollToTopButton/>
   <Footer/>
         </div>
         )

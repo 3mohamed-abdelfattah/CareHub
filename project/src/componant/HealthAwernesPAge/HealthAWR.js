@@ -2,22 +2,23 @@ import Header from '../AllBars/Header';
 import Footer from '../AllBars/Footer';
 import  styles  from './AWR.module.css';
 
-import AWRA from "../Photos/awradult.png"
-import AWRC from "../Photos/awrchild.png"
-import AWRI from "../Photos/awrimpulance.png"
-import AWRM from "../Photos/awrmooth.png"
-import AWRV from "../Photos/awrvirus.png"
-import AWRW from "../Photos/awrwoman.png"
+import AWRA from "../Photos/ADU.png"
+import AWRC from "../Photos/CHIL.png"
+import AWRI from "../Photos/EMP.png"
+import AWRM from "../Photos/THT.png"
+import AWRV from "../Photos/DSSI.png"
+import AWRW from "../Photos/WOM.png"
 import { Link } from 'react-router-dom';
+import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
 const HealthAWR = () => {
 
 
 const Pstyle={
-  fontWeight: 300,
+  fontWeight: 'bold',
   color: '#000',
   fontSize: 30,
-  margin: '2%',
+  margin: '4%',
   textAlign: 'center',
 }
 
@@ -28,9 +29,7 @@ const Pstyle={
   <div className={ styles.landing }>
     <div className={styles.introtext}>
       <h1><b> التوعيه الصحيه</b></h1>
-      <p style={Pstyle}>
-        .....للتوعيه الصحيه ونشر الوعي بين افراد المجتمع من صحة المرأه و
-        اطفال ومسنين 
+      <p style={Pstyle}>نُؤمن بأنّ التوعية الصحية مسؤولية، ونسعى من خلال موقعنا إلى المساهمة في نشر الوعي بين أفراد المجتمع للحفاظ على صحة الجميع
       </p>
     </div>
   </div>
@@ -58,7 +57,7 @@ const Pstyle={
           </Link>
         </div>
         <div className={styles.slideritem}>
-        <Link to ="/healthawr">
+        <Link to ="/awrchild">
           <div className={styles.slide}>
             <figure className={styles.slideimage}>
             <img src={AWRC} alt="" />
@@ -72,7 +71,7 @@ const Pstyle={
     <section className={styles.slidercontainer}>
       <div className={styles.slider}>
       <div className={styles.slideritem}>
-      <Link to ="/healthawr">
+      <Link to ="/awrteeth">
         <div className={styles.slide}>
           <figure className={styles.slideimage}>
           <img src={AWRM} alt="" />
@@ -105,6 +104,7 @@ const Pstyle={
     </section>
   </main>
 </container>
+<ScrollToTopButton/>
 <Footer/>
     </div>
   );

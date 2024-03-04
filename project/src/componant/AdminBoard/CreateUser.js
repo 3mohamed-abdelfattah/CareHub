@@ -1,6 +1,6 @@
 import axios from "axios";
-import { useState,useEffect } from "react";
-import React, { Component }  from 'react';
+import { useState,useEffect, Fragment } from "react";
+import React from 'react';
 
 export default function CreateUser() {
     const [firstname,setfName]=useState('');
@@ -51,7 +51,7 @@ export default function CreateUser() {
     }
 
     return (
-        <>
+        <Fragment>
             <h1 className="Updateuser">انشاء مستخدم جديد</h1>
         <div className="parent1">
             <div className="UpdateDiv">
@@ -71,11 +71,11 @@ export default function CreateUser() {
     
     
                     <div style={{textAlign:"center"}}>
-                       <button type="submit" >انشاء</button>
+                        <button type="submit"><span className="box">إنشاء</span></button>
                     </div>
                 </form>
             </div>
         </div>
-        </>
+        </Fragment>
       )
       }

@@ -3,6 +3,7 @@ import "../DoctorsPage/AllDoc.css";
 import HOS from "../Photos/HOS.jpg"
 import Footer from "../AllBars/Footer";
 import { Fragment } from "react";
+import ScrollToTopButton from "../SomeStyles/ScrollToTopButton";
 
 
 
@@ -12,28 +13,21 @@ export default function Hospital() {
     return (
         <Fragment>
     <Header />
-
-
-  
     <div className="header-D">
+    <h1>تقنياتٌ حديثةٌ وخبراتٌ مُتراكمة، تُجتمع في أشهر مستشفياتنا لخدمتك</h1>
+    <h5 style={{color:"#ff0505",fontSize:"25px"}}> ...بيئةٌ آمنةٌ وراحةٌ تامة، تُحيط بك</h5>
     </div>
-  
-  
     <div className="landing-D">
         <div className="container-D">
-        <h1 className="txtdoc">اشهر المستشفيات في بني سويف</h1>
-      <div className="search-box-D">
+        <div className="search-box-D">
         <input type="text"placeholder="... بحث بالأسم" className="search-input-D"onkeyup="search()"/>
       </div>
-    </div>
-    </div>
-
-  
-
-    
-    <div className="doctors-list-D">
-    <div className="container-D">
-        <div className="Doctors-D">
+        </div>
+        </div>
+        
+      <div className="doctors-list-D">
+      <div className="container-D">
+      <div className="Doctors-D">
     <div className="doctors-data-D">
         <h1>ابن سينا فارما — فرع بني سويف</h1>
         <h3>082 2285541</h3>
@@ -72,7 +66,7 @@ export default function Hospital() {
     </div>
     </div>
     </div>
-
+    <ScrollToTopButton/>
   <Footer/>
         </Fragment>
         )

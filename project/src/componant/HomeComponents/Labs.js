@@ -3,6 +3,7 @@ import "../DoctorsPage/AllDoc.css";
 import LAB from "../Photos/LABS.jpg"
 import Footer from "../AllBars/Footer";
 import { Fragment } from "react";
+import ScrollToTopButton from "../SomeStyles/ScrollToTopButton";
 
 
 
@@ -12,25 +13,18 @@ export default function Labs() {
     return (
         <Fragment>
     <Header />
-
-
-  
     <div className="header-D">
+    <h1>نُقدم لك نتائج موثوقة، تُساعدك على اتّخاذ قرارات صحية سليمة</h1>
+    <h5 style={{color:"#ff0505",fontSize:"25px"}}>...مع أشهر معامل التحاليل</h5>
     </div>
-  
-  
     <div className="landing-D">
         <div className="container-D">
-        <h1 className="txtdoc">اشهر معامل التحاليل في بني سويف</h1>
-      <div className="search-box-D">
+        <div className="search-box-D">
         <input type="text"placeholder="... بحث بالأسم" className="search-input-D"onkeyup="search()"/>
       </div>
-    </div>
-    </div>
+        </div>
+        </div>
 
-  
-
-    
     <div className="doctors-list-D">
     <div className="container-D">
         <div className="Doctors-D">
@@ -72,7 +66,7 @@ export default function Labs() {
     </div>
     </div>
     </div>
-
+    <ScrollToTopButton/>
   <Footer/>
         </Fragment>
         )

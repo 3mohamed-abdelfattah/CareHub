@@ -6,6 +6,7 @@ import ChatbotSkin from "../ChatBOTS/ChatbotSKin";
 import DOC1 from "../Photos/doc1.jpg"
 import DOC2 from "../Photos/nurse.jpg"
 import "./AllDoc.css";
+import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
 
 
@@ -305,8 +306,8 @@ const ToggleHandler7 = ()=> {
     </div>
   </div>
   <ChatbotSkin/>
+  <ScrollToTopButton/>
   <Footer/>
-
         </div>
         )
     }

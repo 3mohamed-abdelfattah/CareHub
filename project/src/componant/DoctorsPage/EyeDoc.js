@@ -6,6 +6,7 @@ import ChatbotEye from "../ChatBOTS/ChatbotEye";
 import DOC1 from "../Photos/doc1.jpg"
 import DOC2 from "../Photos/nurse.jpg"
 import "./AllDoc.css";
+import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
 
 
@@ -63,7 +64,7 @@ const ToggleHandler6 = ()=> {
   
     <div className="landing-D">
         <div className="container-D">
-        <h1 className="txtdoc">احجز مع افضل أطباء في بني سويف</h1>
+        <h1 className="txtdoc">...نخبة من أفضل الأطباء ذوي الخبرة والكفاءة</h1>
       <div className="search-box-D">
         <input type="text"placeholder="... بحث بالأسم" className="search-input-D"onkeyup="search()"/>
       </div>
@@ -278,6 +279,7 @@ const ToggleHandler6 = ()=> {
     </div>
   </div>
   <ChatbotEye/>
+  <ScrollToTopButton/>
   <Footer/>
         </div>
         )

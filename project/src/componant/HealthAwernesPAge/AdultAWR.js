@@ -7,6 +7,7 @@ import AD from "../Photos/AD.webp"
 import AD1 from "../Photos/AD1.jpg"
 import AD3 from "../Photos/AD3.jpg"
 import ADLT0 from "../Photos/ADLUT0.jpg";
+import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
 
 export default function ModifiedAWR() {
@@ -35,6 +36,7 @@ export default function ModifiedAWR() {
     display: 'flex',
     flexDirection: 'row', // Arrange elements horizontally
     justifyContent: 'center', // Center elements within the container
+    margin: '50px'
   };
 
   const divStyle = {
@@ -288,7 +290,7 @@ export default function ModifiedAWR() {
       </p>
     </div>
   </div>
-  <a href="#" className="topA">↑</a>
+  <ScrollToTopButton/>
 </div>
 
 
@@ -433,7 +435,7 @@ export default function ModifiedAWR() {
 </p>
 </div>
 </div>
-<a href="#" className="topA">↑</a>
+<ScrollToTopButton/>
 </div>
 </div>
 
@@ -784,9 +786,8 @@ export default function ModifiedAWR() {
               </p>
             </div>
           </div>
-          <a href="#" className="topA">↑</a>
+          <ScrollToTopButton/>
         </div>
-
 
             )} style={divStyle}>
           <div className="slide">

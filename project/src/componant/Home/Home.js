@@ -2,20 +2,24 @@ import React from 'react';
 import Header from "../AllBars/Header"
 import "./HomePage.css"
 import { Link } from "react-router-dom"
+import { Scrollbars } from 'react-custom-scrollbars';
+
 //الصور
-import HOS from "../Photos/HOS.jpeg"
-import CEN from "../Photos/CEN.jpeg"
-import COM from "../Photos/COM.jpeg"
-import PH from "../Photos/PH.jpeg"
-import LAB from "../Photos/LAB.jpeg"
-import DOC from "../Photos/DOC.jpeg"
-import NEWS from "../Photos/news.jpg"
-import TWEA from "../Photos/tweaa.jpg"
-import CLC from "../Photos/clac.png"
-import FOOC from "../Photos/foodclc.jpg"
+import HOS from "../Photos/HOspital.png"
+import CEN from "../Photos/RAY.png"
+import COM from "../Photos/COMPANY.png"
+import PH from "../Photos/Pharmasy.png"
+import LAB from "../Photos/LAB.png"
+import DOC from "../Photos/DOCtor.png"
+import NEWS from "../Photos/ARTI.png"
+import TWEA from "../Photos/TEWAA.png"
+import CLC from "../Photos/CALC.png"
+import FOOC from "../Photos/FOOD.png"
+import TIME from "../Photos/time.png"
 
 import Footer from "../AllBars/Footer"
 import ChatbotHome from '../ChatBOTS/ChatbotHome';
+import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
 
 
@@ -27,49 +31,12 @@ export default function Home() {
       <Header />
       <div className="landing">
       <div className="intro-text">
-      <h1><b> أختر ما تبحث عنه</b></h1>
-                <p>حدد ما تريد الوصول اليه طبيب و مركز طبي ومستشفى</p>
+      <h1><b>رحلة مُبسّطة للوصول إلى أفضل رعاية طبية</b></h1>
+                <p><h5>...حدد ما تبحث عنه من طبيب مختص أو مركز طبي مُجهز أو مستشفى مُتخصصة</h5></p>
             </div>
         </div>
         <main id="slider">
-            <section className="slider-container">
-            <div className="slider">
-            
-            <div className="slider-item">
-            <Link to ="/hospital" className="HOMELINK">
-                        <div className="slide">
-                            <figure className="slide-image">
-                                <img src={HOS} alt=""/>
-                            </figure>
-                            <h4 className="slide-name">مستشفيات</h4>
-                        </div>
-                        </Link>
-                    </div>
 
-                    <div className="slider-item">
-                    <Link to ="/centers" className="HOMELINK">
-                        <div className="slide">
-                            <figure className="slide-image">
-                                <img src={CEN} alt=""/>
-                            </figure>
-                            <h4 className="slide-name">مراكز</h4>
-                        </div>
-                        </Link>
-                    </div>
-
-                    <div className="slider-item">
-                    <Link to ="/company" className="HOMELINK">
-                        <div className="slide">
-                            <figure className="slide-image">
-                                <img src={COM} alt=""/>
-                            </figure>
-                            <h4 className="slide-name">شركات ادويه</h4>
-                        </div>
-                        </Link>
-                    </div>
-
-                  </div>
-            </section>
             <section className="slider-container">
                 <div className="slider">
 
@@ -108,7 +75,44 @@ export default function Home() {
 
                 </div>
             </section>
+            <section className="slider-container">
+            <div className="slider">
+            
+            <div className="slider-item">
+            <Link to ="/hospital" className="HOMELINK">
+                        <div className="slide">
+                            <figure className="slide-image">
+                                <img src={HOS} alt=""/>
+                            </figure>
+                            <h4 className="slide-name">مستشفيات</h4>
+                        </div>
+                        </Link>
+                    </div>
 
+                    <div className="slider-item">
+                    <Link to ="/centers" className="HOMELINK">
+                        <div className="slide">
+                            <figure className="slide-image">
+                                <img src={CEN} alt=""/>
+                            </figure>
+                            <h4 className="slide-name">مراكز</h4>
+                        </div>
+                        </Link>
+                    </div>
+
+                    <div className="slider-item">
+                    <Link to ="/company" className="HOMELINK">
+                        <div className="slide">
+                            <figure className="slide-image">
+                                <img src={COM} alt=""/>
+                            </figure>
+                            <h4 className="slide-name">شركات ادويه</h4>
+                        </div>
+                        </Link>
+                    </div>
+
+                  </div>
+            </section>
             <section className="slider-container">
                 <div className="slider">
 
@@ -163,9 +167,22 @@ export default function Home() {
                 </Link>
                 </div>
 
+                
+                <div className="slider-item">
+                <Link to ="/notifimid" className="HOMELINK">
+                <div className="slide">
+                    <figure className="slide-image">
+                        <img src={TIME} alt=""/>
+                    </figure>
+                    <h4 className="slide-name">أدوية اليوم</h4>
+                </div>
+                </Link>
+                </div>
+
             </div>
         </section>
         </main>
+        <ScrollToTopButton/>
     <ChatbotHome/>
     <Footer/>
     </div>

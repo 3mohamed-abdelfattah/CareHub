@@ -3,23 +3,45 @@ import "../DoctorsPage/AllDoc.css";
 import PHAR from "../Photos/PHAR.jpg"
 import Footer from "../AllBars/Footer";
 import { Fragment } from "react";
+import ScrollToTopButton from "../SomeStyles/ScrollToTopButton";
 
 
 export default function Pharmacies() {
+
+
+    const head1={
+        color: '#000000',
+        fontSize: 33,
+        fontWeight: 'bold',
+        margin: '1%',
+        textAlign: 'center',
+        position: 'relative',
+        top: 60,
+    }
+    const head2={
+        color: '#ff0505',
+        fontSize: 30,
+        margin: '5%',
+        textAlign: 'center',
+        position: 'relative',
+        top: 40,
+    }
+
 
     return (
         <Fragment>
     <Header />
     <div className="header-D">
+    <h1>نُقدم لك دواءً لكل داء، ونُشاركك رحلتك نحو الصحة والعافية</h1>
+    <h5 style={{color:"#ff0505",fontSize:"25px"}}>...مع أشهر الصيدليات</h5>
     </div>
     <div className="landing-D">
         <div className="container-D">
-        <h1 className="txtdoc">اشهر الصيدليات  في بني سويف</h1>
-      <div className="search-box-D">
+        <div className="search-box-D">
         <input type="text"placeholder="... بحث بالأسم" className="search-input-D"onkeyup="search()"/>
       </div>
-    </div>
-    </div>
+        </div>
+        </div>
     <div className="doctors-list-D">
     <div className="container-D">
         <div className="Doctors-D">
@@ -60,7 +82,7 @@ export default function Pharmacies() {
     </div>
     </div>
     </div>
-
+    <ScrollToTopButton/>
   <Footer/>
         </Fragment>
         )
