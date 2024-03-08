@@ -40,9 +40,7 @@ export default function Arti2() {
             عليك بشكل كبير، فما هي أعراض مرض الإيدز؟ وكيف يمكن اكتشاف الإصابة
             به ...
           </p>
-          <Link to ="/legwarn">
           <h4 style={{color:'#ff0505'}}>قراءة المزيد</h4>
-          </Link>
         </div>
       </div>
       <div className="Section-ArticlesList">
@@ -58,9 +56,7 @@ export default function Arti2() {
             امتصاص الجسم للفيتامينات والعناصر الغذائية المذابة في الدهون،
             وتحدث...
           </p>
-          <Link to ="/legwarn">
           <h4 style={{color:'#ff0505'}}>قراءة المزيد</h4>
-          </Link>
           </div>
       </div>
       <div className="Section-ArticlesList">
@@ -76,9 +72,7 @@ export default function Arti2() {
             والفزع خاصة من شكلها، لكن هل تعرف ما هي اعراض الفتق السري كاملة؟
             و...
           </p>
-          <Link to ="/legwarn">
           <h4 style={{color:'#ff0505'}}>قراءة المزيد</h4>
-          </Link>
           </div>
       </div>
       <div className="Section-ArticlesList">
@@ -94,9 +88,7 @@ export default function Arti2() {
             يتسبب فيها، لكن ما هي اعراض الفتق الشائعة؟ وكيف يمكن اكتشاف
             الإصابة بالفتق...
           </p>
-          <Link to ="/legwarn">
           <h4 style={{color:'#ff0505'}}>قراءة المزيد</h4>
-          </Link>
           </div>
       </div>
       <div className="Section-ArticlesList">
@@ -112,9 +104,7 @@ export default function Arti2() {
             اعراض جفاف العين وما هي العلامات التي تشير على الإصابة بهذه الحالة
             ؟ تعرف ...
           </p>
-          <Link to ="/legwarn">
           <h4 style={{color:'#ff0505'}}>قراءة المزيد</h4>
-          </Link>
           </div>
       </div>
       <div className="Section-ArticlesList">
@@ -130,9 +120,7 @@ export default function Arti2() {
             أي وقت وعمر، تابع معنا هذا المقال سنوضح لك اعراض الروماتويد وأهم
             علا...
           </p>
-          <Link to ="/legwarn">
           <h4 style={{color:'#ff0505'}}>قراءة المزيد</h4>
-          </Link>
           </div>
       </div>
       <div className="Section-ArticlesList">
@@ -148,9 +136,7 @@ export default function Arti2() {
             السن فقط، فتعالوا نتعرف على اعراض الجلطة الدماغية لكي تستطيعوا أن
             تكتشف...
           </p>
-          <Link to ="/legwarn">
           <h4 style={{color:'#ff0505'}}>قراءة المزيد</h4>
-          </Link>
           </div>
       </div>
       <div className="Section-ArticlesList">
@@ -166,9 +152,7 @@ export default function Arti2() {
             وظهور المضاعفات الخطيرة التي قد تؤثر على وظائف الكبد. ما هو تليف
             الكب...
           </p>
-          <Link to ="/legwarn">
           <h4 style={{color:'#ff0505'}}>قراءة المزيد</h4>
-          </Link>
           </div>
       </div>
       <div className="Section-ArticlesList">
@@ -184,9 +168,7 @@ export default function Arti2() {
             عن هذا المرض، لهذا كان لابد أن نوضح لك عزيزي الرجل أبرز وأهم اعراض
             سرط...
           </p>
-          <Link to ="/legwarn">
           <h4 style={{color:'#ff0505'}}>قراءة المزيد</h4>
-          </Link>
           </div>
       </div>
       <div className="Section-ArticlesList">
@@ -202,9 +184,7 @@ export default function Arti2() {
             عنها الكثير، فما هي اعراض دوالي الخصية ؟ وكيف يمكن أن تكتشف إصابتك
             بها خاص...
           </p>
-          <Link to ="/legwarn">
           <h4 style={{color:'#ff0505'}}>قراءة المزيد</h4>
-          </Link>
           </div>
       </div>
     </div>

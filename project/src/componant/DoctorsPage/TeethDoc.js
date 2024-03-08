@@ -34,6 +34,7 @@ export default function TeethDoc() {
     draggable: true,
     progress: undefined,
   };
+  
 
   const [doctorsData, setDoctorsData] = useState([]);
   const [filteredDoctors, setFilteredDoctors] = useState([]);
@@ -73,11 +74,11 @@ export default function TeethDoc() {
         const response = await axios.get("http://localhost:5000/api/doctors/dentists");
         setDoctorsData(response.data);
         setFilteredDoctors(response.data.slice(0, itemsPerPage));
-        setIsLoading(false); // تحديث حالة التحميل عند اكتمال التحميل
+        setIsLoading(false); // تحديث عند اكتمال التحميل
         console.log(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setIsLoading(false); // في حالة حدوث خطأ أيضًا
+        setIsLoading(false); // في حالة حدوث خطأ
       }
     };
   
@@ -117,17 +118,17 @@ export default function TeethDoc() {
     <div className="Doctors-D" key={index}>
       <div className="doctors-data-D">
         <h1>د.{doctor.name}</h1>
-        <h3>{doctor.specialization}تخصص</h3>
+        <h3>تخصص {doctor.specialization}</h3>
         <h4>{doctor.address}</h4>
         <h4><Stars/></h4>
       </div>
-      {doctor.gender === 'male' ? (
+      {doctor.gender === 'Male' ? (
         <img src={DOCM} alt={`Doctor ${index + 1}`} />
       ) : (
         <img src={DOCW} alt={`Doctor ${index + 1}`} />
       )}
       <div className="button-lovation">
-      <Link to="/docdetail">
+      <Link to={`./${doctor._id}`}>
       <button className="buttondet">
       <span className="button_lg">
         <span className="button_sl" />

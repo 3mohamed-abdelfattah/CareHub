@@ -1,0 +1,190 @@
+
+html {
+scroll-behavior: smooth;
+}
+
+.containerD{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width:768px){
+    .containerD {
+        width: 750px;
+    }
+}
+@media (min-width:992px){
+    .containerD {
+        width: 970px;
+    }
+}
+@media (min-width:1200px){
+    .containerD {
+        width: 1170px;
+    }
+}
+.testimonials {
+background-color: #ffffff;
+
+}
+.testimonials .boxD {
+padding: 20px;
+height: 480px;
+background-color: #ffffff;
+border-radius: 25px;
+position: relative;
+}
+
+
+.testimonials .boxD img {
+position: absolute;
+right: 15px;
+top: 15px;
+width: 180px;
+height: 240px;
+border-radius: 50%;
+}
+
+.testimonials .boxD .buttonsD1 {
+position: absolute;
+padding-right: 75%;
+padding-top: 25%;
+}
+
+
+.testimonials .boxD .buttondD{
+    margin-top: 10px;
+    margin-left: 30px;
+    padding: 7px;
+    font-size: medium;
+    padding-top:5px;
+    font-weight: 600;
+    padding: .75rem 1rem;
+    border-radius: .2rem;
+    outline: none;
+    margin: 10px;
+    border: solid .5px;
+}
+.testimonials .boxD .buttondD:hover{
+cursor: pointer;
+background-color: rgb(27, 20, 248);
+color:white;
+}
+
+.testimonials .boxD .buttontD{
+    padding: 7px;
+    margin-left: 30px;
+    font-size: medium;
+    padding-top:5px;
+    font-weight: 600;
+    padding: .75rem 1rem;
+    border-radius: .2rem;
+    border: solid .5px;
+
+    outline: none;
+    margin: 10px;
+
+    
+}
+.testimonials .boxD .buttontD:hover{
+    cursor: pointer;
+    background-color: rgb(27, 20, 248);
+    color:white;
+    }
+.testimonials .boxD h1 {
+    padding-right: 240px;
+    padding-top: 50px;
+}
+
+.testimonials .boxD h2 {
+    padding-right: 260px;
+}
+
+.testimonials .boxD h3 {
+    padding-right: 280px;
+}
+
+.testimonials .boxD p {
+padding-right: 20px;
+font-weight: bold;
+font-size: large;
+}
+
+
+.testimonials .boxD .rateD {
+cursor: pointer;
+border: #92E3A9 solid;
+}
+.opinionsD .evaluateD h3{
+    color: rgb(9, 82, 241);
+    font-weight: 600;
+}
+.opinionsD {
+    margin: 15px;
+    box-shadow: 0 2px 4px rgb(107, 107, 106);
+    border-radius: 6px;
+    position: relative;
+    background-color: #92e3a921;
+}
+.opsD {
+margin: 15px;
+padding-top: 20px;
+padding-bottom: 20px;
+background-color: #92e3a913;
+}
+
+.opinionsD .evaluateD .ratingD .star:hover{
+    transform: scale(1.1);
+}
+.opinionsD .evaluateD .ratingD:hover{
+cursor:grab;
+}
+.opinionsD .textareaD textarea {
+    width: 90%;
+    border: solid rgb(80, 150, 224);
+    border-radius: .2rem;
+    border-width:.5px ;
+    
+}
+.opinionsD .userD .formsD{
+    width: 90%;
+    padding: .5rem;
+    border: solid rgb(80, 150, 224);
+    border-radius: .2rem;
+    border-width:.25px ;
+}
+.opinionsD .btn-groupD {
+    display: flex;
+    grid-gap:.5rem;
+    align-items: center;
+    padding-top: 20px;
+}
+.opinionsD .btn-groupD .btn{
+    padding: .75rem 1rem;
+    border-radius: .2rem;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    font-size: medium;
+    background-color:#1f5357;
+    margin: 10px;
+    color:white;
+
+}
+.opinionsD .btn-groupD .btn:hover{
+    cursor: pointer;
+    background-color: #92E3A9;
+    color:white;
+
+}
+
+
+
+.hrdoc {
+    border: 5px solid #1f5357; /* لون الخط */
+    margin-right: 13%; /* هوامش الخط من الأعلى والأسفل */
+    margin-left: 13%; /* هوامش الخط من الأعلى والأسفل */
+    border-radius: 25px;
+
+  }

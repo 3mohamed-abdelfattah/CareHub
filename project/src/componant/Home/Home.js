@@ -2,7 +2,7 @@ import React from 'react';
 import Header from "../AllBars/Header"
 import "./HomePage.css"
 import { Link } from "react-router-dom"
-import { Scrollbars } from 'react-custom-scrollbars';
+import { useSpring, animated } from 'react-spring';
 
 //الصور
 import HOS from "../Photos/HOspital.png"
@@ -26,6 +26,14 @@ import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
 export default function Home() {
 
+
+    const slideProps = useSpring({
+        opacity: 1,
+        from: { opacity: 0 },
+        config: { duration: 500 },
+      });
+
+
   return (
       <div>
       <Header />
@@ -38,8 +46,8 @@ export default function Home() {
         <main id="slider">
 
             <section className="slider-container">
+            <animated.div style={slideProps}>
                 <div className="slider">
-
                     <div className="slider-item">
                     <Link to ="/pharmacies" className="HOMELINK">
                         <div className="slide">
@@ -50,10 +58,10 @@ export default function Home() {
                         </div>
                         </Link>
                     </div>
-
+                    
                     <div className="slider-item">
                     <Link to ="/labs" className="HOMELINK">
-                        <div className="slide">
+                    <div className="slide">
                             <figure className="slide-image">
                                 <img src={LAB} alt=""/>
                             </figure>
@@ -74,8 +82,10 @@ export default function Home() {
                     </div>
 
                 </div>
+                    </animated.div>
             </section>
             <section className="slider-container">
+            <animated.div style={slideProps}>
             <div className="slider">
             
             <div className="slider-item">
@@ -112,8 +122,12 @@ export default function Home() {
                     </div>
 
                   </div>
+                  </animated.div>
+
             </section>
             <section className="slider-container">
+            <animated.div style={slideProps}>
+
                 <div className="slider">
 
                     <div className="slider-item">
@@ -150,9 +164,12 @@ export default function Home() {
                     </div>
 
                 </div>
+                </animated.div>
             </section>
 
             <section className="slider-container">
+            <animated.div style={slideProps}>
+
             <div className="slider">
 
 
@@ -180,6 +197,7 @@ export default function Home() {
                 </div>
 
             </div>
+            </animated.div>
         </section>
         </main>
         <ScrollToTopButton/>

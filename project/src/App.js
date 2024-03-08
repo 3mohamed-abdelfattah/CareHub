@@ -61,6 +61,11 @@ import DOCdetail from './componant/DoctorsPage/DOCdetail';
 import Highd from './componant/Artifile/Highd';
 import Arti2 from './componant/Artifile/Arti2';
 import Arti3 from './componant/Artifile/Arti3';
+import STomASR from './componant/Artifile/STOMRSM';
+import StomkDo from './componant/HomeComponents/StomchDO';
+import Stomkasb from './componant/HomeComponents/Stomkasb';
+import Stomkgrs from './componant/HomeComponents/Stomkgrsom';
+import Fawry from './componant/Payment/Fawry';
 
 
 export default function App() {
@@ -86,7 +91,6 @@ export default function App() {
         <Route path="/illawr" element={<IllAWR/>} />
         <Route path="/awrteeth" element={<AWRTeeth/>} />
 
-
         <Route path="/doctors" element={<AllDoc/>} />
         <Route path="/skin" element={<SkinDoc/>} />
         <Route path="/bute" element={<ButeDoc/>} />
@@ -106,7 +110,10 @@ export default function App() {
         <Route path="/gland" element={<GlandsDoc/>} />
         <Route path="/urologist" element={<UrologistDoc/>} />
         <Route path="/psychological" element={<PsycholoDoc/>} />
-        <Route path="/teeth" element={<TeethDoc/>} />
+        <Route path="/teeth" element={<TeethDoc/>}/>
+        <Route path="teeth/:id" element={<DOCdetail/>}/>
+
+
 
         <Route path="/bmr" element={<Calculator/>} />
         <Route path="/foodclc" element={<FoodList/>} />
@@ -122,12 +129,12 @@ export default function App() {
         <Route path="/sugerl" element={<Sugerl/>} />
         <Route path="/stomchar" element={<Stomchar/>} />
         <Route path="/cancer" element={<Cancer/>} />
-
+        <Route path="/stomchrsom" element={<STomASR/>} />
         <Route path="/highd" element={<Highd/>} />
-        <Route path="/problems" element={<Cancer/>} />
-        <Route path="/snstake" element={<Cancer/>} />
-        <Route path="/stomchasb" element={<Cancer/>} />
-        <Route path="/stomchrsom" element={<Cancer/>} />
+        <Route path="/snstake" element={<StomkDo/>} />
+        <Route path="/stomchasb" element={<Stomkasb/>} />
+        <Route path="/stomchgrso" element={<Stomkgrs/>} />
+
 
 
         <Route path="/artic" element={<ArticlesList/>} />
@@ -141,9 +148,10 @@ export default function App() {
         <Route path="/notifimid" element={<NotifiMED/>} />
         <Route path="/gamehl" element={<HealthGame/>} />
 
-        
-        <Route path="/docdetail" element={<DOCdetail/>} />
 
+
+
+        <Route path="/fawry" element={<Fawry/>} />
 
 
       </Routes>

@@ -121,13 +121,13 @@ export default function WomanDoc() {
         <h4>{doctor.address}</h4>
         <h4><Stars/></h4>
       </div>
-      {doctor.gender === 'male' ? (
+      {doctor.gender === 'Male' ? (
         <img src={DOCM} alt={`Doctor ${index + 1}`} />
       ) : (
         <img src={DOCW} alt={`Doctor ${index + 1}`} />
       )}
       <div className="button-lovation">
-      <Link to="/docdetail">
+      <Link to={`./${doctor._id}`}>
       <button className="buttondet">
       <span className="button_lg">
         <span className="button_sl" />

@@ -1,6 +1,4 @@
 import {useEffect, useState} from "react";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {faUserPen} from '@fortawesome/free-solid-svg-icons'
 import axios from "axios";
 import { Link } from "react-router-dom"
 import React from 'react';

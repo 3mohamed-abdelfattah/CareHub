@@ -139,7 +139,7 @@ const ArticlesList = () => {
               تتسبب في أعراض مزعجة للغاية، فما هي اعراض عسر الهضم؟ وكيف يمكن
               اكتشاف الإص...
             </p>
-            <Link to ="/problems">
+            <Link to ="/stomchrsom">
             <h4 style={{color:'#ff0505'}}>قراءة المزيد</h4>
             </Link>
             </div>
@@ -190,7 +190,7 @@ const ArticlesList = () => {
               المصابين تظهر عليهم الأعراض، وتاليًا سنتعرف على أهم اعراض جرثومة
               المعدة....
             </p>
-            <Link to ="/stomchrsom">
+            <Link to ="/stomchgrso">
             <h4 style={{color:'#ff0505'}}>قراءة المزيد</h4>
             </Link>
             </div>

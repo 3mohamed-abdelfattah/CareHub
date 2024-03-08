@@ -3,6 +3,7 @@ import Header from "../AllBars/Header";
 import Footer from "../AllBars/Footer";
 import { Link } from "react-router-dom"
 import "../Home/HomePage.css"
+import { useSpring, animated } from 'react-spring';
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
 //الصور
@@ -25,11 +26,20 @@ import MSK from "../Photos/MASLAK.png"
 import NFS from "../Photos/NAfSY.png"
 import DO1 from "../Photos/GALDS.png"
 import TEE from "../Photos/TEEth.png"
+import TESTCHAt from '../ChatBOTS/TEstCHat';
 
 
 
 
 export default function AllDoc() {
+
+
+    const slideProps = useSpring({
+        opacity: 1,
+        from: { opacity: 0 },
+        config: { duration: 500 },
+      });
+
 
 
     return (
@@ -46,6 +56,7 @@ export default function AllDoc() {
             </div>
             <main id="slider">
                 <section className="slider-container">
+                <animated.div style={slideProps}>
                     <div className="slider">
                         <div className="slider-item">
                         <Link to ="/heart" className="HOMELINK">
@@ -96,6 +107,7 @@ export default function AllDoc() {
                             </Link>
                         </div>
                     </div>
+                    </animated.div>
                 </section>
 
 
@@ -103,6 +115,7 @@ export default function AllDoc() {
 
                 
                 <section className="slider-container">
+                <animated.div style={slideProps}>
                     <div className="slider">
                         <div className="slider-item">
                         <Link to ="/bone" className="HOMELINK">
@@ -153,10 +166,12 @@ export default function AllDoc() {
                         </Link>
                         </div>
                     </div>
+                    </animated.div>
                 </section>
 
 
                 <section className="slider-container">
+                <animated.div style={slideProps}>
                 <div className="slider">
                     <div className="slider-item">
                     <Link to ="/brain" className="HOMELINK">
@@ -208,10 +223,12 @@ export default function AllDoc() {
                             </Link>
                     </div>
                 </div>
+                </animated.div>
             </section>
 
 
                 <section className="slider-container">
+                <animated.div style={slideProps}>
                 <div className="slider">
                     <div className="slider-item">
                     <Link to ="/skin" className="HOMELINK">
@@ -262,10 +279,12 @@ export default function AllDoc() {
                     </Link>
                     </div>
                 </div>
+                </animated.div>
             </section>
 
 
                 <section className="slider-container">
+                <animated.div style={slideProps}>
                     <div className="slider">
                         <div className="slider-item">
                         <Link to ="/child" className="HOMELINK">
@@ -316,12 +335,14 @@ export default function AllDoc() {
                         </Link>
                         </div>
                     </div>
+                    </animated.div>
                 </section>
 
 
 
 
                 <section className="slider-container">
+                <animated.div style={slideProps}>
                     <div className="slider">
                         <div className="slider-item">
                         <Link to ="/gland" className="HOMELINK">
@@ -372,12 +393,14 @@ export default function AllDoc() {
                         </Link>
                         </div>
                     </div>
+                    </animated.div>
                 </section>
 
 
 
 
                 <section className="slider-container">
+                <animated.div style={slideProps}>
                     <div className="slider">
                         <div className="slider-item">
                         <Link to ="/teeth" className="HOMELINK">
@@ -396,11 +419,13 @@ export default function AllDoc() {
                                 </Link>
                         </div>
                     </div>
+                    </animated.div>
                 </section>
 
             </main>
         </container>
         <ScrollToTopButton/>
+        <TESTCHAt/>
         <Footer/>
         </div>
         )
