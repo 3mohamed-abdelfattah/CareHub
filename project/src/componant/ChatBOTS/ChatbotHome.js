@@ -16,7 +16,7 @@ const StyledFragment ={
   fontFamily: 'Cairo',
   padding: 5,
   margin: 1,
-  border: '2px solid #94E18D',
+  border: '2px solid #1F5357',
   borderRadius: 5,
   backgroundColor: 'white',
 }

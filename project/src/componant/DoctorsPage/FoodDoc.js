@@ -7,9 +7,9 @@ import DOCM from "../Photos/doctorphoto.png";
 import DOCW from "../Photos/doctorimg.png";
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 import { toast } from "react-toastify";
-import ChatbotTeeth from "../ChatBOTS/ChatbotTeeth";
 import Stars from "../SomeStyles/Stars";
 import { Link } from "react-router-dom/dist";
+import ChatbotFood from "../ChatBOTS/ChatbotFood";
 
 const itemsPerPage = 5;
 
@@ -330,7 +330,7 @@ export default function FoodDoc() {
       </div>
       </div>
           <ScrollToTopButton />
-      <ChatbotTeeth />
+      <ChatbotFood />
       <Footer />
     </div>
   );

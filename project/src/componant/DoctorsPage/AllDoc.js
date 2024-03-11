@@ -5,28 +5,28 @@ import { Link } from "react-router-dom"
 import "../Home/HomePage.css"
 import { useSpring, animated } from 'react-spring';
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
+import AllDocChatbot from '../ChatBOTS/AllDocChatbot';
 
 //الصور
 import Brain from "../Photos/BRAIN.png"
-import Nose from "../Photos/NOSE.png"
+import Nose from "../Photos/nose.png"
 import BT from "../Photos/STOMCH.png"
-import GL from "../Photos/SKIN.png"
-import BU from "../Photos/BUTY.png"
+import GL from "../Photos/Awram.png"
+import BU from "../Photos/bute.png"
 import MS from "../Photos/WOMAN.png"
 import HEART from "../Photos/HEART.png"
 import SR from "../Photos/SURGRY.png"
 import EYE from "../Photos/EYE.png"
 import SUB from "../Photos/FOOD.png"
 import CHILD from "../Photos/Children.png"
-import NUT from "../Photos/NURAL.png"
+import NUT from "../Photos/nural.png"
 import CST from "../Photos/CHEST.png"
 import TKB from "../Photos/TKATB.png"
 import BON from "../Photos/BONE.png"
 import MSK from "../Photos/MASLAK.png"
 import NFS from "../Photos/NAfSY.png"
-import DO1 from "../Photos/GALDS.png"
-import TEE from "../Photos/TEEth.png"
-import TESTCHAt from '../ChatBOTS/TEstCHat';
+import DO1 from "../Photos/glads.png"
+import TEE from "../Photos/teeth.png"
 
 
 
@@ -38,7 +38,7 @@ export default function AllDoc() {
         opacity: 1,
         from: { opacity: 0 },
         config: { duration: 500 },
-      });
+});
 
 
 
@@ -47,12 +47,12 @@ export default function AllDoc() {
     <Header />
     <container>
             <div className='COLOR'>
-              <div className="landing">
+            <div className="landing">
                 <div className="intro-text">
                     <h1><b>رحلة نحو الصحة بمساعدة نخبة من أفضل الأطباء</b> </h1>
                     <p><h5>...غوص عميق في مختلف التخصصات الطبية، وتعرف على أطباء مختصين بكل مجال</h5></p>
                 </div>
-              </div>
+            </div>
             </div>
             <main id="slider">
                 <section className="slider-container">
@@ -174,69 +174,12 @@ export default function AllDoc() {
                 <animated.div style={slideProps}>
                 <div className="slider">
                     <div className="slider-item">
-                    <Link to ="/brain" className="HOMELINK">
-
-                        <div className="slide">
-                            <figure className="slide-image">
-                                <img src={Brain} alt=""/>
-                            </figure>
-                            <h4 className="slide-name">مخ واعصاب</h4>
-                            <div className="custom-line"></div>
-                            <div className="row">
-                                <p>60 دكتور</p>
-                                <strong>•</strong>
-                                <p>4 مراكز</p>
-                            </div>
-                            </div>
-                        </Link>
-                    </div>
-                    <div className="slider-item">
-                    <Link to ="/nose" className="HOMELINK">
-                        <div className="slide">
-                            <figure className="slide-image">
-                                <img src={Nose} alt=""/>
-                            </figure>
-                            <h4 className="slide-name">انف واذن</h4>
-                            <div className="custom-line"></div>
-                            <div className="row">
-                                <p>20 دكتور</p>
-                                <strong>•</strong>
-                                <p>5 مراكز</p>
-                            </div>   
-                            </div>
-                            </Link>
-                    </div>
-                    <div className="slider-item">
-                    <Link to ="/stomch" className="HOMELINK">
-                        <div className="slide">
-                            <figure className="slide-image">
-                                <img src={BT} alt=""/>
-                            </figure>
-                            <h4 className="slide-name">باطنه</h4>
-                            <div className="custom-line"></div>
-                            <div className="row">
-                                <p>30 دكتور</p>
-                                <strong>•</strong>
-                                <p>1 مراكز</p>
-                            </div>
-                            </div>
-                            </Link>
-                    </div>
-                </div>
-                </animated.div>
-            </section>
-
-
-                <section className="slider-container">
-                <animated.div style={slideProps}>
-                <div className="slider">
-                    <div className="slider-item">
-                    <Link to ="/skin" className="HOMELINK">
+                    <Link to ="/awram" className="HOMELINK">
                         <div className="slide">
                             <figure className="slide-image">
                                 <img src={GL} alt=""/>
                             </figure>
-                            <h4 className="slide-name">جلديه</h4>
+                            <h4 className="slide-name">الأورام</h4>
                             <div className="custom-line"></div>
                             <div className="row">
                                 <p>60 دكتور</p>
@@ -277,6 +220,62 @@ export default function AllDoc() {
                             </div>
                     </div>
                     </Link>
+                    </div>
+                </div>
+                </animated.div>
+            </section>
+
+
+                <section className="slider-container">
+                <animated.div style={slideProps}>
+                <div className="slider">
+                <div className="slider-item">
+                        <Link to ="/teeth" className="HOMELINK">
+                            <div className="slide">
+                                <figure className="slide-image">
+                                    <img src={TEE} alt=""/>
+                                </figure>
+                                <h4 className="slide-name">أسنان</h4>
+                                <div className="custom-line"></div>
+                                <div className="row">
+                                    <p>60 دكتور</p>
+                                    <strong>•</strong>
+                                    <p>4 مراكز</p>
+                                </div>
+                                </div>
+                                </Link>
+                        </div>
+                        <div className="slider-item">
+                    <Link to ="/nose" className="HOMELINK">
+                        <div className="slide">
+                            <figure className="slide-image">
+                                <img src={Nose} alt=""/>
+                            </figure>
+                            <h4 className="slide-name">انف واذن</h4>
+                            <div className="custom-line"></div>
+                            <div className="row">
+                                <p>20 دكتور</p>
+                                <strong>•</strong>
+                                <p>5 مراكز</p>
+                            </div>   
+                            </div>
+                            </Link>
+                    </div>
+                    <div className="slider-item">
+                    <Link to ="/stomch" className="HOMELINK">
+                        <div className="slide">
+                            <figure className="slide-image">
+                                <img src={BT} alt=""/>
+                            </figure>
+                            <h4 className="slide-name">باطنه</h4>
+                            <div className="custom-line"></div>
+                            <div className="row">
+                                <p>30 دكتور</p>
+                                <strong>•</strong>
+                                <p>1 مراكز</p>
+                            </div>
+                            </div>
+                            </Link>
                     </div>
                 </div>
                 </animated.div>
@@ -382,7 +381,7 @@ export default function AllDoc() {
                                 <figure className="slide-image">
                                     <img src={MSK} alt=""/>
                                 </figure>
-                                <h4 className="slide-name">مسالك بوليه</h4>
+                                <h4 className="slide-name">جلدية وتناسلية</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
                                     <p>30 دكتور</p>
@@ -402,22 +401,22 @@ export default function AllDoc() {
                 <section className="slider-container">
                 <animated.div style={slideProps}>
                     <div className="slider">
-                        <div className="slider-item">
-                        <Link to ="/teeth" className="HOMELINK">
-                            <div className="slide">
-                                <figure className="slide-image">
-                                    <img src={TEE} alt=""/>
-                                </figure>
-                                <h4 className="slide-name">أسنان</h4>
-                                <div className="custom-line"></div>
-                                <div className="row">
-                                    <p>60 دكتور</p>
-                                    <strong>•</strong>
-                                    <p>4 مراكز</p>
-                                </div>
-                                </div>
-                                </Link>
-                        </div>
+                    <div className="slider-item">
+                    <Link to ="/brain" className="HOMELINK">
+                        <div className="slide">
+                            <figure className="slide-image">
+                                <img src={Brain} alt=""/>
+                            </figure>
+                            <h4 className="slide-name">مخ واعصاب</h4>
+                            <div className="custom-line"></div>
+                            <div className="row">
+                                <p>60 دكتور</p>
+                                <strong>•</strong>
+                                <p>4 مراكز</p>
+                            </div>
+                            </div>
+                        </Link>
+                    </div>
                     </div>
                     </animated.div>
                 </section>
@@ -425,7 +424,7 @@ export default function AllDoc() {
             </main>
         </container>
         <ScrollToTopButton/>
-        <TESTCHAt/>
+        <AllDocChatbot/>
         <Footer/>
         </div>
         )

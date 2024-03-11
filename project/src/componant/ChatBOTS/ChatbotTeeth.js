@@ -118,7 +118,6 @@ const steps = [
         message: "العلاج:تقويم الأسنان",
         end:true,
       },
-
   ];
 
   const theme = {
@@ -132,7 +131,6 @@ const steps = [
     userBubbleColor: 'lightgrey',
     userFontColor: '#000',
   };
-
 
 
       const ChatbotTeeth = () => (

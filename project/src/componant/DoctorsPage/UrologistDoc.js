@@ -7,9 +7,9 @@ import DOCM from "../Photos/doctorphoto.png";
 import DOCW from "../Photos/doctorimg.png";
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 import { toast } from "react-toastify";
-import ChatbotTeeth from "../ChatBOTS/ChatbotTeeth";
 import Stars from "../SomeStyles/Stars";
 import { Link } from "react-router-dom/dist";
+import ChatbotUorolgy from "../ChatBOTS/ChatbotUorolgy";
 
 const itemsPerPage = 5;
 
@@ -70,7 +70,7 @@ export default function UrologistDoc() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/doctors/Urologist");
+        const response = await axios.get("http://localhost:5000/api/doctors/DoctorsA");
         setDoctorsData(response.data);
         setFilteredDoctors(response.data.slice(0, itemsPerPage));
         setIsLoading(false); // تحديث حالة التحميل عند اكتمال التحميل
@@ -331,7 +331,7 @@ export default function UrologistDoc() {
       </div>
       </div>
           <ScrollToTopButton />
-      <ChatbotTeeth />
+      <ChatbotUorolgy />
       <Footer />
     </div>
   );

@@ -7,13 +7,12 @@ import DOCM from "../Photos/doctorphoto.png";
 import DOCW from "../Photos/doctorimg.png";
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 import { toast } from "react-toastify";
-import ChatbotTeeth from "../ChatBOTS/ChatbotTeeth";
 import Stars from "../SomeStyles/Stars";
 import { Link } from "react-router-dom/dist";
 
 const itemsPerPage = 5;
 
-export default function TESTDOC() {
+export default function AwramDoc() {
   const mystyle = {
     overflow: 'hidden',
     transition: 'max-height 0.6s ease',
@@ -34,6 +33,7 @@ export default function TESTDOC() {
     draggable: true,
     progress: undefined,
   };
+  
 
   const [doctorsData, setDoctorsData] = useState([]);
   const [filteredDoctors, setFilteredDoctors] = useState([]);
@@ -47,6 +47,7 @@ export default function TESTDOC() {
   const [cardtoggle4, setCardToggle4] = useState(false);
   const [cardtoggle5, setCardToggle5] = useState(false);
   const [cardtoggle6, setCardToggle6] = useState(false);
+  const [cardtoggle7, setCardToggle7] = useState(false);
 
   const ToggleHandler1 = () => {
     setCardToggle1(!cardtoggle1);
@@ -66,18 +67,21 @@ export default function TESTDOC() {
   const ToggleHandler6 = () => {
     setCardToggle6(!cardtoggle6);
   };
+  const ToggleHandler7 = () => {
+    setCardToggle7(!cardtoggle7);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/doctors/dentists");
+        const response = await axios.get("http://localhost:5000/api/doctors/Oncologist");
         setDoctorsData(response.data);
         setFilteredDoctors(response.data.slice(0, itemsPerPage));
-        setIsLoading(false); // تحديث حالة التحميل عند اكتمال التحميل
+        setIsLoading(false); // تحديث عند اكتمال التحميل
         console.log(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setIsLoading(false); // في حالة حدوث خطأ أيضًا
+        setIsLoading(false); // في حالة حدوث خطأ
       }
     };
   
@@ -117,17 +121,17 @@ export default function TESTDOC() {
     <div className="Doctors-D" key={index}>
       <div className="doctors-data-D">
         <h1>د.{doctor.name}</h1>
-        <h3>دكتور اسنان</h3>
+        <h3>تخصص {doctor.specialization}</h3>
         <h4>{doctor.address}</h4>
         <h4><Stars/></h4>
       </div>
-      {doctor.gender === 'male' ? (
-        <img src={DOCM} alt={`Doctor ${index + 1}`} />
+      {doctor.gender === 'Male' ? (
+        <img src={DOCM} alt='' />
       ) : (
-        <img src={DOCW} alt={`Doctor ${index + 1}`} />
+        <img src={DOCW} alt='' />
       )}
       <div className="button-lovation">
-      <Link to="/docdetail">
+      <Link to={`./${doctor._id}`}>
       <button className="buttondet">
       <span className="button_lg">
         <span className="button_sl" />
@@ -147,8 +151,8 @@ export default function TESTDOC() {
     <div>
     <Header />
     <div className="header-D"></div>
-    <h1 className="txtdoc">ارسم ابتسامة ساحرة</h1>
-    <h1 style={{ color: '#ff0505', textAlign: 'center' }}>...مع أفضل أطباء الأسنان في بني سويف</h1>
+    <h1 className="txtdoc">بيئة طبية آمنة ومريحة</h1>
+    <h1 style={{ color: '#ff0505', textAlign: 'center' }}>...مع أفضل أطباء علاج الأورام في بني سويف</h1>
     <div className="landing-D">
     <div className="container-D">
     <div className="InputContainer">
@@ -219,115 +223,157 @@ export default function TESTDOC() {
 
       <div className="common_questions-D">
         <div className="container-D">
-          <section>
-            <h2 className="title-D">الاسئلة الشائعة</h2>
-    
+        <section>
+        <h2 className="title-D">الاسئلة الشائعة</h2>
+      
+      
         <div className="faq-D" onClick={ToggleHandler1}>
         <div className="question-D">
-          <h4>كيف يمكن الحفاظ على صحة الأسنان اليومية؟</h4>
+          <h4>ماهي أسباب الأورام المعروفة؟</h4>
           <svg width="15"height="10" viewbox="0 0 42 25">
             <path d="M3 3L21 21L39 3" stroke ="white" stroke-width="7" stroke-linecap="round" />
           </svg>
         </div>
         <div className={cardtoggle1 ? "show" : "hide"} style={mystyle}>
         
+        
           <p>
-          <>.يتضمن ذلك فرك الأسنان بفرشاة ناعمة مرتين يوميًا واستخدام خيط الأسنان لتنظيف الفراغات بين الأسنان</>
+          <>تتنوع أسباب الأورام وقد تشمل التغيرات الجبينية والتعرض لمواد كيميائية معينة </>
+          <br/>
+          <br/>
+          <>.التعرض للأشعاعات وبعض الفيروسات وكذلك بعض العوامل البيئية والوراثية</>
           </p>
         
-        </div>
-        </div>
         
+        </div>
+        </div>
+      
         <div className="faq-D" onClick={ToggleHandler2}>
         <div className="question-D">
-          <h4>ما هي أفضل طرق لتبييض الأسنان بشكل آمن؟</h4>
+          <h4>ماهي أنواع الأورام؟</h4>
           <svg width="15"height="10" viewbox="0 0 42 25">
             <path d="M3 3L21 21L39 3" stroke ="white" stroke-width="7" stroke-linecap="round" />
           </svg>
         </div>
         <div className={cardtoggle2 ? "show" : "hide"} style={mystyle}>
         
+        
           <p>
-          <>.يمكن استخدام منتجات تبييض الأسنان المعتمدة من قبل الطبيب السني، بالإضافة إلى تجنب تناول المشروبات والطعام الملون</>
+          <>.الأورام الحميدة وهي التي لاتنتشر إلى أجزاء أخرى من الجسم </>
+          <br/>
+          <br/>
+          <>.الأورام الخبيثة يمكنها الإنتشار والتأثير على أنسجة وأعضاء أخري في الجسم</>
           </p>
         
+        
         </div>
         </div>
-        
-        
+      
         <div className="faq-D" onClick={ToggleHandler3}>
         <div className="question-D">
-          <h4>ما هي أسباب الألم في الأسنان؟</h4>
+          <h4>ماهي أعراض الأورام وعلاماتها؟</h4>
           <svg width="15"height="10" viewbox="0 0 42 25">
             <path d="M3 3L21 21L39 3" stroke ="white" stroke-width="7" stroke-linecap="round" />
           </svg>
         </div>
         <div className={cardtoggle3 ? "show" : "hide"} style={mystyle}>
         
+        
           <p>
-          <>.قد تكون الأسباب متنوعة من تسوس الأسنان إلى التهاب اللثة. يجب استشارة الطبيب السني للتشخيص الدقيق</>
+          <>.تختلف الأعراض بإختلاف موقع الورم ونوعة  ولكن تتشابة معظم الأنواع في بعض اعراضها</>
+          <br/>
+          <br/>
+          <>.ككتلة او تورم غير طبيعي أو فقدان الوزن غير المبرر  ,تعب وألم مستمر ,تغيرات في البول والبراز ,تغيرات في الجلد كالشامات متغيرة الصفات ,وأعراض أخرى</>
           </p>
         
+        
         </div>
         </div>
-        
-        
+      
         <div className="faq-D" onClick={ToggleHandler4}>
         <div className="question-D">
-          <h4>كيف يمكن علاج حساسية الأسنان؟</h4>
+          <h4>ماهي وسائل تشخيص الورم؟</h4>
           <svg width="15"height="10" viewbox="0 0 42 25">
             <path d="M3 3L21 21L39 3" stroke ="white" stroke-width="7" stroke-linecap="round" />
           </svg>
         </div>
         <div className={cardtoggle4 ? "show" : "hide"} style={mystyle}>
         
+        
           <p>
-          <>.يمكن استخدام معاجين الأسنان الخاصة بالحساسية وتجنب المشروبات والأطعمة الباردة أو الساخنة</>
+          <>.يمكن الكشف عن الورم من خلال بعض الفحوص البدنية والصور الشعاعية مثل الأشعة السينية والمقطعية والرنين المغناطيسي</>
+          <br/>
+          <br/>
+          <>.وتعد طريقة الفحوص المخبرية وأخذ عينات من الأنسجة (الخزعة) للفحص تحت المجهر من أفضل وسائل الفحص</>
           </p>
         
+        
         </div>
         </div>
-        
-        
+      
         <div className="faq-D" onClick={ToggleHandler5}>
         <div className="question-D">
-          <h4>ما هي الإجراءات لعلاج تسوس الأسنان؟</h4>
+          <h4>هل يمكن علاج الورم وماهي العلاجات المتاحة؟</h4>
           <svg width="15"height="10" viewbox="0 0 42 25">
             <path d="M3 3L21 21L39 3" stroke ="white" stroke-width="7" stroke-linecap="round" />
           </svg>
         </div>
         <div className={cardtoggle5 ? "show" : "hide"} style={mystyle}>
         
+        
           <p>
-          <>.قد يشمل العلاج حشو الأسنان بمواد ملائمة أو إجراء عمليات تنظيف عميقة</>
+          <>.بالطبع يمكن علاج الورم في مراحله المبكرة بسهولة ويختلف العلاج على حسب نوع الورم ومرحلته</>
+          <br/>
+          <br/>
+          <>.وتعد العمليات الجراحية من أهم الأساليب العلاجية وكذلك العلاج الكيميائي والعلاج الإشعاعي والعلاج المناعي وأساليب أخرى </>
           </p>
         
+        
         </div>
         </div>
-        
-        
+      
         <div className="faq-D" onClick={ToggleHandler6}>
         <div className="question-D">
-          <h4>هل التقويم السني يمكن أن يكون مناسبًا لي؟</h4>
+          <h4>كيف يمكن للأشخاص المصابين بالأورام الحفاظ على نوعية حياتهم؟</h4>
           <svg width="15"height="10" viewbox="0 0 42 25">
             <path d="M3 3L21 21L39 3" stroke ="white" stroke-width="7" stroke-linecap="round" />
           </svg>
         </div>
         <div className={cardtoggle6 ? "show" : "hide"} style={mystyle}>
         
+        
           <p>
-          <>.يفحص الطبيب السني الحالة ويقرر ما إذا كان التقويم مناسبًا لتحسين موقف الأسنان</>
+          <>.يعد العامل النفسي والاجتماعي من أهم محفزات العلاج , العناية بالصحة العقلية ,وإدارة الآثار الجانبية للعلاج ,والحفاظ على نظام حياةنشط وصحي</>
           </p>
         
-        </div>
-        </div>
         
+        </div>
+        </div>
+      
+        <div className="faq-D" onClick={ToggleHandler7}>
+        <div className="question-D">
+          <h4>ماهي العواقب المحتملة للأورام وعلاجها؟ </h4>
+          <svg width="15"height="10" viewbox="0 0 42 25">
+            <path d="M3 3L21 21L39 3" stroke ="white" stroke-width="7" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div className={cardtoggle7 ? "show" : "hide"} style={mystyle}>
+        
+        
+          <p>
+          <>.يمكن أن تسبب الأورام الخبيثة مضاعفات خطيرة ,وقد تصيب علاجاتها المرضى ببعض الآثار الجانبية كالارهاق والغثيان والعدوى</>
+          </p>
+        
+        
+        </div>
+        </div>
       </section>
+
+        
       </div>
       </div>
           <ScrollToTopButton />
-      <ChatbotTeeth />
       <Footer />
-    </div>
-  );
+</div>
+);
 }

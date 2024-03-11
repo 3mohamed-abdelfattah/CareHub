@@ -118,18 +118,15 @@ import { ThemeProvider } from 'styled-components';
             message: "تجنب العدوى أو الانتشار بالتغطية أو التعقيم أو التجفيف، استخدام مواد كيميائية أو تجميد أو جراحة لإزالة الثآليل حسب الحالة",
             end:true,
           },
-
-
-
       ];
 
       const theme = {
         background: '#f5f8fb',
         fontFamily: 'Cairo',
-        headerBgColor: '#94E18D',
+        headerBgColor: '#1F5357',
         headerFontColor: 'white',
         headerFontSize: '20px',
-        botBubbleColor: '#94E18D',
+        botBubbleColor: '#1F5357',
         botFontColor: 'white',
         userBubbleColor: 'lightgrey',
         userFontColor: '#000',

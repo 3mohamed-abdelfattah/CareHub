@@ -16,7 +16,6 @@ import AdultAWR from './componant/HealthAwernesPAge/AdultAWR';
 
 import AllDoc from './componant/DoctorsPage/AllDoc';
 
-import SkinDoc from './componant/DoctorsPage/SkinDoc';
 import ButeDoc from './componant/DoctorsPage/ButeDoc';
 import WomanDoc from './componant/DoctorsPage/WomanDoc';
 import BrainDoc from './componant/DoctorsPage/BrainDoc';
@@ -35,6 +34,8 @@ import GlandsDoc from './componant/DoctorsPage/GlandsDoc';
 import UrologistDoc from './componant/DoctorsPage/UrologistDoc';
 import PsycholoDoc from './componant/DoctorsPage/PsycholoDoc';
 import TeethDoc from './componant/DoctorsPage/TeethDoc';
+
+import TeethDetail from './componant/DoctorsPage/DoctorsDetails/TeethDetail';
 
 import Calculator from "./componant/HomeComponents/BMR"
 import FoodList from './componant/HomeComponents/FoodCL';
@@ -57,7 +58,6 @@ import LowD from './componant/Artifile/LowD';
 import Sugerl from './componant/Artifile/Sugerl';
 import Stomchar from './componant/Artifile/Stomchar';
 import Cancer from './componant/Artifile/Cancer';
-import DOCdetail from './componant/DoctorsPage/DOCdetail';
 import Highd from './componant/Artifile/Highd';
 import Arti2 from './componant/Artifile/Arti2';
 import Arti3 from './componant/Artifile/Arti3';
@@ -66,6 +66,10 @@ import StomkDo from './componant/HomeComponents/StomchDO';
 import Stomkasb from './componant/HomeComponents/Stomkasb';
 import Stomkgrs from './componant/HomeComponents/Stomkgrsom';
 import Fawry from './componant/Payment/Fawry';
+import AwramDoc from './componant/DoctorsPage/Awram';
+import BoneDetail from './componant/DoctorsPage/DoctorsDetails/BoneDetail';
+import AwramDetail from './componant/DoctorsPage/DoctorsDetails/AwramDetail';
+
 
 
 export default function App() {
@@ -92,7 +96,7 @@ export default function App() {
         <Route path="/awrteeth" element={<AWRTeeth/>} />
 
         <Route path="/doctors" element={<AllDoc/>} />
-        <Route path="/skin" element={<SkinDoc/>} />
+        <Route path="/awram" element={<AwramDoc/>} />
         <Route path="/bute" element={<ButeDoc/>} />
         <Route path="/woman" element={<WomanDoc/>} />
         <Route path="/brain" element={<BrainDoc/>} />
@@ -111,8 +115,10 @@ export default function App() {
         <Route path="/urologist" element={<UrologistDoc/>} />
         <Route path="/psychological" element={<PsycholoDoc/>} />
         <Route path="/teeth" element={<TeethDoc/>}/>
-        <Route path="teeth/:id" element={<DOCdetail/>}/>
 
+        <Route path="teeth/:id" element={<TeethDetail/>}/>
+        <Route path="bone/:id" element={<BoneDetail/>}/>
+        <Route path="awram/:id" element={<AwramDetail/>}/>
 
 
         <Route path="/bmr" element={<Calculator/>} />
@@ -136,23 +142,15 @@ export default function App() {
         <Route path="/stomchgrso" element={<Stomkgrs/>} />
 
 
-
         <Route path="/artic" element={<ArticlesList/>} />
         <Route path="/arti2" element={<Arti2/>} />
         <Route path="/arti3" element={<Arti3/>} />
-
-
-
-
 
         <Route path="/notifimid" element={<NotifiMED/>} />
         <Route path="/gamehl" element={<HealthGame/>} />
 
 
-
-
         <Route path="/fawry" element={<Fawry/>} />
-
 
       </Routes>
     </div>

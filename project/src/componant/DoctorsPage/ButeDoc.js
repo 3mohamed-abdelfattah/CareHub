@@ -268,8 +268,8 @@ const ToggleHandler6 = ()=> {
   </section>
     </div>
   </div>
+    <ScrollToTopButton/>
   <ChatbotBute/>
-  <ScrollToTopButton/>
   <Footer/>
         </div>
         )

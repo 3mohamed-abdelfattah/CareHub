@@ -118,21 +118,19 @@ const steps = [
         message: "العلاج:الهرمونات التعويضية، نمط حياة صحي",
         end:true,
       },
-
   ];
 
   const theme = {
     background: '#f5f8fb',
     fontFamily: 'Cairo',
-    headerBgColor: '#94E18D',
+    headerBgColor: '#1F5357',
     headerFontColor: 'white',
     headerFontSize: '20px',
-    botBubbleColor: '#94E18D',
+    botBubbleColor: '#1F5357',
     botFontColor: 'white',
     userBubbleColor: 'lightgrey',
     userFontColor: '#000',
   };
-
 
 
       const ChatbotWoman = () => (

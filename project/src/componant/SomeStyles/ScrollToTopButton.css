@@ -2,13 +2,13 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: rgb(20, 20, 20);
+    background-color: rgba(0, 0, 0, 0.815);
     border: none;
     font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0px 0px 0px 4px #a2c4ac4f;
+    box-shadow: 0px 0px 0px 4px #1f535759;
     cursor: pointer;
     transition-duration: 0.3s;
     overflow: hidden;
@@ -16,7 +16,7 @@
     display: none;
     position: fixed;
     bottom: 12%;
-    right: 95.2%;
+    right: 94.7%;
     z-index: 999;
     
   }
@@ -38,10 +38,11 @@
     width: 50px;
     border-radius: 50px;
     transition-duration: 0.3s;
-    background-color: #a2c4ac;
+    background-color: #1F5357
+    ;
     align-items: left;
     text-align: center;
-    right: 95.2%;
+    right: 94.7%;
     bottom: 13%;
 
 
