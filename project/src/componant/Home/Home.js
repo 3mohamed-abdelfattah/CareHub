@@ -31,16 +31,16 @@ export default function Home() {
         opacity: 1,
         from: { opacity: 0 },
         config: { duration: 500 },
-      });
+    });
 
 
-  return (
-      <div>
-      <Header />
-      <div className="landing">
-      <div className="intro-text">
-      <h1><b>رحلة مُبسّطة للوصول إلى أفضل رعاية طبية</b></h1>
-                <p><h5>...حدد ما تبحث عنه من طبيب مختص أو مركز طبي مُجهز أو مستشفى مُتخصصة</h5></p>
+    return (
+        <div>
+        <Header />
+        <div className="landing">
+        <div className="intro-text">
+        <h1><b>رحلة مُبسّطة للوصول إلى أفضل رعاية طبية</b></h1>
+                <p><h5>...حدد ما تبحث عنه من طبيب مختص أو مركز طبي مُجهز أو مستشفى مُتخصصة في بني سويف</h5></p>
             </div>
         </div>
         <main id="slider">
@@ -121,8 +121,8 @@ export default function Home() {
                         </Link>
                     </div>
 
-                  </div>
-                  </animated.div>
+                    </div>
+                    </animated.div>
 
             </section>
             <section className="slider-container">

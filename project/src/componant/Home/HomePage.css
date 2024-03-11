@@ -25,29 +25,28 @@ html {
 /* شريط التمرير نفسه */
 ::-webkit-scrollbar {
     width: 7px;
-  }
-  
+    }
+
   /* لون خلفية شريط التمرير */
-  ::-webkit-scrollbar-track {
+    ::-webkit-scrollbar-track {
     background-color: #00000013;
-  }
-  
+    }
   /* لون شريط التمرير نفسه */
-  ::-webkit-scrollbar-thumb {
+    ::-webkit-scrollbar-thumb {
     background-color:#1f5357;
     border-radius: 10px;
-  }
-  
+    }
+
   /* لون شريط التمرير عند التحويل (hover) */
-  ::-webkit-scrollbar-thumb:hover {
+    ::-webkit-scrollbar-thumb:hover {
     background-color: #3d5943;
-  }
-  
+    }
+
   /* لون طرف الشريط */
-  ::-webkit-scrollbar-corner {
+    ::-webkit-scrollbar-corner {
     background-color: #ffffff;
-  }
-  
+    }
+
 
 
 body {
@@ -157,7 +156,6 @@ body {
                     color: #ffffff;
                     }
 
-                   
 
                     .slide-image>img {
                         transform: scale(1.2);
@@ -266,11 +264,10 @@ figure:hover+span {
 
 
 
-                                                      /*iPad------------------------resolution*/
+                                                        /*iPad------------------------resolution*/
 
 
 @media screen and (max-width: 768px){
-  
 
 
 
@@ -349,7 +346,7 @@ figure:hover+span {
                     color: rgb(255, 255, 255);
                     }
 
-                   
+
 
                     .slide-image>img {
                         transform: scale(1.2);
@@ -452,11 +449,11 @@ figure img{
 
 
 
-                                                      /*Mobile resolution*/
+                                                        /*Mobile resolution*/
 
 
 @media screen and (max-width: 480px){
-  
+
 
     .landing .intro-text h1 {
         font-size: 25px;
@@ -522,7 +519,6 @@ figure img{
                         color: rgb(255, 255, 255);
                         }
     
-                       
     
                         .slide-image>img {
                             transform: scale(1.2);
@@ -614,10 +610,5 @@ figure img{
         background-position: center;
         
     }
-
-
-
-
-
 
 }
