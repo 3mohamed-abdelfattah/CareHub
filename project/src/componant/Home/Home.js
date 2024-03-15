@@ -6,10 +6,10 @@ import { useSpring, animated } from 'react-spring';
 
 //الصور
 import HOS from "../Photos/HOspital.png"
-import CEN from "../Photos/RAY.png"
-import COM from "../Photos/COMPANY.png"
-import PH from "../Photos/Pharmasy.png"
-import LAB from "../Photos/LAB.png"
+import CEN from "../Photos/Centar.png"
+import COM from "../Photos/Company.png"
+import PH from "../Photos/Pharma.png"
+import LAB from "../Photos/Labs.png"
 import DOC from "../Photos/DOCtor.png"
 import NEWS from "../Photos/ARTI.png"
 import TWEA from "../Photos/TEWAA.png"

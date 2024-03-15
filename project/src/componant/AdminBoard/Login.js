@@ -42,7 +42,7 @@ export default function Login() {
         setPlayStatus(Sound.status.PLAYING);
         toast.success("successful! You have been logged in.", options);
         window.localStorage.setItem("email", email);
-        window.location.pathname = "/";
+        window.location.pathname = `/${email}`;
       } else {
         // Handle unexpected successful response (for robustness)
         console.warn("Unexpected successful response:", res);

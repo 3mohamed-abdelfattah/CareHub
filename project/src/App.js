@@ -8,6 +8,7 @@ import Dashbord from './componant/AdminBoard/Dashbord';
 import Users from './componant/AdminBoard/Users';
 import UpdateUser from './componant/AdminBoard/UpdateUser';
 import CreateUser from './componant/AdminBoard/CreateUser';
+import { ToastContainer } from 'react-toastify';
 
 import HealthAWR from './componant/HealthAwernesPAge/HealthAWR';
 
@@ -34,8 +35,8 @@ import GlandsDoc from './componant/DoctorsPage/GlandsDoc';
 import UrologistDoc from './componant/DoctorsPage/UrologistDoc';
 import PsycholoDoc from './componant/DoctorsPage/PsycholoDoc';
 import TeethDoc from './componant/DoctorsPage/TeethDoc';
+import AwramDoc from './componant/DoctorsPage/Awram';
 
-import TeethDetail from './componant/DoctorsPage/DoctorsDetails/TeethDetail';
 
 import Calculator from "./componant/HomeComponents/BMR"
 import FoodList from './componant/HomeComponents/FoodCL';
@@ -50,9 +51,8 @@ import IllAWR from './componant/HealthAwernesPAge/IllAWR';
 import AWRChild from './componant/HealthAwernesPAge/AWRChild';
 import AWRTeeth from './componant/HealthAwernesPAge/AWRTeeth';
 import ArticlesList from './componant/HomeComponents/ARTI';
-import { ToastContainer } from 'react-toastify';
-import NotifiMED from './componant/HomeComponents/NotifiMed';
-import HealthGame from './componant/HomeComponents/HealthyGame';
+
+
 import LefWarn from './componant/Artifile/LefWarn';
 import LowD from './componant/Artifile/LowD';
 import Sugerl from './componant/Artifile/Sugerl';
@@ -62,13 +62,35 @@ import Highd from './componant/Artifile/Highd';
 import Arti2 from './componant/Artifile/Arti2';
 import Arti3 from './componant/Artifile/Arti3';
 import STomASR from './componant/Artifile/STOMRSM';
-import StomkDo from './componant/HomeComponents/StomchDO';
-import Stomkasb from './componant/HomeComponents/Stomkasb';
-import Stomkgrs from './componant/HomeComponents/Stomkgrsom';
+import StomkDo from './componant/Artifile/StomchDO';
+import Stomkasb from './componant/Artifile/Stomkasb';
+import Stomkgrs from './componant/Artifile/Stomkgrsom';
+
+
+import NotifiMED from './componant/HomeComponents/NotifiMed';
+import HealthGame from './componant/HomeComponents/HealthyGame';
 import Fawry from './componant/Payment/Fawry';
-import AwramDoc from './componant/DoctorsPage/Awram';
+
+
 import BoneDetail from './componant/DoctorsPage/DoctorsDetails/BoneDetail';
 import AwramDetail from './componant/DoctorsPage/DoctorsDetails/AwramDetail';
+import BrainDetail from './componant/DoctorsPage/DoctorsDetails/BrainDetail';
+import ChestDetail from './componant/DoctorsPage/DoctorsDetails/ChestDetail';
+import ButeDetail from './componant/DoctorsPage/DoctorsDetails/ButeDetail';
+import ChildDetail from './componant/DoctorsPage/DoctorsDetails/ChildDetail';
+import EyeDetail from './componant/DoctorsPage/DoctorsDetails/EyeDetail';
+import FoodDetail from './componant/DoctorsPage/DoctorsDetails/FoodDetail';
+import GlandsDetail from './componant/DoctorsPage/DoctorsDetails/GlandsDetail';
+import TeethDetail from './componant/DoctorsPage/DoctorsDetails/TeethDetail';
+import HeartDetail from './componant/DoctorsPage/DoctorsDetails/HeartDetail';
+import NoseDetail from './componant/DoctorsPage/DoctorsDetails/NoseDetail';
+import NuturlDetail from './componant/DoctorsPage/DoctorsDetails/NuturlDetail';
+import PsycholoDetail from './componant/DoctorsPage/DoctorsDetails/PsycholoDetail';
+import SpeachDetail from './componant/DoctorsPage/DoctorsDetails/SpeachDetail';
+import StomchDetail from './componant/DoctorsPage/DoctorsDetails/StomchDetail';
+import SurgryDetail from './componant/DoctorsPage/DoctorsDetails/SurgryDetail';
+import UrologistDetail from './componant/DoctorsPage/DoctorsDetails/UrologistDetail';
+import WomanDetail from './componant/DoctorsPage/DoctorsDetails/WomanDetail';
 
 
 
@@ -119,6 +141,24 @@ export default function App() {
         <Route path="teeth/:id" element={<TeethDetail/>}/>
         <Route path="bone/:id" element={<BoneDetail/>}/>
         <Route path="awram/:id" element={<AwramDetail/>}/>
+        <Route path="brain/:id" element={<BrainDetail/>}/>
+        <Route path="heart/:id" element={<HeartDetail/>}/>
+        <Route path="eye/:id" element={<EyeDetail/>}/>
+        <Route path="surgry/:id" element={<SurgryDetail/>}/>
+        <Route path="speach/:id" element={<SpeachDetail/>}/>
+        <Route path="chest/:id" element={<ChestDetail/>}/>
+        <Route path="stomch/:id" element={<StomchDetail/>}/>
+        <Route path="bute/:id" element={<ButeDetail/>}/>
+        <Route path="woman/:id" element={<WomanDetail/>}/>
+        <Route path="food/:id" element={<FoodDetail/>}/>
+        <Route path="nose/:id" element={<NoseDetail/>}/>
+        <Route path="child/:id" element={<ChildDetail/>}/>
+        <Route path="urologist/:id" element={<UrologistDetail/>}/>
+        <Route path="gland/:id" element={<GlandsDetail/>}/>
+        <Route path="nutural/:id" element={<NuturlDetail/>}/>
+        <Route path="psychological/:id" element={<PsycholoDetail/>}/>
+
+
 
 
         <Route path="/bmr" element={<Calculator/>} />

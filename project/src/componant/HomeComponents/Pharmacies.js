@@ -1,89 +1,186 @@
 import Header from "../AllBars/Header";
 import "../DoctorsPage/AllDoc.css";
-import PHAR from "../Photos/PHAR.jpg"
 import Footer from "../AllBars/Footer";
-import { Fragment } from "react";
+import { useEffect, useState } from "react";
 import ScrollToTopButton from "../SomeStyles/ScrollToTopButton";
+import axios from 'axios';
+import DOCM from "../Photos/Pharmalogo.png";
+import { toast } from "react-toastify";
+import Stars from "../SomeStyles/Stars";
+import { Link } from "react-router-dom/dist";
 
+
+const itemsPerPage = 5;
 
 export default function Pharmacies() {
 
+  const options = {
+    position: "bottom-left",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  };
+  
 
-    const head1={
-        color: '#000000',
-        fontSize: 33,
-        fontWeight: 'bold',
-        margin: '1%',
-        textAlign: 'center',
-        position: 'relative',
-        top: 60,
+  const [doctorsData, setDoctorsData] = useState([]);
+  const [filteredDoctors, setFilteredDoctors] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading, setIsLoading] = useState(true);
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/Pharmacies");
+        setDoctorsData(response.data);
+        setFilteredDoctors(response.data.slice(0, itemsPerPage));
+        setIsLoading(false); // تحديث عند اكتمال التحميل
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setIsLoading(false); // في حالة حدوث خطأ
+      }
+    };
+  
+    fetchData();
+  }, []);
+
+  const handleSearch = (doctorName) => {
+    const filteredData = doctorsData.filter((doctor) =>
+      doctor.Labname.toLowerCase().includes(doctorName.toLowerCase())
+    );
+    if (filteredData.length === 0) {
+      console.log("No results found!");
+      toast.error("No results found!", options);
     }
-    const head2={
-        color: '#ff0505',
-        fontSize: 30,
-        margin: '5%',
-        textAlign: 'center',
-        position: 'relative',
-        top: 40,
+
+    setFilteredDoctors(filteredData.slice(0, itemsPerPage));
+    setCurrentPage(1);
+  };
+
+  const handlePreviousPage = () => {
+    if (currentPage > 1) {
+      const startIndex = (currentPage - 2) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      setFilteredDoctors(doctorsData.slice(startIndex, endIndex));
+      setCurrentPage(currentPage - 1);
     }
+  };
 
+  const handleNextPage = () => {
+    const startIndex = currentPage * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    setFilteredDoctors(doctorsData.slice(startIndex, endIndex));
+    setCurrentPage(currentPage + 1);
+  };
 
-    return (
-        <Fragment>
-    <Header />
-    <div className="header-D">
-    <h1>نُقدم لك دواءً لكل داء، ونُشاركك رحلتك نحو الصحة والعافية</h1>
-    <h5 style={{color:"#ff0505",fontSize:"25px"}}>...مع أشهر الصيدليات</h5>
-    </div>
-    <div className="landing-D">
-        <div className="container-D">
-        <div className="search-box-D">
-        <input type="text"placeholder="... بحث بالأسم" className="search-input-D"onkeyup="search()"/>
+  const doctorElements = filteredDoctors.map((doctor, index) => (
+    <div className="Doctors-D" key={index}>
+      <div className="doctors-data-D">
+      <h1>{doctor.pharmacyename}</h1>
+      <h3>{doctor.phonenumber}</h3>
+      <h4>{doctor.location}</h4>
+        <h4><Stars/></h4>
       </div>
-        </div>
-        </div>
-    <div className="doctors-list-D">
-    <div className="container-D">
-        <div className="Doctors-D">
-    <div className="doctors-data-D">
-        <h1>ابن سينا فارما — فرع بني سويف</h1>
-        <h3>082 2285541</h3>
-        <h4>مركز بنى سويف، محافظة بني سويف 2731106، مصر, بياض العرب, المنيا - الواسطى</h4>
-    </div>
-        <img src={PHAR} alt=""/>
-        <button onclick="document.location=''">التفاصيل</button>
-    </div>
-    </div>
-    </div>
-    <div className="doctors-list-D">
-        <div className="container-D">
-            <div className="Doctors-D">
-        <div className="doctors-data-D">
-            <h1>شركة الإتحاد لتجارة وتوزيع الأدوية</h1>
-            <h3>011 55973307</h3>
-            <h4> مصر, بنى سويف الجديدة, بياض العرب، بني سويف</h4>
-        </div>
-        <img src={PHAR} alt=""/>
-            <button onclick="document.location=''">التفاصيل</button>
-        </div>
-        </div>
-        </div>
+        <img src={DOCM} alt='' />
 
-    <div className="doctors-list-D">
+
+      <div className="button-lovation">
+      <Link to={`./${doctor._id}`}>
+      <button className="buttondet">
+      <span className="button_lg">
+        <span className="button_sl" />
+        <span className="button_text">التفــــاصيل</span>
+      </span>
+    </button>
+    </Link>
+    </div>
+    </div>
+  ));
+
+
+
+
+
+  return (
+    <div>
+    <Header />
+    <div className="header-D"></div>
+    <h1 className="txtdoc">مع أشهر الصيدليات في بني سويف</h1>
+    <h1 style={{ color: '#ff0505', textAlign: 'center' }}>نُقدم لك دواءً لكل داء، ونُشاركك رحلتك نحو الصحة والعافية</h1>
+    <div className="landing-D">
     <div className="container-D">
-        <div className="Doctors-D">
-        <div className="doctors-data-D">
-    <h1>بارك فيل للأدوية</h1>
-    <h3>01276500500</h3>
-    <h4>ش الروضة متفرع من احمد عرابي</h4>
+    <div className="InputContainer">
+    <input type="text" name="text" className="inputss" id="inputss" placeholder="....ابحــث" onInput={(event) => handleSearch(event.target.value)}/>
+    <label htmlFor="input" className="labelforsearch">
+      <svg viewBox="0 0 512 512" className="searchIcon"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" /></svg>
+      </label>
+      <div className="border" />
+      <button className="micButton"><svg viewBox="0 0 384 512" className="micIcon"><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z" /></svg>
+      </button>
+      </div>
+
+
+
         </div>
-        <img src={PHAR} alt=""/>
-    <button onclick="document.location=''">التفاصيل</button>
-    </div>
-    </div>
-    </div>
-    <ScrollToTopButton/>
-  <Footer/>
-        </Fragment>
-        )
-    }
+      </div>
+
+      <div className="doctors-list-D">
+        <div className="container-D">{doctorElements}</div>
+        {isLoading && 
+          <div className="loaderload">
+          <div className="wrapperload">
+            <div className="circle" />
+            <div className="line-1" />
+            <div className="line-2" />
+            <div className="line-3" />
+            <div className="line-4" />
+          </div>
+        </div>
+        }
+
+      </div>
+
+      <div className="pagination-buttons">
+
+    <div className="btn-conteinerr" onClick={handleNextPage}
+    disabled={filteredDoctors.length < itemsPerPage}>
+    <a href="#" className="btn-content">
+      <span className="icon-arrow">
+        <svg xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 66 43" height="30px" width="30px">
+          <g fillRule="evenodd" fill="none" strokeWidth={1} stroke="none" id="arrow">
+            <path fill="#9ee5fa" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" id="arrow-icon-one" />
+            <path fill="#9ee5fa" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" id="arrow-icon-two" />
+            <path fill="#9ee5fa" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" id="arrow-icon-three" />
+          </g>
+        </svg>
+      </span>
+    </a>
+  </div>
+
+
+
+  <div className="btn-conteiner" onClick={handlePreviousPage} disabled={currentPage === 1}>
+  <a href="#" className="btn-content">
+    <span className="icon-arrow">
+      <svg xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 66 43" height="30px" width="30px">
+        <g fillRule="evenodd" fill="none" strokeWidth={1} stroke="none" id="arrow">
+          <path fill="#9ee5fa" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" id="arrow-icon-one" />
+          <path fill="#9ee5fa" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" id="arrow-icon-two" />
+          <path fill="#9ee5fa" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" id="arrow-icon-three" />
+        </g>
+      </svg>
+    </span>
+  </a>
+</div>
+
+      </div>
+<div style={{marginBottom:'1%'}}></div>
+          <ScrollToTopButton />
+      <Footer />
+</div>
+);
+}

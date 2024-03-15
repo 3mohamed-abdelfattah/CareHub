@@ -1,11 +1,13 @@
 const express = require('express')
-const bcrypt = require('bcryptjs')
 const cors = require('cors')
 const mongoose = require('mongoose')
+const validator = require('validator')
 
 const User = require('./models/userModel')
+const Complaint = require('./models/complaintModel')
 const Doctor = require('./models/doctorModel')
 const CheckAdmin = require('./middleware/functions')
+const dbName = 'doctors'
 
 require('dotenv').config() // to use the .env file
 
@@ -14,7 +16,6 @@ const { MongoClient, ObjectId } = require('mongodb');
 
 const PORT = process.env.PORT || 5000
 const url = process.env.MONGO_URL
-const dbName = "doctors"
 
 mongoose.connect(url).then(()=>{
   console.log('mongodb server start')
@@ -47,6 +48,16 @@ app.get('/api/users/:id', async (req, res) => {
     res.status(404).send('User not found');
   }
 })
+
+app.get('/api/user/:id', async (req, res) => {
+  const id = req.params.id;
+  const user = await User.findById(id).select('email , role');
+  if (user) {
+    res.json(user);
+  } else {
+    res.status(404).send('User not found');
+  }
+});
 
 app.post('/api/registeration', async (req, res) => {
 
@@ -107,11 +118,11 @@ app.post('/api/login', async (req, res) => {
 })
 
 
-// PATCH endpoint to update a user role by id *** by admin only ***
-app.patch('/api/updateRole/:id', CheckAdmin , async (req, res) => {
+// PATCH endpoint to update a user role by id 
+app.patch('/api/updateRole/:id', async (req, res) => {
 
-  const userID = req.params.id;
-  const { id , setRole } = req.body;
+  const id = req.params.id;
+  const { setRole } = req.body;
   if(setRole !== 'Admin' && setRole !== 'User' && setRole !== 'Master'){
     return res.status(400).send('invalid role')
   }
@@ -126,10 +137,9 @@ app.patch('/api/updateRole/:id', CheckAdmin , async (req, res) => {
 
 });
 
-// DELETE endpoint to delete a user by id *** by admin only ***
-app.delete('/api/delete/:id', CheckAdmin , async (req, res) => {
-  const { id } = req.body;
-  const userID = req.params.id;
+// DELETE endpoint to delete a user by id 
+app.delete('/api/delete/:id', async (req, res) => {
+  const id = req.params.id;
 
 
   const user = await User.findById(id);
@@ -142,9 +152,10 @@ app.delete('/api/delete/:id', CheckAdmin , async (req, res) => {
 
 } );
 
-// PATCH endpoint to update a user by id *** by admin only ***
-app.patch('/api/update/:id', CheckAdmin , async (req, res) => {
-  const { id, newFirstname, newLastname, newEmail , newPassword , newRole} = req.body;
+// PATCH endpoint to update a user by id 
+app.patch('/api/update/:id', async (req, res) => {
+  const id = req.params.id;
+  const { newFirstname, newLastname, newEmail , newPassword , newRole} = req.body;
   
   const userToUpdate = await User.findById(id);
   
@@ -175,20 +186,22 @@ app.patch('/api/update/:id', CheckAdmin , async (req, res) => {
 
 
 
-
 // gt all doctors by collection
 app.get('/api/doctors/:collection' , async(req , res)=>{
   const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
   try {
       await client.connect();
       const database = client.db(dbName);
-      const collection = database.collection(req.params.collection);
-      const result = await collection.find({}).toArray();
+
+      const collection = req.params.collection;
+
+      const collectionName = database.collection(collection);
+      const result = await collectionName.find({}).toArray()
       res.json(result)
+
   } finally {
       await client.close();
   }
-  
 })
 
 // get doctor by id and collection
@@ -273,7 +286,181 @@ app.patch('/api/doctors/:collection/:id', CheckAdmin, async (req, res) => {
 
 
 
+
+
+// get all hospitals from the database
+app.get('/api/hospitals', async (req, res) => {
+  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    const database = client.db("hospitals");
+
+    const hospitalsCollection = database.collection('hospital');
+
+    const hospitals = await hospitalsCollection.find({}).toArray();
+
+    res.json(hospitals);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  } finally {
+    await client.close();
+}
+});
+
+// get all Labs from the database
+app.get('/api/labs', async (req, res) => {
+  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    const database = client.db("Labs");
+
+    const LabsCollection = database.collection('lab');
+
+    const Labs = await LabsCollection.find({}).toArray();
+
+    res.json(Labs);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  } finally {
+    await client.close();
+}
+});
+
+// get all Clinics and medicalCenters from the database
+app.get('/api/clinics', async (req, res) => {
+  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    const database = client.db("Clinics_and_medicalCenters");
+
+    const ClinicsCollection = database.collection('Clinics_AND_Centers');
+
+    const Clinics = await ClinicsCollection.find({}).toArray();
+
+    res.json(Clinics);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  } finally {
+    await client.close();
+}
+});
+
+// get all pharmaceutical_companies from the database
+app.get('/api/companies', async (req, res) => {
+  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    const database = client.db("pharmaceutical_companies");
+
+    const companiesCollection = database.collection('companies');
+
+    const companies = await companiesCollection.find({}).toArray();
+
+    res.json(companies);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  } finally {
+    await client.close();
+}
+});
+
+// get all Radiologycenters from the database
+app.get('/api/radiologycenters', async (req, res) => {
+  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    const database = client.db("Radiologycenters");
+
+    const RadiologycentersCollection = database.collection('radiologycenter');
+
+    const Radiologycenters = await RadiologycentersCollection.find({}).toArray();
+
+    res.json(Radiologycenters);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  } finally {
+    await client.close();
+}
+});
+
+// get all Pharmacies from the database
+app.get('/api/Pharmacies', async (req, res) => {
+  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    const database = client.db("Pharmacies");
+
+    const PharmaciesCollection = database.collection('pharmacy');
+
+    const Pharmacies = await PharmaciesCollection.find({}).toArray();
+
+    res.json(Pharmacies);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  } finally {
+    await client.close();
+}
+});
+
+
+
+
+
+
+app.post('/api/complaint', async (req, res) => {
+  try {
+    const { name, email, phoneNumber, problem } = req.body;
+
+    if (!(name && email && phoneNumber && problem)) {
+      return res.status(400).send('All fields are required');
+    }
+
+    if (!validator.isEmail(email)) {
+      return res.status(400).send('Invalid email address');
+    }
+
+    const newComplaint = new Complaint({
+      name,
+      email,
+      phoneNumber,
+      problem
+    });
+
+    await newComplaint.save();
+
+    res.status(200).send('Complaint saved successfully');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+app.get('/api/complaint', async (req, res) => {
+  try {
+      const complaints = await Complaint.find({});
+      
+      res.status(200).json(complaints);
+  } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+});
+
+
 app.listen(PORT, () => {
   console.log('Server is running on port', PORT);
 });
+
 

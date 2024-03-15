@@ -54,7 +54,7 @@ export default function SignUp() {
       });
       if (res.status === 200) {
         window.localStorage.setItem('email', email);
-        window.location.pathname = "/";
+        window.location.pathname = `/${email}`;
         setPlayStatus(Sound.status.PLAYING);
         toast.success("Registration successful! You have been logged in.",options);
       }

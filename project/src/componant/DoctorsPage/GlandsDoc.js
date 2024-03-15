@@ -13,7 +13,7 @@ import ChatbotGland from "../ChatBOTS/ChatbotGland";
 
 const itemsPerPage = 5;
 
-export default function TeethDoc() {
+export default function GlandsDoc() {
   const mystyle = {
     overflow: 'hidden',
     transition: 'max-height 0.6s ease',
