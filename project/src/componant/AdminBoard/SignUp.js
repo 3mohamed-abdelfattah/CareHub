@@ -54,7 +54,7 @@ export default function SignUp() {
       });
       if (res.status === 200) {
         window.localStorage.setItem('email', email);
-        window.location.pathname = `/${email}`;
+        window.location.pathname = `/`;
         setPlayStatus(Sound.status.PLAYING);
         toast.success("Registration successful! You have been logged in.",options);
       }
@@ -86,30 +86,30 @@ export default function SignUp() {
   return (
     <Fragment>
         <Header />
-<form className="form" onSubmit={Submit}>
-  <p className="title">Register </p>
-  <p className="message">.Register now and get full access to our Website</p>
+<form className="formlogin" onSubmit={Submit}>
+  <p className="titlelogin">Register </p>
+  <p className="messagelogin">.Register now and get full access to our Website</p>
   <div className="flex">
   <label>
-  <input required placeholder type="text" className="input" id="last-name" value={lastname} onChange={(e)=>setlName(e.target.value)}/>
+  <input required placeholder type="text" className="inputlogin" id="last-name" value={lastname} onChange={(e)=>setlName(e.target.value)}/>
   <span>Lastname</span>
   </label>
   <label>
-    <input required placeholder type="text" className="input" id="first-name" value={firstname} onChange={(e)=>setfName(e.target.value)}/>
+    <input required placeholder type="text" className="inputlogin" id="first-name" value={firstname} onChange={(e)=>setfName(e.target.value)}/>
     <span>Firstname</span>
   </label>
   </div>  
   <label>
-    <input required placeholder type="email" className="input" id="email" value={email} onChange={(e)=>setemail(e.target.value)}/>
+    <input required placeholder type="email" className="inputlogin" id="email" value={email} onChange={(e)=>setemail(e.target.value)}/>
     <span>Email</span>
   </label> 
   {errors.email && <h1 className="error">{errors.email}</h1>}
   <label>
-    <input required placeholder type="password" className="input" id="password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
+    <input required placeholder type="password" className="inputlogin" id="password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
     <span>Password</span>
   </label>
   <label>
-    <input required placeholder type="password" className="input" id="password" value={passwordR} onChange={(e)=>setpasswordR(e.target.value)}/>
+    <input required placeholder type="password" className="inputlogin" id="password" value={passwordR} onChange={(e)=>setpasswordR(e.target.value)}/>
     <span>Confirm password</span>
   </label>
   {errors.password && <h1 className="error">{errors.password}</h1>}

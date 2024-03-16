@@ -5,6 +5,7 @@ import Signup from "../AdminBoard/SignUp"
 import { Link } from "react-router-dom";
 import { Fragment } from "react";
 import "./ChatHome.css"
+import Problems from "../AdminBoard/Problems";
 
 
 const StyledFragment ={
@@ -85,8 +86,9 @@ const StyledFragment ={
         {
           id: '11',
           component: (
-            <Signup/>
-          ),
+            <Link to ="/register">
+            <div>Go To Register</div>
+            </Link>          ),
           end:true,
         },
         {
@@ -132,23 +134,7 @@ const StyledFragment ={
         {
             id: '102',
             component: (
-              <Fragment>
-                <div className="form-container">
-                  <form className="form">
-                    <div className="form-group">
-                      <label htmlFor="email">Email</label>
-                      <input required name="email" id="email" type="text" />
-                      <label htmlFor="number">Number</label>
-                      <input required name="number" id="number" type="text" />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="textarea">?How Can We Help You</label>
-                      <textarea required cols={50} rows={10} id="textarea" name="textarea" defaultValue={"          "} />
-                    </div>
-                    <button type="submit" className="form-submit-btn">Submit</button>
-                  </form>
-                </div>
-              </Fragment>
+              <Link to="/support">Go To Support</Link>
             ),
             end: true,
           },

@@ -8,32 +8,6 @@ import styled from 'styled-components';
 import SOund from "../Photos/sound.mp3"
 import Footer from '../AllBars/Footer';
 import Header from '../AllBars/Header';
-import axios from 'axios';
-
-const sendSMS = async (to, message) => {
-  const accountSid = 'AC4733132059226d63403ca72b235dd749';
-  const authToken = '18cb20c7ce2dbac9f2ec2e297e34a6be';
-  const twilioNumber = '+14302373415';
-
-  const url = `https://api.twilio.com/2010-04-01/Accounts/${accountSid}/Messages.json`;
-
-  try {
-    const response = await axios.post(
-      url,
-      `To=${encodeURIComponent(to)}&From=${encodeURIComponent(twilioNumber)}&Body=${encodeURIComponent(message)}`,
-      {
-        headers: {
-          Authorization: `Basic ${Buffer.from(`${accountSid}:${authToken}`).toString('base64')}`,
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      }
-    );
-
-    console.log('SMS sent successfully:', response.data);
-  } catch (error) {
-    console.error('Error sending SMS:', error);
-  }
-};
 
 
 
@@ -144,8 +118,6 @@ const NotifiMED = () => {
 
     }
     setPlayStatus(Sound.status.PLAYING);
-    // Exemplary usage
-    sendSMS('+201101201745', 'Hello from your React app!');
 
   };
 
@@ -160,8 +132,6 @@ const NotifiMED = () => {
 
   useEffect(() => {
     localStorage.setItem('appointments', JSON.stringify(appointments));
-    sendSMS('+201101201745', 'Hello from your React app!');
-
   }, [appointments]);
 
   useEffect(() => {

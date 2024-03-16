@@ -2,10 +2,10 @@ import React, { Fragment, useState } from 'react';
 import "./adult.css"
 import Header from '../AllBars/Header';
 import Footer from '../AllBars/Footer';
-import IMGS from "../Photos/olderTwe.jpg"
+import IMGS from "../Photos/Adult1.png"
 import AD from "../Photos/AD.webp"
-import AD1 from "../Photos/AD1.jpg"
-import AD3 from "../Photos/AD3.jpg"
+import AD1 from "../Photos/Adult3.png"
+import AD3 from "../Photos/Adult2.png"
 import ADLT0 from "../Photos/ADLUT0.jpg";
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
@@ -36,7 +36,7 @@ export default function ModifiedAWR() {
     display: 'flex',
     flexDirection: 'row', // Arrange elements horizontally
     justifyContent: 'center', // Center elements within the container
-    margin: '50px'
+    marginTop: '7%'
   };
 
   const divStyle = {

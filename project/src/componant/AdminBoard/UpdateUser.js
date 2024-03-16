@@ -19,7 +19,7 @@ export default function UpdateUser() {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-      }
+    }
     
     const id =window.location.pathname.split("/").slice(-1)[0];
 
@@ -65,14 +65,14 @@ export default function UpdateUser() {
             }
         }
         }catch(err){
-           console.log(err)
+        console.log(err)
         }
         
     }
 
 
 
-  return (
+return (
     <Fragment>
         <h1 className="Updateuser">تحديث بيانات المستخدم</h1>
     <div className="parent1">
@@ -91,15 +91,21 @@ export default function UpdateUser() {
                 {password<4 && accept &&<p className="error">كلمة المرور اقصر من الازم</p>}
 
 
-                <input id="role" type="text" placeholder="Role" className="Updateuser" value={Role} onChange={(e)=>setRole(e.target.value)}/>
+                <select value={Role} onChange={(e)=>setRole(e.target.value)} className="Updateuser" style={{border:'#000'}}>
+                <option value="User">مستخدم</option>
+                <option value="Admin">مسؤول</option>
+                <option value="Master">مطور برمجيات</option>
+                <option value="Doctor">طبيب</option>
 
+                </select>
+            
 
                 <div style={{textAlign:"center"}}>
-                     <button type="submit"><span className="box">تحديث</span></button>
+                    <button type="submit"><span className="box">تحديث</span></button>
                 </div>
             </form>
         </div>
     </div>
     </Fragment>
-  )
-  }
+)
+}

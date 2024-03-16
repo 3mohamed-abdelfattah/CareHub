@@ -3,11 +3,11 @@ import Footer from '../AllBars/Footer';
 import  styles  from './AWR.module.css';
 
 import AWRA from "../Photos/ADU.png"
-import AWRC from "../Photos/CHIL.png"
+import AWRC from "../Photos/Children.png"
 import AWRI from "../Photos/EMP.png"
-import AWRM from "../Photos/THT.png"
-import AWRV from "../Photos/DSSI.png"
-import AWRW from "../Photos/WOM.png"
+import AWRM from "../Photos/teeth.png"
+import AWRV from "../Photos/glads.png"
+import AWRW from "../Photos/Centarlogo.png"
 import { Link } from 'react-router-dom';
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
@@ -18,7 +18,6 @@ const Pstyle={
   fontWeight: 'bold',
   color: '#000',
   fontSize: 30,
-  margin: '4%',
   textAlign: 'center',
 }
 
@@ -26,11 +25,10 @@ const Pstyle={
     <div>
     <Header/>
     <container>
-  <div className={ styles.landing }>
+  <div className={ styles.landing } style={{marginTop:'9%'}}>
     <div className={styles.introtext}>
-      <h1><b> التوعيه الصحيه</b></h1>
-      <p style={Pstyle}>نُؤمن بأنّ التوعية الصحية مسؤولية، ونسعى من خلال موقعنا إلى المساهمة في نشر الوعي بين أفراد المجتمع للحفاظ على صحة الجميع
-      </p>
+      <h1 style={{color:'#ff0505'}}><b>نُؤمن بأنّ التوعية الصحية مسؤولية</b></h1>
+      <p style={Pstyle}>ونسعى من خلال موقعنا إلى المساهمة في نشر الوعي بين أفراد المجتمع للحفاظ على صحة الجميع</p>
     </div>
   </div>
   <main id={styles.slider}>

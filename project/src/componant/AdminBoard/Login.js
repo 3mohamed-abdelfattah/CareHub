@@ -90,16 +90,16 @@ export default function Login() {
   return (
     <Fragment>
       <Header />
-      <form className="form" onSubmit={Submit}>
-        <p className="title">Login</p>
-        <p className="message">
+      <form className="formlogin" onSubmit={Submit}>
+        <p className="titlelogin">Login</p>
+        <p className="messagelogin">
           Login now and get full access to our Website
         </p>
         <label>
           <input
             required
             placeholder="Email"
-            className="input"
+            className="inputlogin"
             id="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -111,7 +111,7 @@ export default function Login() {
           <input
             required
             placeholder="Password"
-            className="input"
+            className="inputlogin"
             id="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}

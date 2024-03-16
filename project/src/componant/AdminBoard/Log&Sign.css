@@ -1,4 +1,4 @@
-.form {
+.formlogin {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -11,7 +11,7 @@
     margin-top: 7%;
 }
   
-  .title {
+  .titlelogin {
     font-size: 28px;
     color: #1F5357;
     font-weight: 600;
@@ -23,7 +23,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
-  .title::before,.title::after {
+  .titlelogin::before,.titlelogin::after {
     position: absolute;
     content: "";
     height: 16px;
@@ -33,7 +33,7 @@
     background-color: #1F5357;
   }
   
-  .title::before {
+  .titlelogin::before {
     width: 18px;
     height: 18px;
     background-color: #1F5357;
@@ -41,14 +41,14 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
-  .title::after {
+  .titlelogin::after {
     width: 18px;
     height: 18px;
     animation: pulse 1s linear infinite;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
-  .message, .signin {
+  .messagelogin, .signin {
     color: rgba(88, 87, 87, 0.822);
     font-size: 14px;
   }
@@ -74,11 +74,11 @@
     gap: 6px;
   }
   
-  .form label {
+  .formlogin label {
     position: relative;
   }
   
-  .form label .input {
+  .formlogin label .inputlogin {
     width: 100%;
     padding: 10px 10px 20px 150px;
     outline: 0;
@@ -86,7 +86,7 @@
     border-radius: 10px;
   }
   
-  .form label .input + span {
+  .formlogin label .inputlogin + span {
     position: absolute;
     left: 10px;
     top: 15px;
@@ -97,18 +97,18 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
-  .form label .input:placeholder-shown + span {
+  .formlogin label .inputlogin:placeholder-shown + span {
     top: 15px;
     font-size: 0.9em;
   }
   
-  .form label .input:focus + span,.form label .input:valid + span {
+  .formlogin label .inputlogin:focus + span,.formlogin label .inputlogin:valid + span {
     top: 30px;
     font-size: 0.7em;
     font-weight: 600;
   }
   
-  .form label .input:valid + span {
+  .formlogin label .inputlogin:valid + span {
     color: green;
   }
   

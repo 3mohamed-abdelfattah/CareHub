@@ -80,9 +80,9 @@ export default function Centers() {
   const doctorElements = filteredDoctors.map((doctor, index) => (
     <div className="Doctors-D" key={index}>
       <div className="doctors-data-D">
-      <h1>{doctor.centername}</h1>
-      <h3>{doctor.phonenumber}</h3>
-      <h4>{doctor.location}</h4>
+      <h1>{doctor.name}</h1>
+      <h3>{doctor.phoneNumber}</h3>
+      <h4>{doctor.address}</h4>
         <h4><Stars/></h4>
       </div>
         <img src={DOCM} alt='' />

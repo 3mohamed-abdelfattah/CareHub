@@ -91,6 +91,8 @@ import StomchDetail from './componant/DoctorsPage/DoctorsDetails/StomchDetail';
 import SurgryDetail from './componant/DoctorsPage/DoctorsDetails/SurgryDetail';
 import UrologistDetail from './componant/DoctorsPage/DoctorsDetails/UrologistDetail';
 import WomanDetail from './componant/DoctorsPage/DoctorsDetails/WomanDetail';
+import Problems from './componant/AdminBoard/Problems';
+import ShowProblem from './componant/AdminBoard/ShowProblem';
 
 
 
@@ -106,6 +108,7 @@ export default function App() {
           <Route path="user" element={<Users />} />
           <Route path="user/:id" element={<UpdateUser />} />
           <Route path="users/create" element={<CreateUser />} />
+          <Route path="problems" element={<ShowProblem />} />
         </Route>
 
 
@@ -186,11 +189,13 @@ export default function App() {
         <Route path="/arti2" element={<Arti2/>} />
         <Route path="/arti3" element={<Arti3/>} />
 
-        <Route path="/notifimid" element={<NotifiMED/>} />
-        <Route path="/gamehl" element={<HealthGame/>} />
+        <Route path="/notifimid" element={<NotifiMED/>} />      
+        <Route path="/gamehl" element={<HealthGame/>} />                              {/*<-----------delete this*/}
 
 
         <Route path="/fawry" element={<Fawry/>} />
+        <Route path="/support" element={<Problems/>} />
+
 
       </Routes>
     </div>
