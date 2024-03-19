@@ -3,6 +3,9 @@ import Header from "../AllBars/Header"
 import "./HomePage.css"
 import { Link } from "react-router-dom"
 import { useSpring, animated } from 'react-spring';
+import Footer from "../AllBars/Footer"
+import ChatbotHome from '../ChatBOTS/ChatbotHome';
+import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
 //الصور
 import HOS from "../Photos/HOspital.png"
@@ -16,11 +19,6 @@ import TWEA from "../Photos/TEWAA.png"
 import CLC from "../Photos/CALC.png"
 import FOOC from "../Photos/FOOD.png"
 import TIME from "../Photos/time.png"
-
-import Footer from "../AllBars/Footer"
-import ChatbotHome from '../ChatBOTS/ChatbotHome';
-import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
-
 
 
 
@@ -76,7 +74,7 @@ export default function Home() {
                             <figure className="slide-image">
                                 <img src={DOC} alt=""/>
                             </figure>
-                            <h4 className="slide-name">اطباء</h4>
+                            <h4 className="slide-name">أطباء</h4>
                         </div>
                     </Link>
                     </div>
@@ -147,7 +145,7 @@ export default function Home() {
                         <figure className="slide-image">
                             <img src={FOOC} alt=""/>
                         </figure>
-                        <h4 className="slide-name">الدليل الغذائي </h4>
+                        <h4 className="slide-name">الدليل الغذائي</h4>
                     </div>
                     </Link>
                     </div>
