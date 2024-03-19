@@ -93,6 +93,14 @@ import UrologistDetail from './componant/DoctorsPage/DoctorsDetails/UrologistDet
 import WomanDetail from './componant/DoctorsPage/DoctorsDetails/WomanDetail';
 import Problems from './componant/AdminBoard/Problems';
 import ShowProblem from './componant/AdminBoard/ShowProblem';
+import Orders from './componant/AdminBoard/Orders';
+import ShowOrder from './componant/AdminBoard/ShowOrder';
+import PharmaDetails from './componant/HomeComponents/HomeCompDetails/PharmaDetails';
+import LabsDetails from './componant/HomeComponents/HomeCompDetails/LabDetail';
+import HospitalDetails from './componant/HomeComponents/HomeCompDetails/HosipitalDetails';
+import CompanyDetails from './componant/HomeComponents/HomeCompDetails/CompanyDetail';
+import CentarDetails from './componant/HomeComponents/HomeCompDetails/CentarDetail';
+import OrdersDoc from './componant/AdminBoard/OrdersDoc';
 
 
 
@@ -109,6 +117,7 @@ export default function App() {
           <Route path="user/:id" element={<UpdateUser />} />
           <Route path="users/create" element={<CreateUser />} />
           <Route path="problems" element={<ShowProblem />} />
+          <Route path="orders" element={<ShowOrder />} />
         </Route>
 
 
@@ -161,6 +170,35 @@ export default function App() {
         <Route path="nutural/:id" element={<NuturlDetail/>}/>
         <Route path="psychological/:id" element={<PsycholoDetail/>}/>
 
+        <Route path="pharmacies/:id" element={<PharmaDetails/>}/>
+        <Route path="labs/:id" element={<LabsDetails/>}/>
+        <Route path="company/:id" element={<CompanyDetails/>}/>
+        <Route path="centers/:id" element={<CentarDetails/>}/>
+        <Route path="hospital/:id" element={<HospitalDetails/>}/>
+
+
+        <Route path="pharmacies/:id/ordernow" element={<Orders/>}/>
+        <Route path="labs/:id/ordernow" element={<Orders/>}/>
+        <Route path="teeth/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="bone/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="awram/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="brain/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="heart/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="eye/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="surgry/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="speach/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="chest/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="stomch/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="bute/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="woman/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="food/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="nose/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="child/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="urologist/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="gland/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="nutural/:id/ordernow" element={<OrdersDoc/>}/>
+        <Route path="psychological/:id/ordernow" element={<OrdersDoc/>}/>
+
 
 
 
@@ -195,7 +233,7 @@ export default function App() {
 
         <Route path="/fawry" element={<Fawry/>} />
         <Route path="/support" element={<Problems/>} />
-
+        <Route path="/requests" element={<Orders/>} />
 
       </Routes>
     </div>

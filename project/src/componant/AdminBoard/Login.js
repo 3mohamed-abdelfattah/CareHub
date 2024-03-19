@@ -15,6 +15,7 @@ export default function Login() {
   const [errors, setErrors] = useState({});
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
 
+  const navigate = useNavigate();
   const nav = useNavigate();
   const user = useContext(User);
 
@@ -42,8 +43,10 @@ export default function Login() {
         setPlayStatus(Sound.status.PLAYING);
         toast.success("successful! You have been logged in.", options);
         window.localStorage.setItem("email", email);
-        window.location.pathname = `/${email}`;
-      } else {
+        setTimeout(() => {
+          navigate('/'); // Redirect using useNavigate hook
+        }, 800);
+            } else {
         // Handle unexpected successful response (for robustness)
         console.warn("Unexpected successful response:", res);
       }
@@ -80,7 +83,6 @@ export default function Login() {
         }
       } else {
         setPlayStatus(Sound.status.PLAYING);
-        toast.error("Network error. Please check your internet connection.", options);
       }
 
       setAccept(true);

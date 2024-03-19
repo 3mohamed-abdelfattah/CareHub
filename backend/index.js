@@ -2,11 +2,20 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const validator = require('validator')
+const multer = require('multer');
+
 
 const User = require('./models/userModel')
 const Complaint = require('./models/complaintModel')
 const Doctor = require('./models/doctorModel')
+const Order = require('./models/orderModel')
+
+
 const CheckAdmin = require('./middleware/functions')
+
+const storage = multer.memoryStorage(); 
+const upload = multer({ storage: storage });
+
 const dbName = 'doctors'
 
 require('dotenv').config() // to use the .env file
@@ -165,7 +174,7 @@ app.patch('/api/update/:id', async (req, res) => {
     if (newLastname) userToUpdate.lastname = newLastname;
     if (newEmail) userToUpdate.email = newEmail;
     if (newRole){
-      if(newRole !== 'Admin' && newRole !== 'User' && newRole !== 'Master'){
+      if(newRole !== 'Admin' && newRole !== 'User' && newRole !== 'Master' && newRole !== 'Doctor' ){
         return res.status(400).send('invalid role')
       }
       userToUpdate.role = newRole;
@@ -309,6 +318,32 @@ app.get('/api/hospitals', async (req, res) => {
 }
 });
 
+//get hospitals by id
+app.get('/api/hospitals/:id', async (req, res) => {
+  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    const database = client.db("hospitals");
+
+    const hospitalsCollection = database.collection('hospital');
+
+    const id = req.params.id;
+
+    const hospital = await hospitalsCollection.findOne({_id : new ObjectId(id)});
+    if(hospital){
+      res.json(hospital)
+    } else {
+      res.status(404).send('Hospital not found');
+    }
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  } finally {
+    await client.close();
+}
+});
+
 // get all Labs from the database
 app.get('/api/labs', async (req, res) => {
   const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -321,6 +356,32 @@ app.get('/api/labs', async (req, res) => {
     const Labs = await LabsCollection.find({}).toArray();
 
     res.json(Labs);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  } finally {
+    await client.close();
+}
+});
+
+//get labs by id
+app.get('/api/labs/:id', async (req, res) => {
+  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    const database = client.db("Labs");
+
+    const LabsCollection = database.collection('lab');
+
+    const id = req.params.id;
+
+    const lab = await LabsCollection.findOne({_id : new ObjectId(id)});
+    if(lab){
+      res.json(lab)
+    } else {
+      res.status(404).send('Lab not found');
+    }
 
   } catch (error) {
     console.error(error);
@@ -351,6 +412,32 @@ app.get('/api/clinics', async (req, res) => {
 }
 });
 
+//get clinics by id
+app.get('/api/clinics/:id', async (req, res) => {
+  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    const database = client.db("Clinics_and_medicalCenters");
+
+    const ClinicsCollection = database.collection('Clinics_AND_Centers');
+
+    const id = req.params.id;
+
+    const clinic = await ClinicsCollection.findOne({_id : new ObjectId(id)});
+    if(clinic){
+      res.json(clinic)
+    } else {
+      res.status(404).send('Clinic not found');
+    }
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  } finally {
+    await client.close();
+}
+});
+
 // get all pharmaceutical_companies from the database
 app.get('/api/companies', async (req, res) => {
   const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -363,6 +450,32 @@ app.get('/api/companies', async (req, res) => {
     const companies = await companiesCollection.find({}).toArray();
 
     res.json(companies);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  } finally {
+    await client.close();
+}
+});
+
+//get companies by id
+app.get('/api/companies/:id', async (req, res) => {
+  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    const database = client.db("pharmaceutical_companies");
+
+    const companiesCollection = database.collection('companies');
+
+    const id = req.params.id;
+
+    const company = await companiesCollection.findOne({_id : new ObjectId(id)});
+    if(company){
+      res.json(company)
+    } else {
+      res.status(404).send('Company not found');
+    }
 
   } catch (error) {
     console.error(error);
@@ -393,6 +506,32 @@ app.get('/api/radiologycenters', async (req, res) => {
 }
 });
 
+//get radiologycenters by id
+app.get('/api/radiologycenters/:id', async (req, res) => {
+  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    const database = client.db("Radiologycenters");
+
+    const RadiologycentersCollection = database.collection('radiologycenter');
+
+    const id = req.params.id;
+
+    const radiologycenter = await RadiologycentersCollection.findOne({_id : new ObjectId(id)});
+    if(radiologycenter){
+      res.json(radiologycenter)
+    } else {
+      res.status(404).send('Radiologycenter not found');
+    }
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  } finally {
+    await client.close();
+}
+});
+
 // get all Pharmacies from the database
 app.get('/api/Pharmacies', async (req, res) => {
   const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -414,8 +553,78 @@ app.get('/api/Pharmacies', async (req, res) => {
 }
 });
 
+//get pharmacies by id
+app.get('/api/Pharmacies/:id', async (req, res) => {
+  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    const database = client.db("Pharmacies");
 
+    const PharmaciesCollection = database.collection('pharmacy');
 
+    const id = req.params.id;
+
+    const pharmacy = await PharmaciesCollection.findOne({_id : new ObjectId(id)});
+    if(pharmacy){
+      res.json(pharmacy)
+    } else {
+      res.status(404).send('Pharmacy not found');
+    }
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  } finally {
+    await client.close();
+}
+});
+
+// get all Clinics and medicalCenters from the database
+app.get('/api/c&mc', async (req, res) => {
+  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    const database = client.db("Clinics_and_medicalCenters");
+
+    const PharmaciesCollection = database.collection('Clinics_AND_Centers');
+
+    const Pharmacies = await PharmaciesCollection.find({}).toArray();
+
+    res.json(Pharmacies);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  } finally {
+    await client.close();
+}
+});
+
+//get c&mc by id
+app.get('/api/c&mc/:id', async (req, res) => {
+  const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true });
+  try {
+    await client.connect();
+    const database = client.db("Clinics_and_medicalCenters");
+
+    const PharmaciesCollection = database.collection('Clinics_AND_Centers');
+
+    const id = req.params.id;
+
+    const pharmacy = await PharmaciesCollection.findOne({_id : new ObjectId(id)});
+    if(pharmacy){
+      res.json(pharmacy)
+    } else {
+      res.status(404).send('Clinic or medicalCenter not found');
+    }
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  } finally {
+    await client.close();
+}
+});
 
 
 
@@ -458,6 +667,64 @@ app.get('/api/complaint', async (req, res) => {
     }
 });
 
+
+app.post('/api/orders', upload.single('file'), async (req, res) => {
+  try {
+    const { name, phoneNumber, address, order } = req.body;
+
+    if (!(name && phoneNumber && address && order)) {
+      return res.status(400).send('All fields are required');
+    }
+
+    const file = req.file; 
+
+    if (!file) {
+      return res.status(400).send('No file uploaded.');
+    }
+
+
+    const newOrder = new Order({
+      name,
+      phoneNumber,
+      address,
+      order,
+      file: {
+        data: file.buffer,
+        contentType: file.mimetype,
+      },
+    });
+
+    await newOrder.save();
+
+    res.status(201).send('Order saved successfully');
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+app.get('/api/orders', async (req, res) => {
+  try {
+      const orders = await Order.find({});
+      
+      res.status(200).json(orders);
+  } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+});
+
+app.get('/api/orders/:id', async (req, res) => {
+  const id = req.params.id;
+  const order = await Order.findById(id);
+  if (order) {
+    res.json(order);
+  }
+  else {
+    res.status(404).send('Order not found');
+  }
+}
+);
 
 app.listen(PORT, () => {
   console.log('Server is running on port', PORT);

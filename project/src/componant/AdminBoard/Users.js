@@ -3,7 +3,9 @@ import axios from "axios";
 import { Link } from "react-router-dom"
 import React from 'react';
 import "./Dashboard.css"
-
+import { ToastContainer,toast } from 'react-toastify';
+import Sound from 'react-sound';
+import NOtifi from "../Photos/sound.mp3"
 
 
 
@@ -11,7 +13,18 @@ import "./Dashboard.css"
 export default function Users() {
     const [user,setUser]=useState([]);
     const [runUseEffect,setRun] = useState(0);
+    const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
 
+
+    const options = {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    }  
 
     useEffect(() => {
       fetch("http://localhost:5000/api/users")
@@ -27,6 +40,8 @@ async function deleteUser(id) {
         if(res.status===200){
             setRun((prev)=>prev+1);
             console.log(res);
+            setPlayStatus(Sound.status.PLAYING);
+            toast.success("تم حذف المستخدم بنجاح",options);
         }
     }catch{
         console.log(id);
@@ -94,6 +109,12 @@ const showUsers = user.map((user,index) =>(
             {showUsers}
         </tbody>
       </table>
+      <Sound
+      url={NOtifi}
+      playStatus={playStatus}
+      onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
+    />
     </div>
+    
   )
 }

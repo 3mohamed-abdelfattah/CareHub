@@ -6,6 +6,7 @@ import DOCM from "../../Photos/doctorphoto.png";
 import DOCW from "../../Photos/doctorimg.png";
 import Checkout from '../../SomeStyles/Checkout';
 import Stars from '../../SomeStyles/Stars';
+import { Link } from 'react-router-dom';
 
 export default function TeethDetail() {
   const id = window.location.pathname.split("/").slice(-1)[0];
@@ -62,7 +63,9 @@ export default function TeethDetail() {
                   <img src={DOCW} alt=''/>
                 )}
                 <div className="buttonsD1">
+                <Link to='./ordernow'>
                 <Checkout/>
+                </Link>
                 </div>
 
                 <h1 style={{ color: '#1F5357'}}>{doctorData.name}</h1>

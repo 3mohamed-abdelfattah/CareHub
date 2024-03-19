@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useState,useEffect, Fragment } from "react";
 import React from 'react';
-import {toast } from 'react-toastify';
+import { ToastContainer,toast } from 'react-toastify';
+import Sound from 'react-sound';
+import NOtifi from "../Photos/sound.mp3"
+import { useNavigate } from "react-router-dom";
 
 export default function UpdateUser() {
     const [firstname,setfName]=useState('');
@@ -10,6 +13,8 @@ export default function UpdateUser() {
     const [password,setpassword]=useState('');
     const [Role,setRole]=useState('');
     const [accept,setaccept]=useState(false);
+    const navigate = useNavigate();
+    const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
 
     const options = {
         position: "bottom-left",
@@ -60,8 +65,11 @@ export default function UpdateUser() {
             });
             if(res.status=== 200 ){
                 window.localStorage.setItem("email",email);
-                window.location.pathname="/dashboard/user";
-                toast.success("Registration successful! You have been logged in.",options);
+                setTimeout(() => {
+                    navigate('/dashboard/user'); // Redirect using useNavigate hook
+                }, 800);
+                setPlayStatus(Sound.status.PLAYING);
+                    toast.success(".تم تحديث بيانات المستخدم بنجاح",options);
             }
         }
         }catch(err){
@@ -106,6 +114,11 @@ return (
             </form>
         </div>
     </div>
+    <Sound
+    url={NOtifi}
+    playStatus={playStatus}
+    onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
+  />
     </Fragment>
 )
 }

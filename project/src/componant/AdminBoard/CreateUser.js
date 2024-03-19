@@ -4,6 +4,7 @@ import React from 'react';
 import { ToastContainer,toast } from 'react-toastify';
 import Sound from 'react-sound';
 import NOtifi from "../Photos/sound.mp3"
+import { useNavigate } from "react-router-dom";
 
 export default function CreateUser() {
     const [firstname,setfName]=useState('');
@@ -14,7 +15,8 @@ export default function CreateUser() {
     const [accept, setAccept] = useState(false);
     const [errors, setErrors] = useState({}); // State to hold specific errors
     const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
-  
+    const navigate = useNavigate();
+
   
     const options = {
       position: "bottom-left",
@@ -42,9 +44,11 @@ export default function CreateUser() {
         });
         if (res.status === 200) {
           window.localStorage.setItem('email', email);
-          window.location.pathname = `/dashboard/user`;
+          setTimeout(() => {
+            navigate('/dashboard/user'); // Redirect using useNavigate hook
+        }, 800);
           setPlayStatus(Sound.status.PLAYING);
-          toast.success("Registration successful! You have been logged in.",options);
+          toast.success(".تم انشاء المستخدم بنجاح",options);
         }
         
       } catch (Err) {

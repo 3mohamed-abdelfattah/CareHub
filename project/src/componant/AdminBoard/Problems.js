@@ -1,11 +1,12 @@
 import React from 'react'
 import Header from '../AllBars/Header'
 import Footer from '../AllBars/Footer'
-import { useState, useContext, Fragment } from "react";
+import { useState, Fragment } from "react";
 import axios from "axios";
 import { ToastContainer,toast } from 'react-toastify';
 import Sound from 'react-sound';
 import NOtifi from "../Photos/sound.mp3"
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Problems() {
@@ -18,6 +19,7 @@ export default function Problems() {
     const [accept, setAccept] = useState(false);
     const [errors, setErrors] = useState({}); // State to hold specific errors
     const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
+    const navigate = useNavigate();
 
 
     const options = {
@@ -47,6 +49,9 @@ export default function Problems() {
         window.localStorage.setItem('email', email);
         setPlayStatus(Sound.status.PLAYING);
         toast.success("تم استلام استفسارك بنجاح! نحن نقدر اهتمامك بالتواصل معنا، وسنعمل جاهدين على الرد عليك في أقرب وقت ممكن",options);
+        setTimeout(() => {
+          navigate('/'); // Redirect using useNavigate hook
+        }, 2000);
         }
 
       } catch (Err) {
@@ -56,7 +61,7 @@ export default function Problems() {
           if (status === 400) {
             setPlayStatus(Sound.status.PLAYING);
             toast.error(
-              "This email is already registered. If you forgot your password, contact the support team",options
+              ".هناك مشكله في بياناتك يرجي مراجعه البيانات مره اخري",options
             );
           } else if (status === 401) {
             setPlayStatus(Sound.status.PLAYING);

@@ -82,21 +82,27 @@ PATCH http://localhost:5000/api/doctors/:collection/:id  <-- Admin/Master Id
 
                 -- Get hospitals info --
 GET http://localhost:5000/api/hospitals 
+GET http://localhost:5000/api/hospitals/:id 
 
             -- Get radiologycenters info --
 GET http://localhost:5000/api/radiologycenters
+GET http://localhost:5000/api/radiologycenters/:id
 
             -- Get companies info --
 GET http://localhost:5000/api/companies
+GET http://localhost:5000/api/companies/:id
 
         -- Get clinics info --
 GET http://localhost:5000/api/clinics
+GET http://localhost:5000/api/clinics/:id
 
             -- Get labs info --
 GET http://localhost:5000/api/labs
+GET http://localhost:5000/api/labs:id
 
-            -- Get Pharmacies info --
-GET http://localhost:5000/api/Pharmacies
+            -- Get Clinics and medicalCenters info --
+GET http://localhost:5000/api/c&mc
+GET http://localhost:5000/api/c&mc/:id
 
 
 ______________________________________________________________________
@@ -113,3 +119,17 @@ POST http://localhost:5000/api/complaint
 GET http://localhost:5000/api/complaint
 
 
+______________________________________________________________________
+
+                -- Orders  --
+
+GET http://localhost:5000/api/orders
+
+GET http://localhost:5000/api/orders/:id <-- Order Id
+
+POST http://localhost:5000/api/orders
+    name
+    order
+    address
+    file
+    phoneNumber

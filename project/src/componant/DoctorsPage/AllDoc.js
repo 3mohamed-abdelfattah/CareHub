@@ -15,7 +15,7 @@ import GL from "../Photos/Awram.png"
 import BU from "../Photos/bute.png"
 import MS from "../Photos/WOMAN.png"
 import HEART from "../Photos/HEART.png"
-import SR from "../Photos/SURGRY.png"
+import SR from "../Photos/sergry.png"
 import EYE from "../Photos/EYE.png"
 import SUB from "../Photos/FOOD.png"
 import CHILD from "../Photos/Children.png"
@@ -67,9 +67,9 @@ export default function AllDoc() {
                                 <h4 className="slide-name">قلب</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
-                                    <p>60 دكتور</p>
+                                    <p>28 دكتور</p>
                                     <strong>•</strong>
-                                    <p>4 مراكز</p>
+                                    <p>0 مراكز</p>
                                 </div>
                                 </div>
                                 </Link>
@@ -83,9 +83,9 @@ export default function AllDoc() {
                                 <h4 className="slide-name">جراحه</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
-                                    <p>20 دكتور</p>
+                                    <p>99 دكتور</p>
                                     <strong>•</strong>
-                                    <p>5 مراكز</p>
+                                    <p>0 مراكز</p>
                                 </div>
                                 </div>
                                 </Link>
@@ -99,9 +99,9 @@ export default function AllDoc() {
                                 <h4 className="slide-name">عيون</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
-                                    <p>30 دكتور</p>
+                                    <p>38 دكتور</p>
                                     <strong>•</strong>
-                                    <p>1 مراكز</p>
+                                    <p>0 مراكز</p>
                                 </div>
                             </div>
                             </Link>
@@ -126,9 +126,9 @@ export default function AllDoc() {
                                 <h4 className="slide-name">عظام</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
-                                    <p>60 دكتور</p>
+                                    <p>19 دكتور</p>
                                     <strong>•</strong>
-                                    <p>4 مراكز</p>
+                                    <p>0 مراكز</p>
                                 </div>
                                 </div>
                                 </Link>
@@ -142,9 +142,9 @@ export default function AllDoc() {
                                 <h4 className="slide-name">تخاطب</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
-                                    <p>20 دكتور</p>
+                                    <p>4 دكتور</p>
                                     <strong>•</strong>
-                                    <p>5 مراكز</p>
+                                    <p>4 مراكز</p>
                                 </div>
                                 </div>
                                 </Link>
@@ -158,9 +158,9 @@ export default function AllDoc() {
                                 <h4 className="slide-name">صدر وجهاز تنفسي</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
-                                    <p>30 دكتور</p>
+                                    <p>19 دكتور</p>
                                     <strong>•</strong>
-                                    <p>1 مراكز</p>
+                                    <p>0 مراكز</p>
                                 </div>
                         </div>
                         </Link>
@@ -182,9 +182,9 @@ export default function AllDoc() {
                             <h4 className="slide-name">الأورام</h4>
                             <div className="custom-line"></div>
                             <div className="row">
-                                <p>60 دكتور</p>
+                                <p>6 دكتور</p>
                                 <strong>•</strong>
-                                <p>4 مراكز</p>
+                                <p>0 مراكز</p>
                             </div>
                             </div>
                             </Link>
@@ -198,9 +198,9 @@ export default function AllDoc() {
                             <h4 className="slide-name">تجميل</h4>
                             <div className="custom-line"></div>
                             <div className="row">
-                                <p>20 دكتور</p>
+                                <p>9 دكتور</p>
                                 <strong>•</strong>
-                                <p>5 مراكز</p>
+                                <p>4 مراكز</p>
                             </div>
                             </div>
                             </Link>
@@ -214,9 +214,9 @@ export default function AllDoc() {
                             <h4 className="slide-name">نساء وتوليد</h4>
                             <div className="custom-line"></div>
                             <div className="row">
-                                <p>30 دكتور</p>
+                                <p>20 دكتور</p>
                                 <strong>•</strong>
-                                <p>1 مراكز</p>
+                                <p>0 مراكز</p>
                             </div>
                     </div>
                     </Link>
@@ -238,9 +238,9 @@ export default function AllDoc() {
                                 <h4 className="slide-name">أسنان</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
-                                    <p>60 دكتور</p>
+                                    <p>65 دكتور</p>
                                     <strong>•</strong>
-                                    <p>4 مراكز</p>
+                                    <p>0 مراكز</p>
                                 </div>
                                 </div>
                                 </Link>
@@ -256,7 +256,7 @@ export default function AllDoc() {
                             <div className="row">
                                 <p>20 دكتور</p>
                                 <strong>•</strong>
-                                <p>5 مراكز</p>
+                                <p>0 مراكز</p>
                             </div>   
                             </div>
                             </Link>
@@ -270,9 +270,9 @@ export default function AllDoc() {
                             <h4 className="slide-name">باطنه</h4>
                             <div className="custom-line"></div>
                             <div className="row">
-                                <p>30 دكتور</p>
+                                <p>19 دكتور</p>
                                 <strong>•</strong>
-                                <p>1 مراكز</p>
+                                <p>0 مراكز</p>
                             </div>
                             </div>
                             </Link>
@@ -294,9 +294,9 @@ export default function AllDoc() {
                                 <h4 className="slide-name">اطفال</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
-                                    <p>20 دكتور</p>
+                                    <p>88 دكتور</p>
                                     <strong>•</strong>
-                                    <p>5 مراكز</p>
+                                    <p>0 مراكز</p>
                                 </div>
                                 </div>
                                 </Link>
@@ -310,9 +310,9 @@ export default function AllDoc() {
                                 <h4 className="slide-name">تغذية</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
-                                    <p>22 دكتور</p>
+                                    <p>9 دكتور</p>
                                     <strong>•</strong>
-                                    <p>3 مراكز</p>
+                                    <p>0 مراكز</p>
                                 </div>
                                 </div>
                                 </Link>
@@ -326,9 +326,9 @@ export default function AllDoc() {
                                 <h4 className="slide-name">علاج طبيعي</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
-                                    <p>33 دكتور</p>
+                                    <p>19 دكتور</p>
                                     <strong>•</strong>
-                                    <p>9 مراكز</p>
+                                    <p>0 مراكز</p>
                                 </div>
                         </div>
                         </Link>
@@ -352,9 +352,9 @@ export default function AllDoc() {
                                 <h4 className="slide-name">غدد</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
-                                    <p>60 دكتور</p>
+                                    <p>13 دكتور</p>
                                     <strong>•</strong>
-                                    <p>4 مراكز</p>
+                                    <p>0 مراكز</p>
                                 </div>
                                 </div>
                                 </Link>
@@ -368,9 +368,9 @@ export default function AllDoc() {
                                 <h4 className="slide-name">نفسي</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
-                                    <p>20 دكتور</p>
+                                    <p>13 دكتور</p>
                                     <strong>•</strong>
-                                    <p>5 مراكز</p>
+                                    <p>0 مراكز</p>
                                 </div>
                                 </div>
                                 </Link>
@@ -384,9 +384,9 @@ export default function AllDoc() {
                                 <h4 className="slide-name">جلدية وتناسلية</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
-                                    <p>30 دكتور</p>
+                                    <p>43 دكتور</p>
                                     <strong>•</strong>
-                                    <p>1 مراكز</p>
+                                    <p>0 مراكز</p>
                                 </div>
                         </div>
                         </Link>
@@ -410,9 +410,9 @@ export default function AllDoc() {
                             <h4 className="slide-name">مخ واعصاب</h4>
                             <div className="custom-line"></div>
                             <div className="row">
-                                <p>60 دكتور</p>
+                                <p>19 دكتور</p>
                                 <strong>•</strong>
-                                <p>4 مراكز</p>
+                                <p>0 مراكز</p>
                             </div>
                             </div>
                         </Link>

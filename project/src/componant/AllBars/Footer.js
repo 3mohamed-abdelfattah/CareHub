@@ -54,8 +54,8 @@ const Footer = () => {
                 <a href="/support" style={linkStyle}>
                   Support
                 </a>
-                <a href="/pricing" style={linkStyle}>
-                  Pricing
+                <a href="/requests" style={linkStyle}>
+                  Order
                 </a>
                 <a href="/documentation" style={linkStyle}>
                   Documentation

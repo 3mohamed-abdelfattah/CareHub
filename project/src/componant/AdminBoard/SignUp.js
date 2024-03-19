@@ -22,6 +22,7 @@ export default function SignUp() {
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
 
   const nav = useNavigate();
+  const navigate = useNavigate();
 
   // Get User
   const user = useContext(User);
@@ -54,7 +55,9 @@ export default function SignUp() {
       });
       if (res.status === 200) {
         window.localStorage.setItem('email', email);
-        window.location.pathname = `/`;
+        setTimeout(() => {
+          navigate('/'); // Redirect using useNavigate hook
+        }, 800);
         setPlayStatus(Sound.status.PLAYING);
         toast.success("Registration successful! You have been logged in.",options);
       }
