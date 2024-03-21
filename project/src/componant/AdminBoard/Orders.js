@@ -35,7 +35,7 @@ export default function Orders() {
             formData.append('name', name);
             formData.append('address', address);
             formData.append('phoneNumber', number);
-            formData.append('order', order);
+            formData.append('order', order.trim()); // تحديث القيمة بإزالة المسافات الزائدة
             formData.append('file', file); // إرفاق الملف مع بيانات النموذج
 
             let res = await axios.post("http://localhost:5000/api/orders", formData);

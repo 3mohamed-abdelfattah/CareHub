@@ -29,9 +29,8 @@ export default function ShowOrder() {
       <td>{user.phoneNumber}</td>
       <td>{user.order}</td>
       {/* Assuming 'file' is a base64 encoded string */}
-      <td><img src={`file.data:${user.contentType};base64,${user.file}`} alt="User File" /></td>
       <td>
-        <button className="neumorphism-btn" onClick={() => handleClick(user)}>View Problem</button>
+        <button className="neumorphism-btn" onClick={() => handleClick(user)}>View Order</button>
       </td>
     </tr>
   ));
@@ -46,7 +45,6 @@ export default function ShowOrder() {
             <th>Address</th>
             <th>Number</th>
             <th>Notes</th>
-            <th>Files</th>
             <th>Orders</th>
           </tr>
         </thead>
@@ -63,8 +61,8 @@ export default function ShowOrder() {
             <p><strong>الاسم:</strong> {selectedProblem.name}</p>
             <p><strong>العنوان:</strong> {selectedProblem.address}</p>
             <p><strong>الرقم:</strong> {selectedProblem.phoneNumber}</p>
-            <p><strong>ملاحظات:</strong> {selectedProblem.order}</p>
-            <p><strong>الطلب:</strong><img src={`file.data:${selectedProblem.contentType};base64,${selectedProblem.file}`} alt="User File" /></p>
+            <p><strong>الطلب:</strong> {selectedProblem.order}</p>
+            <p><strong>ملاحظات:</strong><img src={`file.data:${selectedProblem.contentType};base64,${selectedProblem.file}`} alt="User File" /></p>
           </div>
         </div>
       )}
