@@ -6,6 +6,7 @@ import DOCM from "../../Photos/LabsLogo.png";
 import Stars from '../../SomeStyles/Stars';
 import { Link } from 'react-router-dom';
 import CheckLabs from '../../SomeStyles/Checklabs';
+import PayPal from "../../Payment/PayPal";
 
 export default function LabsDetails() {
     const id = window.location.pathname.split("/").slice(-1)[0];
@@ -56,7 +57,10 @@ export default function LabsDetails() {
             <div className="testimonials" id="testimonials">
             <div className="containerD">
                 <div className="boxD">
-                    <img src={DOCM} alt='' />
+                    <img src={DOCM} alt=''/>
+                    <div className="buttonsD0">
+                    <PayPal/>
+                    </div>
                     <div className="buttonsD1">
                     <Link to='./ordernow'>
                     <CheckLabs/>

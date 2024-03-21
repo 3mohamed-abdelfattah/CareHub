@@ -7,6 +7,7 @@ import DOCW from "../../Photos/doctorimg.png";
 import Checkout from "../../SomeStyles/Checkout";
 import Stars from "../../SomeStyles/Stars";
 import { Link } from 'react-router-dom';
+import PayPal from "../../Payment/PayPal";
 
 export default function GlandsDetail() {
   const id = window.location.pathname.split("/").slice(-1)[0];
@@ -72,6 +73,9 @@ export default function GlandsDetail() {
                 ) : (
                   <img src={DOCW} alt="" />
                 )}
+                <div className="buttonsD0">
+                <PayPal/>
+                </div>
                 <div className="buttonsD1">
                 <Link to='./ordernow'>
                 <Checkout/>

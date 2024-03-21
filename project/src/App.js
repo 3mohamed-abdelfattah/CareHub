@@ -66,11 +66,7 @@ import StomkDo from './componant/Artifile/StomchDO';
 import Stomkasb from './componant/Artifile/Stomkasb';
 import Stomkgrs from './componant/Artifile/Stomkgrsom';
 
-
 import NotifiMED from './componant/HomeComponents/NotifiMed';
-import HealthGame from './componant/HomeComponents/HealthyGame';
-import Fawry from './componant/Payment/Fawry';
-
 
 import BoneDetail from './componant/DoctorsPage/DoctorsDetails/BoneDetail';
 import AwramDetail from './componant/DoctorsPage/DoctorsDetails/AwramDetail';
@@ -101,7 +97,6 @@ import HospitalDetails from './componant/HomeComponents/HomeCompDetails/Hosipita
 import CompanyDetails from './componant/HomeComponents/HomeCompDetails/CompanyDetail';
 import CentarDetails from './componant/HomeComponents/HomeCompDetails/CentarDetail';
 import OrdersDoc from './componant/AdminBoard/OrdersDoc';
-
 
 
 export default function App() {
@@ -228,10 +223,7 @@ export default function App() {
         <Route path="/arti3" element={<Arti3/>} />
 
         <Route path="/notifimid" element={<NotifiMED/>} />      
-        <Route path="/gamehl" element={<HealthGame/>} />                              {/*<-----------delete this*/}
 
-
-        <Route path="/fawry" element={<Fawry/>} />
         <Route path="/support" element={<Problems/>} />
         <Route path="/requests" element={<Orders/>} />
 

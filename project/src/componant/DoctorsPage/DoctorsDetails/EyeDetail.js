@@ -7,6 +7,7 @@ import DOCW from "../../Photos/doctorimg.png";
 import Checkout from "../../SomeStyles/Checkout";
 import Stars from "../../SomeStyles/Stars";
 import { Link } from 'react-router-dom';
+import PayPal from "../../Payment/PayPal";
 
 export default function EyeDetail() {
   const id = window.location.pathname.split("/").slice(-1)[0];
@@ -72,6 +73,9 @@ export default function EyeDetail() {
                 ) : (
                   <img src={DOCW} alt="" />
                 )}
+                <div className="buttonsD0">
+                <PayPal/>
+                </div>
                 <div className="buttonsD1">
                 <Link to='./ordernow'>
                 <Checkout/>
@@ -81,11 +85,11 @@ export default function EyeDetail() {
                 <h2>طبيب {doctorData.specialization}</h2>
                 <h3>{doctorData.phoneNumber}</h3>
                 <div style={{ position: "relative", right: "26%" }}>
-                  <Stars />
+                <Stars />
                 </div>
                 <p>{doctorData.address}</p>
-              </div>
-            </div>
+                </div>
+                </div>
             <hr className="hrdoc" />
             <div className="containerD">
               <div className="opinionsD">

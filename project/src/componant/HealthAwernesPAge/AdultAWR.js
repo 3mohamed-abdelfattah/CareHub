@@ -36,14 +36,16 @@ export default function ModifiedAWR() {
     display: 'flex',
     flexDirection: 'row', // Arrange elements horizontally
     justifyContent: 'center', // Center elements within the container
-    marginTop: '7%'
+    marginTop: '5%',
   };
 
   const divStyle = {
-    padding: '10px',
-    margin: '5px',
+    padding: '15px',
+    margin: '10px',
     cursor: 'pointer',
     textAlign: 'center', // Center text within each element
+    width:'400px'
+
   };
 
   return (

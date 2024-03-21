@@ -54,7 +54,7 @@ export default function CentarDetails() {
             <div className="testimonials" id="testimonials">
             <div className="containerD">
                 <div className="boxD">
-                    <img src={DOCM} alt='' />
+                    <img src={DOCM} alt='' style={{width:'230px'}}/>
                     <div className="buttonsD1">
                 </div>
                 <h1 style={{ color: '#1F5357'}}>{doctorData.name}</h1>

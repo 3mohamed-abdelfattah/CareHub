@@ -19,8 +19,8 @@ const orderSchema = new mongoose.Schema({
     required: true
   },
   file: {
-    data: Buffer, // Store file data as binary
-    contentType: String, // Store file content type
+    type: String,
+    required: false
   },
 });
 

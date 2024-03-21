@@ -400,7 +400,7 @@ const FoodList = () => {
         );
         setSelectedFoods(updatedSelectedFoods);
       };
-    
+
       const handleCalculateCalories = () => {
         const total = selectedFoods.reduce((acc, curr) => {
           return acc + Math.round((curr.calories * curr.quantity) / 100);
@@ -409,6 +409,7 @@ const FoodList = () => {
         setPlayStatus(Sound.status.PLAYING);
         toast.success(`إجمالي السعرات الحرارية: ${total}`,options);
   };
+
       const handleFoodRemove = (foodId) => {
         const updatedSelectedFoods = selectedFoods.filter(
           (food) => food.id !== foodId
@@ -416,7 +417,6 @@ const FoodList = () => {
         setSelectedFoods(updatedSelectedFoods);
       };
     
-
 
       const options = {
         position: "bottom-left",
@@ -428,8 +428,6 @@ const FoodList = () => {
         progress: undefined,
       }
     
-
-
 
 
 
@@ -449,8 +447,8 @@ const FoodList = () => {
             <h1 style={{ 
                 fontSize: '25px',
                 marginTop:"10%",
-                 color: 'black',
-                 fontWeight: 'bolder',
+                  color: 'black',
+                  fontWeight: 'bolder',
             }}>اتّخذ قرارات صحية واعية، من خلال معرفة سعرات كلّ لقمة</h1>
             <input
               type="text"

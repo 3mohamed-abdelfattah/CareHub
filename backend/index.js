@@ -3,7 +3,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const validator = require('validator')
 const multer = require('multer');
-
+const path = require('path');
 
 const User = require('./models/userModel')
 const Complaint = require('./models/complaintModel')
@@ -678,22 +678,13 @@ app.post('/api/orders', upload.single('file'), async (req, res) => {
 
     const file = req.file; 
 
-    if (!file) {
-      return res.status(400).send('No file uploaded.');
-    }
-
-
-    const newOrder = new Order({
+    const newOrder = await Order.create({
       name,
       phoneNumber,
       address,
       order,
-      file: {
-        data: file.buffer,
-        contentType: file.mimetype,
-      },
+      file
     });
-
     await newOrder.save();
 
     res.status(201).send('Order saved successfully');
@@ -705,13 +696,12 @@ app.post('/api/orders', upload.single('file'), async (req, res) => {
 
 app.get('/api/orders', async (req, res) => {
   try {
-      const orders = await Order.find({});
-      
-      res.status(200).json(orders);
+    const orders = await Order.find({});
+    res.status(200).json(orders);
   } catch (error) {
-      console.error(error);
-      res.status(500).send('Internal Server Error');
-    }
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 app.get('/api/orders/:id', async (req, res) => {
