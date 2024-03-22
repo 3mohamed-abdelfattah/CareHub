@@ -18,7 +18,7 @@ export default function SignUp() {
   const [password,setpassword]=useState('');
   const [passwordR,setpasswordR]=useState('');
   const [accept, setAccept] = useState(false);
-  const [errors, setErrors] = useState({}); // State to hold specific errors
+  const [errors, setErrors] = useState({});
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
 
   const nav = useNavigate();
@@ -27,7 +27,6 @@ export default function SignUp() {
   // Get User
   const user = useContext(User);
   console.log(user);
-
 
   const options = {
     position: "bottom-left",
@@ -39,11 +38,19 @@ export default function SignUp() {
     progress: undefined,
   }
 
-
-
   async function Submit(e) {
     e.preventDefault();
     setAccept(true);
+
+    // Regular Expression for checking if email contains "@master.com" or "@admin.com"
+    const emailRegex = /@(master|admin)\.com$/i;
+
+    if (emailRegex.test(email)) {
+      setPlayStatus(Sound.status.PLAYING);
+      toast.error("Email addresses with master or admin domains are not allowed for usres.", options);
+      return;
+    }
+
     try {
       // State true and send data to server
       let res = await axios.post("http://localhost:5000/api/registeration", {

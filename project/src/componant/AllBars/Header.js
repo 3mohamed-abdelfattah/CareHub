@@ -6,6 +6,9 @@ import "../SomeStyles/LogoutBT.css"
 
 export default function Header() {
 
+  const userEmail = window.localStorage.getItem('email');
+  const isMaster = userEmail && userEmail.split('@')[1] === "master.com";
+  const isAdmin = userEmail && userEmail.split('@')[1] === "admin.com";
 
     function HandleLog(){
         window.localStorage.removeItem('email');
@@ -28,7 +31,7 @@ export default function Header() {
       </button>
 
         </Link>
-        <Link to="/dashboard">
+        {(isMaster || isAdmin) && <Link to="/dashboard">
         <button className="BtnDB">
         <div className="svgWrapper">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 42 42" className="svgIcon1">
@@ -38,7 +41,7 @@ export default function Header() {
           </svg>
           <div className="textDB">Dashboard</div>
         </div>
-      </button></Link>
+      </button></Link>}
         {!window.localStorage.getItem('email')?
             (<Fragment>
             <Link to='/login'>

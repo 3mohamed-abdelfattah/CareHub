@@ -21,6 +21,7 @@ function PayPal() {
       <PayPalScriptProvider options={initialOptions}>
         <PayPalButtons
           style={{
+            shape: "pill",
             layout: "vertical",
           }}
           onApprove={async (data, actions) => {
