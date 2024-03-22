@@ -14,6 +14,14 @@ import ChatbotChest from "../ChatBOTS/ChatbotChest";
 const itemsPerPage = 5;
 
 export default function ChestDoc() {
+
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
+
+
   const mystyle = {
     overflow: 'hidden',
     transition: 'max-height 0.6s ease',

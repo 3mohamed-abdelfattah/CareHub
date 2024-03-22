@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import "./adult.css"
 import Header from '../AllBars/Header';
 import Footer from '../AllBars/Footer';
@@ -12,6 +12,13 @@ import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
 export default function ModifiedAWR() {
   const [displayText, setDisplayText] = useState('Click on the elements to display');
+
+
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
 
 
 

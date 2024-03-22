@@ -35,6 +35,13 @@ export default function AwramDoc() {
   };
   
 
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
+
+
   const [doctorsData, setDoctorsData] = useState([]);
   const [filteredDoctors, setFilteredDoctors] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);

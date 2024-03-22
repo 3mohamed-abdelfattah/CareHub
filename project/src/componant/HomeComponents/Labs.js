@@ -14,6 +14,13 @@ const itemsPerPage = 5;
 
 export default function Labs() {
 
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
+
+
   const options = {
     position: "bottom-left",
     autoClose: 5000,

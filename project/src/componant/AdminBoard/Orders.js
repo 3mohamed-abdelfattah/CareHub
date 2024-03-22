@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import Header from '../AllBars/Header';
 import Footer from '../AllBars/Footer';
 import axios from "axios";
@@ -16,6 +16,13 @@ export default function Orders() {
     const [accept, setAccept] = useState(false);
     const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
     const navigate = useNavigate();
+
+
+    useEffect(() => {
+        if (!window.localStorage.getItem('email')) {
+            window.location= "/login";
+        }
+    }, [])
 
     const options = {
         position: "bottom-left",

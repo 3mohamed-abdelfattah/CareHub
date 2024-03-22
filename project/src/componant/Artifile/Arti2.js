@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import "../HomeComponents/ARTI.css";
 import SOLC from "../Photos/أعراض-مرض-الإيدز.jpg"
 import SOHP from "../Photos/اعراض-حصى-المرارة.jpg"
@@ -18,6 +18,13 @@ import { Link } from "react-router-dom"
 
 
 export default function Arti2() {
+
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
+
   return (
     <Fragment>
     <Header/>

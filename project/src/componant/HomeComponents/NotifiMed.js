@@ -103,6 +103,13 @@ const NotifiMED = () => {
   const [editIndex, setEditIndex] = useState(null);
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
 
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
+
+
   const addAppointment = () => {
     if (editIndex !== null) {
       const updatedAppointments = [...appointments];

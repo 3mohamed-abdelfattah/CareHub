@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Header from '../AllBars/Header'
 import Footer from '../AllBars/Footer'
 import { useState, Fragment } from "react";
@@ -33,7 +33,12 @@ export default function Problems() {
     }
   
   
-  
+    useEffect(() => {
+      if (!window.localStorage.getItem('email')) {
+          window.location= "/login";
+      }
+  }, [])
+
     async function Submit(e) {
     e.preventDefault();
     setAccept(true);

@@ -28,7 +28,7 @@ body{
   top: 0;
   width: 100%;
   z-index: 1000; /* قيمة عالية لتأكيد الظهور أعلى العناصر الأخرى */
-  background: repeating-linear-gradient(45deg, #a2c4ac, #a2c4ac 20px, #a2c4ac 20px, #a2c4ac 40px);
+  background:#a2c4ac;
 }
 
 

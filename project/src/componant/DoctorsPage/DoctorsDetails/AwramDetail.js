@@ -14,6 +14,12 @@ export default function AwramDetail() {
     const [doctorData, setDoctorData] = useState({});
     const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        if (!window.localStorage.getItem('email')) {
+            window.location= "/login";
+        }
+    }, [])
+
     const body ={
     direction: 'rtl',
     margin: 2,

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import "./FirsrAid.css"
 import Footer from '../AllBars/Footer'
 import Header from '../AllBars/Header'
@@ -8,6 +8,13 @@ import ScrollToTopButton from '../SomeStyles/ScrollToTopButton'
 
 
 export default function FirstAid() {
+
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
+
 
 
     const body ={

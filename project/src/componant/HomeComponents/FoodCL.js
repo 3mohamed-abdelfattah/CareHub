@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from '../AllBars/Footer';
@@ -7,6 +7,14 @@ import Sound from 'react-sound';
 import NOtifi from "../Photos/sound.mp3"
 
 const FoodList = () => {
+  
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
+
+
     const [foods] = useState([
       { id: 1, name: 'تفاح', calories: 52, quantity: 100 },
       { id: 2, name: 'موز', calories: 89, quantity: 100 },

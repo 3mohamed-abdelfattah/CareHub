@@ -14,6 +14,14 @@ import ChatbotEye from "../ChatBOTS/ChatbotEye";
 const itemsPerPage = 5;
 
 export default function EyeDoc() {
+
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
+
+
   const mystyle = {
     overflow: 'hidden',
     transition: 'max-height 0.6s ease',

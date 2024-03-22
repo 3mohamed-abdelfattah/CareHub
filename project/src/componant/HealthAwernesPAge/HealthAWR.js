@@ -10,8 +10,16 @@ import AWRV from "../Photos/glads.png"
 import AWRW from "../Photos/Centarlogo.png"
 import { Link } from 'react-router-dom';
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
+import { useEffect } from 'react';
 
 const HealthAWR = () => {
+
+
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
 
 
 const Pstyle={

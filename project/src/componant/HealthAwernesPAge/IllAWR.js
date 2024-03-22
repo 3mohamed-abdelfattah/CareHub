@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import "./WomanAWR.css"
 import Header from '../AllBars/Header'
 import Footer from '../AllBars/Footer'
@@ -6,6 +6,13 @@ import IAWR from '../Photos/Ill.jpg'
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton'
 
 export default function IllAWR() {
+
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
+
 
     const body ={
         direction: 'rtl',

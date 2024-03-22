@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Header from '../AllBars/Header';
@@ -17,6 +17,13 @@ const Calculator = () => {
   const [result, setResult] = useState(null);
   const [hovered, setHovered] = useState(false);
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
+
+
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
 
 
   const activityLevels = {

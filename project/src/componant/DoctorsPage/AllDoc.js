@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from "../AllBars/Header";
 import Footer from "../AllBars/Footer";
 import { Link } from "react-router-dom"
@@ -32,6 +32,13 @@ import TEE from "../Photos/teeth.png"
 
 
 export default function AllDoc() {
+
+
+    useEffect(() => {
+        if (!window.localStorage.getItem('email')) {
+            window.location= "/login";
+        }
+    }, [])
 
 
     const slideProps = useSpring({

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import "./ARTI.css";
 import SOLC from "../Photos/SOLC.jpg"
 import SOHP from "../Photos/SOHP.jpg"
@@ -16,6 +16,14 @@ import { Link } from "react-router-dom"
 
 
 const ArticlesList = () => {
+  
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
+
+
   return (
     <Fragment>
     <Header/>

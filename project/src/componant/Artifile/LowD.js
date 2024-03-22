@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Fragment } from 'react'
 import Header from '../AllBars/Header'
 import Footer from '../AllBars/Footer'
@@ -8,6 +8,13 @@ import LOWd from "../Photos/اعراض-الضغط-المنخفض-1.jpg"
 
 
 export default function LowD() {
+
+
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
 
 
 

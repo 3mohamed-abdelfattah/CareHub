@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from "../AllBars/Header"
 import "./HomePage.css"
 import { Link } from "react-router-dom"
@@ -23,14 +23,22 @@ import TIME from "../Photos/time.png"
 
 
 export default function Home() {
-
-
+    
+    
     const slideProps = useSpring({
         opacity: 1,
         from: { opacity: 0 },
         config: { duration: 500 },
     });
 
+
+
+
+    useEffect(() => {
+        if (!window.localStorage.getItem('email')) {
+            window.location= "/login";
+        }
+    }, [])
 
     return (
         <div>

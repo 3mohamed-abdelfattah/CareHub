@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Fragment } from 'react'
 import Header from '../AllBars/Header'
 import Footer from '../AllBars/Footer'
@@ -6,6 +6,13 @@ import ScrollToTopButton from '../SomeStyles/ScrollToTopButton'
 
 
 export default function Stomkgrs() {
+
+
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
 
     const body ={
         direction: 'rtl',

@@ -14,6 +14,13 @@ import ChatbotTkatb from "../ChatBOTS/ChatBotTkhtb";
 const itemsPerPage = 5;
 
 export default function SpeachDoc() {
+  useEffect(() => {
+      if (!window.localStorage.getItem('email')) {
+          window.location= "/login";
+      }
+  }, [])
+
+
   const mystyle = {
     overflow: 'hidden',
     transition: 'max-height 0.6s ease',

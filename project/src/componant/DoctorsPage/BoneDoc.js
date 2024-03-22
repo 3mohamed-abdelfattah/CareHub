@@ -142,6 +142,13 @@ export default function BoneDoc() {
 
 
 
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
+
+
 
 
   return (

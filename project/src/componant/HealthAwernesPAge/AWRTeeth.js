@@ -1,9 +1,16 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import Header from '../AllBars/Header'
 import Footer from '../AllBars/Footer'
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton'
 
 export default function AWRTeeth() {
+
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
+
 
     const body ={
         direction: 'rtl',

@@ -14,6 +14,13 @@ import ChatbotFood from "../ChatBOTS/ChatbotFood";
 const itemsPerPage = 5;
 
 export default function FoodDoc() {
+  useEffect(() => {
+      if (!window.localStorage.getItem('email')) {
+          window.location= "/login";
+      }
+  }, [])
+
+
   const mystyle = {
     overflow: 'hidden',
     transition: 'max-height 0.6s ease',

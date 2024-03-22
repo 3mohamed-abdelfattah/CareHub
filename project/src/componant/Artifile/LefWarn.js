@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Fragment } from 'react'
 import Header from '../AllBars/Header'
 import Footer from '../AllBars/Footer'
@@ -6,6 +6,12 @@ import ScrollToTopButton from '../SomeStyles/ScrollToTopButton'
 import LEGar from "../Photos/اعراض-جلطة-الساق.jpg"
 
 export default function LefWarn() {
+
+  useEffect(() => {
+    if (!window.localStorage.getItem('email')) {
+        window.location= "/login";
+    }
+}, [])
 
 
     const body ={

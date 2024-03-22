@@ -34,17 +34,17 @@ const Footer = () => {
               <p>Sections</p>
     
               <div style={verticalLinksContainer}>
-                <a href="/" style={linkStyle}>
-                  Home
-                </a>
-                <a href="/login" style={linkStyle}>
-                  Login
-                </a>
-                <a href="/register" style={linkStyle}>
-                  Sign UP
-                </a>
                 <a href="/doctors" style={linkStyle}>
                   Doctors
+                </a>
+                <a href="/arti" style={linkStyle}>
+                Articles
+                </a>
+                <a href="/notifimid" style={linkStyle}>
+                Reminder 
+                </a>
+                <a href="/foodclc" style={linkStyle}>
+                Calories
                 </a>
               </div>
             </div>
