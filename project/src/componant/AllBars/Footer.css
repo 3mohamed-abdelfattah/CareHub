@@ -110,11 +110,11 @@
   .card3:hover {
     cursor: pointer;
     scale: 1.1;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
   }
   
   .card3:hover .github {
-    fill: white;
+    fill: rgb(0, 0, 0);
   }
   
   .card4:hover {
