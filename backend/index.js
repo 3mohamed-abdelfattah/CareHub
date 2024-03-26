@@ -4,14 +4,21 @@ const mongoose = require('mongoose')
 const validator = require('validator')
 const multer = require('multer');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 
 const User = require('./models/userModel')
 const Complaint = require('./models/complaintModel')
 const Doctor = require('./models/doctorModel')
 const Order = require('./models/orderModel')
+const Message = require('./models/messageModel')
+const Conversation = require('./models/conversationModel')
+const protectURL = require('./middleware/protectURL')
+const { getReceiverSocketId , io , server } = require('./socket/socket.js')
 
 
+const generateTokenAndSetCookie = require('./utils/generateToken.js')
 const CheckAdmin = require('./middleware/functions')
+
 
 const storage = multer.memoryStorage(); 
 const upload = multer({ storage: storage });
@@ -36,6 +43,7 @@ const app = express()
 app.use(express.json()) // to allow the server to read the body of the request
 
 app.use(cors()) // to allow the server to accept requests from the frontend
+app.use(cookieParser())
 
 app.get('/api/users', async (req, res) => {
   const query = req.query
@@ -70,7 +78,6 @@ app.get('/api/user/:id', async (req, res) => {
 
 app.post('/api/registeration', async (req, res) => {
 
-  console.log(req.body)
 
   const { firstname, lastname, email, password , passwordAgin , role } = req.body;
   
@@ -83,15 +90,15 @@ app.post('/api/registeration', async (req, res) => {
     return res.status(401).send('passwords do not match')
   }
 
-
   const newUser = new User({
     firstname,
     lastname,
     email,
     password ,
-    role
+    role,
   });
 
+  generateTokenAndSetCookie(newUser._id , res)
     try{
       await newUser.save();
     }
@@ -112,12 +119,14 @@ app.post('/api/login', async (req, res) => {
     return res.status(400).send('All inputs are required');
   }
 
-  const userData = await User.findOne({email : email})
+  const userData = await User.findOne({email : email} , {__v : 0 , updatedAt : 0 , createdAt : 0 })
 
   //check if user exists in the database with this email
   if(!userData){
     return res.status(402).send('user not found with this email')
   }
+
+  generateTokenAndSetCookie(userData._id , res)
 
   if (userData.password === password) {
     res.json(userData);
@@ -715,6 +724,92 @@ app.get('/api/orders/:id', async (req, res) => {
   }
 }
 );
+
+
+//send message
+app.post('/api/sendmsg/:id' , protectURL , async (req, res) => {
+	try {
+		const { message } = req.body;
+		const { id: receiverId } = req.params;
+    const senderId = req.user._id;
+
+		let conversation = await Conversation.findOne({
+			participants: { $all: [senderId, receiverId] },
+		});
+ 
+		if (!conversation) {
+			conversation = await Conversation.create({
+				participants: [senderId, receiverId],
+			});
+		}
+
+		const newMessage = new Message({
+			senderId,
+			receiverId,
+			message,
+		});
+
+		if (newMessage) {
+			conversation.messages.push(newMessage._id);
+		}
+
+	  // await conversation.save();
+	  // await newMessage.save();
+
+    res.status(201).json(newMessage);
+
+
+		// this will run in parallel
+		await Promise.all([conversation.save(), newMessage.save()]);
+
+		// SOCKET IO FUNCTIONALITY WILL GO HERE
+		const receiverSocketId = getReceiverSocketId(receiverId);
+		if (receiverSocketId) {
+			// io.to(<socket_id>).emit() used to send events to specific client
+			io.to(receiverSocketId).emit("newMessage", newMessage);
+		}
+
+	} catch (error) {
+		console.log("Error in sendMessage controller: ", error.message);
+		res.status(500).json({ error: "Internal server error" });
+	}
+});
+
+//get all messages
+app.get('/api/messages/:id', protectURL, async (req, res) => {
+  try {
+		const { id: userToChatId } = req.params;
+		const senderId = req.user._id;
+
+		const conversation = await Conversation.findOne({
+			participants: { $all: [senderId, userToChatId] },
+		}).populate("messages"); // NOT REFERENCE BUT ACTUAL MESSAGES
+
+		if (!conversation) return res.status(200).json([]);
+
+		const messages = conversation.messages;
+
+		res.status(200).json(messages);
+	} catch (error) {
+		console.log("Error in getMessages controller: ", error.message);
+		res.status(500).json({ error: "Internal server error" });
+	}
+});
+
+app.get('/api/otherusers', protectURL , async (req, res) => {
+  try {
+		const loggedInUserId = req.user._id;
+
+		const filteredUsers = await User.find({ _id: { $ne: loggedInUserId } }).select("-password");
+
+		res.status(200).json(filteredUsers);
+	} catch (error) {
+		console.error("Error in getUsersForSidebar: ", error.message);
+		res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+
 
 app.listen(PORT, () => {
   console.log('Server is running on port', PORT);

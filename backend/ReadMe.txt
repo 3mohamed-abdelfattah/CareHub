@@ -133,3 +133,19 @@ POST http://localhost:5000/api/orders
     address
     file
     phoneNumber
+
+
+
+
+______________________________________________________________________
+
+                -- Messages --
+POST http://localhost:5000/api/sendmsg/:id  (receverID)
+    "message" : " "
+
+GET http://localhost:5000/api/messages/:id (senderID)
+
+
+        ---*for sidebar*---
+GET http://localhost:5000/api/otherusers  (All users exept the currently sign in user)
+

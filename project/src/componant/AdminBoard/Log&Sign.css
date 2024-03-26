@@ -137,6 +137,8 @@
     position: relative;
     /* overflow: hidden; */
     transition: 500ms;
+    cursor: pointer;
+
   }
   
   .buttonlog span {
@@ -160,17 +162,14 @@
     top: 50%;
     bottom: 50%;
     transition: 500ms;
-    transition-delay: 500ms;
-    background-color: #b3e0d2;
-    box-shadow: 0 0 5px #b3e0d2,
-     0 0 15px #b3e0d2, 
-     0 0 25px #b3e0d2;
+    transition-delay: 150ms;
+    background-color: #1f535796;
   }
   
   .buttonlog div {
-    transition: 500ms;
+    transition: 600ms;
     position: absolute;
-    background-color: #b3e0d2;
+    background-color: #1f535796;
     box-shadow: 0 0 15px #b3e0d2, 0 0 30px #b3e0d2, 0 0 50px #b3e0d2;
   }
   
@@ -203,11 +202,11 @@
   }
   
   .buttonlog:hover {
-    color: #000;
+    color: #ffffff;
   }
   
   .buttonlog:hover span {
-    color: #000000;
+    color: #ffffff;
   }
   
   .buttonlog:hover:before {
