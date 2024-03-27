@@ -118,7 +118,7 @@ return (
     url={NOtifi}
     playStatus={playStatus}
     onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
-  />
+    />
     </Fragment>
 )
 }

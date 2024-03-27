@@ -56,6 +56,7 @@ app.get('/api/users', async (req, res) => {
 
 })
 
+// GET endpoint to get a user by id
 app.get('/api/users/:id', async (req, res) => {
   const id = req.params.id;
   const user = await User.findById(id);
@@ -65,6 +66,20 @@ app.get('/api/users/:id', async (req, res) => {
     res.status(404).send('User not found');
   }
 })
+
+// find user by email
+app.get('/api/userbymail', async (req, res) => {
+
+  
+  const user = await User.findOne({email : req.body.email})
+  if (user) {
+    res.json(user);
+  }
+  else {
+    res.status(404).send('User not found');
+  }
+})
+
 
 app.get('/api/user/:id', async (req, res) => {
   const id = req.params.id;
@@ -170,7 +185,54 @@ app.delete('/api/delete/:id', async (req, res) => {
 
 } );
 
-// PATCH endpoint to update a user by id 
+// PATCH endpoint to update a user by email 
+app.patch('/api/update/:mail', async (req, res) => {
+  const { mail } = req.params;
+
+  try {
+    // Find user by email using findOneAndUpdate (return updated doc)
+    const userToUpdate = await User.findOneAndUpdate(
+      { email: mail },
+      req.body,
+      { new: true }
+    );
+
+    if (!userToUpdate) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    // Update user properties (more concise approach)
+    const updates = {};
+    if (req.body.newFirstname) updates.firstname = req.body.newFirstname;
+    if (req.body.newLastname) updates.lastname = req.body.newLastname;
+    if (req.body.newEmail) updates.email = req.body.newEmail; // Email updates require caution (see below)
+
+    // Validate and update role (if provided)
+    if (req.body.newRole) {
+      const validRoles = ['Admin', 'User', 'Master', 'Doctor'];
+      if (!validRoles.includes(req.body.newRole)) {
+        return res.status(400).json({ message: 'Invalid role' });
+      }
+      updates.role = req.body.newRole;
+    }
+
+    // Validate and update password (if provided)
+    if (req.body.newPassword) {
+      // Implement password hashing and security best practices here
+      updates.password = hashPassword(req.body.newPassword); // Replace with your hashing function
+    }
+
+    // Apply updates to the user document
+    Object.assign(userToUpdate, updates);
+    await userToUpdate.save();
+
+    res.json(userToUpdate);
+  } catch (error) {
+    console.error('Error updating user:', error);
+    res.status(500).json({ message: 'Server Error' });
+  }
+});
+
 app.patch('/api/update/:id', async (req, res) => {
   const id = req.params.id;
   const { newFirstname, newLastname, newEmail , newPassword , newRole} = req.body;
@@ -680,12 +742,13 @@ app.get('/api/complaint', async (req, res) => {
 app.post('/api/orders', upload.single('file'), async (req, res) => {
   try {
     const { name, phoneNumber, address, order } = req.body;
+    
+    const file = req.file; 
 
-    if (!(name && phoneNumber && address && order)) {
+    if (!(name && phoneNumber && address && order )) {
       return res.status(400).send('All fields are required');
     }
 
-    const file = req.file; 
 
     const newOrder = await Order.create({
       name,
@@ -713,17 +776,29 @@ app.get('/api/orders', async (req, res) => {
   }
 });
 
-app.get('/api/orders/:id', async (req, res) => {
-  const id = req.params.id;
-  const order = await Order.findById(id);
-  if (order) {
-    res.json(order);
+app.get('/api/orders/:orderId', async (req, res) => {
+  try {
+    const orderId = req.params.orderId;
+    const order = await Order.findById(orderId);
+
+    if (!order) {
+      return res.status(404).send('Order not found');
+    }
+
+    // Access the image data from the order object
+    const imageData = order.file.data;
+    const contentType = order.file.contentType;
+
+    // Set response headers for image data
+    res.setHeader('Content-Type', contentType);
+    res.send(imageData);
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
   }
-  else {
-    res.status(404).send('Order not found');
-  }
-}
-);
+});
+
 
 
 //send message
@@ -814,5 +889,3 @@ app.get('/api/otherusers', protectURL , async (req, res) => {
 app.listen(PORT, () => {
   console.log('Server is running on port', PORT);
 });
-
-

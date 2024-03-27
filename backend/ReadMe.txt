@@ -23,6 +23,10 @@ GET http://localhost:5000/api/users   ===>   to get all users
 
 GET http://localhost:5000/api/users/:id   ===>   to get One user by id
 
+GET http://localhost:5000/api/userbymail   ===>   to get One user by email
+    "email" : " "
+
+
 GET http://localhost:5000/api/user/:id   ===>   to get One user by id with ( Email and Role )
              
 
@@ -38,7 +42,7 @@ GET http://localhost:5000/api/users?limit=(Number of users)&page=(how many users
 
 
             -- Update user info --
-PATCH http://localhost:5000/api/update/:id  <-- User ID
+PATCH http://localhost:5000/api/update/:(id- mail)  <-- UserID or email
 
     "newFirstname" : " ",       **\ OPTINAL /**
     "newLastname"  : " ",       **\ OPTINAL /**
@@ -139,11 +143,13 @@ POST http://localhost:5000/api/orders
 
 ______________________________________________________________________
 
-                -- Messages --
+                --send Messages --
 POST http://localhost:5000/api/sendmsg/:id  (receverID)
     "message" : " "
 
-GET http://localhost:5000/api/messages/:id (senderID)
+
+        all messages from other users 
+GET http://localhost:5000/api/messages/:id (senderID) *the current log in user*
 
 
         ---*for sidebar*---

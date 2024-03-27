@@ -1,26 +1,65 @@
-import React, { Fragment } from 'react';
-import { Link } from "react-router-dom"
+import React, { useState, useEffect } from 'react';
+import { Fragment } from 'react';
+import { Link } from "react-router-dom";
 import Slogan from '../SomeStyles/Slogan';
 import SloganM from '../SomeStyles/SolganM';
-import "../SomeStyles/LogoutBT.css"
+import "../SomeStyles/LogoutBT.css";
 
 export default function Header() {
 
   const userEmail = window.localStorage.getItem('email');
+
+  const [firstname,setfName]=useState('');
+  const [lastname,setlName]=useState('');
+  const [email,setemail]=useState('');
+
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/users?email=${encodeURIComponent(userEmail)}`)
+      .then((res) => res.json())
+      .then((data) => {
+        // التحقق من وجود بيانات
+        if (data.length > 0) {
+          // البحث عن المستخدم الذي يتطابق مع البريد الإلكتروني
+          const user = data.find((user) => user.email === userEmail);
+          if (user) {
+            // إعداد البيانات في الحالة فقط إذا تم العثور على المستخدم
+            setemail(user.email);
+            setfName(user.firstname);
+            setlName(user.lastname);
+          } else {
+            console.log('User not found');
+          }
+        } else {
+          console.log('No data available');
+        }
+      })
+      .catch((error) => console.error('Error fetching user data:', error));
+  }, []);
+  
+  
+
+  function handleDropdownToggle() {
+    setDropdownOpen(!dropdownOpen);
+  }
+
   const isMaster = userEmail && userEmail.split('@')[1] === "master.com";
   const isAdmin = userEmail && userEmail.split('@')[1] === "admin.com";
 
-    function HandleLog(){
-        window.localStorage.removeItem('email');
-        window.location.pathname="/login";
-    }
+  function HandleLog() {
+    window.localStorage.removeItem('email');
+
+    window.location.pathname = "/login";
+  }
 
   return (
     <div className="containerH">
     <div className="d-flex container top-bar shadow">
     <SloganM/>
     <Slogan/>
-        <Link to ="/">
+    {(userEmail) &&<Link to ="/">
         <button className="BtnH">
         <div className="svgWrapperH">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width={50} height={40} viewBox="0,0,256,256">
@@ -29,8 +68,8 @@ export default function Header() {
           <div className="textH">Home</div>
         </div>
       </button>
+        </Link>}
 
-        </Link>
         {(isMaster || isAdmin) && <Link to="/dashboard">
         <button className="BtnDB">
         <div className="svgWrapper">
@@ -41,19 +80,60 @@ export default function Header() {
           </svg>
           <div className="textDB">Dashboard</div>
         </div>
-      </button></Link>}
+        </button></Link>}
         {!window.localStorage.getItem('email')?
             (<Fragment>
+
+
             <Link to='/login'>
             <button className="Btnin">
               <div className="sign"><svg viewBox="0 0 512 512"><path d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z" /></svg></div>
               <div className="textin">Login</div>
             </button>
             </Link>
-            </Fragment>):    <button className="Btnout" onClick={HandleLog}>
-            <div className="signout"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" /></svg></div>
-            <div className="texttt">Logout</div>
-          </button>}
-    </div>
-    </div>
+
+
+            </Fragment>):
+            <Fragment>
+
+
+            <button className="Btnout" onClick={HandleLog}>
+              <div className="signout"><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" /></svg></div>
+              <div className="texttt">Logout</div>
+            </button>
+
+
+            <button id="btn-message" className="button-message"              onClick={handleDropdownToggle}
+            >
+            <div className="content-avatar">
+            <div className="status-user" />
+            <div className="avatar">
+              <svg className="user-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,12.5c-3.04,0-5.5,1.73-5.5,3.5s2.46,3.5,5.5,3.5,5.5-1.73,5.5-3.5-2.46-3.5-5.5-3.5Zm0-.5c1.66,0,3-1.34,3-3s-1.34-3-3-3-3,1.34-3,3,1.34,3,3,3Z" /></svg>
+            </div>
+            </div>
+            <div className="notice-content">
+            <div className="username">{firstname +" "+ lastname}</div>
+            <div className="user-id">{email}</div>
+            </div>
+          </button>
+
+          {dropdownOpen && (
+            <div className="dropdown-menu">
+              {/* Your dropdown options here */}
+              <Link to="/profileUpdate">Profile</Link>
+              <Link to="/settings">Settings</Link>
+              <Link to="/realtimechat">Chat</Link>
+              <Link to="/support">Support</Link>
+              <Link to="/requests">Orders</Link>
+              <Link to="/notifimid">Reminder</Link>
+
+            </div>
+          )}
+
+            </Fragment>
+        }
+        </div>
+        </div>
+
+
 )}
