@@ -116,7 +116,6 @@ export default function BoneDetail() {
           </div>
 
 
-
                 <hr className='hrdoc'/>
                 <div className="containerD">
                 <div className="opinionsD">

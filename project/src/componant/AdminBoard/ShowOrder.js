@@ -36,7 +36,7 @@ export default function ShowOrder() {
   ));
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div style={{padding:'10px', maxHeight: '550px', overflowY: 'auto'}}>
       <table>
         <thead>
           <tr>

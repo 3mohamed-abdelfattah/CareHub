@@ -20,8 +20,24 @@ export default function AwramDetail() {
             window.location= "/login";
         }
     }, [])
+
+    
     const handleLinkedW = () => {
-        window.location.href = ` https://wa.me/+2${doctorData.phoneNumber}`;
+        let phoneNumber = doctorData.phoneNumber;
+        const phoneNumbersArray = phoneNumber.split('-'); // تقسيم الأرقام بواسطة الخط تحتي
+        
+        // اختيار أول رقم يبدأ بـ "010"، ثم "012"، ثم "011"، ثم "015"
+        phoneNumber = phoneNumbersArray.find(number => number.startsWith("010")) ||
+                      phoneNumbersArray.find(number => number.startsWith("012")) ||
+                      phoneNumbersArray.find(number => number.startsWith("011")) ||
+                      phoneNumbersArray.find(number => number.startsWith("015"));
+      
+        if (phoneNumber) {
+          window.location.href = `https://wa.me/+2${phoneNumber}`;
+        } else {
+          // لا يوجد رقم يبدأ بـ "010", "012", "011", أو "015"
+          console.log("No phone number starting with '010', '012', '011', or '015' found.");
+        }
       };
     
     const body ={

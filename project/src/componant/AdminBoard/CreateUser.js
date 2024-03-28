@@ -1,4 +1,4 @@
-import { useState, useContext, Fragment } from "react";
+import { useState, Fragment } from "react";
 import axios from "axios";
 import React from 'react';
 import { ToastContainer,toast } from 'react-toastify';
@@ -11,7 +11,6 @@ export default function CreateUser() {
     const [lastname,setlName]=useState('');
     const [email,setemail]=useState('');
     const [password,setpassword]=useState('');
-    const [passwordR,setpasswordR]=useState('');
     const [accept, setAccept] = useState(false);
     const [errors, setErrors] = useState({}); // State to hold specific errors
     const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
@@ -40,10 +39,9 @@ export default function CreateUser() {
                       lastname: lastname,
                       email:email,
                       password:password,
-                      passwordAgin:passwordR,
+                      passwordAgin:password,
         });
         if (res.status === 200) {
-          window.localStorage.setItem('email', email);
           setTimeout(() => {
             navigate('/dashboard/user'); // Redirect using useNavigate hook
         }, 800);
@@ -89,9 +87,6 @@ export default function CreateUser() {
 
                     <input id="password" type="password" placeholder="كلمة المرور" className="Updateuser" value={password} onChange={(e)=>setpassword(e.target.value)}/>
 
-    
-                    <input id="password" type="password" placeholder="تأكيد كلمة المرور" className="Updateuser" value={passwordR} onChange={(e)=>setpasswordR(e.target.value)}/>
-                    {errors.password && <h1 className="error">{errors.password}</h1>}
 
                     <div style={{textAlign:"center"}}>
                         <button type="submit"><span className="box">إنشاء</span></button>
