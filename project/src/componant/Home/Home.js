@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from "../AllBars/Header"
 import "./HomePage.css"
 import { Link } from "react-router-dom"
@@ -23,7 +23,12 @@ import TIME from "../Photos/time.png"
 
 
 export default function Home() {
-    
+
+    const [email,setemail]=useState('');
+    const [id,setid]=useState('');
+
+    const userEmail = window.localStorage.getItem('email');
+
     
     const slideProps = useSpring({
         opacity: 1,
@@ -31,7 +36,29 @@ export default function Home() {
         config: { duration: 500 },
     });
 
-
+    useEffect(() => {
+        fetch(`http://localhost:5000/api/users?email=${encodeURIComponent(userEmail)}`)
+          .then((res) => res.json())
+          .then((data) => {
+            // التحقق من وجود بيانات
+            if (data.length > 0) {
+              // البحث عن المستخدم الذي يتطابق مع البريد الإلكتروني
+              const user = data.find((user) => user.email === userEmail);
+              if (user) {
+                // إعداد البيانات في الحالة فقط إذا تم العثور على المستخدم
+                setemail(user.email);
+                setid(user._id);
+                window.localStorage.setItem('_id', user._id);
+              } else {
+                console.log('User not found');
+              }
+            } else {
+              console.log('No data available');
+            }
+          })
+          .catch((error) => console.error('Error fetching user data:', error));
+      }, []);
+    
 
 
     useEffect(() => {

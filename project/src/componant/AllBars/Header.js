@@ -38,8 +38,7 @@ export default function Header() {
       })
       .catch((error) => console.error('Error fetching user data:', error));
   }, []);
-  
-  
+
 
   function handleDropdownToggle() {
     setDropdownOpen(!dropdownOpen);
@@ -50,6 +49,7 @@ export default function Header() {
 
   function HandleLog() {
     window.localStorage.removeItem('email');
+    window.localStorage.removeItem('_id');
 
     window.location.pathname = "/login";
   }
