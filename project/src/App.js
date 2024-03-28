@@ -97,6 +97,7 @@ import HospitalDetails from './componant/HomeComponents/HomeCompDetails/Hosipita
 import CompanyDetails from './componant/HomeComponents/HomeCompDetails/CompanyDetail';
 import CentarDetails from './componant/HomeComponents/HomeCompDetails/CentarDetail';
 import OrdersDoc from './componant/AdminBoard/OrdersDoc';
+import Chat from './componant/RealTimeChat/Chat';
 
 
 export default function App() {
@@ -226,6 +227,8 @@ export default function App() {
 
         <Route path="/support" element={<Problems/>} />
         <Route path="/requests" element={<Orders/>} />
+        <Route path="/chat" element={<Chat/>} />
+
 
       </Routes>
     </div>

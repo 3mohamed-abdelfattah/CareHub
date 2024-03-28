@@ -113,7 +113,7 @@ app.post('/api/registeration', async (req, res) => {
     role,
   });
 
-  generateTokenAndSetCookie(newUser._id , res)
+  //generateTokenAndSetCookie(newUser._id , res)
     try{
       await newUser.save();
     }
@@ -141,7 +141,7 @@ app.post('/api/login', async (req, res) => {
     return res.status(402).send('user not found with this email')
   }
 
-  generateTokenAndSetCookie(userData._id , res)
+  //generateTokenAndSetCookie(userData._id , res)
 
   if (userData.password === password) {
     res.json(userData);
