@@ -47,7 +47,7 @@ app.use(cookieParser())
 
 app.get('/api/users', async (req, res) => {
   const query = req.query
-  const limit = query.limit || 10
+  const limit = query.limit || 100
   const page = query.page || 1
   const skip = (page - 1) * limit
 
@@ -141,7 +141,7 @@ app.post('/api/login', async (req, res) => {
     return res.status(402).send('user not found with this email')
   }
 
-  //generateTokenAndSetCookie(userData._id , res)
+  generateTokenAndSetCookie(userData._id , res)
 
   if (userData.password === password) {
     res.json(userData);
@@ -185,53 +185,6 @@ app.delete('/api/delete/:id', async (req, res) => {
 
 } );
 
-// PATCH endpoint to update a user by email 
-app.patch('/api/update/:mail', async (req, res) => {
-  const { mail } = req.params;
-
-  try {
-    // Find user by email using findOneAndUpdate (return updated doc)
-    const userToUpdate = await User.findOneAndUpdate(
-      { email: mail },
-      req.body,
-      { new: true }
-    );
-
-    if (!userToUpdate) {
-      return res.status(404).json({ message: 'User not found' });
-    }
-
-    // Update user properties (more concise approach)
-    const updates = {};
-    if (req.body.newFirstname) updates.firstname = req.body.newFirstname;
-    if (req.body.newLastname) updates.lastname = req.body.newLastname;
-    if (req.body.newEmail) updates.email = req.body.newEmail; // Email updates require caution (see below)
-
-    // Validate and update role (if provided)
-    if (req.body.newRole) {
-      const validRoles = ['Admin', 'User', 'Master', 'Doctor'];
-      if (!validRoles.includes(req.body.newRole)) {
-        return res.status(400).json({ message: 'Invalid role' });
-      }
-      updates.role = req.body.newRole;
-    }
-
-    // Validate and update password (if provided)
-    if (req.body.newPassword) {
-      // Implement password hashing and security best practices here
-      updates.password = hashPassword(req.body.newPassword); // Replace with your hashing function
-    }
-
-    // Apply updates to the user document
-    Object.assign(userToUpdate, updates);
-    await userToUpdate.save();
-
-    res.json(userToUpdate);
-  } catch (error) {
-    console.error('Error updating user:', error);
-    res.status(500).json({ message: 'Server Error' });
-  }
-});
 
 app.patch('/api/update/:id', async (req, res) => {
   const id = req.params.id;
@@ -801,26 +754,37 @@ app.get('/api/orders/:orderId', async (req, res) => {
 
 
 
-//send message
-app.post('/api/sendmsg/:id' , protectURL , async (req, res) => {
+//send message  **no Protection**
+app.post('/api/sendmsg/:senderID/:reseverID',async (req, res) => {
 	try {
 		const { message } = req.body;
-		const { id: receiverId } = req.params;
-    const senderId = req.user._id;
+		const reseverID = req.params.reseverID;
+    const resever = await User.findById(reseverID);
+
+    const senderID = req.params.senderID;
+    const user = await User.findById(senderID);
+
+
+
+    // const user = await User .findById(req.params.senderID);
+
+		// const senderId = req.user._id;
+
+    // const user = await User .findById(req.params.senderID);
 
 		let conversation = await Conversation.findOne({
-			participants: { $all: [senderId, receiverId] },
+			participants: { $all: [user._id, resever._id] },
 		});
- 
+
 		if (!conversation) {
 			conversation = await Conversation.create({
-				participants: [senderId, receiverId],
+				participants: [user._id, resever._id],
 			});
 		}
 
 		const newMessage = new Message({
-			senderId,
-			receiverId,
+			senderId :user._id,
+			receiverId :resever._id,
 			message,
 		});
 
@@ -828,36 +792,38 @@ app.post('/api/sendmsg/:id' , protectURL , async (req, res) => {
 			conversation.messages.push(newMessage._id);
 		}
 
-	  // await conversation.save();
-	  // await newMessage.save();
-
-    res.status(201).json(newMessage);
-
+		// await conversation.save();
+		// await newMessage.save();
 
 		// this will run in parallel
 		await Promise.all([conversation.save(), newMessage.save()]);
 
 		// SOCKET IO FUNCTIONALITY WILL GO HERE
-		const receiverSocketId = getReceiverSocketId(receiverId);
+		const receiverSocketId = getReceiverSocketId(resever._id);
 		if (receiverSocketId) {
 			// io.to(<socket_id>).emit() used to send events to specific client
 			io.to(receiverSocketId).emit("newMessage", newMessage);
 		}
 
+		res.status(201).json(newMessage);
 	} catch (error) {
 		console.log("Error in sendMessage controller: ", error.message);
 		res.status(500).json({ error: "Internal server error" });
 	}
 });
 
-//get all messages
-app.get('/api/messages/:id', protectURL, async (req, res) => {
+//get all messages  **no Protection**
+app.get('/api/messages/:id', async (req, res) => {
   try {
 		const { id: userToChatId } = req.params;
-		const senderId = req.user._id;
+		// const senderId = req.user._id;
+
+    //find user by id
+    const user = await User.findById(userToChatId);
+
 
 		const conversation = await Conversation.findOne({
-			participants: { $all: [senderId, userToChatId] },
+			participants: { $all: [user._id, userToChatId] },
 		}).populate("messages"); // NOT REFERENCE BUT ACTUAL MESSAGES
 
 		if (!conversation) return res.status(200).json([]);
@@ -870,10 +836,11 @@ app.get('/api/messages/:id', protectURL, async (req, res) => {
 		res.status(500).json({ error: "Internal server error" });
 	}
 });
-
-app.get('/api/otherusers', protectURL , async (req, res) => {
+// **no Protection**
+app.get('/api/otherusers/:id' , async (req, res) => {
   try {
-		const loggedInUserId = req.user._id;
+
+		const loggedInUserId = req.params.id;
 
 		const filteredUsers = await User.find({ _id: { $ne: loggedInUserId } }).select("-password");
 
@@ -884,7 +851,30 @@ app.get('/api/otherusers', protectURL , async (req, res) => {
   }
 });
 
+//get message from one user to another **no Protection**
+app.get('/api/messages/:senderID/:receiverId', async (req, res) => {
+  try {
+    const { senderID, receiverId } = req.params;
 
+    const conversation = await Conversation.findOne({
+      participants: { $all: [senderID, receiverId] },
+      
+    }).populate("messages");
+
+
+    if (!conversation) return res.status(200).json([]);
+
+    const messages = conversation.messages;
+    if (messages.length === 0) {
+      return res.status(404).send("No messages found");
+    }
+      
+    res.status(200).json(messages);
+  } catch (error) {
+    console.log("Error in getMessages controller: ", error.message);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
 
 app.listen(PORT, () => {
   console.log('Server is running on port', PORT);

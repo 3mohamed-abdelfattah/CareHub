@@ -23,8 +23,6 @@ GET http://localhost:5000/api/users   ===>   to get all users
 
 GET http://localhost:5000/api/users/:id   ===>   to get One user by id
 
-GET http://localhost:5000/api/userbymail   ===>   to get One user by email
-    "email" : " "
 
 
 GET http://localhost:5000/api/user/:id   ===>   to get One user by id with ( Email and Role )
@@ -149,9 +147,12 @@ POST http://localhost:5000/api/sendmsg/:id  (receverID)
 
 
         all messages from other users 
-GET http://localhost:5000/api/messages/:id (senderID) *the current log in user*
+GET :senderID/:reseverID 
 
 
         ---*for sidebar*---
-GET http://localhost:5000/api/otherusers  (All users exept the currently sign in user)
+GET http://localhost:5000/api/otherusers/:id  (All users exept the currently sign in user)
+
+        ---messages from one user ---
+GET http://localhost:5000/api/messages/:senderID/:receiverId
 

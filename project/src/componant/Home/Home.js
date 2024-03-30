@@ -19,6 +19,7 @@ import TWEA from "../Photos/TEWAA.png"
 import CLC from "../Photos/CALC.png"
 import FOOC from "../Photos/FOOD.png"
 import TIME from "../Photos/time.png"
+import CHT from "../Photos/Chatreal.png"
 
 
 
@@ -225,6 +226,17 @@ export default function Home() {
                         <img src={TIME} alt=""/>
                     </figure>
                     <h4 className="slide-name">أدوية اليوم</h4>
+                </div>
+                </Link>
+                </div>
+
+                <div className="slider-item">
+                <Link to ="/realtimechat" className="HOMELINK">
+                <div className="slide">
+                    <figure className="slide-image">
+                        <img src={CHT} alt=""/>
+                    </figure>
+                    <h4 className="slide-name">المحادثات المباشرة</h4>
                 </div>
                 </Link>
                 </div>

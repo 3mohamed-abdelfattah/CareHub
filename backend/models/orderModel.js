@@ -20,7 +20,6 @@ const orderSchema = new mongoose.Schema({
   },
   file: {
     type: String,
-    required: false
   },
 });
 
