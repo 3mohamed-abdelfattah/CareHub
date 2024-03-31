@@ -4,7 +4,7 @@ import Footer from "../AllBars/Footer";
 import { useEffect, useState } from "react";
 import ScrollToTopButton from "../SomeStyles/ScrollToTopButton";
 import axios from 'axios';
-import DOCM from "../Photos/Pharmalogo.png";
+import DOCM from "../Photos/Pharma.png";
 import { toast } from "react-toastify";
 import Stars from "../SomeStyles/Stars";
 import { Link } from "react-router-dom/dist";
@@ -92,7 +92,7 @@ export default function Pharmacies() {
       <h4>{doctor.address}</h4>
         <h4><Stars/></h4>
       </div>
-        <img src={DOCM} alt='' />
+        <img style={{width:'20%'}} src={DOCM} alt='' />
 
 
       <div className="button-lovation">

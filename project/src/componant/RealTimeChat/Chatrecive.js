@@ -12,6 +12,8 @@ import AV7 from '../Photos/avatar6.jpg';
 import AV8 from '../Photos/avatar7.jpg';
 import AV9 from '../Photos/avatar8.jpg';
 import axios from 'axios';
+import "./RealChat.css";
+
 
 const avatarImages = [AV1, AV2, AV3, AV4, AV5, AV6, AV7, AV8, AV9];
 
@@ -93,7 +95,17 @@ const MessagesComponent = () => {
           {error && <p style={{ color: 'red' }}>{error}</p>}
           <List>
             {users.map(user => (
-              <ListItem style={{ marginLeft: '2%' }} key={user.email} onClick={() => handleUserSelect(user)} sx={{ borderBottom: '1px solid #eee', padding: '10px 0', cursor: 'pointer' }}>
+              <ListItem 
+                style={{ marginLeft: '2%' }} 
+                key={user.email} 
+                onClick={() => handleUserSelect(user)} 
+                sx={{ 
+                  borderBottom: '1px solid #eee', 
+                  padding: '10px 0', 
+                  cursor: 'pointer',
+                  "&:hover": { backgroundColor: "#f0f0f0" } // Add hover effect
+                }}
+              >
                 <ListItemAvatar sx={{ display: 'flex', alignItems: 'center' }}>
                   <Avatar alt="User Avatar" src={userAvatars[user._id]} />
                 </ListItemAvatar>
@@ -117,48 +129,92 @@ const MessagesComponent = () => {
                 <Avatar alt="Sender Avatar" src={userAvatars[message.senderId]} />
               </ListItemAvatar>
               <ListItemText
-                primary={userID === message.senderId ? 'You' : selectedUser.firstname + ' ' + selectedUser.lastname}
-                secondary={
-                  <Fragment>
-                    <Typography
-                      sx={{ display: 'inline', fontSize: 20, fontWeight: 'bold' }}
-                      component="span"
-                      variant="body2"
-                      color={userID === message.senderId ? 'text.primary' : '#1F5357'}
-                    >
-                      {message.message}
-                    </Typography>
-                    <br />
-                    <Typography
-                      sx={{ display: 'inline', fontSize: 10 }}
-                      component="span"
-                      variant="body2"
-                      color={userID === message.senderId ? 'text.secondary' : 'text.secondary'}
-                    >
-                      {new Date(message.createdAt).toLocaleString()}
-                    </Typography>
-                  </Fragment>
-                }
-                sx={{ textAlign: userID === message.senderId ? 'left' : 'right' }}
-              />
+              primary={userID === message.senderId ? 'You' : selectedUser.firstname + ' ' + selectedUser.lastname}
+              secondary={
+                <Fragment>
+                  <Typography
+                    className="message-text" // إضافة الفئة المحددة لتنسيق الرسالة
+                    sx={{ display: 'inline', fontSize: 20, fontWeight: 'bold' }}
+                    component="span"
+                    variant="body2"
+                    color={userID === message.senderId ? 'text.primary' : '#1F5357'}
+                  >
+                    {message.message}
+                  </Typography>
+                  <br />
+                  <Typography
+                    sx={{ display: 'inline', fontSize: 10 }}
+                    component="span"
+                    variant="body2"
+                    color={userID === message.senderId ? 'text.secondary' : 'text.secondary'}
+                  >
+                    {new Date(message.createdAt).toLocaleString()}
+                  </Typography>
+                </Fragment>
+              }
+              sx={{ textAlign: userID === message.senderId ? 'left' : 'right' }}
+            />
+            
             </ListItem>
           ))}
         </List>
-      </Box>
+        </Box>
       {/* Input field for typing and sending messages */}
       <Box sx={{ position: 'absolute', bottom: '0px', right: '0px', width: 'calc(100% - 0px)', backgroundColor: 'white', padding: '10px 10px 0 10px', borderTop: '5px solid #1F5357', display: 'flex', alignItems: 'center' }}>
-        <Input
-          id="message-input"
-          label="Type your message here"
-          variant="outlined"
-          fullWidth
-          value={newMessage}
-          onChange={(e) => setNewMessage(e.target.value)}
-          sx={{ marginRight: '10px' }}
-        />
-        <Button variant="contained" onClick={handleSendMessage} sx={{ backgroundColor: '#128C7E', color: 'white' }}>
-          Send
-        </Button>
+      <div class="messageBox">
+      <div class="fileUploadWrapper">
+        <label for="file">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 337 337">
+            <circle
+              stroke-width="20"
+              stroke="#6c6c6c"
+              fill="none"
+              r="158.5"
+              cy="168.5"
+              cx="168.5"
+            ></circle>
+            <path
+              stroke-linecap="round"
+              stroke-width="25"
+              stroke="#6c6c6c"
+              d="M167.759 79V259"
+            ></path>
+            <path
+              stroke-linecap="round"
+              stroke-width="25"
+              stroke="#6c6c6c"
+              d="M79 167.138H259"
+            ></path>
+          </svg>
+          <span class="tooltip">Add an image</span>
+        </label>
+        <input type="file" id="file" name="file" />
+      </div>
+      <input
+        required=""
+        placeholder="Write here..."
+        type="text"
+        id="messageInput"
+        value={newMessage}
+        onChange={(e) => setNewMessage(e.target.value)}
+      />
+      <button id="sendButton" onClick={handleSendMessage}>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 664 663">
+          <path
+            fill="none"
+            d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+          ></path>
+          <path
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            stroke-width="33.67"
+            stroke="#6c6c6c"
+            d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    
       </Box>
     </Box>
     

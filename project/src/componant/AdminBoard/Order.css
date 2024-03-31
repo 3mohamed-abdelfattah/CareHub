@@ -1,0 +1,74 @@
+/* Orders.css */
+
+.orders-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-heading {
+    margin-top: 8%;
+    color: #ff0505;
+    font-size: 24px;
+}
+
+.sub-heading {
+    color: #1F5357;
+    font-size: 18px;
+}
+
+.form-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* قيمة تحديد العرض الأقصى */
+    width: 100%; /* لتحسين التوافق مع أحجام الشاشات المختلفة */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-file {
+    margin-top: 5px;
+}
+
+.form-submit-btn {
+    background-color: #1F5357;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-submit-btn:hover {
+    background-color: #0f3e3e;
+}

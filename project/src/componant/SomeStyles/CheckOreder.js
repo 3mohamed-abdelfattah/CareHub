@@ -19,7 +19,7 @@ export default function CheckOrder() {
       </div>
     </div>
     <div className="right-sidecheck">
-      <div style={{fontWeight:"bolder",fontSize:"25px",paddingRight:"10px"}} className="newcheck">اطلب ادويتك</div>
+      <div style={{fontWeight:"bolder",fontSize:"25px",paddingRight:"10px"}} className="newcheck">اطلب ادويـتك</div>
     </div>
   </div>
   )

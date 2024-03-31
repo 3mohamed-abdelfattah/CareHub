@@ -2,11 +2,12 @@ import React, { Fragment, useEffect, useState } from 'react';
 import "../../DoctorsPage/DoctorsDetails/Doctordetail.css";
 import Header from '../../AllBars/Header';
 import Footer from '../../AllBars/Footer';
-import DOCM from "../../Photos/Pharmalogo.png";
+import DOCM from "../../Photos/Pharma.png";
 import Stars from '../../SomeStyles/Stars';
 import CheckOrder from '../../SomeStyles/CheckOreder';
 import { Link } from 'react-router-dom';
 import PayPal from "../../Payment/PayPal";
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function PharmaDetails() {
     const id = window.location.pathname.split("/").slice(-1)[0];
@@ -34,8 +35,21 @@ export default function PharmaDetails() {
         } else {
           // لا يوجد رقم يبدأ بـ "010", "012", "011", أو "015"
           console.log("No phone number starting with '010', '012', '011', or '015' found.");
+          toast.error("نأسف! لا تمتلك الصيدلية رقم واتساب يمكنك الطلب من موقعنا وسيتم توصيله لك",options);
+
         }
       };
+
+      const options = {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      }
+
 
     const body ={
     direction: 'rtl',
@@ -81,7 +95,7 @@ export default function PharmaDetails() {
             <div className="testimonials" id="testimonials">
             <div className="containerD">
                 <div className="boxD">
-                    <img src={DOCM} alt='' />
+                    <img style={{width:'21%'}} src={DOCM} alt='' />
                     <div className="buttonsD0">
                     <PayPal/>
                     </div>
@@ -97,6 +111,22 @@ export default function PharmaDetails() {
                 </div>
                 <p>{doctorData.address}</p>
                 </div>
+                </div>
+
+                <div className="massgedoc">
+                <Link to="/realtimechat">
+                <button id="Massgebtn">
+                  <div className="svg-wrapper-1">
+                    <div className="svg-wrapper">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24}>
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <span>Chat Now</span>
+                </button>
+                </Link>
                 </div>
 
                 <div className="map_gogle">
