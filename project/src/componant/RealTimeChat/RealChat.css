@@ -10,7 +10,7 @@
     border: 2px solid rgba(63, 63, 63, 0.384);
   }
   .messageBox:focus-within {
-    border: 2px solid rgba(0, 255, 115, 0.692);
+    border: 2px solid #1f5357;
   }
   .fileUploadWrapper {
     width: 100%;
@@ -90,8 +90,8 @@
 
   #messageInput:focus ~ #sendButton svg path,
   #messageInput:valid ~ #sendButton svg path {
-    fill: #1F5357;
-    stroke: #00ff6a;
+    fill: #00ff6a;
+    stroke: #1F5357;
   }
   
   #sendButton {
