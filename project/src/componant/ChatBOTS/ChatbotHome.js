@@ -1,11 +1,9 @@
 import ChatBot from "react-simple-chatbot";
 import { ThemeProvider } from 'styled-components';
 import UpdateUser from "../AdminBoard/UpdateUser";
-import Signup from "../AdminBoard/SignUp"
 import { Link } from "react-router-dom";
 import { Fragment } from "react";
 import "./ChatHome.css"
-import Problems from "../AdminBoard/Problems";
 
 
 const StyledFragment ={
@@ -156,7 +154,7 @@ const StyledFragment ={
       const ChatbotHome = () => (
         <ThemeProvider theme={theme}>
           <ChatBot steps={steps} 
-          speechSynthesis={{ enable: false, lang: 'ar' }}
+          speechSynthesis={{ enable: false, lang: 'en' }}
           floating={true}
           headerTitle="Digital Doctor"
           floatingStyle={{ left: '25px', bottom: '25px'}}

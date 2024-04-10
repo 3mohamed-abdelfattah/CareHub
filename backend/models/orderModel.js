@@ -21,7 +21,8 @@ const orderSchema = new mongoose.Schema({
   file: {
     type: String,
   },
-});
+})
+
 
 const Order = mongoose.model('Order', orderSchema);
 

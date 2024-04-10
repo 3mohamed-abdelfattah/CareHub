@@ -107,7 +107,7 @@ export default function App() {
     <ToastContainer/>
       <Routes>
         <Route path="/register" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login/>} />
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashbord />}>
           <Route path="user" element={<Users />} />
@@ -228,7 +228,9 @@ export default function App() {
 
         <Route path="/support" element={<Problems/>} />
         <Route path="/requests" element={<Orders/>} />
+        <Route path="/realtimechat/:id" element={<MessagesComponent/>} />
         <Route path="/realtimechat" element={<MessagesComponent/>} />
+
         <Route path="/profileUpdate" element={<Updateme/>} />
 
 

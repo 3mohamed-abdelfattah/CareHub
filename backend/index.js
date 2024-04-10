@@ -2,7 +2,6 @@ const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const validator = require('validator')
-const multer = require('multer');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 
@@ -13,17 +12,35 @@ const Order = require('./models/orderModel')
 const Message = require('./models/messageModel')
 const Conversation = require('./models/conversationModel')
 const protectURL = require('./middleware/protectURL')
-const { getReceiverSocketId , io , server } = require('./socket/socket.js')
+const { getReceiverSocketId , io , server ,app } = require('./socket/socket.js')
 
 
 const generateTokenAndSetCookie = require('./utils/generateToken.js')
 const CheckAdmin = require('./middleware/functions')
 
 
-const storage = multer.memoryStorage(); 
-const upload = multer({ storage: storage });
+//******************** */
+const { v4: uuidv4 } = require('uuid');
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'upload')
+  },
+
+  filename: function (req, file, cb) {
+
+    cb(null,uuidv4() + '-' + file.originalname )
+  }
+})
+
+const upload = multer({ storage: storage })
+app.use(express.static('upload'));
+
+//*********  */
 
 const dbName = 'doctors'
+
 
 require('dotenv').config() // to use the .env file
 
@@ -38,7 +55,7 @@ mongoose.connect(url).then(()=>{
 })
 
 
-const app = express()
+// const app = express()
 
 app.use(express.json()) // to allow the server to read the body of the request
 
@@ -46,12 +63,9 @@ app.use(cors()) // to allow the server to accept requests from the frontend
 app.use(cookieParser())
 
 app.get('/api/users', async (req, res) => {
-  const query = req.query
-  const limit = query.limit || 100
-  const page = query.page || 1
-  const skip = (page - 1) * limit
 
-  const users = await User.find({}, {"__v" : 0 , 'password' :false , }).limit(limit).skip(skip)
+
+  const users = await User.find({}, {"__v" : 0 , 'password' :false , })
   res.status(200).json(users)
 
 })
@@ -696,11 +710,12 @@ app.post('/api/orders', upload.single('file'), async (req, res) => {
   try {
     const { name, phoneNumber, address, order } = req.body;
     
-    const file = req.file; 
+    const filePath = `/uploads/${req.file.filename}`; 
 
     if (!(name && phoneNumber && address && order )) {
       return res.status(400).send('All fields are required');
     }
+
 
 
     const newOrder = await Order.create({
@@ -708,11 +723,11 @@ app.post('/api/orders', upload.single('file'), async (req, res) => {
       phoneNumber,
       address,
       order,
-      file
+      file : filePath
     });
     await newOrder.save();
 
-    res.status(201).send('Order saved successfully');
+    res.status(201).send('Order saved successfully' + newOrder);
   } catch (error) {
     console.error(error);
     res.status(500).send('Internal Server Error');
@@ -766,11 +781,6 @@ app.post('/api/sendmsg/:senderID/:reseverID',async (req, res) => {
 
 
 
-    // const user = await User .findById(req.params.senderID);
-
-		// const senderId = req.user._id;
-
-    // const user = await User .findById(req.params.senderID);
 
 		let conversation = await Conversation.findOne({
 			participants: { $all: [user._id, resever._id] },
@@ -876,6 +886,6 @@ app.get('/api/messages/:senderID/:receiverId', async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log('Server is running on port', PORT);
 });

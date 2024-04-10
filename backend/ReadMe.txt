@@ -147,7 +147,7 @@ POST http://localhost:5000/api/sendmsg/:id  (receverID)
 
 
         all messages from other users 
-GET :senderID/:reseverID 
+GET http://localhost:5000/api/sendmsg/:senderID/:reseverID 
 
 
         ---*for sidebar*---

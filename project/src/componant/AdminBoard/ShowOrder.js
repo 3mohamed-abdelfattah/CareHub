@@ -1,17 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import './ShowProblem.css'; // Import your CSS file
+import './ShowProblem.css'; // استيراد ملف CSS الخاص بك
+
 export default function ShowOrder() {
   const [user, setUser] = useState([]);
   const [selectedProblem, setSelectedProblem] = useState(null);
-  const [runUseEffect, setRun] = useState(0);
+  const [selectedProblemImage, setSelectedProblemImage] = useState(null);
+
+  useEffect(() => {
+    if (selectedProblem && selectedProblem.file) {
+      const imageUrl = `${selectedProblem.file}`; // إضافة timestamp للتخلص من التخزين المؤقت
+
+      fetch(imageUrl)
+        .then(response => response.blob())
+        .then(blob => {
+          const imageURL = URL.createObjectURL(blob);
+          setSelectedProblemImage(imageURL);
+        })
+        .catch(error => console.error('Error fetching image:', error));
+    }
+  }, [selectedProblem]);
 
   useEffect(() => {
     fetch("http://localhost:5000/api/orders")
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
+        console.log(data);
       });
-  }, [runUseEffect]);
+  }, []);
 
   const handleClick = (user) => {
     setSelectedProblem(user);
@@ -27,8 +43,7 @@ export default function ShowOrder() {
       <td>{user.name}</td>
       <td>{user.address}</td>
       <td>{user.phoneNumber}</td>
-      <td>{user.order}</td>
-      {/* Assuming 'file' is a base64 encoded string */}
+      <td>{user.file}</td>
       <td>
         <button className="neumorphism-btn" onClick={() => handleClick(user)}>View Order</button>
       </td>
@@ -62,10 +77,11 @@ export default function ShowOrder() {
             <p><strong>العنوان:</strong> {selectedProblem.address}</p>
             <p><strong>الرقم:</strong> {selectedProblem.phoneNumber}</p>
             <p><strong>الطلب:</strong> {selectedProblem.order}</p>
-            <p><strong>ملاحظات:</strong><img src={`file.data:${selectedProblem.contentType};base64,${selectedProblem.file}`} alt="User File" /></p>
+            <p><strong>ملاحظات:</strong> {selectedProblemImage && <img src={selectedProblemImage} alt="User File" />}</p> {/* تأكد من عرض الصورة بشكل صحيح */}
           </div>
         </div>
       )}
+
     </div>
   );
 }

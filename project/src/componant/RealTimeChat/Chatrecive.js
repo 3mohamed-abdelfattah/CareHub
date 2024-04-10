@@ -1,5 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
-import { Avatar, Box, List, ListItem, ListItemAvatar, ListItemText, Typography, TextField, Button, Input } from '@mui/material';
+import { Avatar, Box, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
 import Footer from '../AllBars/Footer';
 import Header from '../AllBars/Header';
 import AV1 from '../Photos/avatar1.jpg';
@@ -123,8 +123,13 @@ const MessagesComponent = () => {
       <Box sx={{ flex: 3, paddingLeft: 1, marginRight:0.5, overflowY: 'auto', maxHeight: '100%', height: 'calc(100vh - 64px - 56px)', minWidth: '400px', position: 'relative' }}>
       <Box sx={{ height: 'calc(100% - 56px)', overflowY: 'auto' }}>
         <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-          {messages.map((message, index) => (
-            <ListItem alignItems="flex-start" key={message._id} sx={{ flexDirection: userID === message.senderId ? 'row' : 'row-reverse', justifyContent: 'flex-start', color: userID === message.senderId ? 'text.secondary' : 'text.secondary', backgroundColor: userID === message.senderId ? '#f0f0f0' : '#DEF7E5', borderRadius: '20px', padding: '10px', marginBottom: '10px' }}>
+          {messages.length === 0 ? ( // Check if messages array is empty
+            <ListItem sx={{ justifyContent: 'center' }}> 
+              <h2 style={{textAlign:'center',fontWeight:'bolder'}}>Currently, there are no messages. Please send a message to the user you want. 📩</h2>
+            </ListItem>
+          ) : (
+            messages.map((message, index) => (
+              <ListItem alignItems="flex-start" key={message._id} sx={{ flexDirection: userID === message.senderId ? 'row' : 'row-reverse', justifyContent: 'flex-start', color: userID === message.senderId ? 'text.secondary' : 'text.secondary', backgroundColor: userID === message.senderId ? '#f0f0f0' : '#DEF7E5', borderRadius: '20px', padding: '10px', marginBottom: '10px' }}>
               <ListItemAvatar sx={{ marginLeft: userID === message.senderId ? '0' : '10px', marginRight: userID === message.senderId ? '10px' : '0' }}>
                 <Avatar alt="Sender Avatar" src={userAvatars[message.senderId]} />
               </ListItemAvatar>
@@ -133,7 +138,7 @@ const MessagesComponent = () => {
               secondary={
                 <Fragment>
                   <Typography
-                    className="message-text" // إضافة الفئة المحددة لتنسيق الرسالة
+                    className="message-text"
                     sx={{ display: 'inline', fontSize: 20, fontWeight: 'bold' }}
                     component="span"
                     variant="body2"
@@ -154,9 +159,9 @@ const MessagesComponent = () => {
               }
               sx={{ textAlign: userID === message.senderId ? 'left' : 'right' }}
             />
-            
             </ListItem>
-          ))}
+            ))
+          )}
         </List>
         </Box>
       {/* Input field for typing and sending messages */}
@@ -214,13 +219,10 @@ const MessagesComponent = () => {
         </svg>
       </button>
     </div>
-    
       </Box>
     </Box>
-    
     </Box>
     <Footer/>
-    
     </Fragment>
   );
 };
