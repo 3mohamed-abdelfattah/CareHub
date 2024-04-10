@@ -99,11 +99,13 @@ import CentarDetails from './componant/HomeComponents/HomeCompDetails/CentarDeta
 import OrdersDoc from './componant/AdminBoard/OrdersDoc';
 import Updateme from './componant/AdminBoard/Updateme';
 import MessagesComponent from './componant/RealTimeChat/Chatrecive';
+import { SocketContextProvider } from './componant/RealTimeChat/SocketContext';
 
 
 export default function App() {
   return (
     <div>
+    <SocketContextProvider>
     <ToastContainer/>
       <Routes>
         <Route path="/register" element={<SignUp />} />
@@ -235,6 +237,8 @@ export default function App() {
 
 
       </Routes>
+      </SocketContextProvider>
+
     </div>
   );
 }
