@@ -38,6 +38,7 @@ const MessagesComponent = () => {
         })
         .then(data => {
           setMessages(data);
+          console.log(selectedUser._id);
         })
         .catch(error => {
           setError(error.message);

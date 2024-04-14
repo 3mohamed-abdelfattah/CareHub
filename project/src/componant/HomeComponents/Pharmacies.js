@@ -57,7 +57,7 @@ export default function Pharmacies() {
 
   const handleSearch = (doctorName) => {
     const filteredData = doctorsData.filter((doctor) =>
-      doctor.Labname.toLowerCase().includes(doctorName.toLowerCase())
+      doctor.name.toLowerCase().includes(doctorName.toLowerCase())
     );
     if (filteredData.length === 0) {
       console.log("No results found!");
@@ -67,6 +67,9 @@ export default function Pharmacies() {
     setFilteredDoctors(filteredData.slice(0, itemsPerPage));
     setCurrentPage(1);
   };
+
+
+
 
   const handlePreviousPage = () => {
     if (currentPage > 1) {

@@ -57,7 +57,7 @@ export default function Labs() {
 
   const handleSearch = (doctorName) => {
     const filteredData = doctorsData.filter((doctor) =>
-      doctor.Labname.toLowerCase().includes(doctorName.toLowerCase())
+      doctor.name.toLowerCase().includes(doctorName.toLowerCase())
     );
     if (filteredData.length === 0) {
       console.log("No results found!");
