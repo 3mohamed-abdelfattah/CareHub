@@ -3,7 +3,6 @@ import Header from "../AllBars/Header";
 import Footer from "../AllBars/Footer";
 import { Link } from "react-router-dom"
 import "../Home/HomePage.css"
-import { useSpring, animated } from 'react-spring';
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 import AllDocChatbot from '../ChatBOTS/AllDocChatbot';
 
@@ -41,13 +40,6 @@ export default function AllDoc() {
     }, [])
 
 
-    const slideProps = useSpring({
-        opacity: 1,
-        from: { opacity: 0 },
-        config: { duration: 500 },
-});
-
-
 
     return (
         <div>
@@ -56,14 +48,13 @@ export default function AllDoc() {
             <div className='COLOR'>
             <div className="landing">
                 <div className="intro-text">
-                    <h1><b>رحلة نحو الصحة بمساعدة نخبة من أفضل الأطباء</b> </h1>
-                    <p><h5>...غوص عميق في مختلف التخصصات الطبية، وتعرف على أطباء مختصين بكل مجال</h5></p>
+                    <h1 data-aos="zoom-in"><b>رحلة نحو الصحة بمساعدة نخبة من أفضل الأطباء</b> </h1>
+                    <p data-aos="zoom-in"><h5>...غوص عميق في مختلف التخصصات الطبية، وتعرف على أطباء مختصين بكل مجال</h5></p>
                 </div>
             </div>
             </div>
             <main id="slider">
                 <section className="slider-container">
-                <animated.div style={slideProps}>
                     <div className="slider">
                         <div className="slider-item">
                         <Link to ="/heart" className="HOMELINK">
@@ -71,7 +62,7 @@ export default function AllDoc() {
                                 <figure className="slide-image">
                                     <img src={HEART} alt=""/>
                                 </figure>
-                                <h4 className="slide-name">قلب</h4>
+                                <h4 data-aos="zoom-out" className="slide-name">قلب</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
                                     <p>دكتور</p><p>29</p>
@@ -87,7 +78,7 @@ export default function AllDoc() {
                                 <figure className="slide-image">
                                     <img src={SR} alt=""/>
                                 </figure>
-                                <h4 className="slide-name">جراحه</h4>
+                                <h4 data-aos="zoom-out" className="slide-name">جراحه</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
                                 <p>دكتور</p><p>107</p>
@@ -103,7 +94,7 @@ export default function AllDoc() {
                                 <figure className="slide-image">
                                     <img src={EYE} alt=""/>
                                 </figure>
-                                <h4 className="slide-name">عيون</h4>
+                                <h4 data-aos="zoom-out" className="slide-name">عيون</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
                                 <p>دكتور</p><p>39</p>
@@ -114,7 +105,6 @@ export default function AllDoc() {
                             </Link>
                         </div>
                     </div>
-                    </animated.div>
                 </section>
 
 
@@ -122,7 +112,6 @@ export default function AllDoc() {
 
                 
                 <section className="slider-container">
-                <animated.div style={slideProps}>
                     <div className="slider">
                         <div className="slider-item">
                         <Link to ="/bone" className="HOMELINK">
@@ -130,7 +119,7 @@ export default function AllDoc() {
                                 <figure className="slide-image">
                                     <img src={BON} alt=""/>
                                 </figure>
-                                <h4 className="slide-name">عظام</h4>
+                                <h4 data-aos="zoom-out" className="slide-name">عظام</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
                                 <p>دكتور</p><p>22</p>
@@ -146,7 +135,7 @@ export default function AllDoc() {
                                 <figure className="slide-image">
                                     <img src={TKB} alt=""/>
                                 </figure>
-                                <h4 className="slide-name">تخاطب</h4>
+                                <h4 data-aos="zoom-out" className="slide-name">تخاطب</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
                                 <p>دكتور</p><p>4</p>
@@ -162,7 +151,7 @@ export default function AllDoc() {
                                 <figure className="slide-image">
                                     <img src={CST} alt=""/>
                                 </figure>
-                                <h4 className="slide-name">صدر وجهاز تنفسي</h4>
+                                <h4 data-aos="zoom-out" className="slide-name">صدر وجهاز تنفسي</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
                                 <p>دكتور</p><p>19</p>
@@ -173,12 +162,10 @@ export default function AllDoc() {
                         </Link>
                         </div>
                     </div>
-                    </animated.div>
                 </section>
 
 
                 <section className="slider-container">
-                <animated.div style={slideProps}>
                 <div className="slider">
                     <div className="slider-item">
                     <Link to ="/awram" className="HOMELINK">
@@ -186,7 +173,7 @@ export default function AllDoc() {
                             <figure className="slide-image">
                                 <img src={GL} alt=""/>
                             </figure>
-                            <h4 className="slide-name">الأورام</h4>
+                            <h4 data-aos="zoom-out" className="slide-name">الأورام</h4>
                             <div className="custom-line"></div>
                             <div className="row">
                             <p>دكتور</p><p>6</p>
@@ -202,7 +189,7 @@ export default function AllDoc() {
                             <figure className="slide-image">
                                 <img src={BU} alt=""/>
                             </figure>
-                            <h4 className="slide-name">تجميل</h4>
+                            <h4 data-aos="zoom-out" className="slide-name">تجميل</h4>
                             <div className="custom-line"></div>
                             <div className="row">
                             <p>دكتور</p><p>11</p>
@@ -218,7 +205,7 @@ export default function AllDoc() {
                             <figure className="slide-image">
                                 <img src={MS} alt=""/>
                             </figure>
-                            <h4 className="slide-name">نساء وتوليد</h4>
+                            <h4 data-aos="zoom-out" className="slide-name">نساء وتوليد</h4>
                             <div className="custom-line"></div>
                             <div className="row">
                             <p>دكتور</p><p>32</p>
@@ -229,12 +216,10 @@ export default function AllDoc() {
                     </Link>
                     </div>
                 </div>
-                </animated.div>
             </section>
 
 
                 <section className="slider-container">
-                <animated.div style={slideProps}>
                 <div className="slider">
                 <div className="slider-item">
                         <Link to ="/teeth" className="HOMELINK">
@@ -242,7 +227,7 @@ export default function AllDoc() {
                                 <figure className="slide-image">
                                     <img src={TEE} alt=""/>
                                 </figure>
-                                <h4 className="slide-name">أسنان</h4>
+                                <h4 data-aos="zoom-out" className="slide-name">أسنان</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
                                 <p>دكتور</p><p>76</p>
@@ -258,7 +243,7 @@ export default function AllDoc() {
                             <figure className="slide-image">
                                 <img src={Nose} alt=""/>
                             </figure>
-                            <h4 className="slide-name">انف واذن</h4>
+                            <h4 data-aos="zoom-out" className="slide-name">انف واذن</h4>
                             <div className="custom-line"></div>
                             <div className="row">
                             <p>دكتور</p><p>22</p>
@@ -274,7 +259,7 @@ export default function AllDoc() {
                             <figure className="slide-image">
                                 <img src={BT} alt=""/>
                             </figure>
-                            <h4 className="slide-name">باطنه</h4>
+                            <h4 data-aos="zoom-out" className="slide-name">باطنه</h4>
                             <div className="custom-line"></div>
                             <div className="row">
                             <p>دكتور</p><p>21</p>
@@ -285,12 +270,10 @@ export default function AllDoc() {
                             </Link>
                     </div>
                 </div>
-                </animated.div>
             </section>
 
 
                 <section className="slider-container">
-                <animated.div style={slideProps}>
                     <div className="slider">
                         <div className="slider-item">
                         <Link to ="/child" className="HOMELINK">
@@ -298,7 +281,7 @@ export default function AllDoc() {
                                 <figure className="slide-image">
                                     <img src={CHILD} alt=""/>
                                 </figure>
-                                <h4 className="slide-name">اطفال</h4>
+                                <h4 data-aos="zoom-out" className="slide-name">اطفال</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
                                 <p>دكتور</p><p>88</p>
@@ -314,7 +297,7 @@ export default function AllDoc() {
                                 <figure className="slide-image">
                                     <img src={SUB} alt=""/>
                                 </figure>
-                                <h4 className="slide-name">تغذية</h4>
+                                <h4 data-aos="zoom-out" className="slide-name">تغذية</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
                                 <p>دكتور</p><p>12</p>
@@ -330,7 +313,7 @@ export default function AllDoc() {
                                 <figure className="slide-image">
                                     <img src={NUT} alt=""/>
                                 </figure>
-                                <h4 className="slide-name">علاج طبيعي</h4>
+                                <h4 data-aos="zoom-out" className="slide-name">علاج طبيعي</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
                                 <p>دكتور</p><p>19</p>
@@ -341,14 +324,12 @@ export default function AllDoc() {
                         </Link>
                         </div>
                     </div>
-                    </animated.div>
                 </section>
 
 
 
 
                 <section className="slider-container">
-                <animated.div style={slideProps}>
                     <div className="slider">
                         <div className="slider-item">
                         <Link to ="/gland" className="HOMELINK">
@@ -356,7 +337,7 @@ export default function AllDoc() {
                                 <figure className="slide-image">
                                     <img src={DO1} alt=""/>
                                 </figure>
-                                <h4 className="slide-name">غدد</h4>
+                                <h4 data-aos="zoom-out" className="slide-name">غدد</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
                                 <p>دكتور</p><p>130</p>
@@ -372,7 +353,7 @@ export default function AllDoc() {
                                 <figure className="slide-image">
                                     <img src={NFS} alt=""/>
                                 </figure>
-                                <h4 className="slide-name">نفسي</h4>
+                                <h4 data-aos="zoom-out" className="slide-name">نفسي</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
                                 <p>دكتور</p><p>13</p>
@@ -388,7 +369,7 @@ export default function AllDoc() {
                                 <figure className="slide-image">
                                     <img src={MSK} alt=""/>
                                 </figure>
-                                <h4 className="slide-name">جلدية وتناسلية</h4>
+                                <h4 data-aos="zoom-out" className="slide-name">جلدية وتناسلية</h4>
                                 <div className="custom-line"></div>
                                 <div className="row">
                                 <p>دكتور</p><p>45</p>
@@ -399,14 +380,12 @@ export default function AllDoc() {
                         </Link>
                         </div>
                     </div>
-                    </animated.div>
                 </section>
 
 
 
 
                 <section className="slider-container">
-                <animated.div style={slideProps}>
                     <div className="slider">
                     <div className="slider-item">
                     <Link to ="/brain" className="HOMELINK">
@@ -414,7 +393,7 @@ export default function AllDoc() {
                             <figure className="slide-image">
                                 <img src={Brain} alt=""/>
                             </figure>
-                            <h4 className="slide-name">مخ واعصاب</h4>
+                            <h4 data-aos="zoom-out" className="slide-name">مخ واعصاب</h4>
                             <div className="custom-line"></div>
                             <div className="row">
                             <p>دكتور</p><p>20</p>
@@ -425,7 +404,6 @@ export default function AllDoc() {
                         </Link>
                     </div>
                     </div>
-                    </animated.div>
                 </section>
 
             </main>

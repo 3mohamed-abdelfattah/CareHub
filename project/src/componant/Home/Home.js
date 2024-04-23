@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Header from "../AllBars/Header"
 import "./HomePage.css"
 import { Link } from "react-router-dom"
-import { useSpring, animated } from 'react-spring';
 import Footer from "../AllBars/Footer"
 import ChatbotHome from '../ChatBOTS/ChatbotHome';
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
@@ -22,7 +21,6 @@ import TIME from "../Photos/time.png"
 import CHT from "../Photos/Chatreal.png"
 
 
-
 export default function Home() {
 
     const [email,setemail]=useState('');
@@ -30,12 +28,6 @@ export default function Home() {
 
     const userEmail = window.localStorage.getItem('email');
 
-    
-    const slideProps = useSpring({
-        opacity: 1,
-        from: { opacity: 0 },
-        config: { duration: 500 },
-    });
 
     useEffect(() => {
         fetch(`http://localhost:5000/api/users?email=${encodeURIComponent(userEmail)}`)
@@ -73,14 +65,13 @@ export default function Home() {
         <Header />
         <div className="landing">
         <div className="intro-text">
-        <h1><b>رحلة مُبسّطة للوصول إلى أفضل رعاية طبية</b></h1>
-                <p><h5>...حدد ما تبحث عنه من طبيب مختص أو مركز طبي مُجهز أو مستشفى مُتخصصة في بني سويف</h5></p>
+        <h1 data-aos="zoom-in"><b>رحلة مُبسّطة للوصول إلى أفضل رعاية طبية</b></h1>
+                <p data-aos="zoom-in"><h5>...حدد ما تبحث عنه من طبيب مختص أو مركز طبي مُجهز أو مستشفى مُتخصصة في بني سويف</h5></p>
             </div>
         </div>
         <main id="slider">
 
             <section className="slider-container">
-            <animated.div style={slideProps}>
                 <div className="slider">
                     <div className="slider-item">
                     <Link to ="/pharmacies" className="HOMELINK">
@@ -88,7 +79,7 @@ export default function Home() {
                             <figure className="slide-image">
                                 <img src={PH} alt=""/>
                             </figure>
-                            <h4 className="slide-name">صيدليات</h4>
+                            <h4 data-aos="fade-up" className="slide-name">صيدليات</h4>
                         </div>
                         </Link>
                     </div>
@@ -97,9 +88,9 @@ export default function Home() {
                     <Link to ="/labs" className="HOMELINK">
                     <div className="slide">
                             <figure className="slide-image">
-                                <img src={LAB} alt=""/>
+                                <img  src={LAB} alt=""/>
                             </figure>
-                            <h4 className="slide-name">معامل</h4>
+                            <h4 data-aos="fade-up" className="slide-name">معامل</h4>
                         </div>
                         </Link>
                     </div>
@@ -108,38 +99,36 @@ export default function Home() {
                     <Link to ="/doctors" className="HOMELINK">
                         <div className="slide">
                             <figure className="slide-image">
-                                <img src={DOC} alt=""/>
+                                <img  src={DOC} alt=""/>
                             </figure>
-                            <h4 className="slide-name">أطباء</h4>
+                            <h4  data-aos="fade-up" className="slide-name">أطباء</h4>
                         </div>
                     </Link>
                     </div>
 
                 </div>
-                    </animated.div>
             </section>
             <section className="slider-container">
-            <animated.div style={slideProps}>
             <div className="slider">
             
             <div className="slider-item">
             <Link to ="/hospital" className="HOMELINK">
                         <div className="slide">
                             <figure className="slide-image">
-                                <img src={HOS} alt=""/>
+                                <img  src={HOS} alt=""/>
                             </figure>
-                            <h4 className="slide-name">مستشفيات</h4>
+                            <h4 data-aos="fade-up" className="slide-name">مستشفيات</h4>
                         </div>
                         </Link>
                     </div>
 
-                    <div className="slider-item">
+                    <div  className="slider-item">
                     <Link to ="/centers" className="HOMELINK">
                         <div className="slide">
                             <figure className="slide-image">
-                                <img src={CEN} alt=""/>
+                                <img  src={CEN} alt=""/>
                             </figure>
-                            <h4 className="slide-name">مراكز</h4>
+                            <h4 data-aos="fade-up" className="slide-name">مراكز</h4>
                         </div>
                         </Link>
                     </div>
@@ -148,19 +137,17 @@ export default function Home() {
                     <Link to ="/company" className="HOMELINK">
                         <div className="slide">
                             <figure className="slide-image">
-                                <img src={COM} alt=""/>
+                                <img  src={COM} alt=""/>
                             </figure>
-                            <h4 className="slide-name">شركات ادويه</h4>
+                            <h4 data-aos="fade-up" className="slide-name">شركات ادويه</h4>
                         </div>
                         </Link>
                     </div>
 
                     </div>
-                    </animated.div>
 
             </section>
             <section className="slider-container">
-            <animated.div style={slideProps}>
 
                 <div className="slider">
 
@@ -168,9 +155,9 @@ export default function Home() {
                     <Link to ="/bmr" className="HOMELINK">
                     <div className="slide">
                         <figure className="slide-image">
-                            <img src={CLC} alt=""/>
+                            <img  src={CLC} alt=""/>
                         </figure>
-                        <h4 className="slide-name">معدل الأيض</h4>
+                        <h4 data-aos="fade-up" className="slide-name">معدل الأيض</h4>
                     </div>
                     </Link>
                 </div>
@@ -179,9 +166,9 @@ export default function Home() {
                 <Link to ="/foodclc" className="HOMELINK">
                     <div className="slide">
                         <figure className="slide-image">
-                            <img src={FOOC} alt=""/>
+                            <img  src={FOOC} alt=""/>
                         </figure>
-                        <h4 className="slide-name">الدليل الغذائي</h4>
+                        <h4 data-aos="fade-up" className="slide-name">الدليل الغذائي</h4>
                     </div>
                     </Link>
                     </div>
@@ -190,30 +177,27 @@ export default function Home() {
                     <Link to ="/healthawr" className="HOMELINK">
                         <div className="slide">
                             <figure className="slide-image">
-                                <img src={TWEA} alt=""/>
+                                <img  src={TWEA} alt=""/>
                             </figure>
-                            <h4 className="slide-name">التوعية الصحية</h4>
+                            <h4 data-aos="fade-up" className="slide-name">التوعية الصحية</h4>
                         </div>
                     </Link>
                     </div>
 
                 </div>
-                </animated.div>
             </section>
 
             <section className="slider-container">
-            <animated.div style={slideProps}>
 
             <div className="slider">
-
 
                 <div className="slider-item">
                 <Link to ="/arti" className="HOMELINK">
                 <div className="slide">
                     <figure className="slide-image">
-                        <img src={NEWS} alt=""/>
+                        <img  src={NEWS} alt=""/>
                     </figure>
-                    <h4 className="slide-name">مقالات طبية</h4>
+                    <h4 data-aos="fade-up" className="slide-name">مقالات طبية</h4>
                 </div>
                 </Link>
                 </div>
@@ -223,9 +207,9 @@ export default function Home() {
                 <Link to ="/notifimid" className="HOMELINK">
                 <div className="slide">
                     <figure className="slide-image">
-                        <img src={TIME} alt=""/>
+                        <img  src={TIME} alt=""/>
                     </figure>
-                    <h4 className="slide-name">أدوية اليوم</h4>
+                    <h4 data-aos="fade-up" className="slide-name">أدوية اليوم</h4>
                 </div>
                 </Link>
                 </div>
@@ -234,15 +218,14 @@ export default function Home() {
                 <Link to ="/realtimechat" className="HOMELINK">
                 <div className="slide">
                     <figure className="slide-image">
-                        <img src={CHT} alt=""/>
+                        <img  src={CHT} alt=""/>
                     </figure>
-                    <h4 className="slide-name">المحادثات المباشرة</h4>
+                    <h4 data-aos="fade-up" className="slide-name">المحادثات المباشرة</h4>
                 </div>
                 </Link>
                 </div>
 
             </div>
-            </animated.div>
         </section>
         </main>
         <ScrollToTopButton/>
