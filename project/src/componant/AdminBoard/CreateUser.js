@@ -44,7 +44,7 @@ export default function CreateUser() {
         if (res.status === 200) {
           setTimeout(() => {
             navigate('/dashboard/user'); // Redirect using useNavigate hook
-        }, 800);
+        }, 1000);
           setPlayStatus(Sound.status.PLAYING);
           toast.success(".تم انشاء المستخدم بنجاح",options);
         }

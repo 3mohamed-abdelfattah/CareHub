@@ -104,9 +104,7 @@ return (
                 <option value="Admin">مسؤول</option>
                 <option value="Master">مطور برمجيات</option>
                 <option value="Doctor">طبيب</option>
-
                 </select>
-            
 
                 <div style={{textAlign:"center"}}>
                     <button type="submit"><span className="box">تحديث</span></button>

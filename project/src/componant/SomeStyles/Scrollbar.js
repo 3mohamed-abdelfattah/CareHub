@@ -18,11 +18,6 @@ const SCROLLbar = () => {
         />
       )}
     >
-
-
-
-
-
     </Scrollbars>
   );
 };

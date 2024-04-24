@@ -39,9 +39,8 @@ body{
   font-size: 20px;
   padding: 1%;
   justify-content: right;
-
-
 }
+
 .b-flex{
   display: flex;
 }

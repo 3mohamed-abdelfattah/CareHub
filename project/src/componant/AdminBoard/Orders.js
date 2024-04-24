@@ -56,7 +56,7 @@ export default function Orders() {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-      }
+    }
     
 
     return (

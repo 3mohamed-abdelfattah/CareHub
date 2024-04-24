@@ -45,7 +45,7 @@ export default function Login() {
         window.localStorage.setItem("email", email);
         setTimeout(() => {
           navigate('/'); // Redirect using useNavigate hook
-        }, 800);
+        }, 1200);
             } else {
         // Handle unexpected successful response (for robustness)
         console.warn("Unexpected successful response:", res);

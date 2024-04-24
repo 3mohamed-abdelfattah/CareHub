@@ -100,6 +100,7 @@ import OrdersDoc from './componant/AdminBoard/OrdersDoc';
 import Updateme from './componant/AdminBoard/Updateme';
 import MessagesComponent from './componant/RealTimeChat/Chatrecive';
 import { SocketContextProvider } from './componant/RealTimeChat/SocketContext';
+import MedicCard from './componant/HomeComponents/Medicine';
 
 
 export default function App() {
@@ -234,7 +235,7 @@ export default function App() {
         <Route path="/realtimechat" element={<MessagesComponent/>} />
 
         <Route path="/profileUpdate" element={<Updateme/>} />
-
+        <Route path="/medicine" element={<MedicCard/>} />
 
       </Routes>
       </SocketContextProvider>

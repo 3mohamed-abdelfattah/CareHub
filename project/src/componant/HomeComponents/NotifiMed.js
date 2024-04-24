@@ -1,5 +1,3 @@
-// NotifiMED.js
-
 import React, { useState, useEffect, Fragment } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';

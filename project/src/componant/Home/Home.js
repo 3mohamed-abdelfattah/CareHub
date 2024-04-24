@@ -19,6 +19,7 @@ import CLC from "../Photos/CALC.png"
 import FOOC from "../Photos/FOOD.png"
 import TIME from "../Photos/time.png"
 import CHT from "../Photos/Chatreal.png"
+import MED from "../Photos/MED.jpg"
 
 
 export default function Home() {
@@ -31,13 +32,13 @@ export default function Home() {
 
     useEffect(() => {
         fetch(`http://localhost:5000/api/users?email=${encodeURIComponent(userEmail)}`)
-          .then((res) => res.json())
-          .then((data) => {
+        .then((res) => res.json())
+        .then((data) => {
             // التحقق من وجود بيانات
             if (data.length > 0) {
               // البحث عن المستخدم الذي يتطابق مع البريد الإلكتروني
-              const user = data.find((user) => user.email === userEmail);
-              if (user) {
+            const user = data.find((user) => user.email === userEmail);
+            if (user) {
                 // إعداد البيانات في الحالة فقط إذا تم العثور على المستخدم
                 setemail(user.email);
                 setid(user._id);
@@ -227,6 +228,27 @@ export default function Home() {
 
             </div>
         </section>
+
+        <section className="slider-container">
+
+        <div className="slider">
+
+            <div className="slider-item">
+            <Link to ="/medicine" className="HOMELINK">
+            <div className="slide">
+                <figure className="slide-image">
+                    <img  src={MED} alt=""/>
+                </figure>
+                <h4 data-aos="fade-up" className="slide-name">الأدوية الشائعة</h4>
+            </div>
+            </Link>
+            </div>
+
+
+        </div>
+    </section>
+
+
         </main>
         <ScrollToTopButton/>
     <ChatbotHome/>
