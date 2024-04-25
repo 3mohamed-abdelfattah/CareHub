@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './ShowProblem.css'; // قم بإنشاء ملف CSS لتصميم النافذة المنبثقة واستيراده هنا
+import './ShowProblem.css';
 
 export default function ShowProblem() {
     const [user, setUser] = useState([]);
@@ -35,7 +35,7 @@ export default function ShowProblem() {
     ));
 
     return (
-        <div style={{padding:'10px', maxHeight: '550px', overflowY: 'auto'}}>
+        <div style={{ padding: '10px', maxHeight: '550px', overflowY: 'auto' }}>
             <table>
                 <thead>
                     <tr>
@@ -50,7 +50,6 @@ export default function ShowProblem() {
                     {showUsers}
                 </tbody>
             </table>
-
             {selectedProblem && (
                 <div className="modal">
                     <div className="modal-content">

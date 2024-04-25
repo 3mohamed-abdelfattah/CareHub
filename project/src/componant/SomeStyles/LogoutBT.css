@@ -1,290 +1,152 @@
 .containerH {
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(45deg, #92c9b1, #92c9b1 20px, #b3e0d2 20px, #b3e0d2 40px);
-  }
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(45deg, #92c9b1, #92c9b1 20px, #b3e0d2 20px, #b3e0d2 40px);
+}
 
 
 .Btnout {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 55px;
-    height: 55px;
-    border: none;
-    border-radius: 25%;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition-duration: .4s;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-    background-color: rgb(255, 65, 65);
-  }
-  
-  /* plus signout */
-  .signout {
-    width: 100%;
-    transition-duration: .3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .signout svg {
-    width: 20px;
-  }
-  
-  .signout svg path {
-    fill: white;
-  }
-  /* texttt */
-  .texttt {
-    position: absolute;
-    right: 0%;
-    width: 0%;
-    opacity: 0;
-    color: white;
-    font-size: 1.3em;
-    font-weight: 600;
-    transition-duration: .3s;
-  }
-  /* hover effect on button width */
-  .Btnout:hover {
-    width: 125px;
-    border-radius: 15px;
-    transition-duration: .4s;
-  }
-  
-  .Btnout:hover .signout {
-    width: 30%;
-    transition-duration: .3s;
-    padding-left: 20px;
-  }
-  /* hover effect button's texttt */
-  .Btnout:hover .texttt {
-    opacity: 1;
-    width: 70%;
-    transition-duration: .3s;
-    padding-right: 10px;
-  }
-  /* button click effect*/
-  .Btnout:active {
-    transform: translate(2px ,2px);
-  }
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 25%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .4s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(255, 65, 65);
+}
+
+/* plus signout */
+.signout {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signout svg {
+  width: 20px;
+}
+
+.signout svg path {
+  fill: white;
+}
+
+/* texttt */
+.texttt {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.3em;
+  font-weight: 600;
+  transition-duration: .3s;
+}
+
+/* hover effect on button width */
+.Btnout:hover {
+  width: 125px;
+  border-radius: 15px;
+  transition-duration: .4s;
+}
+
+.Btnout:hover .signout {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 20px;
+}
+
+/* hover effect button's texttt */
+.Btnout:hover .texttt {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+}
+
+/* button click effect*/
+.Btnout:active {
+  transform: translate(2px, 2px);
+}
 
 
 
 
 
-  .BtnDB {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 55px;
-    height: 55px;
-    border: none;
-    border-radius: 25%;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition-duration: 0.4s;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-    background-color: #2a442ed3;
-    margin-right: 10px;
-  }
-  
-  /* plus sign */
-  .svgWrapper {
-    width: 100%;
-    transition-duration: 0.4s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .svgIcon {
-    width: 20px;
-  }
-  
-  /* textDB */
-  .textDB {
-    position: absolute;
-    right: 0%;
-    width: 0%;
-    opacity: 0;
-    color: white;
-    font-size: 1.3em;
-    font-weight: 600;
-    transition-duration: 0.3s;
-  }
-  /* hover effect on button width */
-  .BtnDB:hover {
-    width: 125px;
-    border-radius: 15px;
-    transition-duration: 0.3s;
-  }
-  
-  .BtnDB:hover .svgWrapper {
-    width: 30%;
-    transition-duration: 0.3s;
-    padding-left: -20px;
-  }
-  /* hover effect button's textDB */
-  .BtnDB:hover .textDB {
-    opacity: 1;
-    width: 70%;
-    transition-duration: 0.3s;
-    padding-right: 10px;
-  }
-  /* button click effect*/
-  .BtnDB:active {
-    transform: translate(2px, 2px);
-  }
-  
+.BtnDB {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 25%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.4s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: #2a442ed3;
+  margin-right: 10px;
+}
 
+/* plus sign */
+.svgWrapper {
+  width: 100%;
+  transition-duration: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.svgIcon {
+  width: 20px;
+}
 
+/* textDB */
+.textDB {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.3em;
+  font-weight: 600;
+  transition-duration: 0.3s;
+}
 
+/* hover effect on button width */
+.BtnDB:hover {
+  width: 125px;
+  border-radius: 15px;
+  transition-duration: 0.3s;
+}
 
+.BtnDB:hover .svgWrapper {
+  width: 30%;
+  transition-duration: 0.3s;
+  padding-left: -20px;
+}
 
+/* hover effect button's textDB */
+.BtnDB:hover .textDB {
+  opacity: 1;
+  width: 70%;
+  transition-duration: 0.3s;
+  padding-right: 10px;
+}
 
-
-
-  .BtnH {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 55px;
-    height: 55px;
-    border: none;
-    border-radius: 25%;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition-duration: 0.4s;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-    background-color: #2a442ed3;
-    margin-right: 10px;
-  }
-  
-  /* plus sign */
-  .svgWrapperH {
-    width: 100%;
-    transition-duration: 0.4s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .svgIcon1 {
-    width: 20px;
-  }
-  
-  /* textDB */
-  .textH {
-    position: absolute;
-    right: 0%;
-    width: 0%;
-    opacity: 0;
-    color: white;
-    font-size: 1.3em;
-    font-weight: 600;
-    transition-duration: 0.3s;
-  }
-  /* hover effect on button width */
-  .BtnH:hover {
-    width: 125px;
-    border-radius: 15px;
-    transition-duration: 0.3s;
-  }
-  
-  .BtnH:hover .svgWrapperH {
-    width: 30%;
-    transition-duration: 0.3s;
-    padding-left: -20px;
-  }
-  /* hover effect button's textDB */
-  .BtnH:hover .textH {
-    opacity: 1;
-    width: 70%;
-    transition-duration: 0.3s;
-    padding-right: 10px;
-  }
-  /* button click effect*/
-  .BtnH:active {
-    transform: translate(2px, 2px);
-  }
-  
-
-
-
-
-  .Btnin{
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    width: 55px;
-    height: 55px;
-    border: none;
-    border-radius: 25%;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition-duration: .3s;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-    background-color: #000000d3;
-  }
-  
-  /* plus sign */
-  .sign {
-    width: 100%;
-    transition-duration: .3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .sign svg {
-    width: 20px;
-  }
-  
-  .sign svg path {
-    fill: white;
-  }
-  /* text */
-  .textin{
-    position: absolute;
-    right: 0%;
-    width: 0%;
-    opacity: 0;
-    color: white;
-    font-size: 1.3em;
-    font-weight: 600;
-    transition-duration: .3s;
-  }
-  /* hover effect on button width */
-  .Btnin:hover {
-    width: 125px;
-    border-radius: 15px;
-    transition-duration: .3s;
-  }
-  
-  .Btnin:hover .sign {
-    width: 30%;
-    transition-duration: .3s;
-    padding-left: 20px;
-  }
-  /* hover effect button's text */
-  .Btnin:hover .textin{
-    opacity: 1;
-    width: 70%;
-    transition-duration: .3s;
-    padding-right: 10px;
-  }
-  /* button click effect*/
-  .Btnin:active {
-    transform: translate(2px ,2px);
-  }
+/* button click effect*/
+.BtnDB:active {
+  transform: translate(2px, 2px);
+}
 
 
 
@@ -295,214 +157,365 @@
 
 
 
+.BtnH {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 25%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.4s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: #2a442ed3;
+  margin-right: 10px;
+}
 
-  /* USER HEADER DETAIL*/
+/* plus sign */
+.svgWrapperH {
+  width: 100%;
+  transition-duration: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svgIcon1 {
+  width: 20px;
+}
+
+/* textDB */
+.textH {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.3em;
+  font-weight: 600;
+  transition-duration: 0.3s;
+}
+
+/* hover effect on button width */
+.BtnH:hover {
+  width: 125px;
+  border-radius: 15px;
+  transition-duration: 0.3s;
+}
+
+.BtnH:hover .svgWrapperH {
+  width: 30%;
+  transition-duration: 0.3s;
+  padding-left: -20px;
+}
+
+/* hover effect button's textDB */
+.BtnH:hover .textH {
+  opacity: 1;
+  width: 70%;
+  transition-duration: 0.3s;
+  padding-right: 10px;
+}
+
+/* button click effect*/
+.BtnH:active {
+  transform: translate(2px, 2px);
+}
 
 
-  #btn-message {
-    --text-color: rgb(255, 255, 255);
-    --bg-color-sup: #5e5e5eb4;
-    --bg-color: #00000000;
-    --bg-hover-color: #161616ad;
-    --online-status: #4dff00;
-    --font-size: 16px;
-    --btn-transition: all 0.2s ease-out;
-  }
-  
-  .button-message {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font: 400 var(--font-size) Helvetica Neue, sans-serif;
-    background-color: var(--bg-color);
-    border-radius: 15px;
-    cursor: pointer;
-    padding: 0px;
-    width: fit-content;
-    height: 100%;
-    border: 0;
-    overflow: hidden;
-    position: relative;
-    transition: var(--btn-transition);
-    direction: rtl;
-  }
-  
-  .button-message:hover {
-    height: 56px;
-    padding: 2px 20px 2px 8px;
-    background-color: var(--bg-hover-color);
-    transition: var(--btn-transition);
-    margin-left: 8px;
 
-  }
-  
-  .button-message:active {
-    transform: scale(0.99);
-  }
-  
-  .content-avatar {
-    width: 50px;
-    height: 50px;
-    margin: 0px;
-    transition: var(--btn-transition);
-    position: relative;
-  }
-  
-  .button-message:hover .content-avatar {
-    width: 40px;
-    height: 40px;
-  }
-  
-  .avatar {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: var(--bg-color-sup);
-  }
-  
-  .user-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .status-user {
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    right: 35px;
-    bottom: 1px;
-    border-radius: 50%;
-    outline: solid 2px rgba(3, 3, 3, 0.534);
+
+
+.Btnin {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 55px;
+  height: 55px;
+  border: none;
+  border-radius: 25%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: #000000d3;
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 20px;
+}
+
+.sign svg path {
+  fill: white;
+}
+
+/* text */
+.textin {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.3em;
+  font-weight: 600;
+  transition-duration: .3s;
+}
+
+/* hover effect on button width */
+.Btnin:hover {
+  width: 125px;
+  border-radius: 15px;
+  transition-duration: .3s;
+}
+
+.Btnin:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 20px;
+}
+
+/* hover effect button's text */
+.Btnin:hover .textin {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+}
+
+/* button click effect*/
+.Btnin:active {
+  transform: translate(2px, 2px);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* USER HEADER DETAIL*/
+
+
+#btn-message {
+  --text-color: rgb(255, 255, 255);
+  --bg-color-sup: #5e5e5eb4;
+  --bg-color: #00000000;
+  --bg-hover-color: #161616ad;
+  --online-status: #4dff00;
+  --font-size: 16px;
+  --btn-transition: all 0.2s ease-out;
+}
+
+.button-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 400 var(--font-size) Helvetica Neue, sans-serif;
+  background-color: var(--bg-color);
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 0px;
+  width: fit-content;
+  height: 100%;
+  border: 0;
+  overflow: hidden;
+  position: relative;
+  transition: var(--btn-transition);
+  direction: rtl;
+}
+
+.button-message:hover {
+  height: 56px;
+  padding: 2px 20px 2px 8px;
+  background-color: var(--bg-hover-color);
+  transition: var(--btn-transition);
+  margin-left: 8px;
+
+}
+
+.button-message:active {
+  transform: scale(0.99);
+}
+
+.content-avatar {
+  width: 50px;
+  height: 50px;
+  margin: 0px;
+  transition: var(--btn-transition);
+  position: relative;
+}
+
+.button-message:hover .content-avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--bg-color-sup);
+}
+
+.user-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.status-user {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  right: 35px;
+  bottom: 1px;
+  border-radius: 50%;
+  outline: solid 2px rgba(3, 3, 3, 0.534);
+  background-color: var(--online-status);
+  transition: var(--btn-transition);
+  animation: active-status 2s ease-in-out infinite;
+}
+
+.button-message:hover .status-user {
+  width: 10px;
+  height: 10px;
+  right: 1px;
+  bottom: 1px;
+  outline: solid 3px var(--bg-hover-color);
+}
+
+.notice-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: initial;
+  color: var(--text-color);
+
+}
+
+.username {
+  letter-spacing: -1000px;
+  height: 0;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: var(--btn-transition);
+  margin-right: 8px;
+
+}
+
+.user-id {
+  font-size: 12px;
+  letter-spacing: -6px;
+  height: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--btn-transition);
+}
+
+.lable-message {
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  transform: scaleY(1);
+  transition: var(--btn-transition);
+}
+
+.button-message:hover .username {
+  height: auto;
+  letter-spacing: normal;
+  opacity: 1;
+  transform: translateY(0);
+  transition: var(--btn-transition);
+}
+
+.button-message:hover .user-id {
+  height: auto;
+  letter-spacing: normal;
+  opacity: 1;
+  transform: translateY(0);
+  transition: var(--btn-transition);
+}
+
+.button-message:hover .lable-message {
+  height: 0;
+  transform: scaleY(0);
+  transition: var(--btn-transition);
+}
+
+
+
+/*==============================================*/
+@keyframes active-status {
+  0% {
     background-color: var(--online-status);
-    transition: var(--btn-transition);
-    animation: active-status 2s ease-in-out infinite;
   }
-  
-  .button-message:hover .status-user {
-    width: 10px;
-    height: 10px;
-    right: 1px;
-    bottom: 1px;
-    outline: solid 3px var(--bg-hover-color);
-  }
-  
-  .notice-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    text-align: initial;
-    color: var(--text-color);
 
+  33.33% {
+    background-color: #1f53578a;
   }
-  
-  .username {
-    letter-spacing: -1000px;
-    height: 0;
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: var(--btn-transition);
-    margin-right: 8px;
 
+  66.33% {
+    background-color: var(--online-status);
   }
-  
-  .user-id {
-    font-size: 12px;
-    letter-spacing: -6px;
-    height: 0;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: var(--btn-transition);
-  }
-  
-  .lable-message {
-    display: flex;
-    align-items: center;
-    opacity: 1;
-    transform: scaleY(1);
-    transition: var(--btn-transition);
-  }
-  
-  .button-message:hover .username {
-    height: auto;
-    letter-spacing: normal;
-    opacity: 1;
-    transform: translateY(0);
-    transition: var(--btn-transition);
-  }
-  
-  .button-message:hover .user-id {
-    height: auto;
-    letter-spacing: normal;
-    opacity: 1;
-    transform: translateY(0);
-    transition: var(--btn-transition);
-  }
-  
-  .button-message:hover .lable-message {
-    height: 0;
-    transform: scaleY(0);
-    transition: var(--btn-transition);
-  }
-  
 
-  
-  /*==============================================*/
-  @keyframes active-status {
-    0% {
-      background-color: var(--online-status);
-    }
-  
-    33.33% {
-      background-color: #1f53578a;
-    }
-  
-    66.33% {
-      background-color: var(--online-status);
-    }
-  
-    100% {
-      background-color: var(--online-status);
-    }
+  100% {
+    background-color: var(--online-status);
   }
+}
 
 
 
-  /*pop up window*/
-  .dropdown-menu {
-    background:rgba(0, 0, 0, 0.692);
-    border: none !important;
-    border-radius: 8px !important;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    position: absolute;
-    top: 100%;
-    right:0;
-    z-index: 10;
-    width: 10%;
-    
-    /* تحسين تفاعل المستخدم */
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .dropdown-menu a {
-    color: #fff !important;
-    font-size: 15px;
-    padding: 4px 8px;
-    text-decoration: none;
-    width: 100%;
+/*pop up window*/
+.dropdown-menu {
+  background: rgba(0, 0, 0, 0.692);
+  border: none !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 10;
+  width: 10%;
 
-    text-align: center;
-    /* تحسين تفاعل المستخدم */
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .dropdown-menu a:hover {
-    background-color: #444 !important;
-    width: 100%;
-  }
-  
+  /* تحسين تفاعل المستخدم */
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdown-menu a {
+  color: #fff !important;
+  font-size: 15px;
+  padding: 4px 8px;
+  text-decoration: none;
+  width: 100%;
+
+  text-align: center;
+  /* تحسين تفاعل المستخدم */
+  transition: all 0.2s ease-in-out;
+}
+
+.dropdown-menu a:hover {
+  background-color: #444 !important;
+  width: 100%;
+}

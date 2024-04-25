@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import Footer from '../AllBars/Footer';
 import Header from '../AllBars/Header';
 
-
 //Photos
 
 import MED1 from "../Photos/medicine.jpg"
@@ -255,7 +254,7 @@ export default function MedicCard() {
 
                 <hr style={{ width: '80%', borderBottom: '4px solid #1F5357', marginBottom: '4%' }} />
 
-                                {/* section 3 */}
+                {/* section 3 */}
 
                 <section style={{ display: 'flex', justifyContent: 'space-around', marginBottom: '4%' }}>
 

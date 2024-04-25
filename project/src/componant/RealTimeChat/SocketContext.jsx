@@ -9,14 +9,10 @@ export const useSocketContext = () => {
 
 export const SocketContextProvider = ({ children }) => {
     const [socket, setSocket] = useState(null);
-
     useEffect(() => {
         const newSocket = io("http://localhost:3000/realtimechat");
-
         setSocket(newSocket);
-
         return () => newSocket.close();
     }, []);
-
     return <SocketContext.Provider value={{ socket }}>{children}</SocketContext.Provider>;
 };

@@ -6,8 +6,6 @@ import Footer from '../AllBars/Footer';
 import Sound from 'react-sound';
 import NOtifi from "../Photos/sound.mp3"
 
-
-
 const Calculator = () => {
   const [weight, setWeight] = useState('');
   const [height, setHeight] = useState('');
@@ -18,13 +16,11 @@ const Calculator = () => {
   const [hovered, setHovered] = useState(false);
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
 
-
   useEffect(() => {
     if (!window.localStorage.getItem('email')) {
         window.location= "/login";
     }
 }, [])
-
 
   const activityLevels = {
     sedentary: 1.2,
@@ -41,7 +37,6 @@ const Calculator = () => {
 
     const totalCalories = Math.round(bmr * activityLevels[activityLevel]);
     setResult(totalCalories);
-
     // Display the result as a 
     setPlayStatus(Sound.status.PLAYING);
     toast.success(`السعرات الحرارية: ${totalCalories}`, {
@@ -151,7 +146,6 @@ const styles = {
     border: '2px solid rgb(0, 0, 0)',
     fontWeight: 'bold',
   },
-
 };
 
 export default Calculator;

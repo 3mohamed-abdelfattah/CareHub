@@ -1,123 +1,136 @@
-.Do-home-text{
+.Do-home-text {
   text-align: center;
 }
 
 .section-wapp {
-    background-color: rgb(255, 255, 255);
-    border: radius 15px;
-    padding: 20px;
-    margin-top: auto;
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-  }
-  .ArticlesList {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-top: 7%;
-  }
-  
+  background-color: rgb(255, 255, 255);
+  border: radius 15px;
+  padding: 20px;
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.ArticlesList {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 7%;
+}
+
+.section-wapp img {
+  size: auto;
+  vertical-align: middle;
+  height: auto;
+
+  padding: 15px;
+}
+
+.ArticlesList-pages {
+  padding-left: 30px;
+  text-align: center;
+}
+
+.title-pages {
+  margin: 1.5rem;
+  padding: top 2rem;
+}
+
+.Section-ArticlesList {
+  display: flex;
+  margin: 15px;
+  border-bottom: solid 1px rgb(78, 77, 77);
+  align-items: center;
+}
+
+.ArticlesList-pages.Articles-A {
+  font-size: 1em;
+  color: black;
+}
+
+.ArticlesList-pages.Articles-A:hover {
+  color: slateblue;
+}
+
+@media screen and (max-width: 992px) {
   .section-wapp img {
-    size: auto;
-    vertical-align: middle;
-    height: auto;
-  
+    height: 45%;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .Section-ArticlesList {
+    display: block;
+    text-align: center;
     padding: 15px;
   }
-  
-  .ArticlesList-pages {
-    padding-left: 30px;
-    text-align: center;
+}
+
+@media screen and (max-width: 350px) {
+  .section-wapp img {
+    height: auto;
+    padding-left: 20px;
   }
-  .title-pages {
-    margin: 1.5rem;
-    padding: top 2rem;
-  }
-  
-  .Section-ArticlesList {
-    display: flex;
-    margin: 15px;
-    border-bottom: solid 1px rgb(78, 77, 77);
-    align-items: center;
-  }
-  .ArticlesList-pages.Articles-A {
-    font-size: 1em;
-    color: black;
-  }
-  .ArticlesList-pages.Articles-A:hover {
-    color: slateblue;
-  }
-  @media screen and (max-width: 992px) {
-    .section-wapp img {
-      height: 45%;
-    }
-  }
-  @media screen and (max-width: 780px) {
-    .Section-ArticlesList {
-      display: block;
-      text-align: center;
-      padding: 15px;
-    }
-  }
-  @media screen and (max-width: 350px) {
-    .section-wapp img {
-      height: auto;
-      padding-left: 20px;
-    }
-  }
-  .page-item.a .page-link {
-    background-color: #0000003a;
-    border-color: #ffffff;
-    color: white;
-  }
-  .numberOfPages {
-    flex-basis: 0;
-    flex: grow 1;
-    max-width: 100%;
-  }
-  .ArticlesPages {
-    text-align: center;
-    display: block;
-    box-sizing: inherit;
-  }
-  
-  .pagesList {
-    margin: auto;
-    padding: 25px 15px;
-    flex: none;
-    justify-content: center;
-    border-radius: 0.25rem;
-  }
-  .pagesList .pageA {
-    flex: right;
-    margin: 0px 3px;
-  }
-  .ArticlesList a {
-    text-decoration: none;
-  }
-  .pageNumber .pagesList {
-    list-style: none;
-    align-items: center;
-    margin: auto;
-    display: flex;
-    size: auto;
-  }
-  
-  .pageNumber .pagesList .page-link {
-    margin: 0 15px;
-    font-weight: 600;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(0, 0, 0);
-    padding: 10px;
-    width: 50px;
-    border-radius: 4px;
-    color: rgb(0, 0, 0);
-  }
-  .pageNumber .pagesList .page-link:hover {
-    background-color: #a2c4ac;
-    color: white;
-  }
-  
+}
+
+.page-item.a .page-link {
+  background-color: #0000003a;
+  border-color: #ffffff;
+  color: white;
+}
+
+.numberOfPages {
+  flex-basis: 0;
+  flex: grow 1;
+  max-width: 100%;
+}
+
+.ArticlesPages {
+  text-align: center;
+  display: block;
+  box-sizing: inherit;
+}
+
+.pagesList {
+  margin: auto;
+  padding: 25px 15px;
+  flex: none;
+  justify-content: center;
+  border-radius: 0.25rem;
+}
+
+.pagesList .pageA {
+  flex: right;
+  margin: 0px 3px;
+}
+
+.ArticlesList a {
+  text-decoration: none;
+}
+
+.pageNumber .pagesList {
+  list-style: none;
+  align-items: center;
+  margin: auto;
+  display: flex;
+  size: auto;
+}
+
+.pageNumber .pagesList .page-link {
+  margin: 0 15px;
+  font-weight: 600;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  padding: 10px;
+  width: 50px;
+  border-radius: 4px;
+  color: rgb(0, 0, 0);
+}
+
+.pageNumber .pagesList .page-link:hover {
+  background-color: #a2c4ac;
+  color: white;
+}

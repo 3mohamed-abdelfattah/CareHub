@@ -4,7 +4,7 @@ import Header from "../AllBars/Header";
 import { User } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import Footer from "../AllBars/Footer";
-import { ToastContainer, toast } from "react-toastify"; // Assuming you're using react-toastify
+import { toast } from "react-toastify"; // Assuming you're using react-toastify
 import Sound from 'react-sound';
 import NOtifi from "../Photos/sound.mp3"
 
@@ -14,7 +14,6 @@ export default function Login() {
   const [accept, setAccept] = useState(false);
   const [errors, setErrors] = useState({});
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
-
   const navigate = useNavigate();
   const nav = useNavigate();
   const user = useContext(User);
@@ -32,13 +31,11 @@ export default function Login() {
   async function Submit(e) {
     e.preventDefault();
     setAccept(true);
-
     try {
       let res = await axios.post("http://localhost:5000/api/login", {
         email,
         password,
       });
-
       if (res.status === 200) {
         setPlayStatus(Sound.status.PLAYING);
         toast.success("successful! You have been logged in.", options);
@@ -46,11 +43,10 @@ export default function Login() {
         setTimeout(() => {
           navigate('/'); // Redirect using useNavigate hook
         }, 1200);
-            } else {
+      } else {
         // Handle unexpected successful response (for robustness)
         console.warn("Unexpected successful response:", res);
       }
-
       const token = res.data.data.token;
       const UserDetails = res.data.data.user;
       user.setAuth({ token, UserDetails });
@@ -59,7 +55,6 @@ export default function Login() {
       if (Err.response) {
         const status = Err.response.status;
         setErrors({});
-
         switch (status) {
           case 400:
             setPlayStatus(Sound.status.PLAYING);
@@ -84,7 +79,6 @@ export default function Login() {
       } else {
         setPlayStatus(Sound.status.PLAYING);
       }
-
       setAccept(true);
     }
   }
@@ -129,7 +123,6 @@ export default function Login() {
           <div className="bottom" />
           <div className="right" />
         </button>
-
         <p className="signin">
           Don't have account ? <a href="register">Registration</a>
         </p>

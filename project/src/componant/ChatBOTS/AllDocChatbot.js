@@ -79,7 +79,6 @@ const steps = [
   },
 ];
 
-
 const theme = {
   background: '#f5f8fb',
   fontFamily: 'Cairo',
@@ -92,25 +91,24 @@ const theme = {
   userFontColor: '#000',
 };
 
+const AllDocChatbot = () => (
+  <ThemeProvider theme={theme}>
+    <ChatBot steps={steps}
+      speechSynthesis={{ enable: false, lang: 'ar' }}
+      floating={true}
+      headerTitle="Digital Doctor"
+      floatingStyle={{ left: '25px', bottom: '25px' }}
+      opened={false}
+      enableSmoothScroll={true}
+      handleEnd={null}
+      hideBotAvatar={false}
+      hideUserAvatar={false}
+      recognitionEnable={true}
+      placeholder="...اكتب رسالتك"
+      recognitionLang="en-US"
+    />;
+  </ThemeProvider>
+);
 
-      const AllDocChatbot = () => (
-        <ThemeProvider theme={theme}>
-          <ChatBot steps={steps} 
-          speechSynthesis={{ enable: false, lang: 'ar' }}
-          floating={true}
-          headerTitle="Digital Doctor"
-          floatingStyle={{ left: '25px', bottom: '25px'}}
-          opened={false}
-          enableSmoothScroll={true}
-          handleEnd={null}
-          hideBotAvatar={false}
-          hideUserAvatar={false}
-          recognitionEnable={true}
-          placeholder="...اكتب رسالتك"
-          recognitionLang="en-US"
-          />;
-        </ThemeProvider>
-      );
-
-      export default AllDocChatbot;
+export default AllDocChatbot;
 

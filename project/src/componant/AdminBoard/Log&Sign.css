@@ -1,230 +1,232 @@
 .formlogin {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 100%;
-    background-color: #ffffff;
-    padding: 20px;
-    position: relative;
-    align-items: center;
-    direction: rtl;
-    margin-top: 7%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+  background-color: #ffffff;
+  padding: 20px;
+  position: relative;
+  align-items: center;
+  direction: rtl;
+  margin-top: 7%;
 }
-  
-  .titlelogin {
-    font-size: 28px;
-    color: #1F5357;
-    font-weight: 600;
-    letter-spacing: -1px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding-left: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+.titlelogin {
+  font-size: 28px;
+  color: #1F5357;
+  font-weight: 600;
+  letter-spacing: -1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.titlelogin::before,
+.titlelogin::after {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 0px;
+  background-color: #1F5357;
+}
+
+.titlelogin::before {
+  width: 18px;
+  height: 18px;
+  background-color: #1F5357;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.titlelogin::after {
+  width: 18px;
+  height: 18px;
+  animation: pulse 1s linear infinite;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.messagelogin,
+.signin {
+  color: rgba(88, 87, 87, 0.822);
+  font-size: 14px;
+}
+
+.signin {
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.signin a {
+  color: royalblue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.signin a:hover {
+  text-decoration: underline royalblue;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.flex {
+  display: flex;
+  width: 100%;
+  gap: 6px;
+}
+
+.formlogin label {
+  position: relative;
+}
+
+.formlogin label .inputlogin {
+  width: 100%;
+  padding: 10px 10px 20px 150px;
+  outline: 0;
+  border: 1px solid rgba(105, 105, 105, 0.397);
+  border-radius: 10px;
+}
+
+.formlogin label .inputlogin+span {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: grey;
+  font-size: 0.9em;
+  cursor: text;
+  transition: 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.formlogin label .inputlogin:placeholder-shown+span {
+  top: 15px;
+  font-size: 0.9em;
+}
+
+.formlogin label .inputlogin:focus+span,
+.formlogin label .inputlogin:valid+span {
+  top: 30px;
+  font-size: 0.7em;
+  font-weight: 600;
+}
+
+.formlogin label .inputlogin:valid+span {
+  color: green;
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(0.9);
+    opacity: 1;
   }
-  
-  .titlelogin::before,.titlelogin::after {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    border-radius: 50%;
-    left: 0px;
-    background-color: #1F5357;
+
+  to {
+    transform: scale(1.8);
+    opacity: 0;
   }
-  
-  .titlelogin::before {
-    width: 18px;
-    height: 18px;
-    background-color: #1F5357;
-    direction: rtl;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .titlelogin::after {
-    width: 18px;
-    height: 18px;
-    animation: pulse 1s linear infinite;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .messagelogin, .signin {
-    color: rgba(88, 87, 87, 0.822);
-    font-size: 14px;
-  }
-  
-  .signin {
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .signin a {
-    color: royalblue;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .signin a:hover {
-    text-decoration: underline royalblue;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .flex {
-    display: flex;
-    width: 100%;
-    gap: 6px;
-  }
-  
-  .formlogin label {
-    position: relative;
-  }
-  
-  .formlogin label .inputlogin {
-    width: 100%;
-    padding: 10px 10px 20px 150px;
-    outline: 0;
-    border: 1px solid rgba(105, 105, 105, 0.397);
-    border-radius: 10px;
-  }
-  
-  .formlogin label .inputlogin + span {
-    position: absolute;
-    left: 10px;
-    top: 15px;
-    color: grey;
-    font-size: 0.9em;
-    cursor: text;
-    transition: 0.3s ease;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .formlogin label .inputlogin:placeholder-shown + span {
-    top: 15px;
-    font-size: 0.9em;
-  }
-  
-  .formlogin label .inputlogin:focus + span,.formlogin label .inputlogin:valid + span {
-    top: 30px;
-    font-size: 0.7em;
-    font-weight: 600;
-  }
-  
-  .formlogin label .inputlogin:valid + span {
-    color: green;
-  }
-  
-  @keyframes pulse {
-    from {
-      transform: scale(0.9);
-      opacity: 1;
-    }
-  
-    to {
-      transform: scale(1.8);
-      opacity: 0;
-    }
-  }
+}
 
 
 
 
-  
 
-  .buttonlog {
-    padding: 5px 15px;
-    background-color: #ffffff;
-    border: none;
-    font-size: 18px;
-    position: relative;
-    /* overflow: hidden; */
-    transition: 500ms;
-    cursor: pointer;
 
-  }
-  
-  .buttonlog span {
-    color: gray;
-    position: relative;
-    transition: 300ms;
-    transition-delay: 300ms;
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
-  }
-  
-  .buttonlog:before {
-    content: '';
-    position: absolute;
-    width: 0%;
-    height: 0%;
-    left: 50%;
-    right: 50%;
-    top: 50%;
-    bottom: 50%;
-    transition: 500ms;
-    transition-delay: 150ms;
-    background-color: #1f535796;
-  }
-  
-  .buttonlog div {
-    transition: 600ms;
-    position: absolute;
-    background-color: #1f535796;
-    box-shadow: 0 0 15px #b3e0d2, 0 0 30px #b3e0d2, 0 0 50px #b3e0d2;
-  }
-  
-  .buttonlog .top {
-    width: 15px;
-    height: 2px;
-    top: 0;
-    left: 0;
-  }
-  
-  .buttonlog .bottom {
-    width: 15px;
-    height: 2px;
-    bottom: 0;
-    right: 0;
-  }
-  
-  .buttonlog .left {
-    width: 2px;
-    height: 15px;
-    top: 0;
-    left: 0;
-  }
-  
-  .buttonlog .right {
-    width: 2px;
-    height: 15px;
-    bottom: 0;
-    right: 0;
-  }
-  
-  .buttonlog:hover {
-    color: #ffffff;
-  }
-  
-  .buttonlog:hover span {
-    color: #ffffff;
-  }
-  
-  .buttonlog:hover:before {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-  
-  .buttonlog:hover .top, 
-  .buttonlog:hover .bottom {
-    width: 100%;
-  }
-  
-  .buttonlog:hover .left,
-  .buttonlog:hover .right {
-    height: 100%;
-  }
+.buttonlog {
+  padding: 5px 15px;
+  background-color: #ffffff;
+  border: none;
+  font-size: 18px;
+  position: relative;
+  /* overflow: hidden; */
+  transition: 500ms;
+  cursor: pointer;
 
+}
+
+.buttonlog span {
+  color: gray;
+  position: relative;
+  transition: 300ms;
+  transition-delay: 300ms;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.buttonlog:before {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  bottom: 50%;
+  transition: 500ms;
+  transition-delay: 150ms;
+  background-color: #1f535796;
+}
+
+.buttonlog div {
+  transition: 600ms;
+  position: absolute;
+  background-color: #1f535796;
+  box-shadow: 0 0 15px #b3e0d2, 0 0 30px #b3e0d2, 0 0 50px #b3e0d2;
+}
+
+.buttonlog .top {
+  width: 15px;
+  height: 2px;
+  top: 0;
+  left: 0;
+}
+
+.buttonlog .bottom {
+  width: 15px;
+  height: 2px;
+  bottom: 0;
+  right: 0;
+}
+
+.buttonlog .left {
+  width: 2px;
+  height: 15px;
+  top: 0;
+  left: 0;
+}
+
+.buttonlog .right {
+  width: 2px;
+  height: 15px;
+  bottom: 0;
+  right: 0;
+}
+
+.buttonlog:hover {
+  color: #ffffff;
+}
+
+.buttonlog:hover span {
+  color: #ffffff;
+}
+
+.buttonlog:hover:before {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.buttonlog:hover .top,
+.buttonlog:hover .bottom {
+  width: 100%;
+}
+
+.buttonlog:hover .left,
+.buttonlog:hover .right {
+  height: 100%;
+}

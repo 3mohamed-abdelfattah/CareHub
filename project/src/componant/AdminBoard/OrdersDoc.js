@@ -2,7 +2,7 @@ import React, { useState, Fragment, useEffect } from 'react';
 import Header from '../AllBars/Header';
 import Footer from '../AllBars/Footer';
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import Sound from 'react-sound';
 import NOtifi from "../Photos/sound.mp3";
 import { useNavigate } from 'react-router-dom';
@@ -19,10 +19,10 @@ export default function OrdersDoc() {
 
     useEffect(() => {
         if (!window.localStorage.getItem('email')) {
-            window.location= "/login";
+            window.location = "/login";
         }
     }, [])
-    
+
     const options = {
         position: "bottom-left",
         autoClose: 5000,
@@ -43,7 +43,6 @@ export default function OrdersDoc() {
             formData.append('phoneNumber', number);
             formData.append('order', order);
             formData.append('file', file); // إرفاق الملف مع بيانات النموذج
-
             let res = await axios.post("http://localhost:5000/api/orders", formData);
             if (res.status === 201) {
                 setTimeout(() => {
@@ -53,13 +52,12 @@ export default function OrdersDoc() {
                 toast.success("تم استلام طلبك بنجاح!وسنعمل جاهدين على توصيله في أقرب وقت ممكن", options);
             }
         } catch (Err) {
-            // تعامل مع الأخطاء هنا
         }
     }
 
     return (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", minHeight: "100vh" }}>
-        <Header/>
+            <Header />
             <h2 style={{ marginTop: '8%', color: '#ff0505' }}>نجعل كل خطوة في رحلتك مميزة ومثمرة</h2>
             <h2 style={{ color: '#1F5357' }}>!...احجز الآن وانغمس في عالـم من الرفاهية الطبية</h2>
             <Fragment>
@@ -87,7 +85,7 @@ export default function OrdersDoc() {
                 playStatus={playStatus}
                 onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
             />
-            <Footer/>
+            <Footer />
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './ShowProblem.css'; // استيراد ملف CSS الخاص بك
+import './ShowProblem.css';
 
 export default function ShowOrder() {
   const [user, setUser] = useState([]);
@@ -9,7 +9,6 @@ export default function ShowOrder() {
   useEffect(() => {
     if (selectedProblem && selectedProblem.file) {
       const imageUrl = `${selectedProblem.file}`; // إضافة timestamp للتخلص من التخزين المؤقت
-
       fetch(imageUrl)
         .then(response => response.blob())
         .then(blob => {
@@ -25,7 +24,6 @@ export default function ShowOrder() {
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
-        console.log(data);
       });
   }, []);
 
@@ -51,7 +49,7 @@ export default function ShowOrder() {
   ));
 
   return (
-    <div style={{padding:'10px', maxHeight: '550px', overflowY: 'auto'}}>
+    <div style={{ padding: '10px', maxHeight: '550px', overflowY: 'auto' }}>
       <table>
         <thead>
           <tr>
@@ -67,7 +65,6 @@ export default function ShowOrder() {
           {showUsers}
         </tbody>
       </table>
-
       {selectedProblem && (
         <div className="modal">
           <div className="modal-content">

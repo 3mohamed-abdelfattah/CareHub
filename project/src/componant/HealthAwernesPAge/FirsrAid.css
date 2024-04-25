@@ -1,81 +1,93 @@
-
 .headN header {
-    background-color: #1F5357;
-    padding: 1px;
-  }
-  .headN h1 {
-    color: #ffffff;
-    font-size: 3em;
-    font-weight: 400;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    border-radius: 1cm;
-    text-align: center;
-  }
+  background-color: #1F5357;
+  padding: 1px;
+}
+
+.headN h1 {
+  color: #ffffff;
+  font-size: 3em;
+  font-weight: 400;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  border-radius: 1cm;
+  text-align: center;
+}
+
+.containerN {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/* Small */
+@media (min-width: 768px) {
   .containerN {
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+    width: 750px;
   }
-  /* Small */
-  @media (min-width: 768px) {
-    .containerN {
-      width: 750px;
-    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .containerN {
+    width: 970px;
   }
-  /* Medium */
-  @media (min-width: 992px) {
-    .containerN {
-      width: 970px;
-    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .containerN {
+    width: 1170px;
   }
-  /* Large */
-  @media (min-width: 1200px) {
-    .containerN {
-      width: 1170px;
-    }
-  }
-  .containerN h2 {
-    font-weight: 500;
-    font-size: 27px;
-    text-align: start;
-  }
-  .containerN ul {
-    font-style: normal;
-    list-style-type: disc;
-  }
-  .containerN ul li {
-    /* display: block; */
-    font-size: 25px;
-  }
-  .containerN ul li a {
-    text-decoration: none;
-    color: #1c718d;
-  }
-  .containerN img {
-    height: 10cm;
-  
-    text-decoration: none;
-    padding: 1%;
-  
-    bottom: 5%;
-    right: 20%;
-  
-    margin-top: calc(100vh + var(--offset));
-  }
-  .contentN p {
-    text-align: start;
-    text-shadow: #212529;
-    padding: 5;
-    font-size: 27px;
-    word-spacing: normal;
-  }
-  .contentN iframe {
-    margin-right: 20%;
-  }
-  .contentN h3 {
-    font-weight: 500;
-    font-size: 27px;
-    text-align: start;
-  }
+}
+
+.containerN h2 {
+  font-weight: 500;
+  font-size: 27px;
+  text-align: start;
+}
+
+.containerN ul {
+  font-style: normal;
+  list-style-type: disc;
+}
+
+.containerN ul li {
+  /* display: block; */
+  font-size: 25px;
+}
+
+.containerN ul li a {
+  text-decoration: none;
+  color: #1c718d;
+}
+
+.containerN img {
+  height: 10cm;
+
+  text-decoration: none;
+  padding: 1%;
+
+  bottom: 5%;
+  right: 20%;
+
+  margin-top: calc(100vh + var(--offset));
+}
+
+.contentN p {
+  text-align: start;
+  text-shadow: #212529;
+  padding: 5;
+  font-size: 27px;
+  word-spacing: normal;
+}
+
+.contentN iframe {
+  margin-right: 20%;
+}
+
+.contentN h3 {
+  font-weight: 500;
+  font-size: 27px;
+  text-align: start;
+}
