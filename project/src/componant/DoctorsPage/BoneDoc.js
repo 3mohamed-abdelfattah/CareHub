@@ -150,7 +150,6 @@ export default function BoneDoc() {
 
 
 
-
   return (
     <div>
       <Header />
