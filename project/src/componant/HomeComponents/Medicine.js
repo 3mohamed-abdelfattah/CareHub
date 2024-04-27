@@ -64,7 +64,7 @@ const ExpandMore = styled((props) => {
 }));
 
 export default function MedicCard() {
-  // هتكررو دول علي حسب عدد الكارد
+
   const [expanded1, setExpanded1] = React.useState(false);
   const [expanded2, setExpanded2] = React.useState(false);
   const [expanded3, setExpanded3] = React.useState(false);
@@ -211,7 +211,6 @@ export default function MedicCard() {
     setExpanded36(!expanded36);
   };
 
-  //كا كارد هتاخد واحده مختلفه عن التانيه
 
   return (
     <React.Fragment>
@@ -227,32 +226,29 @@ export default function MedicCard() {
         >
           .حيث تلتقي الجودة بالكفاءة لتقديم أفضل تجربة علاجية تستحقها
         </h1>
-
         {/* section 1 */}
-
         <section
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
             marginBottom: "4%",
             direction: "rtl",
           }}
         >
           {/* Card 1 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="بانادول أدفانس" subheader="مسكن" />
             <CardMedia
               component="img"
+              alt="Paella dish"
               height="194"
               image={MED1}
-              alt="Paella dish"
               sizes="300"
             />
             <CardContent>
               <Typography
                 variant="body2"
-                color="text.secondary"
+                color="text.primary"
                 data-aos="fade-up"
               >
                 يعد بانادول مسكنًا فعالًا، كما أنه خافض للحرارة، حيث يعمل على
@@ -307,10 +303,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 2 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="بانادول إكسترا" subheader="مسكن " />
             <CardMedia
               component="img"
@@ -373,8 +367,7 @@ export default function MedicCard() {
             </Collapse>
           </Card>
           {/* Card 3 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="أدول" subheader="مسكن" />
             <CardMedia
               component="img"
@@ -453,20 +446,17 @@ export default function MedicCard() {
             </Collapse>
           </Card>
         </section>
-
         {/* section 2 */}
-
         <section
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
             marginBottom: "4%",
             direction: "rtl",
           }}
         >
           {/* Card 4 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="أدول إكسترا" subheader="مسكن" />
             <CardMedia
               component="img"
@@ -481,8 +471,7 @@ export default function MedicCard() {
                 color="text.secondary"
                 data-aos="fade-up"
               >
-                .أدول إكسترا علاج مركب قوي لتسكين الآلام الشائعة والمتكررة،
-                يمتاز بتأثيره السريع
+                خافض للحرارة يستخدم لعلاج الحمى. والحمى هي زيادة مؤقتة في درجة حرارة الجسم. يستخدم لتخفيف الآلام الخفيفة إلى المتوسطة بما في ذلك أنواع مختلفة من الألم
               </Typography>
             </CardContent>
             <CardActions disableSpacing>
@@ -527,10 +516,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 5 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="دوليبران" subheader="مسكن" />
             <CardMedia
               component="img"
@@ -545,8 +532,7 @@ export default function MedicCard() {
                 color="text.secondary"
                 data-aos="fade-up"
               >
-                يستخدم هذا الدواء كمسكن وخافض للحرارة، وخاصة في حالات الصداع.
-              </Typography>
+                تستخدم أقراص دوليبران (بالإنجليزية: Doliprane) للتخلص من الصداع، فهي تحتوي على المادة الفعالة الباراسيتامول بتركيزين، هما 500 ملغ، و1000 ملغ.              </Typography>
             </CardContent>
             <CardActions disableSpacing>
               <IconButton aria-label="add to favorites">
@@ -591,10 +577,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 6 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="سيتال إكسترا" subheader="مسكن" />
             <CardMedia
               component="img"
@@ -644,7 +628,7 @@ export default function MedicCard() {
                 </Typography>
                 <Typography paragraph data-aos="fade-up">
                   للبالغين و الاطفال أكبر من 12 سنة قرصان كل 4 إلى 6
-                  ساعات حسب الحاجة 
+                  ساعات حسب الحاجة
                 </Typography>
                 <Typography paragraph data-aos="fade-up">
                   <b>ما هي موانع استخدام سيتال إكسترا ؟</b>
@@ -660,7 +644,6 @@ export default function MedicCard() {
             </Collapse>
           </Card>
         </section>
-
         {/* Line  */}
         <hr
           style={{
@@ -669,20 +652,17 @@ export default function MedicCard() {
             marginBottom: "4%",
           }}
         />
-
         {/* section 3 */}
-
         <section
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
             marginBottom: "4%",
             direction: "rtl",
           }}
         >
           {/* Card 7 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="كونجستال " subheader="نزلات البرد" />
             <CardMedia
               component="img"
@@ -743,10 +723,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 8 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="كولد فري" subheader="نزلات البرد" />
             <CardMedia
               component="img"
@@ -808,10 +786,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 9 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="دواء وان تو ثري 123" subheader="نزلات البرد" />
             <CardMedia
               component="img"
@@ -860,7 +836,7 @@ export default function MedicCard() {
                 </Typography>
                 <Typography paragraph data-aos="fade-up">
                   الجرعة المعتادة من وان-تو-ثري شراب للأطفال هي 5 مللي 2 – 3
-                  مرات يوميا بعد الأكل. ساعات حسب الحاجة 
+                  مرات يوميا بعد الأكل. ساعات حسب الحاجة
                 </Typography>
                 <Typography paragraph data-aos="fade-up">
                   <b>ما هي موانع استخدام وان تو ثري 123 ؟</b>
@@ -876,20 +852,17 @@ export default function MedicCard() {
             </Collapse>
           </Card>
         </section>
-
         {/* section 4 */}
-
         <section
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
             marginBottom: "4%",
             direction: "rtl",
           }}
         >
           {/* Card 10 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="أوتريفين" subheader="مزيل احتقان" />
             <CardMedia
               component="img"
@@ -950,10 +923,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 11 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="أوجمنتين" subheader="مضاد حيوي " />
             <CardMedia
               component="img"
@@ -1019,10 +990,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 12 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="بروفين" subheader="مسكن وخافض للحرارة " />
             <CardMedia
               component="img"
@@ -1072,7 +1041,6 @@ export default function MedicCard() {
                   الأكل. شراب بروفين للاطفال من3-7 سنوات: 5 مل ثلاث مرات في
                   اليوم بعد الأكل.
                 </Typography>
-
                 <Typography paragraph data-aos="fade-up">
                   <b>ما هي موانع استخدام بروفين ؟</b>
                 </Typography>
@@ -1085,20 +1053,24 @@ export default function MedicCard() {
             </Collapse>
           </Card>
         </section>
-
+        <hr
+          style={{
+            width: "80%",
+            borderBottom: "4px solid #1F5357",
+            marginBottom: "4%",
+          }}
+        />
         {/* section 5 */}
-
         <section
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
             marginBottom: "4%",
             direction: "rtl",
           }}
         >
           {/* Card 13 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="ابيدون" subheader="علاج الالتهابات والحساسية " />
             <CardMedia
               component="img"
@@ -1167,14 +1139,13 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 14 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="أمبيزيم " subheader="مضاد للالتهاب والتورم" />
             <CardMedia
               component="img"
               height="194"
+              width="445"
               image={MED14}
               alt="Paella dish"
               sizes="300"
@@ -1185,7 +1156,7 @@ export default function MedicCard() {
                 color="text.secondary"
                 data-aos="fade-up"
               >
-                أمبيزيم دواء مضاد للالتهاب والتورم يساعد في علاج الالتهابات
+                يعتبر أمبيزيم - ج Ambezim - G من الأدوية المضادة للالتهابات الشهيرة في الصيدليات، يُفضل تناوله تحت إشراف الطبيب، لأنه قد يؤثر سلبًا على صحة الجسم .
               </Typography>
             </CardContent>
             <CardActions disableSpacing>
@@ -1196,7 +1167,7 @@ export default function MedicCard() {
                 <ShareIcon />
               </IconButton>
               <ExpandMore
-                expand={expanded14}
+                expad={expanded14}
                 onClick={handleExpandClick14}
                 aria-expanded={expanded14}
                 aria-label="show more"
@@ -1232,8 +1203,7 @@ export default function MedicCard() {
             </Collapse>
           </Card>
           {/* Card 15 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="دولفين" subheader="مسكن وخافض للحرارة " />
             <CardMedia
               component="img"
@@ -1248,8 +1218,7 @@ export default function MedicCard() {
                 color="text.secondary"
                 data-aos="fade-up"
               >
-                لبوس دولفين أقماع فعالة في خفض الحمى لدى الأطفال والبالغين،
-              </Typography>
+                يعد ديكلوفيناك من مضادات الالتهاب غير الستيرويدية، وله استخدامات عديدة أهمها: مسكن للألم وخافض للحرارة. علاج التهاب الفقار الروماتيزمي أو التهاب الفقار الروماتيدي.              </Typography>
             </CardContent>
             <CardActions disableSpacing>
               <IconButton aria-label="add to favorites">
@@ -1290,7 +1259,6 @@ export default function MedicCard() {
                   واحدة من الأقماع من 2-3 مرات باليوم بما لا يتجاوز 150 مجم
                   خلال أي 24 ساعة.
                 </Typography>
-
                 <Typography paragraph data-aos="fade-up">
                   <b>ما هي موانع استخدام دولفين ؟</b>
                 </Typography>
@@ -1304,20 +1272,17 @@ export default function MedicCard() {
             </Collapse>
           </Card>
         </section>
-
         {/* section 6 */}
-
         <section
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
             marginBottom: "4%",
             direction: "rtl",
           }}
         >
           {/* Card 16 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader
               title="كتافاست"
               subheader="للأسنان ومسكن لألم والصداع"
@@ -1335,8 +1300,7 @@ export default function MedicCard() {
                 color="text.secondary"
                 data-aos="fade-up"
               >
-                يعمل دواء كتافاست فوار على تسكين الألم و تقليل الإلتهابات
-              </Typography>
+                أكياس كتافاست قد تسبب الدوخة والنعاس أو اضطرابات بصرية، وذلك قد يؤثر على قدرتك على القيادة أو تشغيل الآلات بأمان              </Typography>
             </CardContent>
             <CardActions disableSpacing>
               <IconButton aria-label="add to favorites">
@@ -1398,10 +1362,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 17 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader
               title="ميوفين "
               subheader=" باسط للعضلات ومضاد للالتهاب"
@@ -1419,8 +1381,7 @@ export default function MedicCard() {
                 color="text.secondary"
                 data-aos="fade-up"
               >
-                ميوفين هو دواء لعلاج الشد العضلى الذي يصاحبه ألم شديد وصعوبة فى
-                تحريك العضلة
+                دواء لإراحة العضلات المتشنجة تحتوي على الآتي: الكلورزوكسازون: الذي يستخدم لعلاج التشنجات العضلية، الألم، ويستخدم عادة مع الراحة والعلاج الطبيعي والعلاجات الأخرى
               </Typography>
             </CardContent>
             <CardActions disableSpacing>
@@ -1469,10 +1430,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 18 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="فولتارين جل" subheader="مضادات الالتهاب " />
             <CardMedia
               component="img"
@@ -1537,20 +1496,24 @@ export default function MedicCard() {
             </Collapse>
           </Card>
         </section>
-
+        <hr
+          style={{
+            width: "80%",
+            borderBottom: "4px solid #1F5357",
+            marginBottom: "4%",
+          }}
+        />
         {/* section 7 */}
-
         <section
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
             marginBottom: "4%",
             direction: "rtl",
           }}
         >
           {/* Card 19 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="كارباميد" subheader="مرطب للجلد" />
             <CardMedia
               component="img"
@@ -1566,9 +1529,8 @@ export default function MedicCard() {
                 data-aos="fade-up"
               >
                 يستخدم الكارباميد لعلاج الجلد الخشن والجاف في حالات مثل
-                الأكزيما، والصدفية، والتقرنات الجلدية، والندوب، وبعض مشاكل
-                الأظافر. كما يتم استخدام اليوريا لإزالة الجلد الميت من أنسجة بعض
-                الجروح.
+                الأكزيما، والصدفية، والندوب، وبعض مشاكل
+                الأظافر. كما يتم استخدام اليوريا لإزالة الجلد الميت.
               </Typography>
             </CardContent>
             <CardActions disableSpacing>
@@ -1616,10 +1578,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 20 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="بانثينول " subheader=" مرطب وملطف للجلد" />
             <CardMedia
               component="img"
@@ -1673,10 +1633,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 21 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="بروباميثون" subheader="التهابات الجلد" />
             <CardMedia
               component="img"
@@ -1738,20 +1696,17 @@ export default function MedicCard() {
             </Collapse>
           </Card>
         </section>
-
         {/* section 8 */}
-
         <section
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
             marginBottom: "4%",
             direction: "rtl",
           }}
         >
           {/* Card 22 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="فيروترون" subheader="مكمل غذائى" />
             <CardMedia
               component="img"
@@ -1815,10 +1770,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 23 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="كليندام 300" subheader="مضاد حيوى" />
             <CardMedia
               component="img"
@@ -1835,7 +1788,7 @@ export default function MedicCard() {
               >
                 يستعمل هذا الدواء لعلاج التهابات الحلق واللوزتين لكن يجب التأكد
                 من أن هذه الالتهابات ناتجة عن عدوى بكتيرية وليس عن عدوى فيروسية،
-                فهو يساعد على قتل البكتيريا فقط ولا فاعلية له أمام الفيروسات
+                فهو يساعد على قتل البكتيريا
               </Typography>
             </CardContent>
             <CardActions disableSpacing>
@@ -1884,10 +1837,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 24 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="أميريست" subheader="مضاد للقئ" />
             <CardMedia
               component="img"
@@ -1902,7 +1853,7 @@ export default function MedicCard() {
                 color="text.secondary"
                 data-aos="fade-up"
               >
-                يستخدم اميريست فى الغثيان والقىء الناجم عن العلاج الكيماوي معتدل
+                يستخدم فى الغثيان والقىء الناجم عن العلاج الكيماوي معتدل
                 التسبب للقىء،الوقاية من الغثيان والقيء بعد العمليات
                 الجراحية،الوقاية من الغثيان والقيء الناجم عن الإشعاع
               </Typography>
@@ -1958,7 +1909,7 @@ export default function MedicCard() {
                 <Typography paragraph data-aos="fade-up">
                   جرعة اوندانستيرون للاطفال قبل الجراحة يعطى الأطفال الذين
                   أوزانهم أقل من 40 كغم جرعة تعادل 0.1 مغ/كغم وريدياً. أما الذين
-                  تزيد أوزانهم عن 40 كغم، فيجب أن تكون الجرعة 4 مغ وريدياً. 
+                  تزيد أوزانهم عن 40 كغم، فيجب أن تكون الجرعة 4 مغ وريدياً.
                   الأطفال الذين تجاوزت أعمارهم ال 12 عاماً يعطون جرعة البالغين.
                 </Typography>
                 <Typography paragraph data-aos="fade-up">
@@ -1973,20 +1924,24 @@ export default function MedicCard() {
             </Collapse>
           </Card>
         </section>
-
+        <hr
+          style={{
+            width: "80%",
+            borderBottom: "4px solid #1F5357",
+            marginBottom: "4%",
+          }}
+        />
         {/* section 9 */}
-
         <section
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
             marginBottom: "4%",
             direction: "rtl",
           }}
         >
           {/* Card 25 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="فيرسيرك " subheader="مضاد للدوخة " />
             <CardMedia
               component="img"
@@ -2055,10 +2010,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 26 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="ميكوجيل " subheader="مضاد حموضه " />
             <CardMedia
               component="img"
@@ -2122,10 +2075,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 27 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader
               title=" سبازموفرى"
               subheader="مضاد الكولين(امراض المسالك) "
@@ -2143,9 +2094,9 @@ export default function MedicCard() {
                 color="text.secondary"
                 data-aos="fade-up"
               >
-                السبازموفرى هو دواء يعمل بصورة أساسية كمضاد للتشنجات؛ حيث يقلل
+                دواء يعمل بصورة أساسية كمضاد للتشنجات؛ حيث يقلل
                 من التشنجات العضلية ويساعد على ارتخاء العضلات الملساء في الأمعاء
-                والجهاز الصفراوي (المرارة والقنوات الصفراوية) والرحم والمثانة
+                والجهاز الصفراوي والرحم والمثانة
                 البولية
               </Typography>
             </CardContent>
@@ -2209,20 +2160,17 @@ export default function MedicCard() {
             </Collapse>
           </Card>
         </section>
-
         {/* section 10 */}
-
         <section
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
             marginBottom: "4%",
             direction: "rtl",
           }}
         >
           {/* Card 28 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="انتينال" subheader="مضاد حيوي معالج للإسهال" />
             <CardMedia
               component="img"
@@ -2284,10 +2232,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 29 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="قطرة بولي فريش " subheader="مرطب للعين " />
             <CardMedia
               component="img"
@@ -2354,10 +2300,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 30 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="ديكساترول" subheader="قطرة عينية واذنية" />
             <CardMedia
               component="img"
@@ -2421,20 +2365,24 @@ export default function MedicCard() {
             </Collapse>
           </Card>
         </section>
-
+        <hr
+          style={{
+            width: "80%",
+            borderBottom: "4px solid #1F5357",
+            marginBottom: "4%",
+          }}
+        />
         {/* section 11 */}
-
         <section
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
             marginBottom: "4%",
             direction: "rtl",
           }}
         >
           {/* Card 31 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="قطرة ريموواكس" subheader="قطرة أذن" />
             <CardMedia
               component="img"
@@ -2501,10 +2449,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 32 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="ميبو كريم" subheader="كريم معالج للحروق" />
             <CardMedia
               component="img"
@@ -2588,10 +2534,8 @@ export default function MedicCard() {
               </CardContent>
             </Collapse>
           </Card>
-
           {/* Card 33 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="فيوسيكورت" subheader=" كريم مضاد حيوي للجلد" />
             <CardMedia
               component="img"
@@ -2656,20 +2600,17 @@ export default function MedicCard() {
             </Collapse>
           </Card>
         </section>
-
         {/* section 12 */}
-
         <section
           style={{
             display: "flex",
-            justifyContent: "space-around",
+            justifyContent: "space-evenly",
             marginBottom: "4%",
             direction: "rtl",
           }}
         >
           {/* Card 34 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader
               title=" فلاجيل"
               subheader="أفضل دواء لعلاج اسهال الاطفال والكبار"
@@ -2763,8 +2704,7 @@ export default function MedicCard() {
             </Collapse>
           </Card>
           {/* Card 35 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader
               title="كالما كينج"
               subheader="مستخلصات طبيعية للجهاز الهضمي "
@@ -2839,8 +2779,7 @@ export default function MedicCard() {
             </Collapse>
           </Card>
           {/* Card 36 */}
-
-          <Card sx={{ maxWidth: 445, background: "#F0F0F0" }}>
+          <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="يوريفين" subheader="فوار املاح" />
             <CardMedia
               component="img"
@@ -2901,15 +2840,6 @@ export default function MedicCard() {
             </Collapse>
           </Card>
         </section>
-
-        {/* Line  */}
-        <hr
-          style={{
-            width: "80%",
-            borderBottom: "4px solid #1F5357",
-            marginBottom: "4%",
-          }}
-        />
       </div>
       <Footer />
     </React.Fragment>
