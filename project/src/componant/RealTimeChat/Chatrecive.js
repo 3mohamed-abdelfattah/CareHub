@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
+import { NavLink } from 'react-router-dom';
 import { Avatar, Box, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
 import Footer from '../AllBars/Footer';
 import Header from '../AllBars/Header';
@@ -23,25 +24,22 @@ const MessagesComponent = () => {
   const [error, setError] = useState(null);
   const [newMessage, setNewMessage] = useState('');
   const [userAvatars, setUserAvatars] = useState({});
-
+  const [intervalId, setIntervalId] = useState(null);
   const userID = window.localStorage.getItem('_id');
 
   useEffect(() => {
+    const storedSelectedUser = localStorage.getItem('selectedUser');
+    if (storedSelectedUser) {
+      const user = users.find(user => user._id === storedSelectedUser);
+      setSelectedUser(user);
+    }
+  }, [users]);
+
+  useEffect(() => {
     if (selectedUser) {
-      fetch(`http://localhost:5000/api/messages/${userID}/${selectedUser._id}`)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Failed to fetch messages');
-          }
-          return response.json();
-        })
-        .then(data => {
-          setMessages(data);
-          console.log(selectedUser._id);
-        })
-        .catch(error => {
-          setError(error.message);
-        });
+      fetchMessages();
+      const id = setInterval(fetchMessages, 1000);
+      setIntervalId(id);
     }
   }, [selectedUser]);
 
@@ -60,40 +58,78 @@ const MessagesComponent = () => {
           avatars[user._id] = avatarImages[Math.floor(Math.random() * avatarImages.length)];
         });
         setUserAvatars(avatars);
+        const storedSelectedUser = localStorage.getItem('selectedUser');
+        if (storedSelectedUser) {
+          const user = data.find(user => user._id === storedSelectedUser);
+          setSelectedUser(user);
+        }
       })
       .catch(error => {
         setError(error.message);
       });
-  }, []);
+    return () => clearInterval(intervalId);
+  }, [userID]);
+
+  const fetchMessages = () => {
+    if (selectedUser) {
+      fetch(`http://localhost:5000/api/messages/${userID}/${selectedUser._id}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Failed to fetch messages');
+          }
+          return response.json();
+        })
+        .then(data => {
+          setMessages(data);
+        })
+        .catch(error => {
+          setError(error.message);
+        });
+    }
+  };
 
   const handleSendMessage = () => {
-    axios.post(`http://localhost:5000/api/sendmsg/${userID}/${selectedUser._id}`, {
-      message: newMessage
-    })
-      .then(response => {
-        if (response.data.success) {
-          throw new Error('Failed to send message');
-        }
-        setNewMessage('');
+    if (selectedUser) {
+      axios.post(`http://localhost:5000/api/sendmsg/${userID}/${selectedUser._id}`, {
+        message: newMessage
       })
-      .catch(error => {
-        setError(error.message);
-      });
+        .then(response => {
+          if (response.data.success) {
+            throw new Error('Failed to send message');
+          }
+          setNewMessage('');
+        })
+        .catch(error => {
+          setError(error.message);
+        });
+    }
   };
 
   const handleUserSelect = (user) => {
     setSelectedUser(user);
+    localStorage.setItem('selectedUser', user._id);
+    window.location.reload(); // Refresh the page after selecting a new user
   };
 
   return (
     <Fragment>
       <Header />
       <Box sx={{ display: 'flex', height: 'calc(100vh - 64px)', overflow: 'hidden', marginTop: '4.5%' }}>
-        {/* Sidebar */}
         <Box sx={{ flex: 0.9, borderRight: 1, borderColor: 'divider', paddingRight: 2, overflowY: 'auto', maxHeight: '100%', minWidth: '200px' }}>
           <div className="sidebar">
             {error && <p style={{ color: 'red' }}>{error}</p>}
             <List>
+              <ListItem
+                style={{ marginLeft: '2%' }}
+                key="all-users"
+                sx={{
+                  borderBottom: '1px solid #eee',
+                  padding: '10px 0',
+                  cursor: 'pointer',
+                  "&:hover": { backgroundColor: "#f0f0f0" }
+                }}
+              >
+              </ListItem>
               {users.map(user => (
                 <ListItem
                   style={{ marginLeft: '2%' }}
@@ -103,32 +139,33 @@ const MessagesComponent = () => {
                     borderBottom: '1px solid #eee',
                     padding: '10px 0',
                     cursor: 'pointer',
-                    "&:hover": { backgroundColor: "#f0f0f0" } // Add hover effect
+                    "&:hover": { backgroundColor: "#f0f0f0" }
                   }}
                 >
-                  <ListItemAvatar sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Avatar alt="User Avatar" src={userAvatars[user._id]} />
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary={user.firstname + ' ' + user.lastname}
-                    secondary={user.email + '  [ ' + user.role + ' ] '}
-                    primaryTypographyProps={{ color: 'primary', fontWeight: 'bold' }}
-                  />
+                  <NavLink to={`/realtimechat/${user._id}`} style={{ textDecoration: 'none', width: '100%' }}>
+                    <ListItemAvatar sx={{ display: 'flex', alignItems: 'center' }}>
+                      <Avatar alt="User Avatar" src={userAvatars[user._id]} />
+                      <ListItemText
+                        primary={user.firstname + ' ' + user.lastname}
+                        secondary={user.email + '  [ ' + user.role + ' ] '}
+                        primaryTypographyProps={{ color: 'primary', fontWeight: 'bold' }}
+                      />
+                    </ListItemAvatar>
+                  </NavLink>
                 </ListItem>
               ))}
             </List>
           </div>
         </Box>
-        {/* Main chat window */}
         <Box sx={{ flex: 3, paddingLeft: 1, marginRight: 0.5, overflowY: 'auto', maxHeight: '100%', height: 'calc(100vh - 64px - 56px)', minWidth: '400px', position: 'relative' }}>
           <Box sx={{ height: 'calc(100% - 56px)', overflowY: 'auto' }}>
             <List sx={{ width: '100%', bgcolor: 'background.paper' }}>
-              {messages.length === 0 ? ( // Check if messages array is empty
+              {messages.length === 0 ? (
                 <ListItem sx={{ justifyContent: 'center' }}>
                   <h2 style={{ textAlign: 'center', fontWeight: 'bolder' }}>Currently, there are no messages. Please send a message to the user you want. 📩</h2>
                 </ListItem>
               ) : (
-                messages.map((message, index) => (
+                messages.slice().reverse().map((message, index) => ( // Reverse the order of messages here
                   <ListItem alignItems="flex-start" key={message._id} sx={{ flexDirection: userID === message.senderId ? 'row' : 'row-reverse', justifyContent: 'flex-start', color: userID === message.senderId ? 'text.secondary' : 'text.secondary', backgroundColor: userID === message.senderId ? '#f0f0f0' : '#DEF7E5', borderRadius: '20px', padding: '10px', marginBottom: '10px' }}>
                     <ListItemAvatar sx={{ marginLeft: userID === message.senderId ? '0' : '10px', marginRight: userID === message.senderId ? '10px' : '0' }}>
                       <Avatar alt="Sender Avatar" src={userAvatars[message.senderId]} />
@@ -164,14 +201,13 @@ const MessagesComponent = () => {
               )}
             </List>
           </Box>
-          {/* Input field for typing and sending messages */}
           <Box sx={{ position: 'absolute', bottom: '0px', right: '0px', width: 'calc(100% - 0px)', backgroundColor: 'white', padding: '10px 10px 0 10px', borderTop: '5px solid #1F5357', display: 'flex', alignItems: 'center' }}>
-            <div class="messageBox">
-              <div class="fileUploadWrapper">
-                <label for="file">
+            <div className="messageBox">
+              <div className="fileUploadWrapper">
+                <label htmlFor="file">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 337 337">
                     <circle
-                      stroke-width="20"
+                      strokeWidth="20"
                       stroke="#6c6c6c"
                       fill="none"
                       r="158.5"
@@ -179,19 +215,19 @@ const MessagesComponent = () => {
                       cx="168.5"
                     ></circle>
                     <path
-                      stroke-linecap="round"
-                      stroke-width="25"
+                      strokeLinecap="round"
+                      strokeWidth="25"
                       stroke="#6c6c6c"
                       d="M167.759 79V259"
                     ></path>
                     <path
-                      stroke-linecap="round"
-                      stroke-width="25"
+                      strokeLinecap="round"
+                      strokeWidth="25"
                       stroke="#6c6c6c"
                       d="M79 167.138H259"
                     ></path>
                   </svg>
-                  <span class="tooltip">Add an image</span>
+                  <span className="tooltip">Add an image</span>
                 </label>
                 <input type="file" id="file" name="file" />
               </div>
@@ -210,9 +246,9 @@ const MessagesComponent = () => {
                     d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
                   ></path>
                   <path
-                    stroke-linejoin="round"
-                    stroke-linecap="round"
-                    stroke-width="33.67"
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                    strokeWidth="33.67"
                     stroke="#6c6c6c"
                     d="M646.293 331.888L17.7538 17.6187L155.245 331.888M646.293 331.888L17.753 646.157L155.245 331.888M646.293 331.888L318.735 330.228L155.245 331.888"
                   ></path>

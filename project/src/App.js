@@ -88,13 +88,11 @@ import CentarDetails from './componant/HomeComponents/HomeCompDetails/CentarDeta
 import OrdersDoc from './componant/AdminBoard/OrdersDoc';
 import Updateme from './componant/AdminBoard/Updateme';
 import MessagesComponent from './componant/RealTimeChat/Chatrecive';
-import { SocketContextProvider } from './componant/RealTimeChat/SocketContext';
 import MedicCard from './componant/HomeComponents/Medicine';
 
 export default function App() {
   return (
     <div>
-      <SocketContextProvider>
         <ToastContainer />
         <Routes>
           <Route path="/register" element={<SignUp />} />
@@ -208,7 +206,6 @@ export default function App() {
           <Route path="/profileUpdate" element={<Updateme />} />
           <Route path="/medicine" element={<MedicCard />} />
         </Routes>
-      </SocketContextProvider>
     </div>
   );
 }
