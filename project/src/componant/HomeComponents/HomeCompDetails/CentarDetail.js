@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from "react";
-import "./Doctordetail.css";
+import "../../DoctorsPage/DoctorsDetails/Doctordetail.css";
 import "../../SomeStyles/Whatsappp.css";
 import Header from "../../AllBars/Header";
 import Footer from "../../AllBars/Footer";
@@ -86,10 +86,11 @@ export default function EyeDetail() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/api/doctors/radiologycenters/${id}`)
+    fetch(`http://localhost:5000/api/radiologycenters/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setDoctorData(data);
+        console.log(data);
       })
       .finally(() => setLoading(false));
   }, []);
@@ -127,7 +128,7 @@ export default function EyeDetail() {
     } else {
       console.log("No phone number starting with '010', '012', '011', or '015' found.");
       setPlayStatue(Sound.status.PLAYING);
-      toast.error("نأسف! لا يمتلك الطبيب رقم واتساب يمكنك الطلب من موقعنا وسيتم توصيله لك", options);
+      toast.error("نأسف! لا يمتلك المركز رقم واتساب يمكنك الطلب من موقعنا وسيتم التواصل معك", options);
     }
   };
 
@@ -166,7 +167,7 @@ export default function EyeDetail() {
       <Header />
       <div style={body}>
         <h1 className="txtdoc">
-          أفضل الخدمات والمنتجات 
+          أفضل الخدمات والمنتجات
         </h1>
         <h1 style={{ color: "#ff0505", textAlign: "center" }}>
           نتطلع لخدمتك وتلبية احتياجاتك الصحية بأفضل الطرق الممكنة
@@ -206,7 +207,7 @@ export default function EyeDetail() {
                   </Link>
                 </div>
                 <h1 style={{ color: "#1F5357" }}>{doctorData.name}</h1>
-                <h2>طبيب {doctorData.specialization}</h2>
+                <h2>{doctorData.Category}</h2>
                 <h3>{doctorData.phoneNumber}</h3>
                 <div style={{ position: "relative", right: "26%" }}>
                   <Stars />
