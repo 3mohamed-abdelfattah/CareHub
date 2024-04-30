@@ -1,5 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./Doctordetail.css";
+import "../../SomeStyles/Whatsappp.css";
 import Header from "../../AllBars/Header";
 import Footer from "../../AllBars/Footer";
 import DOCM from "../../Photos/doctorphoto.png";
@@ -8,52 +9,66 @@ import Checkout from "../../SomeStyles/Checkout";
 import Stars from "../../SomeStyles/Stars";
 import { Link } from 'react-router-dom';
 import PayPal from "../../Payment/PayPal";
-import "../../SomeStyles/Whatsappp.css";
 import { toast } from 'react-toastify';
 import Sound from 'react-sound';
-import NOtifi from "../../Photos/sound.mp3"
+import NOtifis from "../../Photos/sounds.mp3"
+import NOtifie from "../../Photos/sounde.mp3"
+import axios from "axios";
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import CardContent from '@mui/material/CardContent';
+import Avatar from '@mui/material/Avatar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
-export default function ButeDetail() {
+export default function EyeDetail() {
   const id = window.location.pathname.split("/").slice(-1)[0];
   const [doctorData, setDoctorData] = useState({});
+  const [commentData, setCommentData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
+  const [playStatue, setPlayStatue] = useState(Sound.status.STOPPED);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [comment, setComment] = useState('');
+  const [filteredComment, setFilteredComment] = useState([]);
 
   useEffect(() => {
     if (!window.localStorage.getItem('email')) {
       window.location = "/login";
     }
-  }, [])
+  }, []);
 
-  const handleLinkedW = () => {
-    let phoneNumber = doctorData.phoneNumber;
-    // Remove spaces from the phone number
-    phoneNumber = phoneNumber.replace(/\s/g, '');
-    const phoneNumbersArray = phoneNumber.split('-'); //تقسيم الأرقام
-    // اختيار أول رقم يبدأ بـ "010"، ثم "012"، ثم "011"، ثم "015"
-    phoneNumber =
-      phoneNumbersArray.find(number => number.startsWith("010")) ||
-      phoneNumbersArray.find(number => number.startsWith("012")) ||
-      phoneNumbersArray.find(number => number.startsWith("011")) ||
-      phoneNumbersArray.find(number => number.startsWith("015"));
-    if (phoneNumber) {
-      window.location.href = `https://wa.me/+2${phoneNumber}`;
-    } else {
-      // لا يوجد رقم يبدأ بـ "010", "012", "011", أو "015"
-      console.log("No phone number starting with '010', '012', '011', or '015' found.");
-      setPlayStatus(Sound.status.PLAYING);
-      toast.error("نأسف! لا تمتلك الصيدلية رقم واتساب يمكنك الطلب من موقعنا وسيتم توصيله لك", options);
+  async function Submit(e) {
+    e.preventDefault(); // Prevent default form submission
+    try {
+      let res = await axios.post("http://localhost:5000/api/comment", {
+        name: name,
+        email: email,
+        comment: comment,
+      });
+      if (res.status === 200) {
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+        setPlayStatus(Sound.status.PLAYING);
+        toast.success("We received your comment successful!", options);
+      }
+    } catch (Err) {
+      if (Err.response) {
+        const status = Err.response.status;
+        if (status === 400) {
+          setPlayStatue(Sound.status.PLAYING);
+          toast.error("We can't receive your comment,Complete your data", options);
+        } else {
+          setPlayStatue(Sound.status.PLAYING);
+          toast.error("An error occurred. Please try again later.", options);
+        }
+      }
     }
-  };
-
-  const options = {
-    position: "bottom-left",
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
   }
 
   const body = {
@@ -70,21 +85,87 @@ export default function ButeDetail() {
   };
 
   useEffect(() => {
-    setLoading(true); // Start loading
+    setLoading(true);
     fetch(`http://localhost:5000/api/doctors/Beautician/${id}`)
       .then((res) => res.json())
       .then((data) => {
         setDoctorData(data);
-        console.log(data);
       })
-      .finally(() => setLoading(false)); // End loading
+      .finally(() => setLoading(false));
   }, []);
+
+  useEffect(() => {
+    fetch(`http://localhost:5000/api/comments/${id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setCommentData(data);
+        setFilteredComment(data);
+      })
+  }, []);
+
+  const options = {
+    position: "bottom-left",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  };
+
+  const handleLinkedW = () => {
+    let phoneNumber = doctorData.phoneNumber;
+    phoneNumber = phoneNumber.replace(/\s/g, '');
+    const phoneNumbersArray = phoneNumber.split('-');
+    phoneNumber =
+      phoneNumbersArray.find(number => number.startsWith("010")) ||
+      phoneNumbersArray.find(number => number.startsWith("012")) ||
+      phoneNumbersArray.find(number => number.startsWith("011")) ||
+      phoneNumbersArray.find(number => number.startsWith("015"));
+    if (phoneNumber) {
+      window.location.href = `https://wa.me/+2${phoneNumber}`;
+    } else {
+      console.log("No phone number starting with '010', '012', '011', or '015' found.");
+      setPlayStatue(Sound.status.PLAYING);
+      toast.error("نأسف! لا يمتلك الطبيب رقم واتساب يمكنك الطلب من موقعنا وسيتم توصيله لك", options);
+    }
+  };
+
+  const commentElements = filteredComment.map((card, index) => (
+    <Card sx={{ maxWidth: '74%', margin: '1%', position: 'relative', right: '12%' }} key={index}>
+      <CardHeader
+        avatar={
+          <Avatar sx={{ bgcolor: '#1F5357', marginLeft: '50%' }} aria-label="recipe">
+            {card.name.charAt(0)}
+          </Avatar>
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title={card.name}
+        subheader={card.email}
+      />
+      <CardContent>
+        <Typography variant="body2" color="text.primary">
+          {card.comment}
+        </Typography>
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon style={{ color: '#ff4141' }} />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon style={{ color: '#1F5357' }} />
+        </IconButton>
+      </CardContent>
+    </Card>
+  ));
 
   return (
     <Fragment>
       <Header />
       <div style={body}>
-        <h1 className="txtdoc">بيئه طبيه امنه ومريحه</h1>
+        <h1 className="txtdoc">لبيئه طبيه امنه ومريحه</h1>
         <h1 style={{ color: "#ff0505", textAlign: "center" }}>
           احجز موعدًا مع افضل اطباء التجميل اليوم
         </h1>
@@ -131,21 +212,6 @@ export default function ButeDetail() {
                 <p>{doctorData.address}</p>
               </div>
             </div>
-            <div className="massgedoc">
-              <Link to="/realtimechat">
-                <button id="Massgebtn">
-                  <div className="svg-wrapper-1">
-                    <div className="svg-wrapper">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24}>
-                        <path fill="none" d="M0 0h24v24H0z" />
-                        <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z" />
-                      </svg>
-                    </div>
-                  </div>
-                  <span>Chat Now</span>
-                </button>
-              </Link>
-            </div>
             <div className="map_gogle">
               <iframe
                 title="موقع الطبيب"
@@ -165,49 +231,71 @@ export default function ButeDetail() {
                 </svg>
               </button>
             </div>
+            <div className="massgedoc">
+              <Link to="/realtimechat">
+                <button id="Massgebtn">
+                  <div className="svg-wrapper-1">
+                    <div className="svg-wrapper">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24}>
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <span>Chat Now</span>
+                </button>
+              </Link>
+            </div>
             <hr className="hrdoc" />
+            {commentElements}
             <div className="containerD">
               <div className="opinionsD">
-                <div className="opsD">
-                  <div className="evaluateD">
-                    <h3>اضف تقييمك الان</h3>
+                <form onSubmit={Submit}>
+                  <div className="opsD">
+                    <div className="evaluateD">
+                      <h3>اضف تقييمك الان</h3>
+                    </div>
+                    <div className="textareaD">
+                      <h4> شارك تجربتك</h4>
+                      <textarea
+                        name
+                        className="formsD"
+                        placeholder="شكرا لمشاركتك"
+                        defaultValue={""}
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}
+                      />
+                    </div>
+                    <div className="userD">
+                      <h4>الاسم</h4>
+                      <input
+                        type="text"
+                        className="formsD"
+                        placeholder="الاسم هنا"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                    </div>
+                    <div className="userD">
+                      <h4>البريد الالكتروني</h4>
+                      <input
+                        type="email"
+                        className="formsD"
+                        placeholder="بريدك الالكتروني"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </div>
+                    <div className="btn-groupD">
+                      <button type="submit" className="btn submit">
+                        ارسال التقييم
+                      </button>
+                      <button type="reset" className="btn cancel" onClick={() => { setComment(''); setName(''); setEmail(''); }}>
+                        الغاء
+                      </button>
+                    </div>
                   </div>
-                  <div className="textareaD">
-                    <h4> شارك تجربتك</h4>
-                    <textarea
-                      name
-                      className="formsD"
-                      placeholder="شكرا لمشاركتك"
-                      defaultValue={""}
-                    />
-                  </div>
-                  <div className="userD">
-                    <h4>الاسم</h4>
-                    <input
-                      type="text"
-                      className="formsD"
-                      required
-                      placeholder="الاسم هنا"
-                    />
-                  </div>
-                  <div className="userD">
-                    <h4>البريد الالكتروني</h4>
-                    <input
-                      type="email"
-                      className="formsD"
-                      required
-                      placeholder="بريدك الالكتروني"
-                    />
-                  </div>
-                  <div className="btn-groupD">
-                    <button type="submit" className="btn submit">
-                      ارسال التقييم
-                    </button>
-                    <button type="reset" className="btn cancel">
-                      الغاء
-                    </button>
-                  </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>
@@ -215,9 +303,14 @@ export default function ButeDetail() {
       </div>
       <Footer />
       <Sound
-        url={NOtifi}
+        url={NOtifis}
         playStatus={playStatus}
         onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
+      />
+      <Sound
+        url={NOtifie}
+        playStatus={playStatue}
+        onFinishedPlaying={() => setPlayStatue(Sound.status.STOPPED)}
       />
     </Fragment>
   );
