@@ -2,7 +2,7 @@ import React, { Fragment, useEffect } from 'react'
 import Header from '../AllBars/Header'
 import Footer from '../AllBars/Footer'
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton'
-
+import CH0 from "../Photos/Children.png"
 export default function AWRChild() {
 
   useEffect(() => {
@@ -47,7 +47,7 @@ export default function AWRChild() {
               <br />
               <li><a href="#25">صحة أسنان الأطفال.</a></li>
             </ul>
-            <img src="img/صحة الطفل.jpeg" alt />
+            <img src={CH0} alt='' />
           </div>
           <hr />
           <div className="contentN">

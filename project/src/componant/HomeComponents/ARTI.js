@@ -27,11 +27,11 @@ const ArticlesList = () => {
       <Header />
       <div className="ArticlesList">
         <div className="Do-home-text">
-          <h1 className="title-pages">المقالات الطبية، رحلة المعرفة نحو عالم الصحة</h1>
-          <h2 style={{ color: '#ff0505' }}>...تُقدم لك أحدث المعلومات الصحية</h2>
+          <h1 className="title-pages" data-aos="zoom-in">المقالات الطبية، رحلة المعرفة نحو عالم الصحة</h1>
+          <h2 style={{ color: '#ff0505' }} data-aos="zoom-in">...تُقدم لك أحدث المعلومات الصحية</h2>
         </div>
         <div className="section-wapp">
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-right">
             <img src={SOLC} alt=""></img>
             <div className="ArticlesList-pages">
               <h2 className="Articles-A">
@@ -48,7 +48,7 @@ const ArticlesList = () => {
               </Link>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-left">
             <img src={SOHP} alt=""></img>
             <div className="ArticlesList-pages">
               <h2 className="Articles-A">
@@ -65,7 +65,7 @@ const ArticlesList = () => {
               </Link>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-right">
             <img src={SOPS} alt=""></img>
             <div className="ArticlesList-pages">
               <h2 className="Articles-A">
@@ -82,7 +82,7 @@ const ArticlesList = () => {
               </Link>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-left">
             <img src={SONG} alt=""></img>
             <div className="ArticlesList-pages">
               <h2 className="Articles-A">
@@ -99,7 +99,7 @@ const ArticlesList = () => {
               </Link>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-right">
             <img src={SOBC} alt=""></img>
             <div className="ArticlesList-pages">
               <h2 className="Articles-A">
@@ -116,7 +116,7 @@ const ArticlesList = () => {
               </Link>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-left">
             <img src={SOLP} alt=""></img>
             <div className="ArticlesList-pages">
               <h2 className="Articles-A">
@@ -133,7 +133,7 @@ const ArticlesList = () => {
               </Link>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-right">
             <img src={SOIW} alt=""></img>
             <div className="ArticlesList-pages">
               <h2 className="Articles-A">
@@ -150,7 +150,7 @@ const ArticlesList = () => {
               </Link>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-left">
             <img src={SONG} alt=""></img>
             <div className="ArticlesList-pages">
               <h2 className="Articles-A">
@@ -167,7 +167,7 @@ const ArticlesList = () => {
               </Link>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-right">
             <img src={ABGS} alt=""></img>
             <div className="ArticlesList-pages">
               <h2 className="Articles-A">
@@ -184,7 +184,7 @@ const ArticlesList = () => {
               </Link>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-left">
             <img src={SOGP} alt=""></img>
             <div className="ArticlesList-pages">
               <h2 className="Articles-A">

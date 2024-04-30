@@ -18,11 +18,10 @@ const orderSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  file: {
+  image: {
     type: String,
   },
 })
-
 
 const Order = mongoose.model('Order', orderSchema);
 

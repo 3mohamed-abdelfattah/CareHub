@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from '../AllBars/Header';
 import Footer from '../AllBars/Footer';
 import Sound from 'react-sound';
-import NOtifi from "../Photos/sound.mp3"
+import NOtifis from "../Photos/sounds.mp3"
 
 const Calculator = () => {
   const [weight, setWeight] = useState('');
@@ -18,9 +18,9 @@ const Calculator = () => {
 
   useEffect(() => {
     if (!window.localStorage.getItem('email')) {
-        window.location= "/login";
+      window.location = "/login";
     }
-}, [])
+  }, [])
 
   const activityLevels = {
     sedentary: 1.2,
@@ -47,7 +47,7 @@ const Calculator = () => {
       draggable: true,
       progress: undefined,
     });
-    };
+  };
 
   return (
     <Fragment>
@@ -91,10 +91,10 @@ const Calculator = () => {
       <Footer />
       <ToastContainer position="bottom-left" autoClose={3000} hideProgressBar />
       <Sound
-      url={NOtifi}
-      playStatus={playStatus}
-      onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
-    />
+        url={NOtifis}
+        playStatus={playStatus}
+        onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
+      />
     </Fragment>
   );
 };
@@ -104,8 +104,8 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop:"5%",
-    marginBottom:"5%",
+    marginTop: "5%",
+    marginBottom: "5%",
   },
   calculatorContainer: {
     width: '60%',

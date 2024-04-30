@@ -5,7 +5,8 @@ import { useState, Fragment } from "react";
 import axios from "axios";
 import { toast } from 'react-toastify';
 import Sound from 'react-sound';
-import NOtifi from "../Photos/sound.mp3"
+import NOtifis from "../Photos/sounds.mp3"
+import NOtifie from "../Photos/sounde.mp3"
 import { useNavigate } from 'react-router-dom';
 
 export default function Problems() {
@@ -17,6 +18,7 @@ export default function Problems() {
   const [accept, setAccept] = useState(false);
   const [errors, setErrors] = useState({}); // State to hold specific errors
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
+  const [playStatue, setPlayStatue] = useState(Sound.status.STOPPED);
   const navigate = useNavigate();
 
   const options = {
@@ -59,15 +61,15 @@ export default function Problems() {
         const status = Err.response.status;
         setErrors({}); // Clear errors on each attempt
         if (status === 400) {
-          setPlayStatus(Sound.status.PLAYING);
+          setPlayStatue(Sound.status.PLAYING);
           toast.error(
             ".هناك مشكله في بياناتك يرجي مراجعه البيانات مره اخري", options
           );
         } else if (status === 401) {
-          setPlayStatus(Sound.status.PLAYING);
+          setPlayStatue(Sound.status.PLAYING);
           toast.error("Passwords do not match. Please check and ensure the password is entered correctly", options);
         } else {
-          setPlayStatus(Sound.status.PLAYING);
+          setPlayStatue(Sound.status.PLAYING);
           toast.error("An error occurred. Please try again later.", options);
         }
         setAccept(true);
@@ -97,9 +99,14 @@ export default function Problems() {
       </Fragment>
       <Footer />
       <Sound
-        url={NOtifi}
+        url={NOtifis}
         playStatus={playStatus}
         onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
+      />
+      <Sound
+        url={NOtifie}
+        playStatus={playStatue}
+        onFinishedPlaying={() => setPlayStatue(Sound.status.STOPPED)}
       />
     </div>
   )

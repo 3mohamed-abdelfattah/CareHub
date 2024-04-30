@@ -31,7 +31,7 @@ const HealthAWR = () => {
     <div>
       <Header />
       <container>
-        <div className={styles.landing} style={{ marginTop: '9%' }}>
+        <div className={styles.landing} style={{ marginTop: '9%' }} data-aos="zoom-in">
           <div className={styles.introtext}>
             <h1 style={{ color: '#ff0505' }}><b>نُؤمن بأنّ التوعية الصحية مسؤولية</b></h1>
             <p style={Pstyle}>ونسعى من خلال موقعنا إلى المساهمة في نشر الوعي بين أفراد المجتمع للحفاظ على صحة الجميع</p>

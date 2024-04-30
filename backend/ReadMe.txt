@@ -46,7 +46,7 @@ PATCH http://localhost:5000/api/update/:(id- mail)  <-- UserID or email
     "newLastname"  : " ",       **\ OPTINAL /**
     "newEmail"     : " " ,      **\ OPTINAL /**
     "newPassword"  : " ",       **\ OPTINAL /**
-    "newRole"  :  " User , Admin , Master , Doctor " ,           **\ OPTINAL /**       ** it MUST be written like this**
+    "newRole"  :  " User , Admin , Master , 'Doctor'  'Hospital' 'Lab' 'Center' 'Company' 'Pharmacy          **\ OPTINAL /**       ** it MUST be written like this**
 
 
 
@@ -125,7 +125,7 @@ ______________________________________________________________________
 
                 -- Orders  --
 
-GET http://localhost:5000/api/orders
+GET http://localhost:5000/api/orders  ---> Get all orders
 
 GET http://localhost:5000/api/orders/:id <-- Order Id
 
@@ -133,8 +133,15 @@ POST http://localhost:5000/api/orders
     name
     order
     address
-    file
-    phoneNumber
+    image
+    phoneNumber 
+
+
+GET http://localhost:5000/api/order-image/:id ---> Get image Name from order 
+
+
+
+GET http://localhost:5000/uploads/(Image name) ---> to get image
 
 
 
@@ -155,4 +162,19 @@ GET http://localhost:5000/api/otherusers/:id  (All users exept the currently sig
 
         ---messages from one user ---
 GET http://localhost:5000/api/messages/:senderID/:receiverId
+
+
+
+______________________________________________________________________
+                    *** User comments ***
+
+
+POST http://localhost:5000/api/comment 
+name   email   comment   **\ REQUIERD /**
+
+GET http://localhost:5000/api/comments  ----> Get all comments
+
+GET http://localhost:5000/api/comments/:id  ----> Get comment by id
+
+
 

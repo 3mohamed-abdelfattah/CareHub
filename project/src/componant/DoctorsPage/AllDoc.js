@@ -6,7 +6,7 @@ import "../Home/HomePage.css"
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 import AllDocChatbot from '../ChatBOTS/AllDocChatbot';
 
-//الصور
+//Photos
 import Brain from "../Photos/BRAIN.png"
 import Nose from "../Photos/nose.png"
 import BT from "../Photos/STOMCH.png"

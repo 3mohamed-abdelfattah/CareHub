@@ -5,7 +5,7 @@ import React from 'react';
 import "./Dashboard.css"
 import { toast } from 'react-toastify';
 import Sound from 'react-sound';
-import NOtifi from "../Photos/sound.mp3"
+import NOtifi from "../Photos/sounds.mp3"
 
 export default function Users() {
   const [user, setUser] = useState([]);

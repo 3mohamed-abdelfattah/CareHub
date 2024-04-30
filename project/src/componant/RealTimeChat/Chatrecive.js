@@ -14,6 +14,10 @@ import AV8 from '../Photos/avatar7.jpg';
 import AV9 from '../Photos/avatar8.jpg';
 import axios from 'axios';
 import "./RealChat.css";
+import { toast } from 'react-toastify';
+import Sound from 'react-sound';
+import NOtifis from "../Photos/sounds.mp3"
+import NOtifie from "../Photos/sounde.mp3"
 
 const avatarImages = [AV1, AV2, AV3, AV4, AV5, AV6, AV7, AV8, AV9];
 
@@ -26,6 +30,8 @@ const MessagesComponent = () => {
   const [userAvatars, setUserAvatars] = useState({});
   const [intervalId, setIntervalId] = useState(null);
   const userID = window.localStorage.getItem('_id');
+  const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
+  const [playStatue, setPlayStatue] = useState(Sound.status.STOPPED);
 
   useEffect(() => {
     const storedSelectedUser = localStorage.getItem('selectedUser');
@@ -47,7 +53,7 @@ const MessagesComponent = () => {
     fetch(`http://localhost:5000/api/otherusers/${userID}`)
       .then(response => {
         if (!response.ok) {
-          throw new Error('Failed to fetch other users');
+          toast.success('Success to fetch other users', options);
         }
         return response.json();
       })
@@ -66,6 +72,8 @@ const MessagesComponent = () => {
       })
       .catch(error => {
         setError(error.message);
+        toast.error('Failed to fetch other users', options);
+        setPlayStatue(Sound.status.PLAYING);
       });
     return () => clearInterval(intervalId);
   }, [userID]);
@@ -75,7 +83,7 @@ const MessagesComponent = () => {
       fetch(`http://localhost:5000/api/messages/${userID}/${selectedUser._id}`)
         .then(response => {
           if (!response.ok) {
-            throw new Error('Failed to fetch messages');
+            toast.success('Success to fetch messages', options);
           }
           return response.json();
         })
@@ -95,12 +103,14 @@ const MessagesComponent = () => {
       })
         .then(response => {
           if (response.data.success) {
-            throw new Error('Failed to send message');
+            toast.success('Success to send message', options);
+            setPlayStatus(Sound.status.PLAYING);
           }
           setNewMessage('');
         })
         .catch(error => {
           setError(error.message);
+          setPlayStatue(Sound.status.PLAYING);
         });
     }
   };
@@ -111,13 +121,22 @@ const MessagesComponent = () => {
     window.location.reload(); // Refresh the page after selecting a new user
   };
 
+  const options = {
+    position: "bottom-left",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  }
+
   return (
     <Fragment>
       <Header />
       <Box sx={{ display: 'flex', height: 'calc(100vh - 64px)', overflow: 'hidden', marginTop: '4.5%' }}>
         <Box sx={{ flex: 0.9, borderRight: 1, borderColor: 'divider', paddingRight: 2, overflowY: 'auto', maxHeight: '100%', minWidth: '200px' }}>
           <div className="sidebar">
-            {error && <p style={{ color: 'red' }}>{error}</p>}
             <List>
               <ListItem
                 style={{ marginLeft: '2%' }}
@@ -259,6 +278,16 @@ const MessagesComponent = () => {
         </Box>
       </Box>
       <Footer />
+      <Sound
+        url={NOtifis}
+        playStatus={playStatus}
+        onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
+      />
+      <Sound
+        url={NOtifie}
+        playStatus={playStatue}
+        onFinishedPlaying={() => setPlayStatue(Sound.status.STOPPED)}
+      />
     </Fragment>
   );
 };

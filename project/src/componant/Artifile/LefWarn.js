@@ -31,11 +31,11 @@ export default function LefWarn() {
       <Header />
       <div style={body}>
         <div className="headZ">
-          <header><h1>اعراض جلطة الساق الأولية والخطيرة انتبه لها</h1></header>
+          <header><h1 data-aos="zoom-in">اعراض جلطة الساق الأولية والخطيرة انتبه لها</h1></header>
         </div>
         <div className="containerZ">
           <div className="homeZ">
-            <ul>
+            <ul data-aos="zoom-in">
               <li><a href="#50">ما هي جلطة الساق.</a></li>
               <br />
               <li><a href="#51">اعراض جلطة الساق.</a></li>
@@ -47,17 +47,17 @@ export default function LefWarn() {
               <li><a href="#54">اعراض جلطة الساق بعد الولادة القيصرية.</a></li>
             </ul>
             {/* اعراض-جلطة-الساق */}
-            <img src={LEGar} alt='' />
+            <img src={LEGar} alt='' data-aos="zoom-in" />
           </div>
           <hr />
           <div className="contentZ">
-            <p>
+            <p data-aos="zoom-in">
               بالتأكيد كلنا نسمع عن الجلطات ومدى انتشار الإصابة بها بين الشباب
               والكبار، ومن أشهر أنواع الجلطات انتشاراً جلطة الساق، حيث يحدث تجلط
               بدون أسباب أو إصابة في الساقين، ولأنها حالة منتشرة فتعرفوا معنا على
               أبرز اعراض جلطة الساق، وكيف يتم اكتشافها؟ في المقال التالي.
             </p>
-            <div id={50}>
+            <div id={50} data-aos="zoom-in">
               <h3><b>ما هي جلطة الساق؟</b></h3>
               <p>
                 في الطبيعي تحدث الجلطات ليتم وقف النزيف والدم وقت الإصابات، لكن من
@@ -75,7 +75,7 @@ export default function LefWarn() {
             </div>
             <br />
             <hr />
-            <div id={51}>
+            <div id={51} data-aos="zoom-in">
               <h3><b>اعراض جلطة الساق:</b></h3>
               <p>
                 هذه الحالة تتسبب في إعاقة الطريق أمام تدفق الدم في القدمين، فيحدث
@@ -100,7 +100,7 @@ export default function LefWarn() {
               <br />
             </div>
             <hr />
-            <div id={52}>
+            <div id={52} data-aos="zoom-in">
               <h3><b>اعراض جلطة الساق السطحية:</b></h3>
               <p>
                 في هذه الحالة تحدث الجلطة في أوردة الساق السطحية القريبة من الجلد،
@@ -121,7 +121,7 @@ export default function LefWarn() {
               <br />
             </div>
             <hr />
-            <div id={53}>
+            <div id={53} data-aos="zoom-in">
               <h3><b>اعراض جلطة الساق الخطيرة:</b></h3>
               <p>
                 هذه الجلطة قد تتسبب في حدوث مضاعفات، وظهور أعراض أخرى أشد خطورة
@@ -144,7 +144,7 @@ export default function LefWarn() {
               </ul>
             </div>
             <hr />
-            <div id={54}>
+            <div id={54} data-aos="zoom-in">
               <h3><b>​​​​​اعراض جلطة الساق بعد الولادة القيصرية:</b></h3>
               <p>
                 النساء بعد الولادة القيصرية يكن معرضات لخطر الإصابة بجلطة الساق، حيث

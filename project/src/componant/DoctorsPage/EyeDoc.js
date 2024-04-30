@@ -21,7 +21,6 @@ export default function EyeDoc() {
     }
   }, [])
 
-
   const mystyle = {
     overflow: 'hidden',
     transition: 'max-height 0.6s ease',
@@ -43,13 +42,10 @@ export default function EyeDoc() {
     progress: undefined,
   };
 
-
   const [doctorsData, setDoctorsData] = useState([]);
   const [filteredDoctors, setFilteredDoctors] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
-
-
   const [cardtoggle1, setCardToggle1] = useState(false);
   const [cardtoggle2, setCardToggle2] = useState(false);
   const [cardtoggle3, setCardToggle3] = useState(false);
@@ -89,7 +85,6 @@ export default function EyeDoc() {
         setIsLoading(false); // في حالة حدوث خطأ
       }
     };
-
     fetchData();
   }, []);
 
@@ -101,7 +96,6 @@ export default function EyeDoc() {
       console.log("No results found!");
       toast.error("No results found!", options);
     }
-
     setFilteredDoctors(filteredData.slice(0, itemsPerPage));
     setCurrentPage(1);
   };
@@ -148,10 +142,6 @@ export default function EyeDoc() {
     </div>
   ));
 
-
-
-
-
   return (
     <div>
       <Header />
@@ -169,12 +159,8 @@ export default function EyeDoc() {
             <button className="micButton"><svg viewBox="0 0 384 512" className="micIcon"><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z" /></svg>
             </button>
           </div>
-
-
-
         </div>
       </div>
-
       <div className="doctors-list-D">
         <div className="container-D">{doctorElements}</div>
         {isLoading &&
@@ -188,11 +174,8 @@ export default function EyeDoc() {
             </div>
           </div>
         }
-
       </div>
-
       <div className="pagination-buttons">
-
         <div className="btn-conteinerr" onClick={handleNextPage}
           disabled={filteredDoctors.length < itemsPerPage}>
           <a href="#" className="btn-content">
@@ -207,9 +190,6 @@ export default function EyeDoc() {
             </span>
           </a>
         </div>
-
-
-
         <div className="btn-conteiner" onClick={handlePreviousPage} disabled={currentPage === 1}>
           <a href="#" className="btn-content">
             <span className="icon-arrow">
@@ -223,15 +203,11 @@ export default function EyeDoc() {
             </span>
           </a>
         </div>
-
       </div>
-
       <div className="common_questions-D">
         <div className="container-D">
-
           <section>
             <h2 className="title-D">الاسئلة الشائعة</h2>
-
             <div className="faq-D" onClick={ToggleHandler1}>
               <div className="question-D">
                 <h4>كيف يمكن الحفاظ على صحة العيون بشكل عام؟</h4>
@@ -240,17 +216,14 @@ export default function EyeDoc() {
                 </svg>
               </div>
               <div className={cardtoggle1 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.يُنصح بتناول الأطعمة الغنية بفيتامين A واستخدام واقي الشمس للحفاظ على صحة العيون</>
                   <br />
                   <br />
                   <>.تجنب الجلوس لفترات طويلة أمام الشاشات والتأكد من الراحة البصرية بالراحة</>
                 </p>
-
               </div>
             </div>
-
             <div className="faq-D" onClick={ToggleHandler2}>
               <div className="question-D">
                 <h4>ما هي الأعراض التحذيرية لمشاكل في النظر؟</h4>
@@ -259,15 +232,11 @@ export default function EyeDoc() {
                 </svg>
               </div>
               <div className={cardtoggle2 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.تشمل الأعراض الشائعة الرؤية الضبابية، الحكة، والعصبية المستمرة. يُنصح بزيارة طبيب العيون في حالة ظهور هذه الأعراض</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler3}>
               <div className="question-D">
                 <h4>ما هي العوامل التي يجب مراعاتها عند اختيار النظارات؟</h4>
@@ -276,18 +245,14 @@ export default function EyeDoc() {
                 </svg>
               </div>
               <div className={cardtoggle3 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.يجب مراعاة درجة النظر وشكل الوجه لاختيار الإطار المناسب</>
                   <br />
                   <br />
                   <>.يُنصح بالتحدث مع طبيب العيون للحصول على توجيه حول العدسات المناسبة</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler4}>
               <div className="question-D">
                 <h4>كيفية العناية بالعدسات اللاصقة؟</h4>
@@ -296,18 +261,14 @@ export default function EyeDoc() {
                 </svg>
               </div>
               <div className={cardtoggle4 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.يجب غسل اليدين جيدًا قبل لمس العدسات، وتنظيفها بمحلول مخصص</>
                   <br />
                   <br />
                   <>.تجنب استخدام العدسات لفترات طويلة واتباع إرشادات الاستخدام</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler5}>
               <div className="question-D">
                 <h4>ما هي الشروط المؤهلة لإجراء جراحة الليزك؟</h4>
@@ -316,18 +277,14 @@ export default function EyeDoc() {
                 </svg>
               </div>
               <div className={cardtoggle5 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.يجب أن يكون الشخص قادرًا على تحمل الجراحة ويتمتع بصحة عامة جيدة</>
                   <br />
                   <br />
                   <>.يُجرى فحص شامل لتحديد ملاءمة الشخص للجراحة</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler6}>
               <div className="question-D">
                 <h4>كيف يمكن العناية بالعين بعد عمليات الليزك؟</h4>
@@ -336,16 +293,12 @@ export default function EyeDoc() {
                 </svg>
               </div>
               <div className={cardtoggle6 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.يتم توجيه الشخص إلى استخدام قطرات العين وتجنب الحركات القوية للعين للمساعدة في التعافي</>
                 </p>
-
               </div>
             </div>
           </section>
-
-
         </div>
       </div>
       <ScrollToTopButton />

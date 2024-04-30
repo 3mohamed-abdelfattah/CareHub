@@ -29,11 +29,11 @@ export default function Arti3() {
       <Header />
       <div className="ArticlesList">
         <div className="Do-home-text">
-          <h1 className="title-pages">المقالات الطبية، رحلة المعرفة نحو عالم الصحة</h1>
-          <h2 style={{ color: '#ff0505' }}>...تُقدم لك أحدث المعلومات الصحية</h2>
+          <h1 className="title-pages" data-aos="zoom-in">المقالات الطبية، رحلة المعرفة نحو عالم الصحة</h1>
+          <h2 style={{ color: '#ff0505' }} data-aos="zoom-in">...تُقدم لك أحدث المعلومات الصحية</h2>
         </div>
         <div className="section-wapp">
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-right">
             {/* أعراض-مرض-الإيدز. */}
             <img src={SOLC} alt="" />
             <div className="ArticlesList-pages">
@@ -49,7 +49,7 @@ export default function Arti3() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-left">
             {/* اعراض-عرق-النسا. */}
             <img src={SOHP} alt="" />
             <div className="ArticlesList-pages">
@@ -65,7 +65,7 @@ export default function Arti3() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-right">
             {/* اعراض -التسمم. */}
             <img src={SOBC} alt="" />
             <div className="ArticlesList-pages">
@@ -81,7 +81,7 @@ export default function Arti3() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-left">
             {/* اعراض-الحمل. */}
             <img src={SOGP} alt="" />
             <div className="ArticlesList-pages">
@@ -97,7 +97,7 @@ export default function Arti3() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-right">
             <img src={SOIW} alt="" />
             <div className="ArticlesList-pages">
               <h2 className="Articles-A">
@@ -112,7 +112,7 @@ export default function Arti3() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-left">
             {/* اعراض-نقص-فيتامين-د. */}
             <img src={SOLP} alt="" />
             <div className="ArticlesList-pages">
@@ -128,7 +128,7 @@ export default function Arti3() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-right">
             {/* اعراض-الحرارة-الداخلية. */}
             <img src={SONG} alt="" />
             <div className="ArticlesList-pages">
@@ -144,7 +144,7 @@ export default function Arti3() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-left">
             <img src={ABGS} alt="" />
             <div className="ArticlesList-pages">
               <h2 className="Articles-A">
@@ -159,7 +159,7 @@ export default function Arti3() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-right">
             <img src={SOPS} alt="" />
             <div className="ArticlesList-pages">
               <h2 className="Articles-A">
@@ -174,7 +174,7 @@ export default function Arti3() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-left">
             {/* اعراض-ضعف-الانتصاب. */}
             <img src={DWA} alt="" />
             <div className="ArticlesList-pages">

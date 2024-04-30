@@ -3,7 +3,7 @@ import { useState, useEffect, Fragment } from "react";
 import React from 'react';
 import { toast } from 'react-toastify';
 import Sound from 'react-sound';
-import NOtifi from "../Photos/sound.mp3"
+import NOtifi from "../Photos/sounds.mp3"
 import { useNavigate } from "react-router-dom";
 import Header from "../AllBars/Header";
 import Footer from "../AllBars/Footer";

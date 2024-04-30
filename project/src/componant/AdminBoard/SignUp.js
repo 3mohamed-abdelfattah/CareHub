@@ -8,8 +8,8 @@ import React from 'react';
 import "./Log&Sign.css"
 import { toast } from 'react-toastify';
 import Sound from 'react-sound';
-import NOtifi from "../Photos/sound.mp3"
-
+import NOtifis from "../Photos/sounds.mp3"
+import NOtifie from "../Photos/sounde.mp3"
 
 export default function SignUp() {
   const [firstname, setfName] = useState('');
@@ -20,6 +20,7 @@ export default function SignUp() {
   const [accept, setAccept] = useState(false);
   const [errors, setErrors] = useState({});
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
+  const [playStatue, setPlayStatue] = useState(Sound.status.STOPPED);
   const nav = useNavigate();
   const navigate = useNavigate();
   // Get User
@@ -42,7 +43,7 @@ export default function SignUp() {
     // Regular Expression for checking if email contains "@master.com" or "@admin.com"
     const emailRegex = /@(master|admin)\.com$/i;
     if (emailRegex.test(email)) {
-      setPlayStatus(Sound.status.PLAYING);
+      setPlayStatue(Sound.status.PLAYING);
       toast.error("Email addresses with master or admin domains are not allowed for usres.", options);
       return;
     }
@@ -72,15 +73,15 @@ export default function SignUp() {
         const status = Err.response.status;
         setErrors({}); // Clear errors on each attempt
         if (status === 400) {
-          setPlayStatus(Sound.status.PLAYING);
+          setPlayStatue(Sound.status.PLAYING);
           toast.error(
             "This email is already registered. If you forgot your password, contact the support team", options
           );
         } else if (status === 401) {
-          setPlayStatus(Sound.status.PLAYING);
+          setPlayStatue(Sound.status.PLAYING);
           toast.error("Passwords do not match. Please check and ensure the password is entered correctly", options);
         } else {
-          setPlayStatus(Sound.status.PLAYING);
+          setPlayStatue(Sound.status.PLAYING);
           toast.error("An error occurred. Please try again later.", options);
         }
         setAccept(true);
@@ -128,9 +129,14 @@ export default function SignUp() {
       </form>
       <Footer />
       <Sound
-        url={NOtifi}
+        url={NOtifis}
         playStatus={playStatus}
         onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
+      />
+      <Sound
+        url={NOtifie}
+        playStatus={playStatue}
+        onFinishedPlaying={() => setPlayStatue(Sound.status.STOPPED)}
       />
     </Fragment>
   )

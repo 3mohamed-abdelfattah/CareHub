@@ -16,7 +16,7 @@ const Footer = () => {
   };
 
   const handleLinkedL = () => {
-    window.location.href = 'https://www.linkedin.com/in/mohamed-mohamed-665003276/';
+    window.location.href = 'https://www.linkedin.com/in/mohamed-devmaster/';
   };
 
   return (

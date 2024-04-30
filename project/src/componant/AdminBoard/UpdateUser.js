@@ -3,7 +3,7 @@ import { useState, useEffect, Fragment } from "react";
 import React from 'react';
 import { toast } from 'react-toastify';
 import Sound from 'react-sound';
-import NOtifi from "../Photos/sound.mp3"
+import NOtifi from "../Photos/sounds.mp3"
 import { useNavigate } from "react-router-dom";
 
 export default function UpdateUser() {
@@ -38,7 +38,7 @@ export default function UpdateUser() {
                 setpassword(data.password);
                 setRole(data.role);
             });
-    },[]);
+    }, []);
 
     async function Submit(e) {
         let sub = true
@@ -89,6 +89,11 @@ export default function UpdateUser() {
                             <option value="Admin">مسؤول</option>
                             <option value="Master">مطور برمجيات</option>
                             <option value="Doctor">طبيب</option>
+                            <option value="Pharmacy">صيدليه</option>
+                            <option value="Center">مركز</option>
+                            <option value="Lab">معمل</option>
+                            <option value="Company">شركه</option>
+                            <option value="Hospital">مستشفي</option>
                         </select>
                         <div style={{ textAlign: "center" }}>
                             <button type="submit"><span className="box">تحديث</span></button>

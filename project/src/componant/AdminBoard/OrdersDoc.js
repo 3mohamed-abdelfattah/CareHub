@@ -4,7 +4,7 @@ import Footer from '../AllBars/Footer';
 import axios from "axios";
 import { toast } from 'react-toastify';
 import Sound from 'react-sound';
-import NOtifi from "../Photos/sound.mp3";
+import NOtifi from "../Photos/sounds.mp3";
 import { useNavigate } from 'react-router-dom';
 
 export default function OrdersDoc() {

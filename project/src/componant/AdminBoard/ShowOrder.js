@@ -4,23 +4,19 @@ import './ShowProblem.css';
 export default function ShowOrder() {
   const [user, setUser] = useState([]);
   const [selectedProblem, setSelectedProblem] = useState(null);
-  const [selectedProblemImage, setSelectedProblemImage] = useState(null);
 
-  useEffect(() => {
-    if (selectedProblem && selectedProblem.file) {
-      const imageUrl = `${selectedProblem.file}`; // إضافة timestamp للتخلص من التخزين المؤقت
-      fetch(imageUrl)
-        .then(response => response.blob())
-        .then(blob => {
-          const imageURL = URL.createObjectURL(blob);
-          setSelectedProblemImage(imageURL);
-        })
-        .catch(error => console.error('Error fetching image:', error));
-    }
-  }, [selectedProblem]);
+
 
   useEffect(() => {
     fetch("http://localhost:5000/api/orders")
+      .then((res) => res.json())
+      .then((data) => {
+        setUser(data);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/order-image/662fd4d16f01a945f0117fba")
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
@@ -41,7 +37,7 @@ export default function ShowOrder() {
       <td>{user.name}</td>
       <td>{user.address}</td>
       <td>{user.phoneNumber}</td>
-      <td>{user.file}</td>
+      <td>{user.image}</td>
       <td>
         <button className="neumorphism-btn" onClick={() => handleClick(user)}>View Order</button>
       </td>
@@ -74,7 +70,7 @@ export default function ShowOrder() {
             <p><strong>العنوان:</strong> {selectedProblem.address}</p>
             <p><strong>الرقم:</strong> {selectedProblem.phoneNumber}</p>
             <p><strong>الطلب:</strong> {selectedProblem.order}</p>
-            <p><strong>ملاحظات:</strong> {selectedProblemImage && <img src={selectedProblemImage} alt="User File" />}</p> {/* تأكد من عرض الصورة بشكل صحيح */}
+            <p><strong>ملاحظات:</strong><img src={selectedProblem.image} alt="User File" /></p> {/* تأكد من عرض الصورة بشكل صحيح */}
           </div>
         </div>
       )}

@@ -29,11 +29,11 @@ export default function Arti2() {
       <Header />
       <div className="ArticlesList">
         <div className="Do-home-text">
-          <h1 className="title-pages">المقالات الطبية، رحلة المعرفة نحو عالم الصحة</h1>
-          <h2 style={{ color: '#ff0505' }}>...تُقدم لك أحدث المعلومات الصحية</h2>
+          <h1 className="title-pages" data-aos="zoom-in">المقالات الطبية، رحلة المعرفة نحو عالم الصحة</h1>
+          <h2 style={{ color: '#ff0505' }} data-aos="zoom-in">...تُقدم لك أحدث المعلومات الصحية</h2>
         </div>
         <div className="section-wapp">
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-left">
             {/* أعراض-مرض-الإيدز. */}
             <img src={SOLC} alt="" />
             <div className="ArticlesList-pages">
@@ -49,7 +49,7 @@ export default function Arti2() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-right">
             {/* اعراض-حصى-المرارة. */}
             <img src={SOHP} alt="" />
             <div className="ArticlesList-pages">
@@ -65,7 +65,7 @@ export default function Arti2() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-left">
             {/* اعراض-الفتق-السري. */}
             <img src={SOBC} alt="" />
             <div className="ArticlesList-pages">
@@ -81,7 +81,7 @@ export default function Arti2() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-right">
             {/* اعراض-الفتق. */}
             <img src={SOGP} alt="" />
             <div className="ArticlesList-pages">
@@ -97,7 +97,7 @@ export default function Arti2() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-left">
             {/* اعراض-جفاف-العين. */}
             <img src={SOIW} alt="" />
             <div className="ArticlesList-pages">
@@ -113,7 +113,7 @@ export default function Arti2() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-right">
             {/* اعراض-الروماتويد. */}
             <img src={SOLP} alt="" />
             <div className="ArticlesList-pages">
@@ -129,7 +129,7 @@ export default function Arti2() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-left">
             {/* اعراض-الجلطة-الدماغية. */}
             <img src={SONG} alt="" />
             <div className="ArticlesList-pages">
@@ -145,7 +145,7 @@ export default function Arti2() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-right">
             {/* اعراض-تليف-الكبد. */}
             <img src={ABGS} alt="" />
             <div className="ArticlesList-pages">
@@ -161,7 +161,7 @@ export default function Arti2() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-left">
             {/* اعراض-سرطان-البروستاتا. */}
             <img src={SOPS} alt="" />
             <div className="ArticlesList-pages">
@@ -177,7 +177,7 @@ export default function Arti2() {
               <h4 style={{ color: '#ff0505' }}>قراءة المزيد</h4>
             </div>
           </div>
-          <div className="Section-ArticlesList">
+          <div className="Section-ArticlesList" data-aos="fade-right">
             {/* اعراض-دوالي-الخصية. */}
             <img src={DWA} alt="" />
             <div className="ArticlesList-pages">

@@ -7,11 +7,15 @@ import Stars from '../../SomeStyles/Stars';
 import { Link } from 'react-router-dom';
 import CheckLabs from '../../SomeStyles/Checklabs';
 import PayPal from "../../Payment/PayPal";
+import { toast } from 'react-toastify';
+import Sound from 'react-sound';
+import NOtifi from "../../Photos/sound.mp3"
 
 export default function LabsDetails() {
   const id = window.location.pathname.split("/").slice(-1)[0];
   const [doctorData, setDoctorData] = useState({});
   const [loading, setLoading] = useState(true);
+  const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
 
   useEffect(() => {
     if (!window.localStorage.getItem('email')) {
@@ -21,9 +25,12 @@ export default function LabsDetails() {
 
   const handleLinkedW = () => {
     let phoneNumber = doctorData.phoneNumber;
-    const phoneNumbersArray = phoneNumber.split('-'); // تقسيم الأرقام بواسطة الخط تحتي
+    // Remove spaces from the phone number
+    phoneNumber = phoneNumber.replace(/\s/g, '');
+    const phoneNumbersArray = phoneNumber.split('-'); //تقسيم الأرقام
     // اختيار أول رقم يبدأ بـ "010"، ثم "012"، ثم "011"، ثم "015"
-    phoneNumber = phoneNumbersArray.find(number => number.startsWith("010")) ||
+    phoneNumber =
+      phoneNumbersArray.find(number => number.startsWith("010")) ||
       phoneNumbersArray.find(number => number.startsWith("012")) ||
       phoneNumbersArray.find(number => number.startsWith("011")) ||
       phoneNumbersArray.find(number => number.startsWith("015"));
@@ -32,8 +39,20 @@ export default function LabsDetails() {
     } else {
       // لا يوجد رقم يبدأ بـ "010", "012", "011", أو "015"
       console.log("No phone number starting with '010', '012', '011', or '015' found.");
+      setPlayStatus(Sound.status.PLAYING);
+      toast.error("نأسف! لا تمتلك الصيدلية رقم واتساب يمكنك الطلب من موقعنا وسيتم توصيله لك", options);
     }
   };
+
+  const options = {
+    position: "bottom-left",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  }
 
   const body = {
     direction: 'rtl',
@@ -159,6 +178,11 @@ export default function LabsDetails() {
         )}
       </div>
       <Footer />
+      <Sound
+        url={NOtifi}
+        playStatus={playStatus}
+        onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
+      />
     </Fragment>
   );
 }

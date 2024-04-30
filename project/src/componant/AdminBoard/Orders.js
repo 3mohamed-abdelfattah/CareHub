@@ -4,7 +4,7 @@ import Footer from '../AllBars/Footer';
 import axios from "axios";
 import { toast } from 'react-toastify';
 import Sound from 'react-sound';
-import NOtifi from "../Photos/sound.mp3";
+import NOtifis from "../Photos/sounds.mp3"
 import { useNavigate } from 'react-router-dom';
 import './Order.css';
 
@@ -13,7 +13,7 @@ export default function Orders() {
     const [address, setAddress] = useState('');
     const [number, setNumber] = useState('');
     const [order, setOrder] = useState('');
-    const [file, setFile] = useState(null);
+    const [image, setImage] = useState(null);
     const [accept, setAccept] = useState(false);
     const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
     const navigate = useNavigate();
@@ -33,7 +33,7 @@ export default function Orders() {
             formData.append('address', address);
             formData.append('phoneNumber', number);
             formData.append('order', order.trim());
-            formData.append('file', file);
+            formData.append('image', image);
             let res = await axios.post("http://localhost:5000/api/orders", formData);
             if (res.status === 201) {
                 setTimeout(() => {
@@ -78,14 +78,14 @@ export default function Orders() {
                         </div>
                         <div className="form-group">
                             <label htmlFor="file" className="form-label" style={{ color: '#1F5357', fontSize: '20px', fontWeight: 'bolder', cursor: 'pointer' }}>اختر ملفًا</label>
-                            <input type="file" id="file" name="file" className="form-file" onChange={(e) => setFile(e.target.files[0])} />
+                            <input type="file" id="file" name="file" className="form-file" onChange={(e) => setImage(e.target.files[0])} />
                         </div>
                         <button type="submit" className="form-submit-btn">ارسال</button>
                     </form>
                 </div>
             </Fragment>
             <Sound
-                url={NOtifi}
+                url={NOtifis}
                 playStatus={playStatus}
                 onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
             />

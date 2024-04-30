@@ -3,7 +3,8 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Sound from 'react-sound';
 import styled from 'styled-components';
-import SOund from "../Photos/sound.mp3"
+import NOtifis from "../Photos/sounds.mp3"
+import NOtifie from "../Photos/sounde.mp3"
 import Footer from '../AllBars/Footer';
 import Header from '../AllBars/Header';
 
@@ -91,6 +92,7 @@ const NotifiMED = () => {
 
   const [editIndex, setEditIndex] = useState(null);
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
+  const [playStatue, setPlayStatue] = useState(Sound.status.STOPPED);
 
   useEffect(() => {
     if (!window.localStorage.getItem('email')) {
@@ -119,7 +121,7 @@ const NotifiMED = () => {
     updatedAppointments.splice(index, 1);
     setAppointments(updatedAppointments);
     toast.error('تم حذف الموعد بنجاح', options);
-    setPlayStatus(Sound.status.PLAYING);
+    setPlayStatue(Sound.status.PLAYING);
   };
 
   useEffect(() => {
@@ -196,9 +198,14 @@ const NotifiMED = () => {
         </table>
         <ToastContainer />
         <Sound
-          url={SOund}
+          url={NOtifis}
           playStatus={playStatus}
           onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
+        />
+        <Sound
+          url={NOtifie}
+          playStatus={playStatue}
+          onFinishedPlaying={() => setPlayStatue(Sound.status.STOPPED)}
         />
       </AppContainer>
       <Footer />

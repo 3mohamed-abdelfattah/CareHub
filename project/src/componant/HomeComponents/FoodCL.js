@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Footer from '../AllBars/Footer';
 import Header from '../AllBars/Header';
 import Sound from 'react-sound';
-import NOtifi from "../Photos/sound.mp3"
+import NOtifi from "../Photos/sounds.mp3"
 
 const FoodList = () => {
 

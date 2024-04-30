@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../AllBars/Footer";
 import { toast } from "react-toastify"; // Assuming you're using react-toastify
 import Sound from 'react-sound';
-import NOtifi from "../Photos/sound.mp3"
+import NOtifis from "../Photos/sounds.mp3"
+import NOtifie from "../Photos/sounde.mp3"
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -14,6 +15,7 @@ export default function Login() {
   const [accept, setAccept] = useState(false);
   const [errors, setErrors] = useState({});
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
+  const [playStatue, setPlayStatue] = useState(Sound.status.STOPPED);
   const navigate = useNavigate();
   const nav = useNavigate();
   const user = useContext(User);
@@ -57,27 +59,27 @@ export default function Login() {
         setErrors({});
         switch (status) {
           case 400:
-            setPlayStatus(Sound.status.PLAYING);
+            setPlayStatue(Sound.status.PLAYING);
             toast.error("Please fill out the fields", options);
             break;
           case 401:
-            setPlayStatus(Sound.status.PLAYING);
+            setPlayStatue(Sound.status.PLAYING);
             toast.error(
               "The password is incorrect, please verify the accuracy of the information", options
             );
             break;
           case 402:
-            setPlayStatus(Sound.status.PLAYING);
+            setPlayStatue(Sound.status.PLAYING);
             toast.error(
               "The email address is not valid, please verify the accuracy of the information", options
             );
             break;
           default:
-            setPlayStatus(Sound.status.PLAYING);
+            setPlayStatue(Sound.status.PLAYING);
             toast.error("An unexpected error occurred. Please try again later.", options);
         }
       } else {
-        setPlayStatus(Sound.status.PLAYING);
+        setPlayStatue(Sound.status.PLAYING);
       }
       setAccept(true);
     }
@@ -129,9 +131,14 @@ export default function Login() {
       </form>
       <Footer />
       <Sound
-        url={NOtifi}
+        url={NOtifis}
         playStatus={playStatus}
         onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
+      />
+      <Sound
+        url={NOtifie}
+        playStatus={playStatue}
+        onFinishedPlaying={() => setPlayStatue(Sound.status.STOPPED)}
       />
     </Fragment>
   );

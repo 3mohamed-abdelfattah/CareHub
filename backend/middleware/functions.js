@@ -1,4 +1,4 @@
-//make `CheckAdmin` function available to other files
+
 const User = require('../models/userModel');
 const Doctor = require('../models/doctorModel');
 
