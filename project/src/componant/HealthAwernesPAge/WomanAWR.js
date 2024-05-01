@@ -34,10 +34,10 @@ export default function WomanAWR() {
       <Header />
       <div style={body}>
         <div className="headZ">
-          <header><h1>صحة المرأة</h1></header>
+          <header><h1 data-aos="zoom-in">صحة المرأة</h1></header>
         </div>
         <div className="containerZ">
-          <div className="homeZ">
+          <div className="homeZ" data-aos="fade-up">
             <ul>
               <li><a href="#11">فحوصات ذاتية يجب ان تقوم بها المراة </a></li>
               <br />
@@ -57,7 +57,7 @@ export default function WomanAWR() {
           </div>
           <hr />
           <div className="contentZ">
-            <div id={11}>
+            <div id={11} data-aos="fade-up">
               <h3><b>فحوصات ذاتية يجب ان تقوم بها المرأة</b></h3>
               <p>
                 بالإضافة إلى الفحوصات الدورية لدى الطبيب، يجب أن تقوم المرأة بعدة
@@ -112,7 +112,7 @@ export default function WomanAWR() {
             </div>
             <br />
             <hr />
-            <div id={12}>
+            <div id={12} data-aos="fade-up">
               <h3><b>امراض قد تصيب المرأة</b></h3>
               <h3>1-هشاشة العظام - Osteoporosis</h3>
               <ul>
@@ -641,7 +641,7 @@ export default function WomanAWR() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/ZYW9cQlAGmc?si=LSFfdxaO7kdoiUKB" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /><br />
             </div>
             <hr />
-            <div id={13}>
+            <div id={13} data-aos="fade-up">
               <h3><b>المرأة والجمال</b></h3>
               <p>
                 المرأة أجمل مخلوقات الله سبحانه وتعالى على الإطلاق، وهي مخلوقٌ يُحبّ
@@ -729,7 +729,7 @@ export default function WomanAWR() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/VSb8Cyjmf8U?si=WiQMF8xSyi4qdAmN" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /><br />
             </div>
             <hr />
-            <div id={14}>
+            <div id={14} data-aos="fade-up">
               <h3><b>صحة المرأة قبل الحمل</b></h3>
               <h3>أمور لابد من معرفتها في زيارة ما قبل الحمل:</h3>
               <ul>
@@ -804,7 +804,7 @@ export default function WomanAWR() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/P6INEUT46H0?si=v3N4_MGQgpkl8Q2A" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /><br />
             </div>
             <hr />
-            <div id={15}>
+            <div id={15} data-aos="fade-up">
               <h3><b>صحة المرأة اثناء الحمل</b></h3>
               <h3>النظام الغذائي والوزن للمرأه الحامل</h3>
               <p>
@@ -898,7 +898,7 @@ export default function WomanAWR() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/NGCZefD0src?si=RDckL9hdfdrO1Gco" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen /><br />
             </div>
             <hr />
-            <div id={16}>
+            <div id={16} data-aos="fade-up">
               <h3><b>صحة المرأة بعد الولاده</b></h3>
               <h3>التغذية الصحيحة والطرق الأمثل لتقليل الوزن بعد الولادة&nbsp;</h3>
               <p>
@@ -1034,7 +1034,7 @@ export default function WomanAWR() {
               </ul>
             </div>
             <hr />
-            <div id={17}>
+            <div id={17} data-aos="fade-up">
               <h3><b>نصائح عامة للحفاظ على صحة المرأة</b></h3>
               <p>
                 ربما تنشغل الكثير من النساء بكيفية الحفاظ على صحتهن والحصول على

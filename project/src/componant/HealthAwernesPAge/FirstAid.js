@@ -32,23 +32,23 @@ export default function FirstAid() {
       <Header />
       <div style={body}>
         <div className="headN">
-          <header><h1>الإسعافات الأوليه</h1></header>
+          <header><h1 data-aos="zoom-in">الإسعافات الأوليه</h1></header>
         </div>
         <div className="containerN">
-          <h2>1-أهمية الإسعافات الأولية</h2>
-          <ul>
+          <h2 data-aos="zoom-in">1-أهمية الإسعافات الأولية</h2>
+          <ul data-aos="fade-up">
             <li><a href="#l"> اهمية الإسعافات الأولية</a></li>
           </ul>
-          <h2>2-أساسيات الإسعافات الأولية</h2>
-          <ul>
+          <h2 data-aos="zoom-in">2-أساسيات الإسعافات الأولية</h2>
+          <ul data-aos="fade-up">
             <li><a href="#m"> أساسيات الإسعافات الأولية</a></li>
           </ul>
-          <h2>3-علبة الإسعافات الأولية</h2>
-          <ul>
+          <h2 data-aos="zoom-in">3-علبة الإسعافات الأولية</h2>
+          <ul data-aos="fade-up">
             <li><a href="#o"> علبة الإسعافات الأولية</a></li>
           </ul>
-          <h2>4-الحالات التي تستلزم إجراء الإسعافات الأولية</h2>
-          <ul>
+          <h2 data-aos="zoom-in">4-الحالات التي تستلزم إجراء الإسعافات الأولية</h2>
+          <ul data-aos="fade-up">
             <li><a href="#p"> الاختناق</a></li>
             <li><a href="#q">الحروق</a></li>
             <li><a href="#r">الكسور</a></li>
@@ -63,7 +63,7 @@ export default function FirstAid() {
           <img src={AID} alt='' />
           <hr />
           <div className="contentN">
-            <div id="l">
+            <div id="l" data-aos="fade-up">
               <h3><b>اهمية الاسعافات الاولية:</b></h3>
               <p>قد تنقذ الإسعافات الأولية حياة شخص ما، فهي تساعد على ما يلي:</p>
               <ul>
@@ -89,7 +89,7 @@ export default function FirstAid() {
               </ul>
             </div>
             <hr />
-            <div id="m">
+            <div id="m" data-aos="fade-up">
               <h3><b>أساسيات الاسعافات الأولية:</b></h3>
               <p>
                 تشتمل أساسيات الإسعافات الأولية على 3 إجراءات يتم إجراؤها في حال
@@ -123,7 +123,7 @@ export default function FirstAid() {
               </p>
             </div>
             <hr />
-            <div id="o">
+            <div id="o" data-aos="fade-up">
               <h3><b>علبة الاسعافات الاوليه</b></h3>
               <p>
                 لا يمكن للإنسان أن يتنبأ متى قد يحتاج إلى الإسعافات الأولية البسيطة.
@@ -160,7 +160,7 @@ export default function FirstAid() {
               ما يلي:
             </p>
             <hr />
-            <div id="p">
+            <div id="p" data-aos="fade-up">
               <h3><b>1-الاختناق</b></h3>
               <p>اعراض الاختناق:</p>
               <ul>
@@ -188,7 +188,7 @@ export default function FirstAid() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/AwKMpaYq5kY?si=xqGUmjyrVKosMJHV" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
             <hr />
-            <div id="q">
+            <div id="q" data-aos="fade-up">
               <h3><b>2-الحروق</b></h3>
               <p>حروق الدرجة الأولى (الخفيفة):</p>
               <p>افعل (√):</p>
@@ -253,7 +253,7 @@ export default function FirstAid() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/KWP7efbdVbg?si=p8fqcFyHojjELmL_" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
             <hr />
-            <div id="r">
+            <div id="r" data-aos="fade-up">
               <h3><b>3-الكسور</b></h3>
               <p>
                 تحتاج الكسور إلى رعاية طبية فورية، خصوصاً إذا نتجت عنها صدمة أو
@@ -290,7 +290,7 @@ export default function FirstAid() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/l5JyLkoAQZg?si=H6Q2gUGcY-N0H0hP" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
             <hr />
-            <div id="s">
+            <div id="s" data-aos="fade-up">
               <h3><b>4-الغرق</b></h3>
               <p>
                 بعد طلب النجدة من المتواجدين في المكان والاتصال على خط الطوارئ يجب
@@ -338,7 +338,7 @@ export default function FirstAid() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/yOFuyj4oqfs?si=NYzf2msM60HXfY7c" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
             <hr />
-            <div id="t">
+            <div id="t" data-aos="fade-up">
               <h3><b>5-ضربات الشمس</b></h3>
               <p>
                 تعتبر ضربة الشمس أكثر خطورة من الإجهاد الحراري؛ حيث يمكن أن تؤدي إلى
@@ -370,7 +370,7 @@ export default function FirstAid() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/H1rr26jm3OY?si=H268YxQIkqujhFTS" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
             <hr />
-            <div id="u">
+            <div id="u" data-aos="fade-up">
               <h3><b>6-لدغة العقرب والثعبان</b></h3>
               <ul>
                 <li>طلب الإسعاف فورًا.</li>
@@ -389,7 +389,7 @@ export default function FirstAid() {
               </ul>
             </div>
             <hr />
-            <div id="v">
+            <div id="v" data-aos="fade-up">
               <h3><b>7-التسمم</b></h3>
               <p>
                 إن الهدف الأساسي من سرعة إجراء الإسعافات الأولية للمصاب بالتسمم هو
@@ -420,7 +420,7 @@ export default function FirstAid() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/QdOf0v24iyM?si=iEuUaeTGOqvk9w_3" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
             <hr />
-            <div id="w">
+            <div id="w" data-aos="fade-up">
               <h3><b>8-تمزق الاربطه والتواء الكاحل</b></h3>
               <ul>
                 <li>
@@ -460,7 +460,7 @@ export default function FirstAid() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/oVVDuA4yLKo?si=xYkna10ydi17dMTC" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
             <hr />
-            <div id="x">
+            <div id="x" data-aos="fade-up">
               <h3><b>9- بلع اللسان</b></h3>
               <h3>إسعاف بلع اللسان الناجم عن فقدان الوعي</h3>
               <ul>
@@ -511,7 +511,7 @@ export default function FirstAid() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/DBkGtvcZgQE?si=eOWANrXCSraj_r69" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
             <hr />
-            <div id="y">
+            <div id="y" data-aos="fade-up">
               <h3><b>10-اصابات الرأس</b></h3>
               <h3>أنواع الإصابات:</h3>
               <ul>

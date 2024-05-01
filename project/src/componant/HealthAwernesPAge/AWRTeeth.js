@@ -31,10 +31,10 @@ export default function AWRTeeth() {
       <Header />
       <div style={body}>
         <div className="headN" >
-          <header><h1>صحة الفم والأسنان</h1></header>
+          <header><h1 data-aos="zoom-in">صحة الفم والأسنان</h1></header>
         </div>
         <div className="containerN">
-          <div className="homeN">
+          <div className="homeN" data-aos="fade-up">
             <ul>
               <li><a href="#30">​​​​العناية بالأسنان</a></li>
               <br />
@@ -52,7 +52,7 @@ export default function AWRTeeth() {
           </div>
           <hr />
           <div className="contentN">
-            <div id={30}>
+            <div id={30} data-aos="fade-up">
               <h3><b>1.​​​​العناية بالأسنان-:</b></h3>
               <p>
                 تنظيف الأسنان بفرشاة ومعجون الأسنان بشكل صحيح ويومي يشكل أهم وسيلة
@@ -178,7 +178,7 @@ export default function AWRTeeth() {
             </div>
             <br />
             <hr />
-            <div id={31}>
+            <div id={31} data-aos="fade-up">
               <h3><b>2.الحالات المرضية التي ربما ترتبط بصحة الفم-:</b></h3>
               <p>
                 إن صحة فمك ربما تسهم في الإصابة بالعديد من الأمراض والاعتلالات
@@ -243,7 +243,7 @@ export default function AWRTeeth() {
               <br />
             </div>
             <hr />
-            <div id={32}>
+            <div id={32} data-aos="fade-up">
               <h3><b>3.كيف يُمكنني حماية صحة الفم -:</b></h3>
               <p>
                 لحماية صحة الفم، احرص على ممارسة العادات الصحية لتنظيف الفم كل يوم.
@@ -277,7 +277,7 @@ export default function AWRTeeth() {
               <br />
             </div>
             <hr />
-            <div id={33}>
+            <div id={33} data-aos="fade-up">
               <h3><b>4.أفضل طرق ترميم الأسنان -:</b></h3>
               <p>
                 تعتبر مشاكل الأسنان وإصاباتها من أكثر الأمور التي تسبب القلق لدى
@@ -380,7 +380,7 @@ export default function AWRTeeth() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/hPO5FmIrONA?si=eJFZTwlFwjxLHt3C" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
             <hr />
-            <div id={34}>
+            <div id={34} data-aos="fade-up">
               <h3>5-أفضل أنواع مسكن ألم الأسنان-:</h3>
               <p>
                 يعد ألم الأسنان من الأعراض الشائعة والمرتبطة بالعديد من المشكلات
@@ -541,7 +541,7 @@ export default function AWRTeeth() {
               <br />
             </div>
             <hr />
-            <div id={35}>
+            <div id={35} data-aos="fade-up">
               <h3><b>6. أسباب لتشقق الشفاه -:</b></h3>
               <p>
                 يُعد تشقق الشفاه مشكلة الشائعة جدًا والتي تسبب الانزعاج الشديد لدى

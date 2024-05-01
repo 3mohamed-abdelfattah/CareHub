@@ -30,10 +30,10 @@ export default function AWRChild() {
       <Header />
       <div style={body}>
         <div className="headN">
-          <header><h1>صحة الطفل</h1></header>
+          <header><h1 data-aos="zoom-in">صحة الطفل</h1></header>
         </div>
         <div className="containerN">
-          <div className="homeN">
+          <div className="homeN" data-aos="fade-up">
             <ul>
               <li><a href="#20">مراحل نمو الطفل.</a></li>
               <br />
@@ -51,7 +51,7 @@ export default function AWRChild() {
           </div>
           <hr />
           <div className="contentN">
-            <div id={20}>
+            <div id={20} data-aos="fade-up">
               <h3><b>مراحل نمو الطفل-:</b></h3>
               <p>
                 مراحل نمو الطفل (بالانجليزية: Drug Development Stages) هي التغيرات
@@ -187,7 +187,7 @@ export default function AWRChild() {
             </div>
             <br />
             <hr />
-            <div id={21}>
+            <div id={21} data-aos="fade-up">
               <h3><b>صحةُ الأطفال ونماؤُهم-:</b></h3>
               <h3>
                 ما هو الأسلوب المتبع في الرعاية من أجل النماء في التدبير المتكامل
@@ -206,7 +206,7 @@ export default function AWRChild() {
               <br />
             </div>
             <hr />
-            <div id={22}>
+            <div id={22} data-aos="fade-up">
               <h3><b>تغذية الاطفال-:</b></h3>
               <p>
                 تعتمد تغذية الأطفال على أفكار التغذية نفسها للبالغين. فكل شخص يحتاج
@@ -299,7 +299,7 @@ export default function AWRChild() {
               <br />
             </div>
             <hr />
-            <div id={23}>
+            <div id={23} data-aos="fade-up">
               <h3><b>الصحة النفسية لدى الأطفال-:</b></h3>
               <p>
                 يكون الاهتمام بالأطفال ونموهم السليم، وصحتهم الجسدية على رأس أولويات
@@ -463,7 +463,7 @@ export default function AWRChild() {
               <br />
             </div>
             <hr />
-            <div id={24}>
+            <div id={24} data-aos="fade-up">
               <h3><b>​​​​​سلامة الأطفال-:</b></h3>
               <h3>سلامة الطفل في السيارة:</h3>
               <ul>
@@ -560,7 +560,7 @@ export default function AWRChild() {
               <br />
             </div>
             <hr />
-            <div id={25}>
+            <div id={25} data-aos="fade-up">
               <h3><b>صحة أسنان الأطفال-:</b></h3>
               <ul>
                 <li>تعريف الأسنان اللبنية:</li>

@@ -30,11 +30,11 @@ export default function IllAWR() {
     <Fragment>
       <Header />
       <div style={body}>
-        <div className="headZ">
+        <div className="headZ" data-aos="fade-up">
           <header><h1>الأمراض المزمنه</h1></header>
         </div>
         <div className="containerZ">
-          <div className="homeZ">
+          <div className="homeZ" data-aos="fade-up">
             <h2>الامراض المزمنه</h2>
             <ul>
               <li><a href="#1"> امراض القلب والأوعيه الدمويه</a></li>
@@ -55,8 +55,8 @@ export default function IllAWR() {
           </div>
           <hr />
           <div className="contentZ">
-            <h3><b>الامراض المزمنه</b></h3>
-            <p>
+            <h3 data-aos="zoom-in"><b>الامراض المزمنه</b></h3>
+            <p data-aos="fade-up">
               الأمراض المزمنة هي مشكلة عالمية، وشهدت أرقامها -منذ العقود الأخيرة من
               القرن العشرين- ارتفاعا ملحوظا. أما في البلاد العربية فقد أدت التغيرات
               في أنماط السلوك الغذائي والنشاط الجسمي إلى حدوث تطورات في معدلاتها
@@ -65,9 +65,9 @@ export default function IllAWR() {
             </p>
             <iframe width={560} height={315} src="https://www.youtube.com/embed/PGdE4Ni_J_I?si=JX3VDi5QKjjhW8n4" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             <hr />
-            <h3><b>- أنواع الأمراض المزمنة: </b></h3>
+            <h3 data-aos="zoom-in"><b>- أنواع الأمراض المزمنة: </b></h3>
             <hr />
-            <div id={1}>
+            <div id={1} data-aos="fade-up">
               <h3><b>1-امراض القلب والاوعيه الدمويه</b></h3>
               <h3><b>تشمل أمراض القلب والشرايين أنواع عديدة، ومنها ما يلي:</b></h3>
               <ul>
@@ -131,7 +131,7 @@ export default function IllAWR() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/nBOotkwUSco?si=n8nuZmvNPixfxnG3" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
             <hr />
-            <div id={2}>
+            <div id={2} data-aos="fade-up">
               <h3><b>2-امراض الجهاز التنفسي</b></h3>
               <p>
                 أمراض الجهاز التنفسي هي مجموعة من الاضطربات التي تصيب الجهاز التنفسي
@@ -327,7 +327,7 @@ export default function IllAWR() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/bTjV8_P1DVM?si=gbERJU3-66xwOJz7" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
             <hr />
-            <div id={3}>
+            <div id={3} data-aos="fade-up">
               <h3><b>3-داء السكري</b></h3>
               <p>
                 هو داء مزمن يؤثر على طريقة استقبال خلايا الجسم للجلوكوز أو كمية
@@ -509,7 +509,7 @@ export default function IllAWR() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/2JHy2NgLc5E?si=TZWvWCxKyrcTDHad" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
             <hr />
-            <div id={4}>
+            <div id={4} data-aos="fade-up">
               <h3><b>4-الفشل الكلوي</b></h3>
               <p>
                 يعد الفشل الكلوي (بالإنجليزية: Kidney Failure) اضطراب ناتج عن
@@ -580,7 +580,7 @@ export default function IllAWR() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/PGYJgnZb3o8?si=wKbl3IZLmN3eMmAL" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
             <hr />
-            <div id={5}>
+            <div id={5} data-aos="fade-up">
               <h3><b>5-مرض السرطان</b></h3>
               <p>
                 السرطان (بالإنجليزية: Cancer) هو نمو غير طبيعي للخلايا في الجسم بسبب
@@ -777,7 +777,7 @@ export default function IllAWR() {
               <iframe width={560} height={315} src="https://www.youtube.com/embed/WC_y75ZdhUY?si=Ol1RUtEYoLMKzC2Y" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
             <hr />
-            <div id={6}>
+            <div id={6} data-aos="fade-up">
               <h3><b>6-التهابات المفاصل</b></h3>
               <p>
                 يعد التهاب المفاصل السبب الرئيسي للعجز ويصيب غالباً كبار السن، كما
@@ -896,7 +896,7 @@ export default function IllAWR() {
               </ul>
               <iframe width={560} height={315} src="https://www.youtube.com/embed/TV3E_CutOow?si=fSbnNvC5xA93hsZz" title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
-            <div id="b">
+            <div id="b" data-aos="fade-up">
               <h3><b> إستراتيجيات التصدي للأمراض المزمنة:</b></h3>
               <br />
               <ul>
