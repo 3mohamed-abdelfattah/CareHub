@@ -63,7 +63,7 @@ export default function ShowOrder() {
             <p><strong>الرقم:</strong>{selectedProblem.phoneNumber}</p>
             <p><strong>الطلب:</strong>{selectedProblem.order}</p>
             <p>
-              <img style={{maxHeight:'100%',maxWidth:'100%'}} src={`http://localhost:5000/uploads/${selectedProblem.image}`} alt="Order Image" />
+              <img style={{maxHeight:'100%',maxWidth:'100%'}} src={`http://localhost:5000/uploads/${selectedProblem.image}`} alt="" />
             </p>
           </div>
         </div>
