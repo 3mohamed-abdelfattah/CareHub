@@ -2,27 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './ShowProblem.css';
 
 export default function ShowOrder() {
-  const [user, setUser] = useState([]);
+  const [users, setUsers] = useState([]);
   const [selectedProblem, setSelectedProblem] = useState(null);
-
-
 
   useEffect(() => {
     fetch("http://localhost:5000/api/orders")
       .then((res) => res.json())
-      .then((data) => {
-        setUser(data);
-        console.log(data);
-      });
-  }, []);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/uploads/user-1714576463381.png")
-      .then((res) => res.json())
-      .then((data) => {
-        setUser(data);
-        console.log(data);
-      });
+      .then((data) => setUsers(data));
   }, []);
 
   const handleClick = (user) => {
@@ -33,15 +19,17 @@ export default function ShowOrder() {
     setSelectedProblem(null);
   };
 
-  const showUsers = user.map((user, index) => (
+  const showUsers = users.map((user, index) => (
     <tr key={index}>
       <td>{index + 1}</td>
       <td>{user.name}</td>
       <td>{user.address}</td>
       <td>{user.phoneNumber}</td>
-      <td><img src={user.image}/></td>
+      <td>{user.order}</td>
       <td>
-        <button className="neumorphism-btn" onClick={() => handleClick(user)}>View Order</button>
+        <button className="neumorphism-btn" onClick={() => handleClick(user)}>
+          View Order
+        </button>
       </td>
     </tr>
   ));
@@ -66,17 +54,20 @@ export default function ShowOrder() {
       {selectedProblem && (
         <div className="modal">
           <div className="modal-content">
-            <span className="close" onClick={closeModal}>&times;</span>
+            <span className="close" onClick={closeModal}>
+              &times;
+            </span>
             <h2>تفاصيل الطلب</h2>
             <p><strong>الاسم:</strong>{selectedProblem.name}</p>
             <p><strong>العنوان:</strong>{selectedProblem.address}</p>
             <p><strong>الرقم:</strong>{selectedProblem.phoneNumber}</p>
             <p><strong>الطلب:</strong>{selectedProblem.order}</p>
-            <p><strong>ملاحظات:</strong><img src={selectedProblem.image}></img></p>
+            <p>
+              <img style={{maxHeight:'100%',maxWidth:'100%'}} src={`http://localhost:5000/uploads/${selectedProblem.image}`} alt="Order Image" />
+            </p>
           </div>
         </div>
       )}
-
     </div>
   );
 }

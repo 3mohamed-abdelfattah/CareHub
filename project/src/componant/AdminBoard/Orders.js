@@ -13,7 +13,7 @@ export default function Orders() {
     const [address, setAddress] = useState('');
     const [number, setNumber] = useState('');
     const [order, setOrder] = useState('');
-    const [image, setImage] = useState(null);
+    const [image, setImage] = useState('');
     const [accept, setAccept] = useState(false);
     const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
     const navigate = useNavigate();

@@ -12,7 +12,7 @@ export default function OrdersDoc() {
     const [address, setAddress] = useState('');
     const [number, setNumber] = useState('');
     const [order, setOrder] = useState('');
-    const [file, setFile] = useState(null); // حالة لتخزين الملف المرفوع
+    const [image, setImage] = useState('');
     const [accept, setAccept] = useState(false);
     const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
     const navigate = useNavigate();
@@ -42,7 +42,7 @@ export default function OrdersDoc() {
             formData.append('address', address);
             formData.append('phoneNumber', number);
             formData.append('order', order);
-            formData.append('file', file); // إرفاق الملف مع بيانات النموذج
+            formData.append('image', image);
             let res = await axios.post("http://localhost:5000/api/orders", formData);
             if (res.status === 201) {
                 setTimeout(() => {
@@ -74,7 +74,7 @@ export default function OrdersDoc() {
                         </div>
                         <div className="form-group">
                             <label htmlFor="file">اختر ملفًا:</label>
-                            <input type="file" id="file" name="file" onChange={(e) => setFile(e.target.files[0])} />
+                            <input type="file" id="file" name="file" className="form-file" onChange={(e) => setImage(e.target.files[0])} />
                         </div>
                         <button type="submit" className="form-submit-btn">ارسال</button>
                     </form>
