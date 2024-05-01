@@ -45,8 +45,10 @@ export default function UpdateUser() {
         e.preventDefault();
         setaccept(true);
         //استقبال البيانات عند الارسال
-        if (firstname === "" || password.length < 0 || Role === "") {
+        if (firstname === "" || password.length < 4) {
             sub = false
+            setPlayStatus(Sound.status.PLAYING);
+            toast.warning("كلمه المرور اقصر من اللازم", options);
         } else sub = true;
         try {
             if (sub) {
@@ -78,12 +80,9 @@ export default function UpdateUser() {
                 <div className="UpdateDiv">
                     <form onSubmit={Submit} className="form2">
                         <input id="first-name" type="text" placeholder="الاسم الأول" className="Updateuser" value={firstname} onChange={(e) => setfName(e.target.value)} />
-                        {firstname === '' && accept && <p className="error">يرجي ادخال اسم المستخدم</p>}
                         <input id="last-name" type="text" placeholder="الاسم الأخير" className="Updateuser" value={lastname} onChange={(e) => setlName(e.target.value)} />
-                        {lastname === '' && accept && <p className="error">يرجي ادخال اسم المستخدم</p>}
                         <input id="email" type="email" placeholder="البريد الإلكتروني" className="Updateuser" value={email} onChange={(e) => setemail(e.target.value)} />
                         <input id="password" type="text" placeholder="كلمة المرور" className="Updateuser" value={password} onChange={(e) => setpassword(e.target.value)} />
-                        {password < 4 && accept && <p className="error">كلمة المرور اقصر من الازم</p>}
                         <select value={Role} onChange={(e) => setRole(e.target.value)} className="Updateuser" style={{ border: '#000' }}>
                             <option value="User">مستخدم</option>
                             <option value="Admin">مسؤول</option>

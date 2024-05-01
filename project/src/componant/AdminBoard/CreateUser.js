@@ -77,7 +77,6 @@ export default function CreateUser() {
             <input id="first-name" type="text" placeholder="الاسم الأول" className="Updateuser" value={firstname} onChange={(e) => setfName(e.target.value)} />
             <input required placeholder="الاسم الأخير" type="text" className="Updateuser" id="last-name" value={lastname} onChange={(e) => setlName(e.target.value)} />
             <input id="email" type="email" placeholder="البريد الإلكتروني" className="Updateuser" value={email} onChange={(e) => setemail(e.target.value)} />
-            {errors.email && <h1 className="error">{errors.email}</h1>}
             <input id="password" type="password" placeholder="كلمة المرور" className="Updateuser" value={password} onChange={(e) => setpassword(e.target.value)} />
             <div style={{ textAlign: "center" }}>
               <button type="submit"><span className="box">إنشاء</span></button>

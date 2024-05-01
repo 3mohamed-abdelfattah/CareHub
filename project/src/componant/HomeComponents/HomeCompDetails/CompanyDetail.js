@@ -202,7 +202,7 @@ export default function EyeDetail() {
                   <PayPal />
                 </div>
                 <div className="buttonsD1">
-                  <Link to='./ordernow'>
+                  <Link to='/requests'>
                     <Checkout />
                   </Link>
                 </div>

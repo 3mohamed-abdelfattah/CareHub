@@ -8,7 +8,7 @@ export default function ShowOrder() {
   useEffect(() => {
     fetch("http://localhost:5000/api/orders")
       .then((res) => res.json())
-      .then((data) => setUsers(data));
+      .then((data) => setUsers(data))
   }, []);
 
   const handleClick = (user) => {
@@ -63,7 +63,7 @@ export default function ShowOrder() {
             <p><strong>الرقم:</strong>{selectedProblem.phoneNumber}</p>
             <p><strong>الطلب:</strong>{selectedProblem.order}</p>
             <p>
-              <img style={{maxHeight:'100%',maxWidth:'100%'}} src={`http://localhost:5000/uploads/${selectedProblem.image}`} alt="" />
+              <img style={{ maxHeight: '100%', maxWidth: '100%' }} src={`http://localhost:5000/uploads/${selectedProblem.image}`} alt="" />
             </p>
           </div>
         </div>
