@@ -12,14 +12,16 @@ export default function ShowOrder() {
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
+        console.log(data);
       });
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/order-image/662fd4d16f01a945f0117fba")
+    fetch("http://localhost:5000/uploads/user-1714576463381.png")
       .then((res) => res.json())
       .then((data) => {
         setUser(data);
+        console.log(data);
       });
   }, []);
 
@@ -37,7 +39,7 @@ export default function ShowOrder() {
       <td>{user.name}</td>
       <td>{user.address}</td>
       <td>{user.phoneNumber}</td>
-      <td>{user.image}</td>
+      <td><img src={user.image}/></td>
       <td>
         <button className="neumorphism-btn" onClick={() => handleClick(user)}>View Order</button>
       </td>
@@ -66,11 +68,11 @@ export default function ShowOrder() {
           <div className="modal-content">
             <span className="close" onClick={closeModal}>&times;</span>
             <h2>تفاصيل الطلب</h2>
-            <p><strong>الاسم:</strong> {selectedProblem.name}</p>
-            <p><strong>العنوان:</strong> {selectedProblem.address}</p>
-            <p><strong>الرقم:</strong> {selectedProblem.phoneNumber}</p>
-            <p><strong>الطلب:</strong> {selectedProblem.order}</p>
-            <p><strong>ملاحظات:</strong><img src={selectedProblem.image} alt="User File" /></p> {/* تأكد من عرض الصورة بشكل صحيح */}
+            <p><strong>الاسم:</strong>{selectedProblem.name}</p>
+            <p><strong>العنوان:</strong>{selectedProblem.address}</p>
+            <p><strong>الرقم:</strong>{selectedProblem.phoneNumber}</p>
+            <p><strong>الطلب:</strong>{selectedProblem.order}</p>
+            <p><strong>ملاحظات:</strong><img src={selectedProblem.image}></img></p>
           </div>
         </div>
       )}

@@ -155,8 +155,8 @@ app.get('/api/messages/:senderID/:receiverId', messagesController.getConversatio
 
 
 app.post('/api/comment', CommentController.makeComment);
-app.get('/api/comments', CommentController.getComment);
-app.get('/api/comments/:id', CommentController.getCommentById);
+app.get('/api/all-comments', CommentController.getComment);
+app.get('/api/comments', CommentController.getCommentById);
 
 
 

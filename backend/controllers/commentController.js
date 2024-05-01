@@ -5,7 +5,7 @@ const validator = require('validator');
 
 const makeComment = async (req, res) => {
   try {
-    const { name, email, comment } = req.body;
+    const { name, email, comment ,docID } = req.body;
 
     if (!(name && email && comment)) {
       return res.status(400).send('All fields are required');
@@ -16,9 +16,10 @@ const makeComment = async (req, res) => {
     }
 
     const newComment = new Comment({
+      docID,
       name,
       email,
-      comment
+      comment,
     });
 
     await newComment.save();
@@ -42,15 +43,26 @@ const getComment = async (req, res) => {
 }
 
 const getCommentById = async (req, res) => {
-  const id = req.params.id;
-  const comment = await Comment.findById(id);
+  try {
+    const { docID } = req.query; // Get docID from query parameters
 
-  if (comment) {
-    res.json(comment);
-  } else {
-    res.status(404).send('Comment not found');
+    if (!docID) {
+      return res.status(400).send('Missing docID parameter');
+    }
+
+    const comments = await Comment.find({ docID }); // Filter comments
+
+    if (!comments.length) {
+      return res.status(200).json([]); // Send empty array if no comments found
+    }
+
+    res.status(200).json(comments);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
   }
 }
+
 
 module.exports = {
   makeComment,

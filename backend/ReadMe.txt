@@ -1,4 +1,3 @@
-
 POST http://localhost:5000/api/registeration
 
     "firstname": " ",
@@ -42,11 +41,11 @@ GET http://localhost:5000/api/users?limit=(Number of users)&page=(how many users
             -- Update user info --
 PATCH http://localhost:5000/api/update/:(id- mail)  <-- UserID or email
 
-    "newFirstname" : " ",       **\ OPTINAL /**
-    "newLastname"  : " ",       **\ OPTINAL /**
-    "newEmail"     : " " ,      **\ OPTINAL /**
-    "newPassword"  : " ",       **\ OPTINAL /**
-    "newRole"  :  " User , Admin , Master , 'Doctor'  'Hospital' 'Lab' 'Center' 'Company' 'Pharmacy          **\ OPTINAL /**       ** it MUST be written like this**
+    "newFirstname" : " ",       *\ OPTINAL /*
+    "newLastname"  : " ",       *\ OPTINAL /*
+    "newEmail"     : " " ,      *\ OPTINAL /*
+    "newPassword"  : " ",       *\ OPTINAL /*
+    "newRole"  :  " User , Admin , Master , 'Doctor'  'Hospital' 'Lab' 'Center' 'Company' 'Pharmacy          *\ OPTINAL /*       ** it MUST be written like this**
 
 
 
@@ -77,9 +76,9 @@ GET http://localhost:5000/api/doctors/:collection/:id  <-- Doctor Id
                 -- Update Doctor info --
 PATCH http://localhost:5000/api/doctors/:collection/:id  <-- Admin/Master Id
 
-    "D_id"      : "Doctor id"       **\ REQUIERD /**
-    "address"        : " ",         **\ OPTINAL /**
-    "phoneNumber"    : " ",         **\ OPTINAL /**
+    "D_id"      : "Doctor id"       *\ REQUIERD /*
+    "address"        : " ",         *\ OPTINAL /*
+    "phoneNumber"    : " ",         *\ OPTINAL /*
 
 
                 -- Get hospitals info --
@@ -141,7 +140,7 @@ GET http://localhost:5000/api/order-image/:id ---> Get image Name from order
 
 
 
-GET http://localhost:5000/uploads/(Image name) ---> to get image
+GET http://localhost:5000/uploads/(Image name) ---> to get image
 
 
 
@@ -157,7 +156,7 @@ POST http://localhost:5000/api/sendmsg/:id  (receverID)
 GET http://localhost:5000/api/sendmsg/:senderID/:reseverID 
 
 
-        ---*for sidebar*---
+        ---for sidebar---
 GET http://localhost:5000/api/otherusers/:id  (All users exept the currently sign in user)
 
         ---messages from one user ---
@@ -170,12 +169,8 @@ ______________________________________________________________________
 
 
 POST http://localhost:5000/api/comment 
-name   email   comment   **\ REQUIERD /**
+name   email   comment   *\ REQUIERD /*
 
-GET http://localhost:5000/api/comments  ----> Get all comments
+GET http://localhost:5000/api/all-comments  ----> Get all comments
 
-GET http://localhost:5000/api/comments/:id  ----> Get comment by id
-
-
-
-ddd
+GET http://localhost:5000/api/comments?docID='id'  ----> replace 'id' with docID

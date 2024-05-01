@@ -49,11 +49,12 @@ export default function EyeDetail() {
         name: name,
         email: email,
         comment: comment,
+        docID: id,
       });
       if (res.status === 200) {
         setTimeout(() => {
           window.location.reload();
-        }, 1000);
+        }, 1500);
         setPlayStatus(Sound.status.PLAYING);
         toast.success("We received your comment successful!", options);
       }
@@ -95,7 +96,7 @@ export default function EyeDetail() {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/comments/${id}`)
+    fetch(`http://localhost:5000/api/comments?docID=${id}`)
       .then((res) => res.json())
       .then((data) => {
         setCommentData(data);

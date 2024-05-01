@@ -12,6 +12,11 @@ const CommentSchema = new mongoose.Schema({
   comment: {
     type: String,
     required: true
+  },
+  docID :{
+    type: String,
+    required: true
+  
   }
 },
 { collection: 'Comment' });
