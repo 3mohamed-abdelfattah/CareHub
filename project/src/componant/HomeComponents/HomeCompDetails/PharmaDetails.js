@@ -5,7 +5,6 @@ import Header from "../../AllBars/Header";
 import Footer from "../../AllBars/Footer";
 import DOCM from "../../Photos/doctorphoto.png";
 import DOCW from "../../Photos/doctorimg.png";
-import Checkout from "../../SomeStyles/Checkout";
 import Stars from "../../SomeStyles/Stars";
 import { Link } from 'react-router-dom';
 import PayPal from "../../Payment/PayPal";
@@ -23,6 +22,7 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import CheckOrder from "../../SomeStyles/CheckOreder";
 
 export default function EyeDetail() {
   const id = window.location.pathname.split("/").slice(-1)[0];
@@ -203,7 +203,7 @@ export default function EyeDetail() {
                 </div>
                 <div className="buttonsD1">
                   <Link to='./ordernow'>
-                    <Checkout />
+                    <CheckOrder />
                   </Link>
                 </div>
                 <h1 style={{ color: "#1F5357" }}>{doctorData.name}</h1>

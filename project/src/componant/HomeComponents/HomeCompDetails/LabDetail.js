@@ -23,6 +23,7 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import CheckLabs from "../../SomeStyles/Checklabs";
 
 export default function EyeDetail() {
   const id = window.location.pathname.split("/").slice(-1)[0];
@@ -203,7 +204,7 @@ export default function EyeDetail() {
                 </div>
                 <div className="buttonsD1">
                   <Link to='./ordernow'>
-                    <Checkout />
+                    <CheckLabs />
                   </Link>
                 </div>
                 <h1 style={{ color: "#1F5357" }}>{doctorData.name}</h1>
