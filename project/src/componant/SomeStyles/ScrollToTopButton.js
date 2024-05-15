@@ -3,7 +3,6 @@ import './ScrollToTopButton.css';
 
 const ScrollToTopButton = () => {
   const [showButton, setShowButton] = useState(false);
-
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -15,13 +14,11 @@ const ScrollToTopButton = () => {
     const scrollPosition = window.scrollY;
     const windowHeight = window.innerHeight;
     const middleOfPage = windowHeight / 2;
-
     setShowButton(scrollPosition > middleOfPage);
   };
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };

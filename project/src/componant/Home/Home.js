@@ -77,7 +77,6 @@ export default function Home() {
                                 </div>
                             </Link>
                         </div>
-
                         <div className="slider-item">
                             <Link to="/labs" className="HOMELINK">
                                 <div className="slide">
@@ -102,7 +101,6 @@ export default function Home() {
                 </section>
                 <section className="slider-container">
                     <div className="slider">
-
                         <div className="slider-item">
                             <Link to="/hospital" className="HOMELINK">
                                 <div className="slide">
@@ -181,7 +179,6 @@ export default function Home() {
                                 </div>
                             </Link>
                         </div>
-
                         <div className="slider-item">
                             <Link to="/notifimid" className="HOMELINK">
                                 <div className="slide">

@@ -20,30 +20,25 @@ html {
     scroll-behavior: smooth;
 }
 
-/* تخصيص شكل لشريط التمرير */
+/* Scroll Bar*/
 
-/* شريط التمرير نفسه */
 ::-webkit-scrollbar {
     width: 7px;
 }
 
-/* لون خلفية شريط التمرير */
 ::-webkit-scrollbar-track {
     background-color: #00000013;
 }
 
-/* لون شريط التمرير نفسه */
 ::-webkit-scrollbar-thumb {
     background-color: #1f5357;
     border-radius: 10px;
 }
 
-/* لون شريط التمرير عند التحويل (hover) */
 ::-webkit-scrollbar-thumb:hover {
     background-color: #3d5943;
 }
 
-/* لون طرف الشريط */
 ::-webkit-scrollbar-corner {
     background-color: #ffffff;
 }
@@ -167,7 +162,6 @@ a:hover {
                         color: #ffffff;
                     }
 
-
                     .slide-image>img {
                         transform: scale(1.2);
                     }
@@ -212,8 +206,6 @@ a:hover {
                     justify-content: space-between;
                     padding: 1%;
                     color: #000000;
-
-
                 }
             }
         }

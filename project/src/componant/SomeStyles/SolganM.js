@@ -5,6 +5,5 @@ export default function SloganM() {
       <span>CareHub</span>
       <span>CareHub</span>
     </div>
-
   )
 }

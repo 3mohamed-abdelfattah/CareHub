@@ -5,7 +5,6 @@ import Header from '../AllBars/Header'
 import AID from "../Photos/aid.jpg"
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton'
 
-
 export default function FirstAid() {
 
   useEffect(() => {

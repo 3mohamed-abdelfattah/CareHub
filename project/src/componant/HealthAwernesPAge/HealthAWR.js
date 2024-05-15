@@ -13,7 +13,6 @@ import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 import { useEffect } from 'react';
 
 const HealthAWR = () => {
-
   useEffect(() => {
     if (!window.localStorage.getItem('email')) {
       window.location = "/login";

@@ -11,7 +11,6 @@ export default function AWRChild() {
     }
   }, [])
 
-
   const body = {
     direction: 'rtl',
     margin: 2,

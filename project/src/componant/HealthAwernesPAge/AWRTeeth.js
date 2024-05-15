@@ -11,7 +11,6 @@ export default function AWRTeeth() {
     }
   }, [])
 
-
   const body = {
     direction: 'rtl',
     margin: 2,
@@ -24,7 +23,6 @@ export default function AWRTeeth() {
     WebkitTapHighlightColor: 'transparent',
     marginTop: '5%',
   }
-
 
   return (
     <Fragment>

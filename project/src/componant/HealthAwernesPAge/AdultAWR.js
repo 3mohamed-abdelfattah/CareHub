@@ -9,7 +9,6 @@ import AD3 from "../Photos/Adult2.png"
 import ADLT0 from "../Photos/ADLUT0.jpg";
 import ScrollToTopButton from '../SomeStyles/ScrollToTopButton';
 
-
 export default function ModifiedAWR() {
   const [displayText, setDisplayText] = useState('Click on the elements to display');
 

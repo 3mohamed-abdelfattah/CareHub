@@ -13,7 +13,6 @@ export default function WomanAWR() {
     }
   }, [])
 
-
   const body = {
     direction: 'rtl',
     margin: 2,
@@ -27,7 +26,6 @@ export default function WomanAWR() {
     backgroundColor: '#ffffff',
     marginTop: '5%'
   }
-
 
   return (
     <Fragment>

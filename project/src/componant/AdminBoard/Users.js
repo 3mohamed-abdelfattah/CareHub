@@ -12,7 +12,6 @@ export default function Users() {
   const [runUseEffect, setRun] = useState(0);
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
 
-
   const options = {
     position: "bottom-left",
     autoClose: 5000,
@@ -42,7 +41,6 @@ export default function Users() {
     } catch {
     }
   }
-
 
   const showUsers = user.map((user, index) => (
     <tr key={index}>
@@ -84,7 +82,6 @@ export default function Users() {
     </tr>
   ));
 
-
   return (
     <div style={{ padding: '10px', maxHeight: '550px', overflowY: 'auto' }}>
       <table>
@@ -107,6 +104,5 @@ export default function Users() {
         onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
       />
     </div>
-
   )
 }

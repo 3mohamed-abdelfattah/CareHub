@@ -46,7 +46,6 @@ export default function TeethDoc() {
   const [filteredDoctors, setFilteredDoctors] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
-
   const [cardtoggle1, setCardToggle1] = useState(false);
   const [cardtoggle2, setCardToggle2] = useState(false);
   const [cardtoggle3, setCardToggle3] = useState(false);
@@ -97,7 +96,6 @@ export default function TeethDoc() {
       console.log("No results found!");
       toast.error("No results found!", options);
     }
-
     setFilteredDoctors(filteredData.slice(0, itemsPerPage));
     setCurrentPage(1);
   };

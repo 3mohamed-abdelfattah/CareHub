@@ -14,13 +14,11 @@ import ChatbotChest from "../ChatBOTS/ChatbotChest";
 const itemsPerPage = 5;
 
 export default function ChestDoc() {
-
   useEffect(() => {
     if (!window.localStorage.getItem('email')) {
       window.location = "/login";
     }
   }, [])
-
 
   const mystyle = {
     overflow: 'hidden',
@@ -48,8 +46,6 @@ export default function ChestDoc() {
   const [filteredDoctors, setFilteredDoctors] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
-
-
   const [cardtoggle1, setCardToggle1] = useState(false);
   const [cardtoggle2, setCardToggle2] = useState(false);
   const [cardtoggle3, setCardToggle3] = useState(false);
@@ -89,7 +85,6 @@ export default function ChestDoc() {
         setIsLoading(false); // في حالة حدوث خطأ
       }
     };
-
     fetchData();
   }, []);
 
@@ -101,7 +96,6 @@ export default function ChestDoc() {
       console.log("No results found!");
       toast.error("No results found!", options);
     }
-
     setFilteredDoctors(filteredData.slice(0, itemsPerPage));
     setCurrentPage(1);
   };

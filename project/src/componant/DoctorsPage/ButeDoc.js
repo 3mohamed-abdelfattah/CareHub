@@ -14,13 +14,11 @@ import ChatbotBute from "../ChatBOTS/ChatbotBute";
 const itemsPerPage = 5;
 
 export default function ButeDoc() {
-
   useEffect(() => {
     if (!window.localStorage.getItem('email')) {
       window.location = "/login";
     }
   }, [])
-
 
   const mystyle = {
     overflow: 'hidden',
@@ -48,8 +46,6 @@ export default function ButeDoc() {
   const [filteredDoctors, setFilteredDoctors] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
-
-
   const [cardtoggle1, setCardToggle1] = useState(false);
   const [cardtoggle2, setCardToggle2] = useState(false);
   const [cardtoggle3, setCardToggle3] = useState(false);
@@ -89,7 +85,6 @@ export default function ButeDoc() {
         setIsLoading(false); // في حالة حدوث خطأ
       }
     };
-
     fetchData();
   }, []);
 
@@ -101,7 +96,6 @@ export default function ButeDoc() {
       console.log("No results found!");
       toast.error("No results found!", options);
     }
-
     setFilteredDoctors(filteredData.slice(0, itemsPerPage));
     setCurrentPage(1);
   };
@@ -148,10 +142,6 @@ export default function ButeDoc() {
     </div>
   ));
 
-
-
-
-
   return (
     <div>
       <Header />
@@ -169,12 +159,8 @@ export default function ButeDoc() {
             <button className="micButton"><svg viewBox="0 0 384 512" className="micIcon"><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z" /></svg>
             </button>
           </div>
-
-
-
         </div>
       </div>
-
       <div className="doctors-list-D">
         <div className="container-D">{doctorElements}</div>
         {isLoading &&
@@ -188,11 +174,8 @@ export default function ButeDoc() {
             </div>
           </div>
         }
-
       </div>
-
       <div className="pagination-buttons">
-
         <div className="btn-conteinerr" onClick={handleNextPage}
           disabled={filteredDoctors.length < itemsPerPage}>
           <a href="#" className="btn-content">
@@ -207,9 +190,6 @@ export default function ButeDoc() {
             </span>
           </a>
         </div>
-
-
-
         <div className="btn-conteiner" onClick={handlePreviousPage} disabled={currentPage === 1}>
           <a href="#" className="btn-content">
             <span className="icon-arrow">
@@ -223,14 +203,11 @@ export default function ButeDoc() {
             </span>
           </a>
         </div>
-
       </div>
-
       <div className="common_questions-D">
         <div className="container-D">
           <section>
             <h2 className="title-D">الاسئلة الشائعة</h2>
-
             <div className="faq-D" onClick={ToggleHandler1}>
               <div className="question-D">
                 <h4>ما هي العمليات التجميلية الشائعة وكيف يمكن تحديد المناسبة لي؟</h4>
@@ -240,15 +217,11 @@ export default function ButeDoc() {
               </div>
               <div className={cardtoggle1 ? "show" : "hide"} style={mystyle}>
                 <p>
-
                   <>.يُنصح بالتحدث مع طبيب التجميل لتقييم الاحتياجات الشخصية وتحديد الإجراءات المناسبة، مثل تجميل الوجه، وشد الجلد، وزراعة الشعر
                   </>
-
                 </p>
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler2}>
               <div className="question-D">
                 <h4> هل هناك آثار جانبية لإجراءات التجميل؟</h4>
@@ -258,14 +231,10 @@ export default function ButeDoc() {
               </div>
               <div className={cardtoggle2 ? "show" : "hide"} style={mystyle}>
                 <p>
-
                   <>.يمكن أن تتفاوت الآثار الجانبية باختلاف الإجراء، ويفضل الحديث مع الطبيب حول المخاطر المحتملة والتوقعات  </>
-
                 </p>
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler3}>
               <div className="question-D">
                 <h4>كيف يمكن تحسين مظهر البشرة بدون جراحة؟</h4>
@@ -275,15 +244,11 @@ export default function ButeDoc() {
               </div>
               <div className={cardtoggle3 ? "show" : "hide"} style={mystyle}>
                 <p>
-
                   <>.يمكن استخدام إجراءات غير جراحية مثل حقن التجميل وعلاجات الليزر لتحسين مظهر البشرة
                   </>
-
                 </p>
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler4}>
               <div className="question-D">
                 <h4>هل هناك نصائح للعناية بالبشرة بعد الإجراءات التجميلية؟</h4>
@@ -293,9 +258,7 @@ export default function ButeDoc() {
               </div>
               <div className={cardtoggle4 ? "show" : "hide"} style={mystyle}>
                 <p>
-
                   <>.يفضل اتباع إرشادات الطبيب بعد الإجراء للحفاظ على النتائج وتجنب التعرض المفرط للشمس واستخدام منتجات العناية الموصى بها  </>
-
                 </p>
               </div>
             </div>
