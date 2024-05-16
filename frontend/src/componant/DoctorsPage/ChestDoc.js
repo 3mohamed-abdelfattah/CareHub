@@ -142,10 +142,6 @@ export default function ChestDoc() {
     </div>
   ));
 
-
-
-
-
   return (
     <Fragment>
       <Header />
@@ -163,12 +159,8 @@ export default function ChestDoc() {
             <button className="micButton"><svg viewBox="0 0 384 512" className="micIcon"><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z" /></svg>
             </button>
           </div>
-
-
-
         </div>
       </div>
-
       <div className="doctors-list-D">
         <div className="container-D">{doctorElements}</div>
         {isLoading &&
@@ -182,11 +174,8 @@ export default function ChestDoc() {
             </div>
           </div>
         }
-
       </div>
-
       <div className="pagination-buttons">
-
         <div className="btn-conteinerr" onClick={handleNextPage}
           disabled={filteredDoctors.length < itemsPerPage}>
           <a href="#" className="btn-content">
@@ -201,9 +190,6 @@ export default function ChestDoc() {
             </span>
           </a>
         </div>
-
-
-
         <div className="btn-conteiner" onClick={handlePreviousPage} disabled={currentPage === 1}>
           <a href="#" className="btn-content">
             <span className="icon-arrow">
@@ -217,16 +203,11 @@ export default function ChestDoc() {
             </span>
           </a>
         </div>
-
       </div>
-
       <div className="common_questions-D">
         <div className="container-D">
-
           <section>
             <h2 className="title-D">الاسئلة الشائعة</h2>
-
-
             <div className="faq-D" onClick={ToggleHandler1}>
               <div className="question-D">
                 <h4>ماهي أسباب الربو؟</h4>
@@ -235,14 +216,11 @@ export default function ChestDoc() {
                 </svg>
               </div>
               <div className={cardtoggle1 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>. تعدد أسباب الربو ويعد أهمها العوامل الوراثية والبيئية من تعرض للمهيجات وأسباب الحساسية </>
                 </p>
-
               </div>
             </div>
-
             <div className="faq-D" onClick={ToggleHandler2}>
               <div className="question-D">
                 <h4>كيف يمكن تقليل مخاطر الإصابة بالالتهاب الرئوي؟</h4>
@@ -251,18 +229,14 @@ export default function ChestDoc() {
                 </svg>
               </div>
               <div className={cardtoggle2 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.يمكن تقليل مخاطر الإصابة بالالتهاب الرئوي من خلال تجنب التدخين وتجنب التعرض للعوادم الضارة</>
                   <br />
                   <br />
                   <> . يجب تجنب تناول الأطعمة المجمدة ومنتجات الألبان والأطعمة المقلية,ويجب التقليل من استخدام الملح</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler3}>
               <div className="question-D">
                 <h4>؟(COPD)ماهي أعراض التهاب الشعب الهوائية المزمن</h4>
@@ -271,15 +245,11 @@ export default function ChestDoc() {
                 </svg>
               </div>
               <div className={cardtoggle3 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.تتمثل اعراض التهاب الشعب الهوائية المزمن صعوبة التنفس,والسعال المزمن ,وإفرازات البلغم المتكررة </>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler4}>
               <div className="question-D">
                 <h4>كيف يمكن الوقاية من الحساسية المرتبطة بالربو؟</h4>
@@ -288,15 +258,11 @@ export default function ChestDoc() {
                 </svg>
               </div>
               <div className={cardtoggle4 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.يجب تجنب المهيجات المعروفة من اتربة وأدخنة وغيرها وإستخدام الأدوية المناسبة للسيطرة على الأعراض</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler5}>
               <div className="question-D">
                 <h4>ماهو السرطان الرئوي وعوامل الخطر المرتبطة به؟</h4>
@@ -305,15 +271,11 @@ export default function ChestDoc() {
                 </svg>
               </div>
               <div className={cardtoggle5 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.يعد السرطان الرئوي أحد انواع السرطانات المعروفة وهو نمو غير طبيعي لخلايا الرئتين,تشمل عوامل الخطر التدخين والتعرض للملوثات البيئية</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler6}>
               <div className="question-D">
                 <h4>ما أهمية فحص الصدر الدوري ,وماهي الاختبارات التشخيصية المستخدمة في فحص الأمراض الصدرية؟</h4>
@@ -322,17 +284,12 @@ export default function ChestDoc() {
                 </svg>
               </div>
               <div className={cardtoggle6 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.لاشك أن الفحوصات الدورية مفيدة ومهمة في الكشف المبكر عن التغيرات في الرئتين ,وتتمثل هذه الفحوصات في صورة شعاعية للصدر ,واختبارات وظائف الرئة ,وفحص البلغم</>
                 </p>
-
               </div>
             </div>
-
           </section>
-
-
         </div>
       </div>
       <ScrollToTopButton />

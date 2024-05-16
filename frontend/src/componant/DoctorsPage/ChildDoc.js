@@ -166,7 +166,6 @@ export default function ChildDoc() {
           </div>
         </div>
       </div>
-
       <div className="doctors-list-D">
         <div className="container-D">{doctorElements}</div>
         {isLoading &&
@@ -180,11 +179,8 @@ export default function ChildDoc() {
             </div>
           </div>
         }
-
       </div>
-
       <div className="pagination-buttons">
-
         <div className="btn-conteinerr" onClick={handleNextPage}
           disabled={filteredDoctors.length < itemsPerPage}>
           <a href="#" className="btn-content">
@@ -199,9 +195,6 @@ export default function ChildDoc() {
             </span>
           </a>
         </div>
-
-
-
         <div className="btn-conteiner" onClick={handlePreviousPage} disabled={currentPage === 1}>
           <a href="#" className="btn-content">
             <span className="icon-arrow">
@@ -215,15 +208,11 @@ export default function ChildDoc() {
             </span>
           </a>
         </div>
-
       </div>
-
       <div className="common_questions-D">
         <div className="container-D">
-
           <section>
             <h2 className="title-D">الاسئلة الشائعة</h2>
-
             <div className="faq-D" onClick={ToggleHandler1}>
               <div className="question-D">
                 <h4>كم يجب أن ينام الطفل في كل يوم؟</h4>
@@ -232,14 +221,11 @@ export default function ChildDoc() {
                 </svg>
               </div>
               <div className={cardtoggle1 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.يعتمد عدد ساعات النوم على الفئة العمرية، ولكن في المتوسط، يحتاج الرضع إلى 14-17 ساعة والأطفال الأكبر سنًا إلى 9-11 ساعة</>
                 </p>
-
               </div>
             </div>
-
             <div className="faq-D" onClick={ToggleHandler2}>
               <div className="question-D">
                 <h4>ما هو الوزن الطبيعي للطفل في عمر معين؟</h4>
@@ -248,15 +234,11 @@ export default function ChildDoc() {
                 </svg>
               </div>
               <div className={cardtoggle2 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>يختلف الوزن الطبيعي باختلاف الأعمار، ويجب متابعة المخططات النمو لتحديد ما إذا كان الطفل في نطاق الوزن الطبيعي</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler3}>
               <div className="question-D">
                 <h4>متى يمكن بدء تقديم الأغذية الصلبة للرضع؟</h4>
@@ -265,15 +247,11 @@ export default function ChildDoc() {
                 </svg>
               </div>
               <div className={cardtoggle3 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.يُفضل بدء تقديم الأغذية الصلبة حوالي ستة أشهر، ولكن يجب الاستماع إلى علامات استعداد الطفل</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler4}>
               <div className="question-D">
                 <h4>كيف يمكن تعزيز نمو الطفل؟</h4>
@@ -282,15 +260,11 @@ export default function ChildDoc() {
                 </svg>
               </div>
               <div className={cardtoggle4 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.تقديم تغذية متوازنة، وتشجيع على النشاط البدني، وضمان الفحص الدوري لتقييم التطور العام</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler5}>
               <div className="question-D">
                 <h4>ما هي اللقاحات الضرورية للأطفال؟</h4>
@@ -299,15 +273,11 @@ export default function ChildDoc() {
                 </svg>
               </div>
               <div className={cardtoggle5 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.تشمل اللقاحات الضرورية للأطفال تلك التي تحمي من الأمراض المعدية مثل الحصبة، والسعال الديكي، والتهاب الكبد</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler6}>
               <div className="question-D">
                 <h4>كيف يمكن التعامل مع نزلات البرد الشائعة لدى الأطفال؟</h4>
@@ -316,11 +286,9 @@ export default function ChildDoc() {
                 </svg>
               </div>
               <div className={cardtoggle6 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.ينصح بتوفير الراحة وزيادة شرب السوائل واستخدام المرطبات لتسهيل التنفس</>
                 </p>
-
               </div>
             </div>
           </section>

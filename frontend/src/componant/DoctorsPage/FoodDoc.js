@@ -163,12 +163,8 @@ export default function FoodDoc() {
             <button className="micButton"><svg viewBox="0 0 384 512" className="micIcon"><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z" /></svg>
             </button>
           </div>
-
-
-
         </div>
       </div>
-
       <div className="doctors-list-D">
         <div className="container-D">{doctorElements}</div>
         {isLoading &&
@@ -182,11 +178,8 @@ export default function FoodDoc() {
             </div>
           </div>
         }
-
       </div>
-
       <div className="pagination-buttons">
-
         <div className="btn-conteinerr" onClick={handleNextPage}
           disabled={filteredDoctors.length < itemsPerPage}>
           <a href="#" className="btn-content">
@@ -201,9 +194,6 @@ export default function FoodDoc() {
             </span>
           </a>
         </div>
-
-
-
         <div className="btn-conteiner" onClick={handlePreviousPage} disabled={currentPage === 1}>
           <a href="#" className="btn-content">
             <span className="icon-arrow">
@@ -217,16 +207,11 @@ export default function FoodDoc() {
             </span>
           </a>
         </div>
-
       </div>
-
       <div className="common_questions-D">
         <div className="container-D">
-
           <section>
             <h2 className="title-D">الاسئلة الشائعة</h2>
-
-
             <div className="faq-D" onClick={ToggleHandler1}>
               <div className="question-D">
                 <h4>ما هو نمط غذائي صحي ومتوازن؟</h4>
@@ -235,14 +220,11 @@ export default function FoodDoc() {
                 </svg>
               </div>
               <div className={cardtoggle1 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.النمط الغذائي الصحي يتضمن تناول مجموعة متنوعة من الفواكه والخضروات، الحبوب الكاملة، البروتينات الصحية، والدهون الجيدة بكميات مناسبة</>
                 </p>
-
               </div>
             </div>
-
             <div className="faq-D" onClick={ToggleHandler2}>
               <div className="question-D">
                 <h4>كيف يمكن تحسين الهضم والصحة المعوية من خلال التغذية؟</h4>
@@ -251,15 +233,11 @@ export default function FoodDoc() {
                 </svg>
               </div>
               <div className={cardtoggle2 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.تناول ألياف غذائية كافية من الخضروات والفواكه، وشرب كميات كافية من الماء يساعد في تعزيز الهضم وصحة الجهاز الهضمي</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler3}>
               <div className="question-D">
                 <h4>ما هي الطرق الصحية لخسارة الوزن؟</h4>
@@ -268,15 +246,11 @@ export default function FoodDoc() {
                 </svg>
               </div>
               <div className={cardtoggle3 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.تحقيق توازن بين الأكل والنشاط البدني، وتجنب الأطعمة العالية بالسعرات الحرارية، وتناول وجبات صغيرة ومتكررة يمكن أن يساعد في فقدان الوزن بطريقة صحية</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler4}>
               <div className="question-D">
                 <h4>كيف يمكن تحسين نسبة الدهون في الجسم؟</h4>
@@ -285,15 +259,11 @@ export default function FoodDoc() {
                 </svg>
               </div>
               <div className={cardtoggle4 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.زيادة النشاط البدني، وتناول البروتينات الصحية، وتجنب الدهون المشبعة يمكن أن يساعد في تحسين نسبة الدهون في الجسم</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler5}>
               <div className="question-D">
                 <h4>ما هي التوصيات الغذائية للأشخاص الذين يعانون من السكري؟</h4>
@@ -302,15 +272,11 @@ export default function FoodDoc() {
                 </svg>
               </div>
               <div className={cardtoggle5 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.توزيع الوجبات على اليوم، والتحكم في كميات الكربوهيدرات، وتناول الألياف يساعد في إدارة مستويات السكر في الدم</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler6}>
               <div className="question-D">
                 <h4>كيف يمكن للتغذية أن تساعد في تقوية الجهاز المناعي؟</h4>
@@ -319,16 +285,12 @@ export default function FoodDoc() {
                 </svg>
               </div>
               <div className={cardtoggle6 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.تناول الفيتامينات والمعادن الضرورية، والتركيز على الأطعمة الغنية بالمضادات الأكسدية يمكن أن يعزز من قوة الجهاز المناعي</>
                 </p>
-
               </div>
             </div>
           </section>
-
-
         </div>
       </div>
       <ScrollToTopButton />
