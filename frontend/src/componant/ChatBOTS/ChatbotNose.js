@@ -131,7 +131,7 @@ const ChatbotNose = () => (
       recognitionEnable={true}
       placeholder="...اكتب رسالتك"
       recognitionLang="en-US"
-    />;
+    />
   </ThemeProvider>
 );
 

@@ -129,7 +129,7 @@ const ChatbotChest = () => (
       recognitionEnable={true}
       placeholder="...اكتب رسالتك"
       recognitionLang="en-US"
-    />;
+    />
   </ThemeProvider>
 );
 
