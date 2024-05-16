@@ -168,12 +168,8 @@ export default function BrainDoc() {
             <button className="micButton"><svg viewBox="0 0 384 512" className="micIcon"><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z" /></svg>
             </button>
           </div>
-
-
-
         </div>
       </div>
-
       <div className="doctors-list-D">
         <div className="container-D">{doctorElements}</div>
         {isLoading &&
@@ -187,11 +183,8 @@ export default function BrainDoc() {
             </div>
           </div>
         }
-
       </div>
-
       <div className="pagination-buttons">
-
         <div className="btn-conteinerr" onClick={handleNextPage}
           disabled={filteredDoctors.length < itemsPerPage}>
           <a href="#" className="btn-content">
@@ -206,9 +199,6 @@ export default function BrainDoc() {
             </span>
           </a>
         </div>
-
-
-
         <div className="btn-conteiner" onClick={handlePreviousPage} disabled={currentPage === 1}>
           <a href="#" className="btn-content">
             <span className="icon-arrow">
@@ -222,15 +212,11 @@ export default function BrainDoc() {
             </span>
           </a>
         </div>
-
       </div>
-
       <div className="common_questions-D">
         <div className="container-D">
           <section>
             <h2 className="title-D">الاسئلة الشائعة</h2>
-
-
             <div className="faq-D" onClick={ToggleHandler1}>
               <div className="question-D">
                 <h4>ما هي أعراض السكتة الدماغية وكيفية التعامل معها؟</h4>
@@ -239,19 +225,14 @@ export default function BrainDoc() {
                 </svg>
               </div>
               <div className={cardtoggle1 ? "show" : "hide"} style={mystyle}>
-
-
                 <p>
                   <>.يشمل الوجع الحاد في الرأس وفقدان الوعي أحيانًا. يجب الاتصال بالطوارئ في حالة الاشتباه بالسكتة الدماغية</>
                   <br />
                   <br />
                   <>.الوقاية تشمل تحسين نمط الحياة، مثل التغذية الجيدة وممارسة الرياضة بانتظام</>
                 </p>
-
-
               </div>
             </div>
-
             <div className="faq-D" onClick={ToggleHandler2}>
               <div className="question-D">
                 <h4>هل هناك طرق لتحسين الذاكرة ووظائف الدماغ؟</h4>
@@ -260,19 +241,14 @@ export default function BrainDoc() {
                 </svg>
               </div>
               <div className={cardtoggle2 ? "show" : "hide"} style={mystyle}>
-
-
                 <p>
                   <>.التمارين الذهنية مثل حل الألغاز وتعلم شيء جديد يمكن أن تحسن وظائف الدماغ</>
                   <br />
                   <br />
                   <>.الحفاظ على نظام غذائي صحي ومتوازن يساهم في دعم صحة الدماغ</>
                 </p>
-
-
               </div>
             </div>
-
             <div className="faq-D" onClick={ToggleHandler3}>
               <div className="question-D">
                 <h4>ما هي أعراض مرض الزهايمر وكيف يمكن التعامل معه؟</h4>
@@ -281,19 +257,14 @@ export default function BrainDoc() {
                 </svg>
               </div>
               <div className={cardtoggle3 ? "show" : "hide"} style={mystyle}>
-
-
                 <p>
                   <>.يتضمن فقدان الذاكرة والتغيرات في الشخصية. الدعم العاطفي والعلاج الطبي يلعبان دورًا هامًا</>
                   <br />
                   <br />
                   <>.الحفاظ على التفاعل الاجتماعي وتشجيع الأنشطة العقلية يمكن أن يساعد في تحسين جودة حياة المصاب</>
                 </p>
-
-
               </div>
             </div>
-
             <div className="faq-D" onClick={ToggleHandler4}>
               <div className="question-D">
                 <h4>هل الصداع النصفي قابل للعلاج؟</h4>
@@ -302,19 +273,14 @@ export default function BrainDoc() {
                 </svg>
               </div>
               <div className={cardtoggle4 ? "show" : "hide"} style={mystyle}>
-
-
                 <p>
                   <>.يمكن استخدام الأدوية المضادة للصداع لتخفيف الأعراض، ولكن يجب استشارة الطبيب لتحديد العلاج المناسب</>
                   <br />
                   <br />
                   <>.تجنب العوامل المحتملة المسببة للصداع النصفي، مثل التوتر وتغييرات في نمط النوم</>
                 </p>
-
-
               </div>
             </div>
-
             <div className="faq-D" onClick={ToggleHandler5}>
               <div className="question-D">
                 <h4>كيفية التعامل مع الشلل الرعاش؟</h4>
@@ -323,19 +289,14 @@ export default function BrainDoc() {
                 </svg>
               </div>
               <div className={cardtoggle5 ? "show" : "hide"} style={mystyle}>
-
-
                 <p>
                   <>.العلاج الطبي الدوري والعلاج الطبيعي يمكن أن يساعدان في تحسين الحركة والتحكم في العضلات</>
                   <br />
                   <br />
                   <>.دعم الدعم النفسي والاجتماعي يلعب دورًا هامًا في تحسين نوعية الحياة للأفراد المتأثرين</>
                 </p>
-
-
               </div>
             </div>
-
             <div className="faq-D" onClick={ToggleHandler6}>
               <div className="question-D">
                 <h4>متى يجب إجراء فحوصات للدماغ والأعصاب؟</h4>
@@ -344,16 +305,11 @@ export default function BrainDoc() {
                 </svg>
               </div>
               <div className={cardtoggle6 ? "show" : "hide"} style={mystyle}>
-
-
                 <p>
                   <>.تشمل الأعراض المثلثة الحادة، مثل الصداع الشديد والغثيان والضعف، دلالات على الحاجة إلى فحوصات دقيقة مثل الرنين المغناطيسي</>
                 </p>
-
-
               </div>
             </div>
-
             <div className="faq-D" onClick={ToggleHandler7}>
               <div className="question-D">
                 <h4>ما هي أحدث التقنيات في تشخيص أمراض الدماغ؟</h4>
@@ -362,18 +318,12 @@ export default function BrainDoc() {
                 </svg>
               </div>
               <div className={cardtoggle7 ? "show" : "hide"} style={mystyle}>
-
-
                 <p>
                   <>.تقنيات مثل الطباعة ثلاثية الأبعاد والتصوير الوظيفي للدماغ توفر رؤية أفضل لهيكل الدماغ ووظائفه</>
                 </p>
-
-
               </div>
             </div>
           </section>
-
-
         </div>
       </div>
       <ScrollToTopButton />

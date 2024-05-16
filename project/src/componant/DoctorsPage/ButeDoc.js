@@ -262,8 +262,6 @@ export default function ButeDoc() {
                 </p>
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler5}>
               <div className="question-D">
                 <h4>هل يمكن تحقيق نتائج دائمة من إجراءات التجميل غير الجراحية؟</h4>
@@ -273,14 +271,10 @@ export default function ButeDoc() {
               </div>
               <div className={cardtoggle5 ? "show" : "hide"} style={mystyle}>
                 <p>
-
                   <>.تعتمد مدى دوام النتائج على نوع الإجراء، وفي الغالب تكون النتائج طويلة الأمد ولكن قد تتطلب جلسات صيانة</>
-
                 </p>
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler6}>
               <div className="question-D">
                 <h4>ما هي العوامل التي يجب أخذها في اعتبار لتحديد مناسبة إجراء التجميل؟</h4>
@@ -297,8 +291,6 @@ export default function ButeDoc() {
               </div>
             </div>
           </section>
-
-
         </div>
       </div>
       <ScrollToTopButton />

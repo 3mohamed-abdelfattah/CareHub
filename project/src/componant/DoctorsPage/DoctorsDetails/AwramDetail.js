@@ -23,7 +23,6 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-
 export default function EyeDetail() {
   const id = window.location.pathname.split("/").slice(-1)[0];
   const [doctorData, setDoctorData] = useState({});
@@ -35,13 +34,11 @@ export default function EyeDetail() {
   const [email, setEmail] = useState('');
   const [comment, setComment] = useState('');
   const [filteredComment, setFilteredComment] = useState([]);
-
   useEffect(() => {
     if (!window.localStorage.getItem('email')) {
       window.location = "/login";
     }
   }, []);
-
   async function Submit(e) {
     e.preventDefault(); // Prevent default form submission
     try {
@@ -71,7 +68,6 @@ export default function EyeDetail() {
       }
     }
   }
-
   const body = {
     direction: "rtl",
     margin: 2,
@@ -84,7 +80,6 @@ export default function EyeDetail() {
     WebkitTapHighlightColor: "transparent",
     marginTop: "7%",
   };
-
   useEffect(() => {
     setLoading(true);
     fetch(`http://localhost:5000/api/doctors/Oncologist/${id}`)
@@ -94,7 +89,6 @@ export default function EyeDetail() {
       })
       .finally(() => setLoading(false));
   }, []);
-
   useEffect(() => {
     fetch(`http://localhost:5000/api/comments?docID=${id}`)
       .then((res) => res.json())
@@ -103,7 +97,6 @@ export default function EyeDetail() {
         setFilteredComment(data);
       })
   }, []);
-
   const options = {
     position: "bottom-left",
     autoClose: 5000,
@@ -113,7 +106,6 @@ export default function EyeDetail() {
     draggable: true,
     progress: undefined,
   };
-
   const handleLinkedW = () => {
     let phoneNumber = doctorData.phoneNumber;
     phoneNumber = phoneNumber.replace(/\s/g, '');
@@ -131,7 +123,6 @@ export default function EyeDetail() {
       toast.error("نأسف! لا يمتلك الطبيب رقم واتساب يمكنك الطلب من موقعنا وسيتم توصيله لك", options);
     }
   };
-
   const commentElements = filteredComment.map((card, index) => (
     <Card sx={{ maxWidth: '74%', margin: '1%', position: 'relative', right: '12%' }} key={index}>
       <CardHeader
@@ -161,7 +152,6 @@ export default function EyeDetail() {
       </CardContent>
     </Card>
   ));
-
   return (
     <Fragment>
       <Header />

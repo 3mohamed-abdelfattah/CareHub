@@ -164,12 +164,8 @@ export default function HeartDoc() {
             <button className="micButton"><svg viewBox="0 0 384 512" className="micIcon"><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z" /></svg>
             </button>
           </div>
-
-
-
         </div>
       </div>
-
       <div className="doctors-list-D">
         <div className="container-D">{doctorElements}</div>
         {isLoading &&
@@ -183,11 +179,8 @@ export default function HeartDoc() {
             </div>
           </div>
         }
-
       </div>
-
       <div className="pagination-buttons">
-
         <div className="btn-conteinerr" onClick={handleNextPage}
           disabled={filteredDoctors.length < itemsPerPage}>
           <a href="#" className="btn-content">
@@ -202,9 +195,6 @@ export default function HeartDoc() {
             </span>
           </a>
         </div>
-
-
-
         <div className="btn-conteiner" onClick={handlePreviousPage} disabled={currentPage === 1}>
           <a href="#" className="btn-content">
             <span className="icon-arrow">
@@ -218,17 +208,11 @@ export default function HeartDoc() {
             </span>
           </a>
         </div>
-
       </div>
-
       <div className="common_questions-D">
         <div className="container-D">
-
           <section>
             <h2 className="title-D">الاسئلة الشائعة</h2>
-
-
-
             <div className="faq-D" onClick={ToggleHandler1}>
               <div className="question-D">
                 <h4>ما هي العلامات التحذيرية لمشاكل في القلب؟</h4>
@@ -237,14 +221,11 @@ export default function HeartDoc() {
                 </svg>
               </div>
               <div className={cardtoggle1 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.الأعراض تشمل ألم في الصدر، صعوبة في التنفس، والدوخة. يجب الفحص الفوري في حالة ظهور هذه الأعراض</>
                 </p>
-
               </div>
             </div>
-
             <div className="faq-D" onClick={ToggleHandler2}>
               <div className="question-D">
                 <h4>كيف يمكن تحسين صحة القلب بشكل عام؟</h4>
@@ -253,18 +234,14 @@ export default function HeartDoc() {
                 </svg>
               </div>
               <div className={cardtoggle2 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.يُنصح بممارسة الرياضة بانتظام واتباع نظام غذائي صحي قليل الدهون</>
                   <br />
                   <br />
                   <>.إجراء فحوصات دورية لفحص مستويات الكولسترول وضغط الدم</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler3}>
               <div className="question-D">
                 <h4>ما هي أسباب ارتفاع ضغط الدم وكيف يمكن التحكم فيه؟</h4>
@@ -273,15 +250,11 @@ export default function HeartDoc() {
                 </svg>
               </div>
               <div className={cardtoggle3 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.يمكن أن تشمل الأسباب التقدم في العمر وعوامل وراثية. يُنصح بتغيير نمط الحياة والتحكم في الوزن للتحكم في ضغط الدم</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler4}>
               <div className="question-D">
                 <h4>كيف يمكن الوقاية من أمراض القلب؟</h4>
@@ -290,18 +263,14 @@ export default function HeartDoc() {
                 </svg>
               </div>
               <div className={cardtoggle4 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.تجنب الأطعمة الغنية بالدهون المشبعة وممارسة الرياضة بانتظام</>
                   <br />
                   <br />
                   <>.إجراء فحوصات دورية لفحص مستويات الكولسترول وضغط الدم</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler5}>
               <div className="question-D">
                 <h4>ما هي الإجراءات الرئيسية لعلاج الذبحة الصدرية؟</h4>
@@ -310,15 +279,11 @@ export default function HeartDoc() {
                 </svg>
               </div>
               <div className={cardtoggle5 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.يمكن أن يشمل العلاج استخدام الأدوية المناسبة وإجراء عمليات توسيع الشرايين (القسطرة)</>
                 </p>
-
               </div>
             </div>
-
-
             <div className="faq-D" onClick={ToggleHandler6}>
               <div className="question-D">
                 <h4>كيف يمكن متابعة القلب بعد عملية جراحية؟</h4>
@@ -327,16 +292,12 @@ export default function HeartDoc() {
                 </svg>
               </div>
               <div className={cardtoggle6 ? "show" : "hide"} style={mystyle}>
-
                 <p>
                   <>.يُجري فحوصات دورية لمتابعة وظيفة القلب وضبط الأدوية إذا لزم الأمر</>
                 </p>
-
               </div>
             </div>
           </section>
-
-
         </div>
       </div>
       <ScrollToTopButton />
