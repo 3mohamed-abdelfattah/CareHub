@@ -73,6 +73,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-transform-private-property-in-object": "^7.24.5",
     "webpack": "^5.90.3"
   }
 }
