@@ -28,9 +28,7 @@ fields_of_used_languages:
     "React.js",
     "MongoDB",
     "Node.js",
-    "Express.js",
-    "UI/UX",
-    "Bootstrap",
+    "Express.js"
   ]
   
 ```
