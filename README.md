@@ -28,15 +28,21 @@ fields_of_used_languages:
     "React.js",
     "MongoDB",
     "Node.js",
-    "Express.js",
-    "UI/UX",
-    "Bootstrap",
+    "Express.js"
   ]
   
 ```
   
 ---  
-![WhatsApp Image 2024-04-30 at 06 02 00_0190d780](https://github.com/3mohamed-abdelfattah/Virtual_Project/assets/142848460/6ea29633-324c-4968-b919-7eb569623927)
+![Image](https://github.com/3mohamed-abdelfattah/Virtual_Project/assets/142848460/6ea29633-324c-4968-b919-7eb569623927)
+
+
+
+
+https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/472b56b9-f941-43d3-9db1-5aac4de25222
+
+
+
 
 
 <p align="center">

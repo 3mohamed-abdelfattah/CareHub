@@ -83,7 +83,6 @@ const MessagesComponent = () => {
       fetch(`http://localhost:5000/api/messages/${userID}/${selectedUser._id}`)
         .then(response => {
           if (!response.ok) {
-            toast.success('Success to fetch messages', options);
           }
           return response.json();
         })
