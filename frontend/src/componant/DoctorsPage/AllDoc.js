@@ -100,7 +100,6 @@ export default function AllDoc() {
                             </div>
                         </div>
                     </section>
-
                     <section className="slider-container">
                         <div className="slider">
                             <div className="slider-item">
@@ -153,7 +152,6 @@ export default function AllDoc() {
                             </div>
                         </div>
                     </section>
-
                     <section className="slider-container">
                         <div className="slider">
                             <div className="slider-item">
@@ -206,7 +204,6 @@ export default function AllDoc() {
                             </div>
                         </div>
                     </section>
-
                     <section className="slider-container">
                         <div className="slider">
                             <div className="slider-item">
@@ -259,7 +256,6 @@ export default function AllDoc() {
                             </div>
                         </div>
                     </section>
-
                     <section className="slider-container">
                         <div className="slider">
                             <div className="slider-item">
@@ -312,7 +308,6 @@ export default function AllDoc() {
                             </div>
                         </div>
                     </section>
-
                     <section className="slider-container">
                         <div className="slider">
                             <div className="slider-item">
@@ -365,7 +360,6 @@ export default function AllDoc() {
                             </div>
                         </div>
                     </section>
-
                     <section className="slider-container">
                         <div className="slider">
                             <div className="slider-item">
@@ -386,7 +380,6 @@ export default function AllDoc() {
                             </div>
                         </div>
                     </section>
-
                 </main>
             </container>
             <ScrollToTopButton />
