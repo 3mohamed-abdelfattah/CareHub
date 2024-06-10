@@ -53,6 +53,11 @@ Our intuitive admin dashboard provides seamless access to:
 </p>
 
 > **✨ Check out the demo before launching the site! 🚀**
+> <p align="center">
+  <a href="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/472b56b9-f941-43d3-9db1-5aac4de25222">
+    <img src="https://img.shields.io/badge/View-Demo-blue" alt="View Demo"/>
+  </a>
+</p>
 
 <p align="center">
   <a href="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/472b56b9-f941-43d3-9db1-5aac4de25222">
