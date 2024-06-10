@@ -1,4 +1,4 @@
-<h2 align="center">Hello!👋 We are a team at Beni Suef University working on our graduation project</h2>
+<h2 align="center">Hello!👋 We are a team at Beni-Suef University working on our graduation project</h2>
 
 <h1 align="center">
 Our project is a simulation of all medical and healthcare specialties on a website.
@@ -11,7 +11,7 @@ Our project is a simulation of all medical and healthcare specialties on a websi
 ```yaml
 name: CareHub
 description: The Healthcare Revolution Through Technology
-location: Beni Suef, Egypt
+location: Beni-Suef, Egypt
 
 fields_of_used_languages:
   [
