@@ -5,7 +5,6 @@
 </h1>
 
 <h2>👨🏻‍💻 &nbsp;About Our Project</h2>
----
 
 ```yaml
 name: CareHub
@@ -52,6 +51,8 @@ Our intuitive admin dashboard provides seamless access to:
 <p align="center">
   <img src="https://github.com/3mohamed-abdelfattah/Virtual_Project/assets/142848460/6ea29633-324c-4968-b919-7eb569623927" alt="CareHub Image"/>
 </p>
+
+> **✨ Check out the demo before launching the site! 🚀**
 
 <p align="center">
   <a href="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/472b56b9-f941-43d3-9db1-5aac4de25222">
