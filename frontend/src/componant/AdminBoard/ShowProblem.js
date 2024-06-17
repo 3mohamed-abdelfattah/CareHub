@@ -52,8 +52,8 @@ export default function ShowProblem() {
             </table>
             {selectedProblem && (
                 <div className="modal">
-                    <div className="modal-content">
-                        <span className="close" onClick={closeModal}>&times;</span>
+                    <div className="modal-content-p">
+                    <span className="close" onClick={closeModal}>&times;</span>
                         <h2>تفاصيل الاستفسار</h2>
                         <p><strong>الاسم:</strong> {selectedProblem.name}</p>
                         <p><strong>الايميل:</strong> {selectedProblem.email}</p>
