@@ -42,11 +42,7 @@ const registerationPage =  async (req, res) => {
     }
   
     const newUser = new User({
-      firstname,
-      lastname,
-      email,
-      password ,
-      role,
+      firstname,lastname,email,password ,role
     });
   
     //generateTokenAndSetCookie(newUser._id , res)

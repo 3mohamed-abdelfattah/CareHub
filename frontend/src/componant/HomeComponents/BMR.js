@@ -34,7 +34,6 @@ const Calculator = () => {
     const bmr = gender === 'male'
       ? 10 * parseFloat(weight) + 6.25 * parseFloat(height) - 5 * parseFloat(age) + 5
       : 10 * parseFloat(weight) + 6.25 * parseFloat(height) - 5 * parseFloat(age) - 161;
-
     const totalCalories = Math.round(bmr * activityLevels[activityLevel]);
     setResult(totalCalories);
     // Display the result as a 
