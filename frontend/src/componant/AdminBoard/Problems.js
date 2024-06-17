@@ -49,7 +49,6 @@ export default function Problems() {
         problem: problem,
       });
       if (res.status === 200) {
-        window.localStorage.setItem('email', email);
         setPlayStatus(Sound.status.PLAYING);
         toast.success("تم استلام استفسارك بنجاح! نحن نقدر اهتمامك بالتواصل معنا، وسنعمل جاهدين على الرد عليك في أقرب وقت ممكن", options);
         setTimeout(() => {
