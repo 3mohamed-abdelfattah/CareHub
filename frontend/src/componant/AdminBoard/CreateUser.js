@@ -6,17 +6,23 @@ import Sound from 'react-sound';
 import NOtifis from "../Photos/sounds.mp3"
 import NOtifie from "../Photos/sounde.mp3"
 import { useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function CreateUser() {
   const [firstname, setfName] = useState('');
   const [lastname, setlName] = useState('');
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [accept, setAccept] = useState(false);
   const [errors, setErrors] = useState({}); // State to hold specific errors
   const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
   const [playStatue, setPlayStatue] = useState(Sound.status.STOPPED);
   const navigate = useNavigate();
+
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+};
 
   const options = {
     position: "bottom-left",
@@ -77,7 +83,27 @@ export default function CreateUser() {
             <input id="first-name" type="text" placeholder="الاسم الأول" className="Updateuser" value={firstname} onChange={(e) => setfName(e.target.value)} />
             <input required placeholder="الاسم الأخير" type="text" className="Updateuser" id="last-name" value={lastname} onChange={(e) => setlName(e.target.value)} />
             <input id="email" type="email" placeholder="البريد الإلكتروني" className="Updateuser" value={email} onChange={(e) => setemail(e.target.value)} />
-            <input id="password" type="password" placeholder="كلمة المرور" className="Updateuser" value={password} onChange={(e) => setpassword(e.target.value)} />
+            <input
+            id="password"
+            type={showPassword ? "text" : "password"}
+            placeholder="كلمة المرور"
+            className="Updateuser"
+            value={password}
+            onChange={(e) => setpassword(e.target.value)}
+            style={{ paddingRight: '30px' }} // توفير مساحة للأيقونة
+        />
+        <span
+            onClick={toggleShowPassword}
+            style={{
+                position: 'relative',
+                right: '95%',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                cursor: 'pointer'
+            }}
+        >
+            {showPassword ? <FaEyeSlash /> : <FaEye />}
+        </span>
             <div style={{ textAlign: "center" }}>
               <button type="submit"><span className="box">إنشاء</span></button>
             </div>

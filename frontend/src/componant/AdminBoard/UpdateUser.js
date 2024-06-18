@@ -5,16 +5,22 @@ import { toast } from 'react-toastify';
 import Sound from 'react-sound';
 import NOtifi from "../Photos/sounds.mp3";
 import { useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function UpdateUser() {
     const [firstname, setfName] = useState('');
     const [lastname, setlName] = useState('');
     const [email, setemail] = useState('');
     const [password, setpassword] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [Role, setRole] = useState('');
     const [accept, setaccept] = useState(false);
     const navigate = useNavigate();
     const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
+
+    const toggleShowPassword = () => {
+        setShowPassword(!showPassword);
+    };
 
     const options = {
         position: "bottom-left",
@@ -82,7 +88,27 @@ export default function UpdateUser() {
                         <input id="first-name" type="text" placeholder="الاسم الأول" className="Updateuser" value={firstname} onChange={(e) => setfName(e.target.value)} />
                         <input id="last-name" type="text" placeholder="الاسم الأخير" className="Updateuser" value={lastname} onChange={(e) => setlName(e.target.value)} />
                         <input id="email" type="email" placeholder="البريد الإلكتروني" className="Updateuser" value={email} onChange={(e) => setemail(e.target.value)} />
-                        <input id="password" type="text" placeholder="كلمة المرور" className="Updateuser" value={password} onChange={(e) => setpassword(e.target.value)} />
+                        <input
+                            id="password"
+                            type={showPassword ? "text" : "password"}
+                            placeholder="كلمة المرور"
+                            className="Updateuser"
+                            value={password}
+                            onChange={(e) => setpassword(e.target.value)}
+                            style={{ paddingRight: '30px' }} // توفير مساحة للأيقونة
+                        />
+                        <span
+                            onClick={toggleShowPassword}
+                            style={{
+                                position: 'relative',
+                                right: '95%',
+                                top: '50%',
+                                transform: 'translateY(-50%)',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            {showPassword ? <FaEyeSlash /> : <FaEye />}
+                        </span>
                         <select value={Role} onChange={(e) => setRole(e.target.value)} className="Updateuser" style={{ border: '#000' }}>
                             <option value="User">مستخدم</option>
                             <option value="Admin">مسؤول</option>

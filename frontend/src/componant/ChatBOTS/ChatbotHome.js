@@ -57,7 +57,7 @@ const steps = [
   },
   {
     id: '7',
-    message: "...سنقوم الان بتوجيهك الي صفحه لتقوم بتديث بياناتك",
+    message: "...سنقوم الان بتوجيهك الي صفحه لتقوم بتحديث بياناتك",
     trigger: '8',
   },
   {
@@ -160,6 +160,8 @@ const ChatbotHome = () => (
       recognitionEnable={true}
       placeholder="...اكتب رسالتك"
       recognitionLang="en-US"
+      width="40%"
+      style={{ height: '70%' }}
     />
   </ThemeProvider>
 );

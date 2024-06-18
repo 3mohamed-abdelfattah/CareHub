@@ -77,7 +77,7 @@ export default function Orders() {
                             <textarea required cols={50} rows={10} id="textarea" className="form-textarea" value={order} onChange={(e) => setOrder(e.target.value)} />
                         </div>
                         <div className="form-group">
-                            <label htmlFor="file" className="form-label" style={{ color: '#1F5357', fontSize: '20px', fontWeight: 'bolder', cursor: 'pointer' }}>اختر ملفًا</label>
+                            <label htmlFor="file" className="form-label" style={{ color: '#1F5357', fontSize: '20px', fontWeight: 'bolder', cursor: 'pointer' }}>اختر ملفًا...</label>
                             <input type="file" id="file" name="file" className="form-file" onChange={(e) => setImage(e.target.files[0])} />
                         </div>
                         <button type="submit" className="form-submit-btn">ارسال</button>

@@ -150,7 +150,7 @@ export default function EyeDetail() {
       />
       <CardContent>
         <Typography variant="body2" color="text.primary">
-          {card.comment}
+          <h4>{card.comment}</h4>
         </Typography>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon style={{ color: '#ff4141' }} />

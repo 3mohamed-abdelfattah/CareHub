@@ -122,6 +122,8 @@ const ChatbotBrain = () => (
       recognitionEnable={true}
       placeholder="...اكتب رسالتك"
       recognitionLang="en-US"
+      width="40%"
+      style={{ height: '70%' }}
     />
   </ThemeProvider>
 );
