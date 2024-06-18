@@ -55,26 +55,26 @@ export default function ShowOrder() {
       </table>
       {selectedProblem && (
         <div className="modal">
-        <div className="modal-content">
-          <div>
-            <h1>تفاصيل الطلب</h1>
-            <p><strong>الاسم:</strong> {selectedProblem.name}</p>
-            <p><strong>العنوان:</strong> {selectedProblem.address}</p>
-            <p><strong>الرقم:</strong> {selectedProblem.phoneNumber}</p>
-            <p><strong>الطلب:</strong> {selectedProblem.order}</p>
+          <div className="modal-content">
+            <div>
+              <h1>تفاصيل الطلب</h1>
+              <p><strong>الاسم:</strong> {selectedProblem.name}</p>
+              <p><strong>العنوان:</strong> {selectedProblem.address}</p>
+              <p><strong>الرقم:</strong> {selectedProblem.phoneNumber}</p>
+              <p><strong>الطلب:</strong> {selectedProblem.order}</p>
+            </div>
+            <Zoom>
+              <img
+                style={{ maxHeight: '600px', maxWidth: '500px' }}
+                src={`http://localhost:5000/uploads/${selectedProblem.image}`}
+                alt=""
+              />
+            </Zoom>
+            <span className="close" onClick={closeModal}>
+              &times;
+            </span>
           </div>
-          <Zoom>
-          <img
-            style={{ maxHeight: '600px', maxWidth: '500px' }}
-            src={`http://localhost:5000/uploads/${selectedProblem.image}`}
-            alt=""
-          />
-        </Zoom>
-        <span className="close" onClick={closeModal}>
-        &times;
-      </span>
         </div>
-      </div>
       )}
     </div>
   );

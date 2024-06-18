@@ -22,7 +22,7 @@ export default function CreateUser() {
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
-};
+  };
 
   const options = {
     position: "bottom-left",
@@ -84,26 +84,26 @@ export default function CreateUser() {
             <input required placeholder="الاسم الأخير" type="text" className="Updateuser" id="last-name" value={lastname} onChange={(e) => setlName(e.target.value)} />
             <input id="email" type="email" placeholder="البريد الإلكتروني" className="Updateuser" value={email} onChange={(e) => setemail(e.target.value)} />
             <input
-            id="password"
-            type={showPassword ? "text" : "password"}
-            placeholder="كلمة المرور"
-            className="Updateuser"
-            value={password}
-            onChange={(e) => setpassword(e.target.value)}
-            style={{ paddingRight: '30px' }} // توفير مساحة للأيقونة
-        />
-        <span
-            onClick={toggleShowPassword}
-            style={{
+              id="password"
+              type={showPassword ? "text" : "password"}
+              placeholder="كلمة المرور"
+              className="Updateuser"
+              value={password}
+              onChange={(e) => setpassword(e.target.value)}
+              style={{ paddingRight: '30px' }} // توفير مساحة للأيقونة
+            />
+            <span
+              onClick={toggleShowPassword}
+              style={{
                 position: 'relative',
                 right: '95%',
                 top: '50%',
                 transform: 'translateY(-50%)',
                 cursor: 'pointer'
-            }}
-        >
-            {showPassword ? <FaEyeSlash /> : <FaEye />}
-        </span>
+              }}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
             <div style={{ textAlign: "center" }}>
               <button type="submit"><span className="box">إنشاء</span></button>
             </div>

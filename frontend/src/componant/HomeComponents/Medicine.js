@@ -13,6 +13,8 @@ import IconButton from "@mui/material/IconButton";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 //Photos
 import MED1 from "../Photos/Panadol .jpg";
@@ -238,13 +240,15 @@ export default function MedicCard() {
           {/* Card 1 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="بانادول أدفانس" subheader="مسكن" />
-            <CardMedia
-              component="img"
-              alt="Paella dish"
-              height="194"
-              image={MED1}
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                alt="Paella dish"
+                height="194"
+                image={MED1}
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -306,13 +310,15 @@ export default function MedicCard() {
           {/* Card 2 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="بانادول إكسترا" subheader="مسكن " />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED2}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED2}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -369,13 +375,15 @@ export default function MedicCard() {
           {/* Card 3 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="أدول" subheader="مسكن" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED3}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED3}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -458,13 +466,15 @@ export default function MedicCard() {
           {/* Card 4 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="أدول إكسترا" subheader="مسكن" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED4}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED4}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -519,13 +529,15 @@ export default function MedicCard() {
           {/* Card 5 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="دوليبران" subheader="مسكن" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED5}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED5}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -580,13 +592,15 @@ export default function MedicCard() {
           {/* Card 6 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="سيتال إكسترا" subheader="مسكن" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED6}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED6}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -664,13 +678,15 @@ export default function MedicCard() {
           {/* Card 7 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="كونجستال " subheader="نزلات البرد" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED7}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED7}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -726,13 +742,15 @@ export default function MedicCard() {
           {/* Card 8 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="كولد فري" subheader="نزلات البرد" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED8}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED8}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -789,13 +807,15 @@ export default function MedicCard() {
           {/* Card 9 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="دواء وان تو ثري 123" subheader="نزلات البرد" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED9}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED9}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -864,13 +884,15 @@ export default function MedicCard() {
           {/* Card 10 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="أوتريفين" subheader="مزيل احتقان" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED10}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED10}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -926,13 +948,15 @@ export default function MedicCard() {
           {/* Card 11 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="أوجمنتين" subheader="مضاد حيوي " />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED11}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED11}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -993,13 +1017,15 @@ export default function MedicCard() {
           {/* Card 12 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="بروفين" subheader="مسكن وخافض للحرارة " />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED12}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED12}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -1072,13 +1098,15 @@ export default function MedicCard() {
           {/* Card 13 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="ابيدون" subheader="علاج الالتهابات والحساسية " />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED13}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED13}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -1142,14 +1170,16 @@ export default function MedicCard() {
           {/* Card 14 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="أمبيزيم " subheader="مضاد للالتهاب والتورم" />
-            <CardMedia
-              component="img"
-              height="194"
-              width="445"
-              image={MED14}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                width="445"
+                image={MED14}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -1205,13 +1235,15 @@ export default function MedicCard() {
           {/* Card 15 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="دولفين" subheader="مسكن وخافض للحرارة " />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED15}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED15}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -1287,13 +1319,15 @@ export default function MedicCard() {
               title="كتافاست"
               subheader="للأسنان ومسكن لألم والصداع"
             />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED16}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED16}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -1368,13 +1402,15 @@ export default function MedicCard() {
               title="ميوفين "
               subheader=" باسط للعضلات ومضاد للالتهاب"
             />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED17}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED17}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -1433,13 +1469,15 @@ export default function MedicCard() {
           {/* Card 18 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="فولتارين جل" subheader="مضادات الالتهاب " />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED18}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED18}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -1515,13 +1553,15 @@ export default function MedicCard() {
           {/* Card 19 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="كارباميد" subheader="مرطب للجلد" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED19}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED19}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -1581,13 +1621,15 @@ export default function MedicCard() {
           {/* Card 20 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="بانثينول " subheader=" مرطب وملطف للجلد" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED20}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED20}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -1636,13 +1678,15 @@ export default function MedicCard() {
           {/* Card 21 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="بروباميثون" subheader="التهابات الجلد" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED21}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED21}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -1708,13 +1752,15 @@ export default function MedicCard() {
           {/* Card 22 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="فيروترون" subheader="مكمل غذائى" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED22}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED22}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -1773,13 +1819,15 @@ export default function MedicCard() {
           {/* Card 23 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="كليندام 300" subheader="مضاد حيوى" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED23}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED23}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -1840,13 +1888,15 @@ export default function MedicCard() {
           {/* Card 24 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="أميريست" subheader="مضاد للقئ" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED24}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED24}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -1943,13 +1993,15 @@ export default function MedicCard() {
           {/* Card 25 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="فيرسيرك " subheader="مضاد للدوخة " />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED25}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED25}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -2013,13 +2065,15 @@ export default function MedicCard() {
           {/* Card 26 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="ميكوجيل " subheader="مضاد حموضه " />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED26}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED26}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -2081,13 +2135,15 @@ export default function MedicCard() {
               title=" سبازموفرى"
               subheader="مضاد الكولين(امراض المسالك) "
             />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED27}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED27}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -2172,13 +2228,15 @@ export default function MedicCard() {
           {/* Card 28 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="انتينال" subheader="مضاد حيوي معالج للإسهال" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED28}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED28}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -2235,13 +2293,15 @@ export default function MedicCard() {
           {/* Card 29 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="قطرة بولي فريش " subheader="مرطب للعين " />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED29}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED29}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -2303,13 +2363,15 @@ export default function MedicCard() {
           {/* Card 30 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="ديكساترول" subheader="قطرة عينية واذنية" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED30}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED30}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -2384,13 +2446,15 @@ export default function MedicCard() {
           {/* Card 31 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="قطرة ريموواكس" subheader="قطرة أذن" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED31}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED31}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -2452,13 +2516,15 @@ export default function MedicCard() {
           {/* Card 32 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="ميبو كريم" subheader="كريم معالج للحروق" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED32}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED32}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -2537,13 +2603,15 @@ export default function MedicCard() {
           {/* Card 33 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="فيوسيكورت" subheader=" كريم مضاد حيوي للجلد" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED33}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED33}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -2615,13 +2683,15 @@ export default function MedicCard() {
               title=" فلاجيل"
               subheader="أفضل دواء لعلاج اسهال الاطفال والكبار"
             />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED34}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED34}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -2709,13 +2779,15 @@ export default function MedicCard() {
               title="كالما كينج"
               subheader="مستخلصات طبيعية للجهاز الهضمي "
             />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED35}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED35}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
@@ -2781,13 +2853,15 @@ export default function MedicCard() {
           {/* Card 36 */}
           <Card sx={{ maxWidth: 445, minWidth: '445', background: "#F0F0F0" }}>
             <CardHeader title="يوريفين" subheader="فوار املاح" />
-            <CardMedia
-              component="img"
-              height="194"
-              image={MED36}
-              alt="Paella dish"
-              sizes="300"
-            />
+            <Zoom>
+              <CardMedia
+                component="img"
+                height="194"
+                image={MED36}
+                alt="Paella dish"
+                sizes="300"
+              />
+            </Zoom>
             <CardContent>
               <Typography
                 variant="body2"
