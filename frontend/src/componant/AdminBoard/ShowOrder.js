@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './ShowProblem.css';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 export default function ShowOrder() {
   const [users, setUsers] = useState([]);
@@ -61,11 +63,13 @@ export default function ShowOrder() {
             <p><strong>الرقم:</strong> {selectedProblem.phoneNumber}</p>
             <p><strong>الطلب:</strong> {selectedProblem.order}</p>
           </div>
+          <Zoom>
           <img
-          style={{ maxHeight: '600px', maxWidth: '500px' }}
-          src={`http://localhost:5000/uploads/${selectedProblem.image}`}
-          alt=""
-        />
+            style={{ maxHeight: '600px', maxWidth: '500px' }}
+            src={`http://localhost:5000/uploads/${selectedProblem.image}`}
+            alt=""
+          />
+        </Zoom>
         <span className="close" onClick={closeModal}>
         &times;
       </span>
