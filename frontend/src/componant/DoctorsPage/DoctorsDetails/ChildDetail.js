@@ -205,7 +205,7 @@ export default function EyeDetail() {
                   </Link>
                 </div>
                 <h1 style={{ color: "#1F5357" }}>{doctorData.name}</h1>
-                <h2>طبيب {doctorData.specialization}</h2>
+                <h2>طبيب {doctorData.Specialization}</h2>
                 <h3>{doctorData.phoneNumber}</h3>
                 <div style={{ position: "relative", right: "26%" }}>
                   <Stars />
