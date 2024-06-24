@@ -50,9 +50,11 @@ Our intuitive admin dashboard provides seamless access to:
 
 ## Check Our Presentation 🌟
 
-  <video src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/fdfbbc94-62a1-4816-a0a4-a0c08dd6f1ec" width="100%" height="auto" autoplay loop controls>
-    Your browser does not support the video tag.
-  </video>
+https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/fdfbbc94-62a1-4816-a0a4-a0c08dd6f1ec
+
+
+## Check Our Documentation 📚
+[Documentation.pdf](https://github.com/user-attachments/files/15959219/Documentation.pdf)
 
 
 
