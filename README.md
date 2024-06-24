@@ -48,6 +48,11 @@ Our intuitive admin dashboard provides seamless access to:
 - 🤖 **Chatbot:** Interact with our intelligent chatbot for medication recommendations, preliminary diagnoses, and site assistance.
 - ⏰ **Medication Timetable:** Schedule and receive reminders for your medication timings.
 
+###  Check Our Presentation 🚀
+https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/fdfbbc94-62a1-4816-a0a4-a0c08dd6f1ec
+
+
+
 <p align="center">
   <img src="https://github.com/3mohamed-abdelfattah/Virtual_Project/assets/142848460/6ea29633-324c-4968-b919-7eb569623927" alt="CareHub Image"/>
 </p>
