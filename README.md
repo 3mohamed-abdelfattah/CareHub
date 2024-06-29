@@ -3,7 +3,7 @@
 
 <h1 align="center">
 🚀 Welcome to CareHub: Revolutionizing Healthcare Through Technology 🌐
-      <img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/c4f8b137-cc5c-4b72-852e-3f2fbbb36bde" alt="CareHub Image" width="300"/>
+      <img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/c4f8b137-cc5c-4b72-852e-3f2fbbb36bde" alt="CareHub Image" width="30"/>
 </h1>
 
 <h2>👨🏻‍💻 &nbsp;About Our Project</h2>
@@ -21,7 +21,8 @@ fields_of_used_languages:
     "Express.js"
   ]
 ```
-![image](https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/1c4160e2-44db-4c13-9f10-681b51bb60a7)
+<img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/1c4160e2-44db-4c13-9f10-681b51bb60a7" alt="CareHub Image" width="300"/>
+
 
 ## 📝 &nbsp;Project Overview
 
