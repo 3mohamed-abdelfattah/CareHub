@@ -89,6 +89,8 @@ import OrdersDoc from './componant/AdminBoard/OrdersDoc';
 import Updateme from './componant/AdminBoard/Updateme';
 import MessagesComponent from './componant/RealTimeChat/Chatrecive';
 import MedicCard from './componant/HomeComponents/Medicine';
+import DefaultCenters from './componant/HomeComponents/DefaultCenters';
+import DefaultCentersDetails from './componant/HomeComponents/HomeCompDetails/DefaultCentersDetails';
 
 export default function App() {
   return (
@@ -155,6 +157,7 @@ export default function App() {
         <Route path="labs/:id" element={<LabsDetails />} />
         <Route path="company/:id" element={<CompanyDetails />} />
         <Route path="centers/:id" element={<CentarDetails />} />
+        <Route path="/default-center/:id" element={<DefaultCentersDetails />} />
         <Route path="hospital/:id" element={<HospitalDetails />} />
         <Route path="pharmacies/:id/ordernow" element={<Orders />} />
         <Route path="labs/:id/ordernow" element={<Orders />} />
@@ -184,6 +187,7 @@ export default function App() {
         <Route path="/pharmacies" element={<Pharmacies />} />
         <Route path="/labs" element={<Labs />} />
         <Route path="/hospital" element={<Hospital />} />
+        <Route path="/default-center" element={<DefaultCenters />} />
         <Route path="/arti" element={<ArticlesList />} />
         <Route path="/legwarn" element={<LefWarn />} />
         <Route path="/lowar" element={<LowD />} />

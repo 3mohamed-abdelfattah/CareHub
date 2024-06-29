@@ -20,6 +20,8 @@ import FOOC from "../Photos/FOOD.png"
 import TIME from "../Photos/time.png"
 import CHT from "../Photos/Chatreal.png"
 import MED from "../Photos/MED.jpg"
+import CEND from "../Photos/defultcenter.png"
+
 
 export default function Home() {
     const [email, setemail] = useState('');
@@ -122,12 +124,12 @@ export default function Home() {
                             </Link>
                         </div>
                         <div className="slider-item">
-                            <Link to="/company" className="HOMELINK">
+                            <Link to="/default-center" className="HOMELINK">
                                 <div className="slide">
                                     <figure className="slide-image">
-                                        <img src={COM} alt="" />
+                                        <img src={CEND} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">شركات ادويه</h4>
+                                    <h4 data-aos="fade-up" className="slide-name">العيادات الشاملة</h4>
                                 </div>
                             </Link>
                         </div>
@@ -146,16 +148,6 @@ export default function Home() {
                             </Link>
                         </div>
                         <div className="slider-item">
-                            <Link to="/foodclc" className="HOMELINK">
-                                <div className="slide">
-                                    <figure className="slide-image">
-                                        <img src={FOOC} alt="" />
-                                    </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">الدليل الغذائي</h4>
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="slider-item">
                             <Link to="/healthawr" className="HOMELINK">
                                 <div className="slide">
                                     <figure className="slide-image">
@@ -165,17 +157,27 @@ export default function Home() {
                                 </div>
                             </Link>
                         </div>
+                        <div className="slider-item">
+                            <Link to="/company" className="HOMELINK">
+                                <div className="slide">
+                                    <figure className="slide-image">
+                                        <img src={COM} alt="" />
+                                    </figure>
+                                    <h4 data-aos="fade-up" className="slide-name">شركات ادويه</h4>
+                                </div>
+                            </Link>
+                        </div>
                     </div>
                 </section>
                 <section className="slider-container">
                     <div className="slider">
                         <div className="slider-item">
-                            <Link to="/arti" className="HOMELINK">
+                            <Link to="/foodclc" className="HOMELINK">
                                 <div className="slide">
                                     <figure className="slide-image">
-                                        <img src={NEWS} alt="" />
+                                        <img src={FOOC} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">مقالات طبية</h4>
+                                    <h4 data-aos="fade-up" className="slide-name">الدليل الغذائي</h4>
                                 </div>
                             </Link>
                         </div>
@@ -203,6 +205,16 @@ export default function Home() {
                 </section>
                 <section className="slider-container">
                     <div className="slider">
+                        <div className="slider-item">
+                            <Link to="/arti" className="HOMELINK">
+                                <div className="slide">
+                                    <figure className="slide-image">
+                                        <img src={NEWS} alt="" />
+                                    </figure>
+                                    <h4 data-aos="fade-up" className="slide-name">مقالات طبية</h4>
+                                </div>
+                            </Link>
+                        </div>
                         <div className="slider-item">
                             <Link to="/medicine" className="HOMELINK">
                                 <div className="slide">
