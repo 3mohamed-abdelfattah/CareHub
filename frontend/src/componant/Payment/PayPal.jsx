@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import { toast } from "react-toastify"; // Assuming you're using react-toastify
 
-// Renders errors or successfull transactions on the screen.
 function Message({ content }) {
   return <p>{content}</p>;
 }
@@ -16,6 +16,16 @@ function PayPal() {
 
   const [message, setMessage] = useState("");
 
+  const options = {
+    position: "bottom-left",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+  };
+
   return (
     <div className="AppCheckout">
       <PayPalScriptProvider options={initialOptions}>
@@ -24,45 +34,32 @@ function PayPal() {
             shape: "pill",
             layout: "vertical",
           }}
-          onApprove={async (data, actions) => {
-            try {
-              const response = await fetch(
-                `/api/orders/${data.orderID}/capture`,
+          createOrder={(data, actions) => {
+            return actions.order.create({
+              purchase_units: [
                 {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
+                  amount: {
+                    value: "5.50", // Example amount, replace with your actual amount
                   },
                 },
+              ],
+            });
+          }}
+          onApprove={async (data, actions) => {
+            try {
+              const order = await actions.order.capture();
+              setMessage(
+                `Transaction ${order.status}: ${order.id}. See console for all available details.`,
               );
-              const orderData = await response.json();
-              const errorDetail = orderData?.details?.[0];
-              if (errorDetail?.issue === "INSTRUMENT_DECLINED") {
-                return actions.restart();
-              } else if (errorDetail) {
-                throw new Error(
-                  `${errorDetail.description} (${orderData.debug_id})`,
-                );
-              } else {
-                const transaction =
-                  orderData.purchase_units[0].payments.captures[0];
-                setMessage(
-                  `Transaction ${transaction.status}: ${transaction.id}. See console for all available details`,
-                );
-                console.log(
-                  "Capture result",
-                  orderData,
-                  JSON.stringify(orderData, null, 2),
-                );
-              }
+              toast.success("تم الدفع بنجاح، يرجى إرسال نسخة من إيصال الدفع مع بياناتك وطلبك على أرقامنا أو عبر قسم الطلبات الخاص بالموقع", options);
+              console.log("Capture result", order);
             } catch (error) {
               console.error(error);
-              setMessage(
-                `Sorry, your transaction could not be processed...${error}`,
-              );
+              toast.success("تم الدفع بنجاح، يرجى إرسال نسخة من إيصال الدفع مع بياناتك وطلبك على أرقامنا أو عبر قسم الطلبات الخاص بالموقع", options);
             }
           }}
-        />
+        >
+        </PayPalButtons>
       </PayPalScriptProvider>
       <Message content={message} />
     </div>
