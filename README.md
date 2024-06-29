@@ -2,7 +2,7 @@
 
 
 <div style="text-align: center;">
-    <img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/c4f8b137-cc5c-4b72-852e-3f2fbbb36bde" alt="Image 1" width="300" style="margin: 10px;">
+    <img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/c4f8b137-cc5c-4b72-852e-3f2fbbb36bde" alt="Image 1" width="100" style="margin: 10px;">
     <img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/fa13a201-45cb-4425-bdc8-76b3242dfe9c" alt="Image 2" width="300" style="margin: 10px;">
 </div>
 
