@@ -63,8 +63,9 @@ const steps = [
   {
     id: '8',
     component: (
-      <UpdateUser />
-    ),
+      <Link to="/profileUpdate">
+        <div>Update your data</div>
+      </Link>),
     end: true,
   },
   {
