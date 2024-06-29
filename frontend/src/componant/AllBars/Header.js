@@ -105,7 +105,6 @@ export default function Header() {
               <div className="dropdown-menu">
                 {/* dropdown options here */}
                 <Link to="/profileUpdate">Profile</Link>
-                <Link to="/settings">Settings</Link>
                 <Link to="/realtimechat">Chat</Link>
                 <Link to="/support">Support</Link>
                 <Link to="/requests">Orders</Link>

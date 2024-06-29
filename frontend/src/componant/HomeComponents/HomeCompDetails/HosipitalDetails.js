@@ -5,10 +5,8 @@ import Header from "../../AllBars/Header";
 import Footer from "../../AllBars/Footer";
 import DOCM from "../../Photos/doctorphoto.png";
 import DOCW from "../../Photos/doctorimg.png";
-import Checkout from "../../SomeStyles/Checkout";
 import Stars from "../../SomeStyles/Stars";
 import { Link } from 'react-router-dom';
-import PayPal from "../../Payment/PayPal";
 import { toast } from 'react-toastify';
 import Sound from 'react-sound';
 import NOtifis from "../../Photos/sounds.mp3"
@@ -198,21 +196,13 @@ export default function EyeDetail() {
                 ) : (
                   <img src={DOCW} alt="" />
                 )}
-                <div className="buttonsD0">
-                  <PayPal />
-                </div>
-                <div className="buttonsD1">
-                  <Link to='/requests'>
-                    <Checkout />
-                  </Link>
-                </div>
                 <h1 style={{ color: "#1F5357" }}>{doctorData.name}</h1>
                 <h2>{doctorData.Category}</h2>
                 <h3>{doctorData.phoneNumber}</h3>
                 <div style={{ position: "relative", right: "26%" }}>
                   <Stars />
                 </div>
-                <p>{doctorData.address}</p>
+                <p>{doctorData.address || 'بني سويف'}</p>
               </div>
             </div>
             <div className="map_gogle">
@@ -222,7 +212,7 @@ export default function EyeDetail() {
                 height="300"
                 loading="lazy"
                 allowFullScreen
-                src={doctorData.link}
+                src={doctorData.link || 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3443.1252889641017!2d30.56398141511958!3d29.0661277822604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1458d180f2fc16e5%3A0x8eab819b8c9a46b1!2sBeni%20Suef%2C%20Beni%20Suef%20Governorate!5e0!3m2!1sen!2seg!4v1627317620866!5m2!1sen!2seg'}
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
