@@ -1,12 +1,17 @@
 import React, { useState } from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import { toast } from "react-toastify"; // Assuming you're using react-toastify
+import { toast } from "react-toastify"; 
+import NOtifis from "../Photos/sounds.mp3"
+import Sound from 'react-sound';
 
 function Message({ content }) {
   return <p>{content}</p>;
 }
 
 function PayPal() {
+
+  const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
+
   const initialOptions = {
     "client-id": "ATVPCZs8COpxYjWJ7H2-ewghyKKyMJVyK9svPmUSWkwXGSeaFS0sDnLEmoooL-uTPb8Kr8sLHIdb-iyM",
     "enable-funding": "paylater,venmo,card",
@@ -51,10 +56,10 @@ function PayPal() {
               setMessage(
                 `Transaction ${order.status}: ${order.id}. See console for all available details.`,
               );
+              setPlayStatus(Sound.status.PLAYING);
               toast.success("تم الدفع بنجاح، يرجى إرسال نسخة من إيصال الدفع مع بياناتك وطلبك على أرقامنا أو عبر قسم الطلبات الخاص بالموقع", options);
-              console.log("Capture result", order);
             } catch (error) {
-              console.error(error);
+              setPlayStatus(Sound.status.PLAYING);
               toast.success("تم الدفع بنجاح، يرجى إرسال نسخة من إيصال الدفع مع بياناتك وطلبك على أرقامنا أو عبر قسم الطلبات الخاص بالموقع", options);
             }
           }}
@@ -62,6 +67,11 @@ function PayPal() {
         </PayPalButtons>
       </PayPalScriptProvider>
       <Message content={message} />
+      <Sound
+      url={NOtifis}
+      playStatus={playStatus}
+      onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
+    />
     </div>
   );
 }
