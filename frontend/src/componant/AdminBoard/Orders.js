@@ -4,7 +4,8 @@ import Footer from '../AllBars/Footer';
 import axios from "axios";
 import { toast } from 'react-toastify';
 import Sound from 'react-sound';
-import NOtifis from "../Photos/sounds.mp3"
+import NOtifis from "../Photos/sounds.mp3";
+import defaultImage from "./../Photos/noData.jpg"; // Use default image if no file is uploaded
 import { useNavigate } from 'react-router-dom';
 import './Order.css';
 
@@ -13,7 +14,7 @@ export default function Orders() {
     const [address, setAddress] = useState('');
     const [number, setNumber] = useState('');
     const [order, setOrder] = useState('');
-    const [image, setImage] = useState('');
+    const [image, setImage] = useState(null); // null for default
     const [accept, setAccept] = useState(false);
     const [playStatus, setPlayStatus] = useState(Sound.status.STOPPED);
     const navigate = useNavigate();
@@ -22,18 +23,26 @@ export default function Orders() {
         if (!window.localStorage.getItem('email')) {
             window.location = "/login";
         }
-    }, [])
+    }, []);
 
     async function Submit(e) {
         e.preventDefault();
         setAccept(true);
-        try {
-            const formData = new FormData();
-            formData.append('name', name);
-            formData.append('address', address);
-            formData.append('phoneNumber', number);
-            formData.append('order', order.trim());
+
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('address', address);
+        formData.append('phoneNumber', number);
+        formData.append('order', order.trim());
+
+        if (image) {
             formData.append('image', image);
+        } else {
+            const defaultImageBlob = await fetch(defaultImage).then(res => res.blob());
+            formData.append('image', defaultImageBlob, 'defaultImage.jpg'); // استخدم الصورة الافتراضية إذا لم يتم تحميل ملف
+        }
+
+        try {
             let res = await axios.post("http://localhost:5000/api/orders", formData);
             if (res.status === 201) {
                 setTimeout(() => {
@@ -43,6 +52,7 @@ export default function Orders() {
                 toast.success("تم استلام طلبك بنجاح! وسنعمل جاهدين على توصيله في أقرب وقت ممكن", options);
             }
         } catch (Err) {
+            console.error("Error submitting order:", Err);
         }
     }
 
@@ -54,7 +64,7 @@ export default function Orders() {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-    }
+    };
 
     return (
         <div className="orders-container">
