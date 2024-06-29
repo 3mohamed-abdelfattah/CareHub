@@ -184,7 +184,7 @@ const MessagesComponent = () => {
                 </ListItem>
               ) : (
                 messages.slice().reverse().map((message, index) => ( // Reverse the order of messages here
-                  <ListItem alignItems="flex-start" key={message._id} sx={{ flexDirection: userID === message.senderId ? 'row' : 'row-reverse', justifyContent: 'flex-start', color: userID === message.senderId ? 'text.secondary' : 'text.secondary', backgroundColor: userID === message.senderId ? '#f0f0f0' : '#DEF7E5', borderRadius: '20px', padding: '10px', marginBottom: '10px' }}>
+                  <ListItem alignItems="flex-start" key={message._id} sx={{ flexDirection: userID === message.senderId ? 'row' : 'row-reverse', justifyContent: 'flex-start', color: userID === message.senderId ? 'text.secondary' : 'text.secondary', backgroundColor: userID === message.senderId ? '#DEF7E5' : '#f0f0f0', borderRadius: '20px', padding: '10px', marginBottom: '10px' }}>
                     <ListItemAvatar sx={{ marginLeft: userID === message.senderId ? '0' : '10px', marginRight: userID === message.senderId ? '10px' : '0' }}>
                       <Avatar alt="Sender Avatar" src={userAvatars[message.senderId]} />
                     </ListItemAvatar>

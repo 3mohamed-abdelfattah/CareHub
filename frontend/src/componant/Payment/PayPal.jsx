@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import { toast } from "react-toastify"; 
+import { toast } from "react-toastify";
 import NOtifis from "../Photos/sounds.mp3"
 import Sound from 'react-sound';
 
@@ -68,10 +68,10 @@ function PayPal() {
       </PayPalScriptProvider>
       <Message content={message} />
       <Sound
-      url={NOtifis}
-      playStatus={playStatus}
-      onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
-    />
+        url={NOtifis}
+        playStatus={playStatus}
+        onFinishedPlaying={() => setPlayStatus(Sound.status.STOPPED)}
+      />
     </div>
   );
 }
