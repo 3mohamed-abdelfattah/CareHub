@@ -1,7 +1,7 @@
 <h2 align="center">Hello!👋 We are a team at Beni-Suef University working on our graduation project</h2>
 
 
-<div style="display: flex; justify-content: center; align-items: center; margin: 20px;">
+<div>
     <img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/c4f8b137-cc5c-4b72-852e-3f2fbbb36bde" alt="Image 1" width="70" style="margin: 5px;">
     <img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/fa13a201-45cb-4425-bdc8-76b3242dfe9c" alt="Image 2" width="300" style="margin: 10px;">
 </div>
