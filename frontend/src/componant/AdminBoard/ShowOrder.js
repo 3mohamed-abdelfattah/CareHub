@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './ShowProblem.css';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
+import defaultImage from '../Photos/noData.jpg';
 
 export default function ShowOrder() {
   const [users, setUsers] = useState([]);
@@ -66,8 +67,9 @@ export default function ShowOrder() {
             <Zoom>
               <img
                 style={{ maxHeight: '600px', maxWidth: '500px' }}
-                src={`http://localhost:5000/uploads/${selectedProblem.image}`}
+                src={selectedProblem.image ? `http://localhost:5000/uploads/${selectedProblem.image}` : defaultImage}
                 alt=""
+                onError={(e) => e.target.src = defaultImage} // لضمان عرض الصورة الافتراضية في حالة حدوث خطأ
               />
             </Zoom>
             <span className="close" onClick={closeModal}>
