@@ -66,19 +66,19 @@ https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/fdfbbc94-62a1-4
 
  <table align="center">
   <tr>
-    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/8fde1c64-5ee4-4d26-9cbf-cd0f0459484d" alt="CareHub Image" width="300" style="border: 2px solid #92E3A9;"/></td>
-    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/b5fbcbd8-7b13-4e01-b9bb-e309a2c5e82c" alt="CareHub Image" width="300" style="border: 2px solid #92E3A9;"/></td>
-    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/3693cdff-5058-47ff-a250-806f6e482245" alt="CareHub Image" width="300" style="border: 2px solid #92E3A9;"/></td>
+    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/8fde1c64-5ee4-4d26-9cbf-cd0f0459484d" alt="CareHub Image"  style="border: 2px solid #92E3A9;"/></td>
+    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/b5fbcbd8-7b13-4e01-b9bb-e309a2c5e82c" alt="CareHub Image" style="border: 2px solid #92E3A9;"/></td>
+    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/3693cdff-5058-47ff-a250-806f6e482245" alt="CareHub Image"  style="border: 2px solid #92E3A9;"/></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/0b380e9b-a11e-436b-9682-0599158fc233" alt="CareHub Image" width="300" style="border: 2px solid #92E3A9;"/></td>
-    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/d8510bad-1e14-400b-8391-b3ceca1e7ffb" alt="CareHub Image" width="300" style="border: 2px solid #92E3A9;"/></td>
-    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/780d0e8d-398c-4d10-bd79-e37c46c23314" alt="CareHub Image" width="300" style="border: 2px solid #92E3A9;"/></td>
+    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/0b380e9b-a11e-436b-9682-0599158fc233" alt="CareHub Image"  style="border: 2px solid #92E3A9;"/></td>
+    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/d8510bad-1e14-400b-8391-b3ceca1e7ffb" alt="CareHub Image"  style="border: 2px solid #92E3A9;"/></td>
+    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/780d0e8d-398c-4d10-bd79-e37c46c23314" alt="CareHub Image" style="border: 2px solid #92E3A9;"/></td>
   </tr>
   <tr>
-    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/81890e58-f023-4092-b437-2dbc6c262323" alt="CareHub Image" width="300" style="border: 2px solid #92E3A9;"/></td>
-    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/dfcc92a3-9f37-498e-b9bf-66000da26378" alt="CareHub Image" width="300" style="border: 2px solid #92E3A9;"/></td>
-    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/a6871fe1-13d1-4124-a09f-73afffc0766c" alt="CareHub Image" width="300" style="border: 2px solid #92E3A9;"/></td>
+    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/81890e58-f023-4092-b437-2dbc6c262323" alt="CareHub Image"  style="border: 2px solid #92E3A9;"/></td>
+    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/dfcc92a3-9f37-498e-b9bf-66000da26378" alt="CareHub Image" style="border: 2px solid #92E3A9;"/></td>
+    <td><img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/a6871fe1-13d1-4124-a09f-73afffc0766c" alt="CareHub Image"  style="border: 2px solid #92E3A9;"/></td>
   </tr>
 </table>
 
