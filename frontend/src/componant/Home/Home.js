@@ -75,7 +75,7 @@ export default function Home() {
                                     <figure className="slide-image">
                                         <img src={PH} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">صيدليات</h4>
+                                    <h4 data-aos="zoom-out" className="slide-name">صيدليات</h4>
                                 </div>
                             </Link>
                         </div>
@@ -85,7 +85,7 @@ export default function Home() {
                                     <figure className="slide-image">
                                         <img src={LAB} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">معامل</h4>
+                                    <h4 data-aos="zoom-out" className="slide-name">معامل</h4>
                                 </div>
                             </Link>
                         </div>
@@ -95,7 +95,7 @@ export default function Home() {
                                     <figure className="slide-image">
                                         <img src={DOC} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">أطباء</h4>
+                                    <h4 data-aos="zoom-out" className="slide-name">أطباء</h4>
                                 </div>
                             </Link>
                         </div>
@@ -109,7 +109,7 @@ export default function Home() {
                                     <figure className="slide-image">
                                         <img src={HOS} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">مستشفيات</h4>
+                                    <h4 data-aos="zoom-out" className="slide-name">مستشفيات</h4>
                                 </div>
                             </Link>
                         </div>
@@ -119,7 +119,7 @@ export default function Home() {
                                     <figure className="slide-image">
                                         <img src={CEN} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">مراكز</h4>
+                                    <h4 data-aos="zoom-out" className="slide-name">مراكز</h4>
                                 </div>
                             </Link>
                         </div>
@@ -129,7 +129,7 @@ export default function Home() {
                                     <figure className="slide-image">
                                         <img src={CEND} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">العيادات الشاملة</h4>
+                                    <h4 data-aos="zoom-out" className="slide-name">العيادات الشاملة</h4>
                                 </div>
                             </Link>
                         </div>
@@ -143,7 +143,7 @@ export default function Home() {
                                     <figure className="slide-image">
                                         <img src={CLC} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">معدل الأيض</h4>
+                                    <h4 data-aos="zoom-out" className="slide-name">معدل الأيض</h4>
                                 </div>
                             </Link>
                         </div>
@@ -153,7 +153,7 @@ export default function Home() {
                                     <figure className="slide-image">
                                         <img src={TWEA} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">التوعية الصحية</h4>
+                                    <h4 data-aos="zoom-out" className="slide-name">التوعية الصحية</h4>
                                 </div>
                             </Link>
                         </div>
@@ -163,7 +163,7 @@ export default function Home() {
                                     <figure className="slide-image">
                                         <img src={COM} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">شركات ادويه</h4>
+                                    <h4 data-aos="zoom-out" className="slide-name">شركات ادويه</h4>
                                 </div>
                             </Link>
                         </div>
@@ -177,7 +177,7 @@ export default function Home() {
                                     <figure className="slide-image">
                                         <img src={FOOC} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">الدليل الغذائي</h4>
+                                    <h4 data-aos="zoom-out" className="slide-name">الدليل الغذائي</h4>
                                 </div>
                             </Link>
                         </div>
@@ -187,7 +187,7 @@ export default function Home() {
                                     <figure className="slide-image">
                                         <img src={TIME} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">أدوية اليوم</h4>
+                                    <h4 data-aos="zoom-out" className="slide-name">أدوية اليوم</h4>
                                 </div>
                             </Link>
                         </div>
@@ -197,7 +197,7 @@ export default function Home() {
                                     <figure className="slide-image">
                                         <img src={CHT} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">المحادثات المباشرة</h4>
+                                    <h4 data-aos="zoom-out" className="slide-name">المحادثات المباشرة</h4>
                                 </div>
                             </Link>
                         </div>
@@ -211,7 +211,7 @@ export default function Home() {
                                     <figure className="slide-image">
                                         <img src={NEWS} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">مقالات طبية</h4>
+                                    <h4 data-aos="zoom-out" className="slide-name">مقالات طبية</h4>
                                 </div>
                             </Link>
                         </div>
@@ -221,7 +221,7 @@ export default function Home() {
                                     <figure className="slide-image">
                                         <img src={MED} alt="" />
                                     </figure>
-                                    <h4 data-aos="fade-up" className="slide-name">الأدوية الشائعة</h4>
+                                    <h4 data-aos="zoom-out" className="slide-name">الأدوية الشائعة</h4>
                                 </div>
                             </Link>
                         </div>
