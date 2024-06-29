@@ -108,6 +108,7 @@ const MessagesComponent = () => {
           setNewMessage('');
         })
         .catch(error => {
+          toast.error('Check your internet and try again', options);
           setError(error.message);
           setPlayStatue(Sound.status.PLAYING);
         });
