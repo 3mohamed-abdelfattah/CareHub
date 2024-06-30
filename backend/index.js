@@ -135,10 +135,12 @@ app.get('/api/c&mc/:id', otherPlacesController.getClinicsAndMedicalCentersById);
 
 app.post('/api/complaint', complaintAndOrderController.makeComplaint);
 app.get('/api/complaint', complaintAndOrderController.getComplaints);
+app.delete('/api/complaint/:id', complaintAndOrderController.deleteComplaint);
 
 app.post('/api/orders', upload.single('image'), complaintAndOrderController.makeOrder);
 app.get('/api/orders', complaintAndOrderController.getOrders);
 app.get('/api/order-image/:id', complaintAndOrderController.orderImage);
+app.delete('/api/orders/:id', complaintAndOrderController.deleteOrder);
 
 
 

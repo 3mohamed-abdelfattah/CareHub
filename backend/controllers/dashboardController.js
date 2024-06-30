@@ -6,7 +6,7 @@ const UpdateUserRole = async (req, res) => {
 
     const id = req.params.id;
     const { setRole } = req.body;
-    if(setRole !== 'Admin' && setRole !== 'User' && setRole !== 'Master' && setRole !== 'Doctor' && setRole !== 'Hospital' && setRole !== 'Lab' && setRole !== 'Center' && setRole !== 'Company' && setRole !== 'Pharmacy'){
+    if(newRole !== 'Admin' && newRole !== 'User' && newRole !== 'Master' && newRole !== 'Doctor' && newRole !== 'Hospital' && newRole !== 'Lab' && newRole !== 'Center' && newRole !== 'Company' && newRole !== 'Pharmacy' && newRole !== 'CustmerService'){
       return res.status(400).send('invalid role')
     }
     const user = await User.findById(id);
@@ -46,7 +46,7 @@ const updateUser = async (req, res) => {
       if (newLastname) userToUpdate.lastname = newLastname;
       if (newEmail) userToUpdate.email = newEmail;
       if (newRole){
-        if(newRole !== 'Admin' && newRole !== 'User' && newRole !== 'Master' && newRole !== 'Doctor' && newRole !== 'Hospital' && newRole !== 'Lab' && newRole !== 'Center' && newRole !== 'Company' && newRole !== 'Pharmacy'){
+        if(newRole !== 'Admin' && newRole !== 'User' && newRole !== 'Master' && newRole !== 'Doctor' && newRole !== 'Hospital' && newRole !== 'Lab' && newRole !== 'Center' && newRole !== 'Company' && newRole !== 'Pharmacy' && newRole !== 'CustmerService'){
           return res.status(400).send('invalid role')
         }
         userToUpdate.role = newRole;

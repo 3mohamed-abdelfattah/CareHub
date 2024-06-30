@@ -29,6 +29,8 @@ const loginPage = async (req, res) => {
 }
 
 const registerationPage =  async (req, res) => {
+
+
     const { firstname, lastname, email, password , passwordAgin , role } = req.body;
     
     const exist = await User.findOne ({email : email })
@@ -42,7 +44,11 @@ const registerationPage =  async (req, res) => {
     }
   
     const newUser = new User({
-      firstname,lastname,email,password ,role
+      firstname,
+      lastname,
+      email,
+      password ,
+      role,
     });
   
     //generateTokenAndSetCookie(newUser._id , res)
@@ -52,6 +58,7 @@ const registerationPage =  async (req, res) => {
       catch(err){
         return res.status(400).send(err.message)
       }
+  
     
       res.json(newUser)
   

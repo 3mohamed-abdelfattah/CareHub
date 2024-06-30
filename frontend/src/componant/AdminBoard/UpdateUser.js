@@ -110,8 +110,9 @@ export default function UpdateUser() {
                             {showPassword ? <FaEyeSlash /> : <FaEye />}
                         </span>
                         <select value={Role} onChange={(e) => setRole(e.target.value)} className="Updateuser" style={{ border: '#000' }}>
-                        <option value="Master">مسئول</option>
-                        <option value="Admin">دعم فني</option>
+                        <option value="Master">مطور</option>
+                        <option value="Admin">مسئول</option>
+                        <option value="CustmerService">دعم فني</option>
                         <option value="Doctor">طبيب</option>
                         <option value="Pharmacy">صيدليه</option>
                         <option value="Lab">معمل</option>

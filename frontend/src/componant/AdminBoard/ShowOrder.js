@@ -7,12 +7,13 @@ import defaultImage from '../Photos/noData.jpg';
 export default function ShowOrder() {
   const [users, setUsers] = useState([]);
   const [selectedProblem, setSelectedProblem] = useState(null);
+  const [runUseEffect, setRun] = useState(0); // Add state to trigger re-fetching
 
   useEffect(() => {
     fetch("http://localhost:5000/api/orders")
       .then((res) => res.json())
       .then((data) => setUsers(data))
-  }, []);
+  }, [runUseEffect]); // Add runUseEffect to dependencies
 
   const handleClick = (user) => {
     setSelectedProblem(user);
@@ -22,9 +23,20 @@ export default function ShowOrder() {
     setSelectedProblem(null);
   };
 
+  const deleteOrder = (id) => {
+    fetch(`http://localhost:5000/api/orders/${id}`, {
+      method: 'DELETE',
+    })
+      .then((res) => {
+        if (res.ok) {
+          setRun(runUseEffect + 1); // Re-fetch the data
+        }
+      });
+  };
+
   const showUsers = users.map((user, index) => (
     <tr key={index}>
-      <td>{index + 1}</td>
+      <td className="id-column">{index + 1}</td>
       <td>{user.name}</td>
       <td>{user.address}</td>
       <td>{user.phoneNumber}</td>
@@ -33,6 +45,7 @@ export default function ShowOrder() {
         <button className="neumorphism-btn" onClick={() => handleClick(user)}>
           View Order
         </button>
+        <button className="neumorphism-btn" onClick={() => deleteOrder(user._id)}>Delete</button>
       </td>
     </tr>
   ));
@@ -42,7 +55,7 @@ export default function ShowOrder() {
       <table>
         <thead>
           <tr>
-            <th>ID</th>
+            <th style={{ width: '7%' }}>ID</th>
             <th>Name</th>
             <th>Address</th>
             <th>Number</th>
@@ -69,7 +82,7 @@ export default function ShowOrder() {
                 style={{ maxHeight: '600px', maxWidth: '500px' }}
                 src={selectedProblem.image ? `http://localhost:5000/uploads/${selectedProblem.image}` : defaultImage}
                 alt=""
-                onError={(e) => e.target.src = defaultImage} // لضمان عرض الصورة الافتراضية في حالة حدوث خطأ
+                onError={(e) => e.target.src = defaultImage}
               />
             </Zoom>
             <span className="close" onClick={closeModal}>

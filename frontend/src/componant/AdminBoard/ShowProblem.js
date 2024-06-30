@@ -10,17 +10,28 @@ export default function ShowProblem() {
         fetch("http://localhost:5000/api/complaint")
             .then((res) => res.json())
             .then((data) => {
-                setUser(data)
+                setUser(data);
             });
-    }, [runUseEffect])
+    }, [runUseEffect]);
 
     const handleClick = (user) => {
         setSelectedProblem(user);
-    }
+    };
 
     const closeModal = () => {
         setSelectedProblem(null);
-    }
+    };
+
+    const deleteProblem = (id) => {
+        fetch(`http://localhost:5000/api/complaint/${id}`, {
+            method: 'DELETE',
+        })
+            .then((res) => {
+                if (res.ok) {
+                    setRun(runUseEffect + 1); // Re-fetch the data
+                }
+            });
+    };
 
     const showUsers = user.map((user, index) => (
         <tr key={index}>
@@ -30,6 +41,7 @@ export default function ShowProblem() {
             <td>{user.phoneNumber}</td>
             <td>
                 <button className="neumorphism-btn" onClick={() => handleClick(user)}>View Problem</button>
+                <button className="neumorphism-btn" onClick={() => deleteProblem(user._id)}>Delete</button>
             </td>
         </tr>
     ));
@@ -39,11 +51,11 @@ export default function ShowProblem() {
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th style={{ width: '7%' }}>ID</th>
                         <th>Name</th>
                         <th>Mail</th>
                         <th>Number</th>
-                        <th>Problem</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -53,7 +65,7 @@ export default function ShowProblem() {
             {selectedProblem && (
                 <div className="modal">
                     <div className="modal-content-p">
-                    <span className="close" onClick={closeModal}>&times;</span>
+                        <span className="close" onClick={closeModal}>&times;</span>
                         <h2>تفاصيل الاستفسار</h2>
                         <p><strong>الاسم:</strong> {selectedProblem.name}</p>
                         <p><strong>الايميل:</strong> {selectedProblem.email}</p>
@@ -63,5 +75,5 @@ export default function ShowProblem() {
                 </div>
             )}
         </div>
-    )
+    );
 }

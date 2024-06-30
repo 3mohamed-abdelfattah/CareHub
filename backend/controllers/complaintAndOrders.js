@@ -44,6 +44,23 @@ const getComplaints =  async (req, res) => {
       }
 }
 
+const deleteComplaint = async (req, res) => {
+    try {
+      const complaint = await Complaint.findById(req.params.id);
+      if (complaint) {
+        await complaint.deleteOne();
+        res.status(200).send('Complaint deleted successfully');
+      } else {
+        res.status(404).send('Complaint not found');
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+
+}
+
+
 const makeOrder =  async (req, res) => {
     try {
       const { name, phoneNumber, address, order  } = req.body;
@@ -97,8 +114,22 @@ const orderImage = async (req, res) => {
       res.status(500).send('Internal Server Error');
     }
 }
-    
 
+const deleteOrder = async (req, res) => {
+    try {
+      const order = await Order.findById(req.params.id);
+      if (order) {
+        await order.deleteOne();
+        res.json({message: 'Order removed'})
+      } else {
+        res.status(200).send('Order deleted successfully');
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+
+}
 
 
 module.exports = {
@@ -106,5 +137,8 @@ module.exports = {
     getComplaints,
     makeOrder,
     getOrders,
-    orderImage
+    orderImage,
+    deleteComplaint,
+    deleteOrder
+
 }
