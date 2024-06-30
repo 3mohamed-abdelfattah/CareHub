@@ -33,7 +33,7 @@ const HealthAWR = () => {
         <div className={styles.landing} style={{ marginTop: '9%' }} data-aos="zoom-in">
           <div className={styles.introtext}>
             <h1 style={{ color: '#ff0505' }} data-aos="zoom-in"><b>نُؤمن بأنّ التوعية الصحية مسؤولية</b></h1>
-            <p style={Pstyle} data-aos="fade-up">ونسعى من خلال موقعنا إلى المساهمة في نشر الوعي بين أفراد المجتمع للحفاظ على صحة الجميع</p>
+            <p style={Pstyle} data-aos="zoom-out">ونسعى من خلال موقعنا إلى المساهمة في نشر الوعي بين أفراد المجتمع للحفاظ على صحة الجميع</p>
           </div>
         </div>
         <main id={styles.slider}>
@@ -45,13 +45,13 @@ const HealthAWR = () => {
                     <figure className={styles.slideimage}>
                       <img src={AWRA} alt="" />
                     </figure>
-                    <h4 className={styles.slidename} data-aos="zoom-in">صحة المسنين</h4>
+                    <h4 className={styles.slidename}>صحة المسنين</h4>
                   </div>
                 </Link>
               </div>
               <div className={styles.slideritem}>
                 <Link to="/womanawr">
-                  <div className={styles.slide} data-aos="fade-up">
+                  <div className={styles.slide} data-aos="zoom-out">
                     <figure className={styles.slideimage}>
                       <img src={AWRW} alt="" />
                     </figure>
@@ -61,7 +61,7 @@ const HealthAWR = () => {
               </div>
               <div className={styles.slideritem}>
                 <Link to="/awrchild">
-                  <div className={styles.slide} data-aos="fade-up">
+                  <div className={styles.slide} data-aos="zoom-out">
                     <figure className={styles.slideimage}>
                       <img src={AWRC} alt="" />
                     </figure>
@@ -75,7 +75,7 @@ const HealthAWR = () => {
             <div className={styles.slider}>
               <div className={styles.slideritem}>
                 <Link to="/awrteeth">
-                  <div className={styles.slide} data-aos="fade-up">
+                  <div className={styles.slide} data-aos="zoom-out">
                     <figure className={styles.slideimage}>
                       <img src={AWRM} alt="" />
                     </figure>
@@ -83,7 +83,7 @@ const HealthAWR = () => {
                   </div>
                 </Link >
               </div>
-              <div className={styles.slideritem} data-aos="fade-up">
+              <div className={styles.slideritem} data-aos="zoom-out">
                 <Link to="/firstaid">
                   <div className={styles.slide}>
                     <figure className={styles.slideimage}>
@@ -93,7 +93,7 @@ const HealthAWR = () => {
                   </div>
                 </Link>
               </div>
-              <div className={styles.slideritem} data-aos="fade-up">
+              <div className={styles.slideritem} data-aos="zoom-out">
                 <Link to="/illawr">
                   <div className={styles.slide}>
                     <figure className={styles.slideimage}>
