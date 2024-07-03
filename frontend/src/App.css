@@ -2,13 +2,16 @@
   box-sizing: border-box;
   font-family: 'Cairo';
 
+
 }
 
-body {
+body{
   font-family: 'cairo';
   margin: 0;
 }
-
+::selection {
+  background-color:  #1e5257ab;
+}
 .container {
   padding: 0;
   margin: 0 auto;
