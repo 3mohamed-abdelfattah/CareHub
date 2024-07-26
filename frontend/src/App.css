@@ -28,7 +28,6 @@ body{
   top: 0;
   width: 100%;
   z-index: 1000;
-  /* قيمة عالية لتأكيد الظهور أعلى العناصر الأخرى */
   background: #a2c4ac;
 }
 
@@ -299,10 +298,6 @@ input::placeholder {
   text-align: right;
   margin-top: 0;
 }
-
-
-
-
 
 
 
