@@ -1,6 +1,3 @@
-<h2 align="center">Hello!👋 We are a team at Beni-Suef University working on our graduation project</h2>
-
-
 <h1 align="center">
       <img src="https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/c4f8b137-cc5c-4b72-852e-3f2fbbb36bde" alt="CareHub Image" width="30"/>
  Welcome to CareHub: Revolutionizing Healthcare Through Technology 🌐🚀
