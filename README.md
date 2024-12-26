@@ -97,3 +97,17 @@ https://github.com/3mohamed-abdelfattah/CareHub/assets/142848460/fdfbbc94-62a1-4
   <img src="https://img.shields.io/badge/Node.js-%23339933.svg?logo=node.js&logoColor=white" alt="Node.js"/>
   <img src="https://img.shields.io/badge/Express.js-%23000000.svg?logo=express&logoColor=white" alt="Express.js"/>
 </p>
+
+
+
+# Project Rights
+
+This project is protected under the **Creative Commons Attribution-NonCommercial-NoDerivs 4.0** license. It is only permitted to view the project without any rights to modify, use, or download it.
+
+## Terms:
+1. The project is for demonstration purposes only and cannot be used commercially.
+2. The code cannot be reused in other projects.
+3. Distribution or modification of the project is not allowed.
+
+[Read the full license text here](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode).
+
